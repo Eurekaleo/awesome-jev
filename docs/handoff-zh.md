@@ -1,20 +1,21 @@
 # Jev Survey 交接报告（中文）
 
-生成日期：2026-09-23（Asia/Singapore）。版本：0.1.0。本报告说明本轮实际完成了什么、如何打开和重建、数据相对原快照的变化、已运行与未运行的检查，以及发布前必须由维护者确认的事项。所有数值均来自 `data/stats.json`，重建后以其为准。
+生成日期：2026-09-23（Asia/Singapore）。版本：0.1.0。本报告说明本轮实际完成了什么、如何打开和重建、数据相对原快照的变化、已运行与未运行的检查，以及发布记录与仍待办的事项。所有数值均来自 `data/stats.json`，重建后以其为准。
 
 ## 1. 成果位置与打开方式
 
 | 成果 | 路径 | 说明 |
 | --- | --- | --- |
-| 项目根目录 | `jev-survey/` | 建议仓库名 `awesome-jev-survey`（尚未创建远程仓库） |
-| 研究网站 | `index.html`（由 `site/index.template.html` 生成） | `python3 -m http.server 8000` 后打开 http://localhost:8000；直接双击也可阅读，但证据抽屉与导出需要本地服务器 |
+| 公开仓库 | https://github.com/Eurekaleo/awesome-jev-survey | 2026-09-23 创建（公开，`main` 分支）；本地目录 `jev-survey/` 即该仓库的工作副本 |
+| 线上网站 | https://eurekaleo.github.io/awesome-jev-survey/ | GitHub Pages，从 `main` 根目录自动部署；推送后约 1 分钟更新 |
+| 研究网站源文件 | `index.html`（由 `site/index.template.html` 生成） | 本地：`python3 -m http.server 8000` 后打开 http://localhost:8000；直接双击也可阅读，但证据抽屉与导出需要本地服务器 |
 | Survey 初稿 | `paper/main.pdf`（20 页，XeLaTeX 已编译）、`paper/survey.md`、`paper/main.tex` + `paper/sections/` | 源文件为 `paper/src/survey.src.md`；表格、图、数字由数据生成 |
 | 统一数据 | `data/*.json` | papers / claims / repositories / taxonomy / review-relations / sources / search-runs；另有生成的 `references.bib`、`exports/*.csv`、`stats.json` |
 | 文档 | `docs/` | methodology、related-surveys、evidence-audit（这三份由数据生成）、limitations、reference-study、deployment、本报告 |
 | 脚本 | `scripts/` | validate-data、build、render-readme、render-docs、build-paper、check-links、measure、update-metadata、update-github、bootstrap-from-snapshot |
 | 检索留档 | `research/snapshot-2026-09-23/`（原快照，只读）、`research/increments/2026-09-23T0818Z/`（本轮增量）、`research/curation/`（首版编辑输入） | |
 | 交付压缩包 | `../jev-survey-0.1.0.zip` | 不含论文 PDF 原件与第三方 README 全文 |
-| 私有在线预览 | https://claude.ai/artifact/P4LgwEVZ6HmgW4ubyXx49m | Claude Artifact，默认仅本人可见，分享需在页面 Share 菜单中操作。与仓库版的差别：预览环境禁止下载，因此导出区与指向仓库文件（PDF、数据、LICENSE、CONTRIBUTING）的链接改为文字说明；`?paper=` 深链接在该环境不可用。该副本已在本地按预览外壳复现并实测（搜索、解释图、证据抽屉均正常），但内置浏览器未登录 claude.ai，线上页面本身未能由我打开核对 |
+| 私有在线预览（发布前的临时预览，现以 GitHub Pages 为准） | https://claude.ai/artifact/P4LgwEVZ6HmgW4ubyXx49m | Claude Artifact，默认仅本人可见，分享需在页面 Share 菜单中操作；第 2 版已同步署名与许可。与线上版的差别：预览环境禁止下载，所以“当前结果”的 CSV/BibTeX 导出按钮改为说明，指向数据文件与 PDF 的链接改为在新标签页打开 GitHub Pages 上的文件；`?paper=` 深链接在该环境不可用。该副本在本地按预览外壳复现实测过；内置浏览器未登录 claude.ai，线上预览页本身未能由我打开核对 |
 
 ## 2. 本轮实际完成
 
@@ -22,7 +23,7 @@
 - **统一数据**：`research/` 原快照 → `data/` 规范数据，保留所有原字段于 `source_record`；网站、README、BibTeX、CSV、文档与稿件表格全部由同一数据生成，`build.py --check` 保证无漂移。
 - **网站**（英文）：Hero / What is Jev / 研究地图 / 方法图鉴（6 类读出方式）/ 7 项发现与反证 / 可靠性实验室（4 个标注 Illustrative 的交互解释 + Reported 数据）/ 选择性控制与应用 / 开放生态审计 / 文献检索室 / 方法与维护；支持搜索、7 类筛选、排序、重置、空结果、分页、证据抽屉、深链接、BibTeX/CSV/JSON 导出。
 - **Survey 初稿**：约 1 万词，含研究问题、方法、先行综述比较、谱系、实现分类、七项证据综合、失效目录、开放性审计、**提议**的评测方案（未执行）、开放问题、局限；7 张数据表、3 张数据图、88 条引用。
-- **仓库**：README（生成）、LICENSE、NOTICE、CONTRIBUTING、CITATION.cff、CHANGELOG、4 类 issue 模板、3 个 GitHub Actions（校验构建、每周链接检查、手动增量检索）。
+- **仓库**：README（生成）、LICENSE（MIT）、LICENSE-CONTENT（CC BY 4.0）、NOTICE、CONTRIBUTING、CITATION.cff、CHANGELOG、4 类 issue 模板、3 个 GitHub Actions（校验构建、每周链接检查、手动增量检索）。
 
 ## 3. 数据规模与相对原快照的变化
 
@@ -68,39 +69,46 @@
 | --- | --- |
 | `scripts/validate-data.py` | 通过（67 文献、62 证据、109 仓库；词表、引用、定位、缺失原因、原快照一致性） |
 | `scripts/build.py --check` | 通过（生成文件与数据一致，构建幂等） |
-| Python 单元测试 `python3 -m unittest discover -s tests` | 13/13 通过（计数不膨胀、4,666 候选不入库、无“已复现”、CSV 注入防护、README/CITATION 与数据一致、无参考站残留、无占位身份） |
-| JS 单元测试 `node --test tests/*.test.mjs` | 7/7 通过（搜索、筛选、排序、CSV、URL/HTML 安全、URL 状态）。注：本机 Homebrew Node 缺失 ICU 库无法启动，测试通过 VS Code 自带 Node 24 运行；CI 使用 Node 22 |
-| `scripts/check-links.py` | 209 个链接全部可达（arXiv 顺序限速检查） |
-| `scripts/measure.py --budget` | 首次加载 408 KB 原始 / 80.2 KB gzip（不含网页字体），在 110 KB 预算内；首页不加载 PDF、4,666 候选或全量 JSON；证据数据 185.6 KB（gzip 34.5 KB）按需加载 |
+| Python 单元测试 `python3 -m unittest discover -s tests` | 13/13 通过（计数不膨胀、4,666 候选不入库、无“已复现”、CSV 注入防护、README/CITATION 与数据一致、除已确认作者主页与本站网址外无参考站残留、署名在网站 / README / CITATION / 文稿中一致且无占位身份） |
+| JS 单元测试 `node --test tests/*.test.mjs` | 7/7 通过（搜索、筛选、排序、CSV、URL/HTML 安全、URL 状态）。注：本机 Homebrew Node 缺失 ICU 库无法启动，测试通过 VS Code 自带的 Node 运行；GitHub Actions 上以 Node 22 运行并通过 |
+| `scripts/check-links.py` | 本地与 GitHub Actions（“Link check” 手动触发一次）均为 219 个链接全部可达（含新增的仓库、作者主页与许可链接；arXiv 顺序限速检查），报告见 `reports/link-check.json` |
+| `scripts/measure.py --budget` | 首次加载 409 KB 原始 / 80.3 KB gzip（不含网页字体），在 110 KB 预算内；首页不加载 PDF、4,666 候选或全量 JSON；证据数据 185.6 KB（gzip 34.5 KB）按需加载 |
 | 浏览器实测（内置浏览器） | 桌面 1440×900、平板 768×1024 与手机 375×812：均无横向溢出；Tab/方向键切换、搜索、筛选、分页、抽屉（含焦点返回）、深链接、四个解释面板与升级模拟器均实际操作；控制台无错误。导出按钮的 CSV/BibTeX 逻辑由单元测试覆盖，未在浏览器中实际触发下载 |
 | 搜索与筛选响应（浏览器实测） | 筛选重绘 0.4–2.7 ms；输入搜索到结果更新 95–106 ms（含 90 ms 防抖）；本地 DOMContentLoaded 153 ms（本机回环服务器，非网络实测）；记录于 `reports/browser-measurements.json` |
 | 私有预览副本（本地复现 Artifact 外壳） | 以预览环境的页面外壳与文件布局在本地服务器实测：标题、字体、搜索（calibration → 26 条）、解释图、证据抽屉（加载 drawer.json、Esc 关闭后焦点返回）正常，控制台无错误，无横向溢出。线上预览页因内置浏览器未登录 claude.ai 未能直接打开核对 |
 | 自动可访问性扫描 | 无缺失 alt、无无名按钮/链接、无重复 id、表单均有标签、标题层级无跳级（已修复两处） |
 | 调色板校验（dataviz 校验器） | 浅色 / 深色三槽位全部通过色盲分离与对比度检查；浅色 aqua 对比不足 3:1，已通过直接标签与表格视图补偿 |
-| LaTeX | `latexmk -xelatex` 成功，无未定义引用，剩 2 个轻微 overfull |
+| LaTeX | `latexmk -xelatex` 成功，无未定义引用，剩 1 个轻微 overfull；标题页署名 Meng Luo（链接主页） |
+| GitHub Actions “Validate and build” | 首次推送（`9d28a38`）与升级到 v7 Actions 后（`2018613`）均通过：数据校验、生成文件一致性、Python 与 JS 单元测试、页面体积预算；Node 20 弃用提示已随升级消除 |
+| GitHub Pages 线上核对 | 首页、样式、脚本（含 `.mjs` 的 `text/javascript` 类型）、drawer.json、PDF、CSV、BibTeX 均返回 200；内置浏览器打开线上站点实测搜索（calibration → 26 条）、URL 状态、解释图、证据抽屉与深链接正常，控制台无错误，无横向溢出；首页仓库按钮与贡献卡片指向 GitHub 仓库与 issue 表单 |
+| 仓库元数据 | GitHub 识别许可证为 MIT；`CITATION.cff` 通过 CFF 1.2.0 schema 校验；四个 issue 表单可解析，其引用的标签（add-paper / correction / resource-update / reproduction）已创建 |
 
-**未运行**：Lighthouse 与线上 Core Web Vitals（未部署）；真机与屏幕阅读器人工测试；第二审稿人独立筛查；任何模型实验或复现（全部数值均为作者 / 厂商 / 社区报告）；GitHub Pages 实际部署。
+**未运行**：Lighthouse 与线上 Core Web Vitals（站点已部署，但尚未做正式性能审计）；真机与屏幕阅读器人工测试；第二审稿人独立筛查；任何模型实验或复现（全部数值均为作者 / 厂商 / 社区报告）。
 
-## 7. 发布前必须由维护者确认
+## 7. 维护者确认事项
 
-1. **作者与单位**：`site.config.json` 的 `authors` 与 `CITATION.cff` 目前为 “Jev Survey contributors”，未从参考站复制任何署名。
-2. **内容许可**：代码 MIT；原创文字与数据拟采用 CC BY 4.0（`LICENSE` 中标注为待确认）。
-3. **远程仓库与网址**：未创建任何远程仓库、网址、DOI 或 arXiv 编号；`repository_url`、`site_url` 为 null，页面不会显示虚构链接。
-4. **arXiv 摘要**：`data/papers.json` 保留了 arXiv API 元数据中的摘要以供溯源，网站不展示全文摘要；如需对外公开数据，请确认 arXiv API 使用条款。
-5. **最新增量**：发布当天再运行一次增量检索，并复核先行综述。
+已确认并落实：
+1. **作者**：Meng Luo（主页 https://eurekaleo.github.io/）。由 `site.config.json` 统一提供给网站署名与 `<meta name="author">`、README、BibTeX、文稿标题页；`CITATION.cff` 同步，测试检查四处一致。未添加单位（未确认）。
+2. **许可**：代码 MIT（`LICENSE`，GitHub 可识别）；原创文字、图表与整理后的数据 CC BY 4.0（`LICENSE-CONTENT.md`，含适用范围与建议署名）；第三方材料不在两者范围内（`NOTICE.md`）。
+3. **远程仓库与网址**：https://github.com/Eurekaleo/awesome-jev-survey（公开）与 https://eurekaleo.github.io/awesome-jev-survey/ ；DOI 与 arXiv 编号仍为空，未虚构。
+4. **arXiv 摘要**：已核对 arXiv API 使用条款（2026-09-23）：描述性元数据（明确包括标题、摘要、作者、标识符）以 CC0 1.0 提供，允许存储、转换与分享；`NOTICE.md` 已写明。
 
-## 8. 发布步骤（逐条可执行）
+仍待办：
+5. **下一次增量**：本轮增量完成于 2026-09-23 08:18 UTC；arXiv 下一次公告在 2026-09-24 00:00 UTC 左右。之后在 GitHub Actions 手动运行 “Literature increment”，或本地运行 `update-metadata.py` / `update-github.py`，人工筛查后更新数据。
+6. **第二审稿人**复筛核心纳入与证据记录（见第 4 节）。
+
+## 8. 发布记录与后续发布
+
+2026-09-23 已执行：`git init -b main`、首个提交（作者 Meng Luo，邮箱为 GitHub noreply 地址）、`gh repo create Eurekaleo/awesome-jev-survey --public --source . --push`、通过 API 开启 Pages（`main` / 根目录）、添加仓库主题标签、创建 issue 标签、将 Actions 升级到 v7。
+
+之后的每次更新：
 
 ```sh
-cd jev-survey
 python3 scripts/validate-data.py && python3 scripts/build.py && python3 -m unittest discover -s tests
-git init -b main && git add -A && git commit -m "Jev survey 0.1.0"
-gh repo create <owner>/awesome-jev-survey --public --source . --push
-# GitHub: Settings → Pages → Deploy from a branch → main / (root)
-# 然后在 site.config.json 填写 repository_url 与 site_url，重新 build 并推送
+git add -A && git commit -m "<变更说明>" && git push
 ```
 
-论文重建：`python3 scripts/build-paper.py --pdf`（需要 matplotlib 与 TeX Live）。
+推送后 “Validate and build” 自动校验，Pages 自动重新部署。论文重建：`python3 scripts/build-paper.py --pdf`（需要 matplotlib 与 TeX Live）。
 
 ## 9. 后续维护流程
 
