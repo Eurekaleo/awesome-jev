@@ -1,0 +1,23 @@
+name: Literature increment (manual)
+
+# Runs the dated arXiv and GitHub increments and uploads them for human screening.
+# It never commits: new candidates must be screened and added to data/ by a person.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  increment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python3 scripts/update-metadata.py
+      - run: python3 scripts/update-github.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with: {name: increment, path: research/increments/}

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/S38TrMRxwGjyKu17/BRNbt2kToc</id>
+  <title>arXiv Query: search_query=(abs:"decision head" OR abs:"decision heads") AND submittedDate:"202606010000 TO 202609232359"&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T08:30:46Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(abs:%22decision+head%22+OR+abs:%22decision+heads%22)+AND+submittedDate:%22202606010000+TO+202609232359%22&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>3</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.16710v1</id>
+    <title>The Ethical Decision Head: Operationalizing Normative Ethics in Autonomous Vehicles via Reinforcement Learning from Human Feedback</title>
+    <updated>2026-08-17T15:26:09Z</updated>
+    <link href="https://arxiv.org/abs/2608.16710v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.16710v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As autonomous vehicles (AVs) approach Level 4 and Level 5 operational capability [SAE International, 2018], their on- board decision systems must handle not only safety-critical locomotion but also their subsequent moral weight. This paper details the Ethical Decision Head (EDH), a deep re- inforcement learning (RL) framework that encodes ethical reasoning as a differentiable reward signal, enabling a pol- icy gradient agent to learn morally-aligned driving behavior in scenarios whose state representation is aligned with the CARLA simulation environment [Dosovitskiy et al., 2017]. Two normative frameworks are instantiated and evaluated: a Utilitarian framework minimizing total casualties and a Kan- tian framework enforcing course maintenance as a categori- cal imperative. The EDH is trained via Proximal Policy Op- timization (PPO) [Schulman et al., 2017] against a Bradley- Terry reward model [Bradley and Terry, 1952] learned from pairwise human preference annotations over 200 collision- imminent scenarios. Results reveal an asymmetry in the learnability of normative ethical frameworks under human su- pervision. The Kantian condition, which reduces to a con- stant prediction task under the codebook, serves as a pipeline control: it confirms training stability and rules out infrastruc- ture failure as an explanation for the utilitarian result. The Utilitarian agent learned something more unsettling: human raters rewarded self-sacrifice over casualty minimization, and the model learned that preference faithfully. This divergence between what humans prescribe in theory and what they re- ward in practice suggests that RLHF does not learn ethics as philosophers define it, but as humans live it.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-17T15:26:09Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Thomas Mbrice</name>
+    </author>
+    <author>
+      <name>Ammar Ali</name>
+    </author>
+    <author>
+      <name>Sami Mian</name>
+    </author>
+    <author>
+      <name>Khai Hern Low</name>
+    </author>
+    <author>
+      <name>Eric Chen</name>
+    </author>
+    <author>
+      <name>Arshia Aghajani</name>
+    </author>
+    <author>
+      <name>Wolf Schäfer</name>
+    </author>
+    <author>
+      <name>Amin Shirangi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.14995v1</id>
+    <title>PAS-QFL: Personalized Ansatz Selection for Quantum Federated Learning under Client Data Heterogeneity</title>
+    <updated>2026-08-15T02:52:39Z</updated>
+    <link href="https://arxiv.org/abs/2608.14995v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.14995v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum federated learning (QFL) lets multiple quantum clients collaboratively train quantum neural networks (QNNs) without sharing private local data. However, existing QFL methods commonly assume that all clients use the same ansatz, overlooking how heterogeneous client data affects ansatz suitability. Under class-imbalanced non-IID data, different clients may favor different ansatz structures, so a fixed ansatz can lead to unstable and unfair performance across clients. In this paper, we propose PAS-QFL, a Personalized Ansatz Selection framework for QFL under client data heterogeneity. Rather than treating the ansatz as a monolithic structure, PAS-QFL decomposes each client QNN into a globally shared ansatz and a client-specific private ansatz, and personalizes the structure of the private ansatz rather than only its parameters. The shared ansatz is placed first and selected by a stability-aware cross-client criterion so that its parameters can be reliably aggregated, while the private ansatz serves as a personalized decision head, selected per client by local Macro-F1 to adapt the shared representation to its local data. During training, each client updates both its shared and private parameters locally but uploads only the shared parameters, so federated aggregation stays well-defined while each client keeps its own private structure. PAS-QFL uses Macro-F1 as the primary selection metric to avoid misleading accuracy under class imbalance. Experiments on heterogeneous QFL tasks show that PAS-QFL improves average Macro-F1 over the existing fixed-ansatz QFL baselines, demonstrating the value of personalizing the ansatz structure for practical QFL.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-15T02:52:39Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Jindi Wu</name>
+    </author>
+    <author>
+      <name>Qun Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.28933v1</id>
+    <title>FinInvest-GTCN: Explainable Graph-Temporal-Causal Modeling for Risk-Aware Investment Decision Optimization</title>
+    <updated>2026-06-27T14:09:57Z</updated>
+    <link href="https://arxiv.org/abs/2606.28933v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.28933v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Venture capital (VC) investment decisions face distinct challenges, such as multi-source heterogeneous data, non-stationary time series, and the demand for explainable predictions in high-stakes, low-data settings. To overcome these issues, we introduce \textbf{FinInvest-GTCN}, a Graph-Temporal-Causal Network that redefines the task from content recommendation to quantitative risk-return assessment. This architecture combines a relational graph encoder to capture the investment ecosystem's topology, a multi-scale temporal fusion module to handle long-term dependencies and non-stationarity, and a causal decision head that generates risk-adjusted predictions with interpretable causal attributions. A core innovation is the Meta-Causal Adaptation (MCA) strategy, which facilitates robust fine-tuning for new, data-scarce sectors by aligning updates with causally-plausible structures derived from meta-pretraining. Comprehensive experiments on proprietary VC datasets show that FinInvest-GTCN delivers state-of-the-art results, markedly lowering the primary Risk-Adjusted Mean Squared Error (RA-MSE) to 2.51 from a baseline of 3.05 and boosting the cumulative return of a simulated portfolio by 18.7\%. Ablation studies underscore the essential role of each component, while additional analyses confirm the model's stability, interpretability, and enhanced adaptability. This work pioneers a data-driven, explainable framework for investment decision support.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-27T14:09:57Z</published>
+    <arxiv:comment>28 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Junyan Tan</name>
+    </author>
+    <author>
+      <name>Yifan Li</name>
+    </author>
+    <author>
+      <name>Minghao Wang</name>
+    </author>
+    <author>
+      <name>Zihan Chen</name>
+    </author>
+    <author>
+      <name>Haoyu Zhang</name>
+    </author>
+  </entry>
+</feed>

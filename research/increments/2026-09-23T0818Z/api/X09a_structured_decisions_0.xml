@@ -1,0 +1,1102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/wsrKGajSFG6CiOFCA9pcCgtMp3E</id>
+  <title>arXiv Query: search_query=abs:"structured decisions" AND submittedDate:"202606010000 TO 202609232359"&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T08:36:11Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22structured+decisions%22+AND+submittedDate:%22202606010000+TO+202609232359%22&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>42</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24631v1</id>
+    <title>From Semantic Decisions to Feasible Trajectories: Self-Evolving LLM-Guided Optimal Control for Narrow-Space Parking</title>
+    <updated>2026-09-21T14:12:27Z</updated>
+    <link href="https://arxiv.org/abs/2609.24631v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24631v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous parking in nonconvex and narrow environments remains challenging. Although optimal-control methods can explicitly enforce vehicle dynamics and collision constraints, nonconvexity compromises solver robustness and can cause failures. Large language models (LLMs) exhibit strong semantic reasoning capabilities, but directly generating dense trajectories makes it difficult to guarantee physical feasibility. We introduce SE-LLM-OCP, a unified framework in which LLMs make high-level discrete maneuver decisions, while an optimal-control module enforces low-level vehicle dynamics and collision constraints. Online, the LLM proposes sparse maneuver plans, decomposing the parking task into a sequence of short-horizon trajectory-optimization problems. A low-level solver then sequentially solves optimal-control problems. If the solver fails, the LLM aggregates failure evidence from the solver and validation stages to guide replanning. Offline, SE-LLM-OCP automatically evolves a structured decision-making knowledge base from scratch, driven by accumulated online failures. We validate our proposed framework in simulation on a car-like vehicle model and on a differential-drive robot. Our experimental results show that SE-LLM-OCP enables safer autonomous parking in narrow scenarios and demonstrates transfer of the same maneuver representation to a different kinematic platform.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T14:12:27Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Zhengbao Yao</name>
+    </author>
+    <author>
+      <name>Yuanfu Luo</name>
+    </author>
+    <author>
+      <name>Kehan Xue</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24496v1</id>
+    <title>Conformalized Safe Feasible Sets in Uncertain Decision Systems</title>
+    <updated>2026-09-21T12:35:46Z</updated>
+    <link href="https://arxiv.org/abs/2609.24496v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24496v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Safety-critical decision systems often require a downstream optimizer to choose from an unknown feasible set determined by an unobserved label $Y$. Given a context $X$, the goal is to construct a safe subset $D(X)$ contained in the oracle feasible set $A(X,Y)$ with probability at least $1-α$. Existing conformal approaches typically construct a prediction set of the unobserved label $Y$ and retain decisions that are safe for every value in this set. Although valid, this requires a stronger intermediate event than set inclusion. We propose Directed Inclusion Safety Calibration (DISC), a conformal framework that directly controls the probability of this inclusion event by reducing its verification to a scalar critical-inclusion score. Given a pretrained nested family of candidate feasible sets, DISC assigns each labeled observation the smallest nestedness level at which the corresponding subset is contained in $A(X,Y)$, and constructs the safe feasible set using an empirical quantile at test-time. With data exchangeability, this yields a finite-sample, distribution-free inclusion guarantee. Under two practical set families, we show that DISC produces a safe feasible set containing that obtained by the corresponding calibration baseline. We further develop optimization-based score computation and decision-aware procedures for learning subset families. Experiments across continuous and structured decision problems show that DISC achieves the target inclusion guarantee while producing larger feasible regions.</summary>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T12:35:46Z</published>
+    <arxiv:primary_category term="stat.ME"/>
+    <author>
+      <name>Yajie Bao</name>
+    </author>
+    <author>
+      <name>Yinjie Min</name>
+    </author>
+    <author>
+      <name>Haojie Ren</name>
+    </author>
+    <author>
+      <name>Changliang Zou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.23703v1</id>
+    <title>Financial Language Models as Applied Artificial Intelligence Systems for News-Based Trading under Market Frictions</title>
+    <updated>2026-09-20T15:24:06Z</updated>
+    <link href="https://arxiv.org/abs/2609.23703v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.23703v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Financial language models can transform unstructured firm-specific news into structured decision signals, but financial AI research lacks an integrated deployment framework for evaluating whether those signals remain useful in financial decision systems. Computer science research has developed strong methods for time-series forecasting, text classification, multimodal stock prediction, graph-based market modeling, and machine-learning operations, yet these streams do not provide a domain-specific protocol that jointly tests financial language-model outputs under event-time observability, probability calibration, execution timing, transaction costs, liquidity constraints, capacity limits, operational diagnostics, and statistical inference. We introduce MFAST, a Market-Friction-Aware Sentiment-to-Trading framework that converts timestamped financial text into auditable, reproducible, and market-feasible trading decisions. The application is news-based trading, where firm-specific text must be linked to securities before portfolio decisions can be evaluated. The framework links Refinitiv News Analytics to Center for Research in Security Prices (CRSP) equity data, restricts the primary out-of-sample evaluation to post-release news outside disclosed foundation-model data-freshness periods, and adds a public replication arm using open financial text and public price data. Results show that decoder-only language models outperform encoder baselines and dictionary sentiment in classification, calibration, return prediction, and net portfolio performance, while operational diagnostics reveal trade-offs among accuracy, latency, memory, throughput, and inference cost. The paper shows that credible evaluation of financial language models requires an end-to-end engineering approach combining language understanding, temporal discipline, market-friction-aware deployment, and reproducible validation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.TR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-20T15:24:06Z</published>
+    <arxiv:comment>47 pages. Revise and resubmit at Engineering Applications of Artificial Intelligence</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Kemal Kirtac</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.18766v2</id>
+    <title>FRAUDSkill: Structured Frozen-Weight Skill Optimization for Audio Anti-Fraud Detection</title>
+    <updated>2026-09-17T15:41:24Z</updated>
+    <link href="https://arxiv.org/abs/2609.18766v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.18766v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large audio-language models have shown promise for anti-fraud detection by directly processing speech and reasoning over fraud-related evidence. Their deployment, however, requires predictions to follow a predefined label space and a structured decision protocol consisting of service-scenario identification, fraud detection, and conditional fraud-type classification. Existing fine-tuning and prompt-based approaches typically encode task knowledge, constraints, and decision rules into model parameters or manually maintained prompts, making them difficult to adapt as fraud patterns and labeling policies evolve. To this end, we propose FRAUDSkill, a structured frozen-weight adaptation framework that leaves the underlying audio-language model unchanged while optimizing an external layer of skill programs, route-specific policies, and decision rules. We further combine structured output control with validation-guided multi-path inference to ensure protocol-compliant predictions. On the TeleAntiFraud benchmark, FRAUDSkill achieves 73.50% Macro-F1, outperforming the shared frozen-model baseline by 31.96% while reducing invalid outputs to 1.94%. Extensive experiments demonstrate that external skill optimization provides an effective and adaptable solution for structured audio anti-fraud detection without modifying the underlying model. The source code is available at https://anonymous.4open.science/r/FRAUDSKILL-114514.</summary>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T14:51:37Z</published>
+    <arxiv:comment>10 pages, 4 figures, including supplementary material</arxiv:comment>
+    <arxiv:primary_category term="cs.SD"/>
+    <author>
+      <name>Chengxian Hu</name>
+    </author>
+    <author>
+      <name>Zhiming Ma</name>
+    </author>
+    <author>
+      <name>Mingjun Pan</name>
+    </author>
+    <author>
+      <name>Yifan Wang</name>
+    </author>
+    <author>
+      <name>Shun Zhang</name>
+    </author>
+    <author>
+      <name>Qifan Wang</name>
+    </author>
+    <author>
+      <name>Zhilei Zhao</name>
+    </author>
+    <author>
+      <name>Yijin Zhou</name>
+    </author>
+    <author>
+      <name>Yuxi Zhao</name>
+    </author>
+    <author>
+      <name>Huiyuan Liu</name>
+    </author>
+    <author>
+      <name>Peidong Wang</name>
+    </author>
+    <author>
+      <name>Peng Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.18610v1</id>
+    <title>A Geometric Theory of Decision Boundaries in Structured Markov Decision Processes</title>
+    <updated>2026-09-16T13:01:13Z</updated>
+    <link href="https://arxiv.org/abs/2609.18610v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.18610v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Classical dynamic programming represents optimal sequential decisions through value functions and policies. While this functional representation is natural for computing optimal decisions, it does not directly identify the mathematical object governing policy reconstruction, representation complexity, or oracle-query complexity once an optimal policy is fixed. This paper addresses this question by developing a geometric theory of structured optimal policies in which the decision-boundary geometry induced by the policy becomes the primary object of analysis. We show that, under suitable structural regularity conditions, this geometry provides the minimal representation required for policy reconstruction and determines the statistical and computational complexity of the reconstruction problem. Building upon this representation, we establish structural properties of policy-induced decision geometry, introduce intrinsic notions of boundary and decision complexity, derive information-theoretic measures of decision compression, and obtain statistical guarantees for boundary estimation and policy reconstruction from black-box policy queries. Collectively, these results demonstrate that, for the structured decision problems considered here, the complexity of policy reconstruction is governed by the geometry of the decision boundary rather than by the cardinality of the ambient state space. Controlled numerical experiments examine the principal theoretical predictions and provide empirical evidence consistent with the proposed framework.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T13:01:13Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Fredy Pokou</name>
+      <arxiv:affiliation>MRE, INOCS</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17247v1</id>
+    <title>DriveMCP: An Agentic AI framework for Advanced Driver Assistance System</title>
+    <updated>2026-09-15T14:29:18Z</updated>
+    <link href="https://arxiv.org/abs/2609.17247v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.17247v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An agentic AI driver-assistance framework that integrates perception, compliance reasoning, vehicle-state interpretation, and safety arbitration into a modular and auditable pipeline. The architecture, referred to as DriveMCP, incorporates a sensor-like perception stack alongside DriveLM as the vision-language front end to generate a graph-structured scene understanding (Graph Visual Question Answering) and language-grounded driving information. Key compliance elements in world_state, including posted speed limits and jurisdiction cues, are derived from DriveLM outputs through a structured parsing layer rather than being injected as simulator ground truth. A stateful orchestration layer coordinates specialized experts exposed as Model Context Protocol (MCP) servers: (i) a Rules server that performs retrieval-augmented compliance reasoning over jurisdiction-specific traffic codes and sign conventions, (ii) a Weather server that estimates traction risk and contextual speed advisories, and (iii) an MCP-CAN server that surfaces Controller Area Network (CAN)/On-Board Diagnostics (OBD) telemetry and diagnostic context for health-aware risk shaping. These outputs are fused to generate a structured decision that prompts a recommended course of action. The outcome is then further filtered by a Responsibility-Sensitive Safety (RSS)-inspired guardrail that arbitrates speak versus act decisions under bounded online adaptation. In CARLA simulation across multilingual, cross-border, and dynamic speed-limit scenarios, DriveMCP reduces traffic infractions and overspeed relative to the VLM-Direct, VLM-Direct+RAG, and VLM-Tools-NoArbiter baselines, while improving hazard response time and maintaining sub-second advisory latency.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-15T14:29:18Z</published>
+    <arxiv:comment>Submitted to IEEE Transactions on Intelligent Vehicles</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Farzad Nadiri</name>
+    </author>
+    <author>
+      <name>Mehdi Cina</name>
+    </author>
+    <author>
+      <name>Ahmad B. Rad</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.16163v1</id>
+    <title>GPEvac: GNN-Based PPO for Adaptive Evacuation Routing During Shooting Events</title>
+    <updated>2026-09-14T18:04:40Z</updated>
+    <link href="https://arxiv.org/abs/2609.16163v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.16163v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The sharp increase in mass shootings underscores an urgent need for systems that guide victims to safety in real time. An effective evacuation system must minimize threat exposure while also accounting for adversarial uncertainty and crowding dynamics. Current methods in the literature are rigidly constrained to layout-specific policies and computationally intractable in large-scale layouts, while practical guidelines simply advise victims to "run", "hide", or "fight". We propose GPEvac: a GNN-based PPO framework that computes adaptive evacuation routes during shooting events. To capture both local and long-distance dependencies, we introduce an edge-first sequential message-passing scheme with a learnable virtual global node. The resulting graph embeddings are integrated into a permutation-invariant scoring mechanism that allows a single learned policy to operate across building layouts of diverse topologies and sizes. Through extensive simulation, we show that GPEvac outperforms intelligent baselines across distinct architectural layouts, significantly reducing total threat exposure. Crucially, the system computes global evacuation routes in just 14.73 ms on local CPU hardware, enabling seamless integration with live surveillance systems. In addition to saving lives during shooting events, the methodologies developed are transferable to other graph-structured decision-making domains, including critical infrastructure, intelligent transportation systems, and adaptive sensor networks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-14T18:04:40Z</published>
+    <arxiv:comment>7 pages, 4 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Daniel Perkins</name>
+    </author>
+    <author>
+      <name>Subhadeep Chakraborty</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.13357v1</id>
+    <title>Can Autonomous LLM Agents Execute Multireference Quantum Chemistry Calculations?</title>
+    <updated>2026-09-11T17:32:05Z</updated>
+    <link href="https://arxiv.org/abs/2609.13357v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.13357v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multireference electronic-structure calculations remain difficult to automate because critical workflow decisions, including active-space selection, state averaging, convergence recovery, and state identification, traditionally rely on expert judgment. Here, we investigate whether an autonomous large language model (LLM) agent can perform these tasks without human intervention. The agent selects active spaces using literature-grounded analogies or explicitly documented chemical reasoning, generates and submits ORCA calculations, analyzes outputs, and records all decisions in an auditable reasoning log. Benchmarking against 558 vertical transition energies (VTEs) from QUESTDB shows that an unguided baseline agent achieves 24.9% coverage with a mean absolute error (MAE) of 0.373 eV. Introducing a structured decision ladder increases coverage to 44.1% while reducing the MAE to 0.339 eV. The largest gains are observed for double and Rydberg excitations, demonstrating that expert-informed procedural guidance substantially improves active-space construction and state identification. When provided with complete workflow information, the agent successfully reproduces published QUEST calculations with an MAE of only 23 meV, resolving 75% of target configurations within seven attempts. These results demonstrate that contemporary LLM agents can autonomously execute and reproduce complex multireference quantum-chemical workflows, while highlighting the importance of structured reasoning frameworks for achieving reliable high-throughput and high-fidelity electronic-structure calculations.</summary>
+    <category term="physics.chem-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.comp-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-11T17:32:05Z</published>
+    <arxiv:comment>16 pages, 6 figures, 2 tables</arxiv:comment>
+    <arxiv:primary_category term="physics.chem-ph"/>
+    <author>
+      <name>Victor Chang Lee</name>
+    </author>
+    <author>
+      <name>James M. Rondinelli</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.08678v1</id>
+    <title>HiBRIDGE: A Hierarchical Bayesian Neural Network Framework for Interpretable Dialogue Management in Group-Robot Interaction</title>
+    <updated>2026-09-08T12:44:38Z</updated>
+    <link href="https://arxiv.org/abs/2609.08678v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.08678v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In multi-party human-robot interaction, a robot must continuously decide whom to address and what to say to participate effectively in the conversation. In real-world interactions, this is challenging because several behaviours may be plausible at the same time: a robot might continue a topic with one participant, involve another through a question, or address the whole group, with the appropriate choice depending on both whom it addresses and the interaction context. Current approaches remain limited in representing uncertainty when several behaviours are plausible and in structuring decisions into semantically meaningful intermediate steps that make robot decisions easier to interpret. Addressing these, we present HiBRIDGE, a hierarchical Bayesian neural network framework for group-robot dialogue management. Its Bayesian formulation enables uncertainty-aware prediction and robust learning from limited interaction data, while the hierarchical approach formulates behaviour selection as a structured, multi-stage decision process. We further use decision-tree surrogates to investigate whether this structure can support more interpretable explanations. Across three offline group-HRI datasets, our findings show that Bayesian formulations outperform their deterministic counterparts and several state-of-the-art baselines. Next, through an online study (N=20), we show that explanations derived from the hierarchical model are rated as more helpful for understanding robot behaviour and are preferred over those derived from the flat model. Finally, through our in-person study (N=12), we demonstrate the feasibility of HiBRIDGE for autonomous real-time group interaction, with both hierarchical and flat Bayesian variants positively perceived. Overall, HiBRIDGE combines strong predictive performance with a structured decision process that supports more interpretable explanations of robot behaviour.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-08T12:44:38Z</published>
+    <arxiv:comment>28 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Massimiliano Nigro</name>
+    </author>
+    <author>
+      <name>Hatice Gunes</name>
+    </author>
+    <author>
+      <name>Micol Spitale</name>
+    </author>
+    <author>
+      <name>Fethiye Irmak Dogan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.08481v1</id>
+    <title>An Evidence Model for Agentic Processes: Evidence Claims, Trust Assumptions, and Policy Assessment</title>
+    <updated>2026-09-08T09:25:28Z</updated>
+    <link href="https://arxiv.org/abs/2609.08481v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.08481v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic AI systems increasingly exchange messages, invoke tools, request approvals, hold structured decision sessions, and modify shared artifacts. Logs and anchors can make selected records tamper-evident, but they can also mislead if their evidentiary meaning is implicit: a hash does not establish semantic truth, a signature does not establish authorization, and an external anchor does not establish capture completeness. This paper proposes an evidence claim model for agentic processes. It distinguishes artifact integrity, temporal existence, provenance, approval evidence, declared ordering, capture claim, relevance claim, deliberation traceability, monitoring claim, anchoring authorization claim, policy assessment claim, risk treatment claim, mitigation implementation claim, and management response claim. Semantic validity is treated as a recurring limitation. The model maps these claims to mechanisms, assumptions, limitations, and threats, and situates them in an agent organization with functional CEO agent, executive, operational, evidence, and audit roles, plus a plan-do-check-act-inspired management response loop. The contribution is conceptual: it does not validate a particular implementation, prevent all failures, or automate legal compliance. It provides a vocabulary for stating which claims an agentic black box can support, which claims it cannot establish, and which controls are required around it.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-08T09:25:28Z</published>
+    <arxiv:comment>7 pages, 1 table</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Arslan Brömme</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.04048v1</id>
+    <title>Translation as a Decision Space: A Multi-Agent Perspective on Low-Resource Dialect Generation</title>
+    <updated>2026-09-03T16:22:18Z</updated>
+    <link href="https://arxiv.org/abs/2609.04048v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.04048v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Neural machine translation (NMT) systems typically produce a single output per input, obscuring the alternative decision trajectories implicitly available within multilingual decoding. This opacity becomes particularly problematic in low-resource dialect settings, where multiple linguistically valid realizations may differ in lexical authenticity, register, and structural stability. We propose reframing translation as a structured decision space explored by autonomous translation agents. Instead of analyzing a single output, we model distinct translation pathways as agents operating over a shared multilingual backbone. Inter-agent divergence is treated not as error but as an interpretable behavioral signal. We conduct an empirical study on Turkish--Syrian Arabic translation using three agents: (1) zero-shot direct translation, (2) dialect-stabilized translation via lightweight fine-tuning, and (3) pivot translation through English. Evaluation is performed on 5,000 dialogue sentences, while stabilization is trained on 5,000 additional Turkish--Syrian sentence pairs drawn from television dialogue and MADAR-Turk resources. Rather than optimizing for conventional performance metrics, we quantify structured behavioral displacement using dialect marker frequency, lexical proximity to standardized Arabic, and structural variance. Lightweight stabilization nearly doubles dialect marker usage, increasing it from 0.2266 to 0.4988, while significantly reducing structural instability. Pivot mediation introduces normalization pressure and measurable compression effects, whereas zero-shot translation exhibits the highest decision variance. We argue that translation divergence across agents reveals latent decision flexibility within multilingual models and we provide a principled interpretability framework for low-resource dialect generation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-03T16:22:18Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hasan Alkhder</name>
+    </author>
+    <author>
+      <name>Mohammad Abboush</name>
+    </author>
+    <author>
+      <name>Igor Tchappi</name>
+    </author>
+    <author>
+      <name>Ahmet Zengin</name>
+    </author>
+    <author>
+      <name>Amro Najjar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.02092v1</id>
+    <title>Beyond Outcome Gaps: Process-Aware Fairness Diagnosis for LLM-based Multi-Agent Decision Systems</title>
+    <updated>2026-09-02T04:32:41Z</updated>
+    <link href="https://arxiv.org/abs/2609.02092v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.02092v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-based multi-agent systems (MAS) are increasingly considered for high-stakes decision-making, yet outcome-based fairness audits can miss where risks arise within the decision trajectory. We present SCOPED-Hiring, a process-aware fairness diagnosis pipeline for LLM-based hiring MAS. SCOPED-Hiring constructs controlled resume variants, runs role-based hiring committees, logs over 311K structured decision trajectories, and converts trajectory fields into quantitative fairness signals organized by six diagnostic lenses: final outcome, counterfactual, process, pathway, dynamic, and design effects. SCOPED-Hiring reveals that balanced final hire rates can mask hidden trajectory unfairness in multi-agent decision trajectories: career gaps trigger suspicion, proxy cues shape qualification judgments, and identity cues lead to unequal investigation. Targeted repair guided by these diagnoses reduces total layered burden by 72.3% while shifting the hire rate by only 1.86 pp, showing that process diagnosis can guide effective repair. Project Page: https://scoped-hiring-project-page.vercel.app/</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-02T04:32:41Z</published>
+    <arxiv:comment>Accepted to EMNLP 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yiran Zhao</name>
+    </author>
+    <author>
+      <name>Lu Zhou</name>
+    </author>
+    <author>
+      <name>Liming Fang</name>
+    </author>
+    <author>
+      <name>Yufei Chen</name>
+    </author>
+    <author>
+      <name>Jiafei Wu</name>
+    </author>
+    <author>
+      <name>Zhe Liu</name>
+    </author>
+    <author>
+      <name>Xiaogang Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.29397v1</id>
+    <title>AlgoWorlds: Benchmarking Tool Use for Global Optimization in Algorithmic Worlds</title>
+    <updated>2026-08-29T18:37:41Z</updated>
+    <link href="https://arxiv.org/abs/2608.29397v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.29397v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-use benchmarks generally evaluate whether an agent completes a workflow using appropriate tools and valid arguments. However, feasibility alone is insufficient in real-world decision settings such as route planning and fleet dispatch. Individual choices interact through shared constraints and costs, so a feasible solution may still be substantially suboptimal. This raises a harder question: can an agent turn information gathered through tools into a globally optimal decision? We introduce AlgoWorlds, a benchmark that transforms formally specified combinatorial optimization problems into partially observed decision environments with verifiable global optima. Each environment contains a hidden instance observed only through task-specific information tools, after which the agent commits to one structured decision evaluated for feasibility and optimality. AlgoWorlds contains 240 environments covering ten combinatorial optimization families and four workload levels. Family-specific deterministic programs generate the instances, exact algorithms certify their optima and determine workload levels, and two structurally different tool interfaces present each underlying instance. We evaluate seven leading LLMs, including Claude Opus 4.8 and GPT-5.6 Sol. Achieving global optimality remains highly challenging: although leading models produce feasible decisions in most cases, the best-performing model reaches exact optimality in only 38.61% of cases. Even when agents collect sufficient information to reconstruct the hidden instance, most failures end in feasible but suboptimal decisions. The challenge therefore extends beyond information acquisition to information integration, global constraint reasoning, and decision verification. The project homepage is available at https://xzx34.github.io/AlgoWorlds/, and the code is available at https://github.com/xzx34/AlgoWorlds.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-29T18:37:41Z</published>
+    <arxiv:comment>Homepage: https://xzx34.github.io/AlgoWorlds/ Code: https://github.com/xzx34/AlgoWorlds</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zixiang Xu</name>
+    </author>
+    <author>
+      <name>Jiaan Wang</name>
+    </author>
+    <author>
+      <name>Fandong Meng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.28728v1</id>
+    <title>PermitGPT: A Unified Generative-AI Pipeline for Construction Hazard Forecasting, Permit Prediction, and Community Impact</title>
+    <updated>2026-08-28T16:55:02Z</updated>
+    <link href="https://arxiv.org/abs/2608.28728v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.28728v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Urban construction governance requires early decisions that connect workplace safety, permitting requirements, and community impact, yet the relevant evidence is often scattered across separate municipal and regulatory data sources. This paper presents PermitGPT, a unified generative artificial intelligence framework for converting unstructured construction permit descriptions into structured decision-support outputs across three domains: safety hazard identification, permit requirement specification, and community impact assessment. To address data fragmentation, we spatially and temporally align records from the New York City Department of Buildings, Occupational Safety and Health Administration, and NYC 311 service requests, producing 90,000 structured prompt-response pairs derived through rule-based alignment and domain-informed spot checking. We fine-tune three open-weight language models using parameter-efficient adaptation and evaluate them on 2,833 held-out test cases. The results show complementary model behavior: Gemma-3-1B provides the most efficient inference at 3.07 samples per second with low memory usage, Llama-3.2-3B gives the highest lexical overlap for regulatory-style outputs with a BLEU score of 0.0091, and 4-bit Mistral-7B-Instruct-v0.3 achieves the strongest semantic alignment with a BERTScore-F1 of 0.7747. Because the task involves open-ended structured generation, low BLEU values are interpreted alongside semantic metrics and qualitative output structure rather than as standalone indicators of utility. Overall, PermitGPT provides an initial step toward AI-assisted construction governance while identifying directions for stronger task-level evaluation and real-world validation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-28T16:55:02Z</published>
+    <arxiv:comment>1 figure, 3 tables, Accepted at 2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)</arxiv:journal_ref>
+    <author>
+      <name>Mohd Ruhul Ameen</name>
+    </author>
+    <author>
+      <name>Farjana Aktar</name>
+    </author>
+    <author>
+      <name>Akif Islam</name>
+    </author>
+    <author>
+      <name>Momen Khandoker Ope</name>
+    </author>
+    <author>
+      <name>Abu Saleh Musa Miah</name>
+    </author>
+    <author>
+      <name>Jungpil Shin</name>
+    </author>
+    <arxiv:doi>10.1109/PECCII70991.2026.11662046</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/PECCII70991.2026.11662046" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.25565v1</id>
+    <title>Maru: Information Architecture as a Shared Language for Generating Aligned and Persistent User Interfaces</title>
+    <updated>2026-08-26T09:19:17Z</updated>
+    <link href="https://arxiv.org/abs/2608.25565v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.25565v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generative user interfaces (GenUIs) promise on-demand components tailored to users' needs. As users iterate on information tasks, they construct personal structures over information they encounter---how items are grouped, what gets prioritized, and what terms mean in their context. Yet, current systems leave these structural decisions to the model at each generation, ignoring the structural logic users have established. Without a persistent representational structure shared between user and system, GenUIs have no basis to remain aligned with what users have established. We draw on Information Architecture (IA), a design practice for organizing and structuring information, as a shared language to bridge user-constructed structure and system generation. We present a framework identifying four IA elements---partition, hierarchy, order, and vocabulary---and characterize how each maps to concrete UI generation decisions. We instantiate this framework in Maru, a conversational system that captures user prompts and interactions as IA preferences, persisting as rules both user and system draw on across generations. A user study revealed that IA persistence kept generated UIs aligned as sessions progressed, while alignment without it degraded, with diverse patterns emerging across users and contexts, pointing to the value of IA persistence in aligning GenUI to individual needs.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-26T09:19:17Z</published>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Eunhye Kim</name>
+    </author>
+    <author>
+      <name>DaEun Choi</name>
+    </author>
+    <author>
+      <name>Bryan Min</name>
+    </author>
+    <author>
+      <name>Hyunjung Yi</name>
+    </author>
+    <author>
+      <name>Yue Jiang</name>
+    </author>
+    <author>
+      <name>Juho Kim</name>
+    </author>
+    <arxiv:doi>10.1145/3830398.3830621</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3830398.3830621" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.22967v2</id>
+    <title>Closed-Loop Bayesian Molecular Inverse Design with Semantic LLM Surrogates</title>
+    <updated>2026-09-11T09:51:35Z</updated>
+    <link href="https://arxiv.org/abs/2608.22967v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.22967v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Practical molecular inverse design is rarely a one-shot generation problem; it often takes the form of closed-loop candidate-pool enrichment, where under a limited oracle budget the goal is to increase the fraction of generated molecules that match a desired property profile. Bayesian optimization (BO) offers a natural framework for this setting, yet standard Gaussian-process surrogates typically operate in compressed continuous embeddings, which discard the substructural and reference-similarity signals that chemists naturally use to decide where to look next. We propose BoMolLLM, a closed-loop framework in which the surrogate, rather than the generator, is treated as the locus of design choice, and instantiate it with a frozen large language model that reasons directly over the task instruction, SMILES-level optimization history, and oracle feedback in their native textual form. At each iteration, the surrogate returns a structured decision signal that selects informative reference molecules under an exploration and exploitation principle, optionally with a concise guidance sentence. This signal is converted into next-round conditioning text for a frozen molecular generator, yielding an inspectable optimization trace in natural language. Experiments on MolQA drug and material design tasks show that BoMolLLM improves over one-shot prompting, is competitive with or stronger than GP-based BO baselines, and reveals a domain-dependent interface: reference-only transfer works best for binary drug targets, while adding a concise surrogate summary is more beneficial for continuous material</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-24T08:30:01Z</published>
+    <arxiv:comment>28 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yaoyao Xu</name>
+    </author>
+    <author>
+      <name>Xinjian Zhao</name>
+    </author>
+    <author>
+      <name>Xiaozhuang Song</name>
+    </author>
+    <author>
+      <name>Lei Bai</name>
+    </author>
+    <author>
+      <name>Tianshu Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.22772v1</id>
+    <title>SPOC-SQL: Stage-wise Preference Optimization for Controllable Text-to-SQL</title>
+    <updated>2026-08-24T03:48:05Z</updated>
+    <link href="https://arxiv.org/abs/2608.22772v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.22772v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Text-to-SQL aims to translate natural language questions into executable SQL queries over relational databases, requiring multi-stage structured reasoning over database schemas and query constraints. However, existing methods treat this task as single-step generation, where models optimize entire SQL sequences without targeted feedback at key decision points and lack support for interacting with and controlling the intermediate generation process. To address this issue, we propose SPOC-SQL, which decomposes Text-to-SQL into four sequential subtasks following standard SQL execution logic and designs stage-specific optimization strategies for the model to learn key decisions. Specifically, we propose the implementation of fine-grained preference optimisation at key decision points across SQL stages, with the objective of enhancing structured decision-making during query construction. Furthermore, a structured decomposition strategy is designed, facilitating stage-wise intervention and correction through explicit intermediate representations. This results in more controllable and reliable SQL generation. Experiments demonstrate that incorporating stage-wise human knowledge consistently improves performance, validating the effectiveness of stage perception controllable generation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-24T03:48:05Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yingnan Chen</name>
+    </author>
+    <author>
+      <name>Chun Ding</name>
+    </author>
+    <author>
+      <name>Tianshi Xu</name>
+    </author>
+    <author>
+      <name>Xu Yang</name>
+    </author>
+    <author>
+      <name>Si Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.26180v1</id>
+    <title>PACEShop: Evaluating Personalized, Actionable, Compositional, and Evidence-grounded Shopping Assistants</title>
+    <updated>2026-08-20T01:21:51Z</updated>
+    <link href="https://arxiv.org/abs/2608.26180v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.26180v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Shopping assistants are shifting from ranked product lists toward structured decision support, where systems must synthesize shopper context, product evidence, and next-step guidance into a coherent recommendation experience. This changes the unit of evaluation: a fluent response can still fail by ignoring shopper context, contradicting itself across components, or leaving defects too vague to localize. Existing personalization, grounding, and LLM-as-a-judge benchmarks cover pieces of this problem, but they do not define a joint evaluation target for structured shopping-assistant responses. We formulate this missing evaluation target as PACE: Personalized, Actionable, Compositional, and Evidence-grounded evaluation. We instantiate PACE with two artifacts: PACEShop, a benchmark dataset that makes the target measurable through 22,625 controlled records with structured personas, auditable evidence pools, GOOD/BAD labels, and gold defect family and location annotations; and PACEJudge, a training-free judging protocol that makes the target reportable through a structured output contract. Our experiments show that generic judges can recognize broad quality but fail to recover the diagnostic fields required for PACE; PACEShop makes these failures verifiable, and PACEJudge improves persona-source, cross-component, grounding, and family/location closure without retraining, showing that realistic shopping-assistant evaluation requires a task-matched output contract rather than only a stronger backbone or scalar prompt.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-20T01:21:51Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Weimin Lyu</name>
+    </author>
+    <author>
+      <name>Chen Luo</name>
+    </author>
+    <author>
+      <name>Guangrui Li</name>
+    </author>
+    <author>
+      <name>Yaochen Xie</name>
+    </author>
+    <author>
+      <name>Dhineshkumar Ramasubbu</name>
+    </author>
+    <author>
+      <name>Arief Koesdwiady</name>
+    </author>
+    <author>
+      <name>Wanqiu Long</name>
+    </author>
+    <author>
+      <name>Hansu Gu</name>
+    </author>
+    <author>
+      <name>Yutong Chen</name>
+    </author>
+    <author>
+      <name>Zheshen Wang</name>
+    </author>
+    <author>
+      <name>Dakuo Wang</name>
+    </author>
+    <author>
+      <name>Yi Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.19029v1</id>
+    <title>Adaptive Memory and Reflection Multi-Agent System for Medical Question Answering</title>
+    <updated>2026-08-19T15:24:18Z</updated>
+    <link href="https://arxiv.org/abs/2608.19029v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.19029v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Accurate and responsible medical question answering (QA) is important in healthcare, where complex cases require factual knowledge and nuanced reasoning. Existing medical QA systems, typically based on single-agent architectures and static retrieval, often lack adaptability, persistent memory, and structured decision-making. This work introduces an adaptive memory and reflection (AMR) agentic system, a multi-agent framework in which specialized agents use dedicated memory and reflection-based feedback to retrieve relevant prior cases and improve subsequent reasoning. Complexity assessment routes questions through solo, collaborative, or escalated workflows, while consensus and ethical overseer modules support reasoning consolidation and output review. Evaluation on MedQA and MedMCQA demonstrates strong performance compared with several baselines. Ablation studies show that combining agent-specific memory, reflection, and external retrieval yields the strongest performance. These findings highlight the potential of structured memory and feedback for developing more trustworthy medical agents. The source code is publicly available at https://github.com/mm-air/AMR-Agent.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-19T15:24:18Z</published>
+    <arxiv:comment>Accepted by IEEE SMC 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Pradeep Murugesan</name>
+    </author>
+    <author>
+      <name>Luoxiao Yang</name>
+    </author>
+    <author>
+      <name>Xueli Chen</name>
+    </author>
+    <author>
+      <name>Xinqi Fan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.14400v2</id>
+    <title>Ten simple rules for non-visual, reproducible and accessible bioinformatics</title>
+    <updated>2026-08-20T06:58:47Z</updated>
+    <link href="https://arxiv.org/abs/2608.14400v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.14400v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Bioinformatics workflows rely heavily on visual representations. Quality-control plots, cell embeddings, heatmaps, genome-browser tracks, and interactive dashboards are not merely illustrations, but instruments for making analytical decisions. For blind and low-vision researchers who use screen readers, braille displays, or audio-based interfaces, these create a barrier: the evidence used to justify an analysis is often encoded in visual form, while the underlying decision remains undocumented.
+  We argue that non-visual accessibility and computational reproducibility are closely aligned, as they both require analyses to be transparent and to record why decisions were made. We present ten simple rules for non-visual bioinformatics, covering plots as decision records, cautious use of AI-generated figure descriptions, accessible computing environments, text-first literate programming, structured data and metadata, compact object summaries, accessible publication formats, collaboration practices, shared community infrastructure, and accessibility as part of FAIR research. The intended audience is computational biologists and developers.
+  Using single-cell RNA-seq as a running example, we show that the accessible equivalent of a plot is a structured decision record. That is, a plot companion that goes beyond storing the underlying data by also stating the purpose of the analysis and the resulting quantitative evidence and uncertainty. We argue that treating accessibility in this way makes bioinformatics more inclusive and also more transparent and auditable.</summary>
+    <category term="q-bio.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-14T15:40:16Z</published>
+    <arxiv:comment>28 pages, 4 figures, 5 supplementary figures, 8 supplementary tables</arxiv:comment>
+    <arxiv:primary_category term="q-bio.GN"/>
+    <author>
+      <name>Jacqueline G. Kientsch</name>
+    </author>
+    <author>
+      <name>Stephan C. F. Neuhauss</name>
+    </author>
+    <author>
+      <name>Izaskun Mallona</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.11631v1</id>
+    <title>CLAIM: Leading Open-domain Active Clarification of Large Language Models with Uncertainty Measurement</title>
+    <updated>2026-08-12T04:27:45Z</updated>
+    <link href="https://arxiv.org/abs/2608.11631v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.11631v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In open-domain human-computer interaction scenarios, large language models (LLMs) frequently encounter user queries that are ambiguous or incomplete. In such cases, directly producing an answer often leads to overgeneralized, erroneous, or low-information responses. In contrast, asking clarifying questions can substantially improve interaction quality. However, existing approaches still rely heavily on manually annotated data or preference alignment to address two fundamental challenges: when clarification is necessary, and which aspect of the query should be clarified. This reliance incurs high annotation costs and limits generalization. To address these challenges, we propose CLAIM, an uncertainty-driven framework for active clarification learning in open-domain settings. CLAIM eliminates the need for explicit human preference annotations by quantifying query uncertainty through the entropy induced by answer disagreements across multiple models. This uncertainty signal is then used to construct high-quality synthetic data, enabling the training of a unified clarification decision model through a combination of supervised learning and reinforcement learning. Specifically, we propose an entropy-driven synthetic data generation pipeline that integrates entropy-based uncertainty estimation with semantic clustering and reasoning-based judgments, enabling reliable automatic annotation of clarification requirements. To train CLAIM, we formulate the clarification process as a structured decision generation problem and adopt a training paradigm that combines supervised fine-tuning (SFT) with group-relative policy optimization (GRPO). Experimental results demonstrate that CLAIM can learn stable and generalizable clarification strategies without relying on manually labeled data, offering a low-cost and robust solution for proactive understanding in real-world open-domain interactions with LLMs.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-12T04:27:45Z</published>
+    <arxiv:comment>11 pages, 4 figures, and 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Kuangzhao Yang</name>
+    </author>
+    <author>
+      <name>Ziliang Zhao</name>
+    </author>
+    <author>
+      <name>Zhicheng Dou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.10731v2</id>
+    <title>When Is a General Factor Distinguishable? Non-Proportionality, Stable Structure, and the Bifactor Decision</title>
+    <updated>2026-09-12T13:59:44Z</updated>
+    <link href="https://arxiv.org/abs/2608.10731v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.10731v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Whether an added general dimension is necessary beyond correlated first-order factors is a property of population covariance, not an estimator. A bifactor structure is covariance-equivalent to correlated factors when general and group loadings are proportional within every cluster. When every cluster violates proportionality, at least three indicators per cluster and mild conditions rule out exact reproduction by a K-factor model with diagonal uniquenesses. Mixed configurations remain only partly characterized, motivating graded distinguishability. We develop a two-step procedure that delivers a stable first-order structure only when it persists across direct wider-count comparisons, then compares oblique and bifactor representations conditionally on delivery. A preliminary simulation study provides tentative design evidence. A major study develops three non-nested persistence profiles, designates .80/r2 as the practical default, and evaluates the frozen family on held-out replications from the same generators. Within the studied scenarios, anchor-only persistence outperforms anchor-zero, minimum congruence modestly outperforms maximum RMSD, and depth four adds no precision at the fixed .70 cutoff. Held-out results also expose stable-yet-wrong delivery under a weak core and show that the conditional comparison is highly accurate after correct recovery. Four empirical applications illustrate agreement, adjacent-count uncertainty, and non-delivery. Persistence, not count alone, carries the structural decision.</summary>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-11T09:46:15Z</published>
+    <arxiv:primary_category term="stat.ME"/>
+    <author>
+      <name>Jinsong Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.08822v1</id>
+    <title>Automated Generation of Complexity-Validated Decision Scenarios Using Large Language Models</title>
+    <updated>2026-08-09T17:12:48Z</updated>
+    <link href="https://arxiv.org/abs/2608.08822v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.08822v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cognitive decision-making research depends on diverse scenarios with carefully controlled complexity, yet manual production is slow, inconsistent, and biased. We developed an automated pipeline that uses LLms to generate structured decision scenarios and validates their complexity through a composite framework rooted in established task-complexity theory. We evaluated 4,238 scenarios across multiple domains and complexity tiers. Measurement validation met rigorous psychometric standards. Agreement among five independent model families was nearly perfect, with an intraclass correlation coefficient of 0.997 and a kappa of 0.971. Known-groups validity demonstrated large separation between tiers, with an eta-squared of 0.587 and all pairwise comparisons significant at p less than .001. Factor analysis revealed a dominant complexity construct, with loadings between 0.87 and 0.96 across three frameworks, while interactivity formed a weaker secondary dimension at 0.34. Discriminant validity was limited by a strong relationship between complexity and text length that persisted after controlling for tier, yielding a partial correlation of 0.86. This constrains construct purity but does not undermine the instrument's tier-grading function. Model analyses showed a negative association between throughput and schema pass rate (r = -0.967, p = .007, n = 5), suggesting a speed-quality trade-off, though largely driven by one high-throughput model. Llama 4 Maverick generated scenarios fastest at 134 per minute versus 25 for DeepSeek Chat V3.2, but underproduced complex-tier scenarios, whereas DeepSeek Chat V3.2 balanced domain coverage with high schema compliance. The system demonstrated strong psychometric properties, enabling reliable classification into Simple, Moderate, and Complex tiers and providing the measurement infrastructure needed for downstream cognitive assessment of AI systems</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-09T17:12:48Z</published>
+    <arxiv:comment>38 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Abdalla Doleh</name>
+    </author>
+    <author>
+      <name>Toni Somers</name>
+    </author>
+    <author>
+      <name>Ratna Babu Chinnam</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.16930v1</id>
+    <title>EMAN: Optimization-Driven Capacity Growth through Path Emergence in Multi-Task Learning</title>
+    <updated>2026-08-05T06:06:40Z</updated>
+    <link href="https://arxiv.org/abs/2608.16930v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.16930v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing multi-task learning methods rely on hard sharing, multiple paths or experts, adaptive sharing, and dynamic expansion. However, their capacity changes are usually constrained by predefined structures or triggered by task boundaries and conflict signals. This raises a fundamental question: can a network start from exact single-path computation and grow a new independent path only when persistent optimization evidence appears? We propose the Emergent Modular Atomic Network (EMAN), an optimization-driven framework for exposing an antisymmetric growth direction through latent relative phases without instantiating a second path, and for monitoring multiple decision signals during training to transform local optimization evidence into a structural decision. EMAN materializes two equal-capacity independent paths only after certification. EMAN adaptively allocates shared and task-specific representation capacity to accommodate varying task requirements. Extensive experiments on controlled rank settings, PASCAL-Context, and NYUv2 validate its effectiveness, achieving improved performance at a competitive computational cost.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-05T06:06:40Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Chenlei Fang</name>
+    </author>
+    <author>
+      <name>Jingchen Li</name>
+    </author>
+    <author>
+      <name>Hongzong LI</name>
+    </author>
+    <author>
+      <name>Qingyao Li</name>
+    </author>
+    <author>
+      <name>Yixuan Zhang</name>
+    </author>
+    <author>
+      <name>Huarui Wu</name>
+    </author>
+    <author>
+      <name>Haobin Shi</name>
+    </author>
+    <author>
+      <name>Chunjiang Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.03868v1</id>
+    <title>GENESIS: Towards Explainable Causal Discovery</title>
+    <updated>2026-08-04T16:09:01Z</updated>
+    <link href="https://arxiv.org/abs/2608.03868v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.03868v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Causal Discovery (CD) from observational data faces two fundamental challenges. First, purely statistical methods often lack the power to resolve structural ambiguities in low-sample regimes. Second, although LLM-assisted hybrid approaches improve structure recovery through semantic reasoning, the influence of that reasoning on individual edge decisions remains largely opaque. Consequently, existing hybrid methods fail to satisfy a fundamental requirement: explaining why a particular edge is included or excluded in the learned directed acyclic graph (DAG). This is critical in real-world applications, where no ground-truth DAG exists and every structural decision must be independently justified. We formalize this requirement as decision traceability, requiring every inferred edge to be supported by auditable statistical evidence, Markov Blanket consistency, or explicit domain reasoning. We propose GENESIS, an explainable hybrid CD framework that decomposes graph construction into interpretable decision points. GENESIS first identifies and scores three-node structural motifs, including chains, forks, and colliders, to establish transparent structural priors, then progressively refines the graph by integrating these priors with observational evidence, invoking domain knowledge only when statistical evidence is insufficient. By design, every edge decision is resolved through an auditable source of evidence. Experiments show that GENESIS achieves 100% decision traceability across all settings, establishing explainability as a first-class objective in causal discovery. Despite this additional requirement, GENESIS consistently outperforms purely statistical CD methods on the majority of benchmark datasets across all sample regimes in terms of Structural Hamming Distance (SHD), while achieving performance comparable to state-of-the-art LLM-assisted approaches.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-04T16:09:01Z</published>
+    <arxiv:comment>13 pages, 2 figures, 13 tables, 1 algorithm</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Abhinav Thorat</name>
+    </author>
+    <author>
+      <name>Ravi Kumar Kolla</name>
+    </author>
+    <author>
+      <name>Vishak K Bhat</name>
+    </author>
+    <author>
+      <name>Harsh Vardhan Singh Chauhan</name>
+    </author>
+    <author>
+      <name>Niranjan Pedanekar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.16919v1</id>
+    <title>CARA: Cognitive Adaptive Recommendation Agent</title>
+    <updated>2026-08-02T19:57:59Z</updated>
+    <link href="https://arxiv.org/abs/2608.16919v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.16919v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in large language models and agent-based recommendation frameworks have introduced new opportunities for more flexible and context-aware recommendation. However, existing methods still largely rely on semantic matching, end-to-end generation, or loosely structured agent workflows, without explicitly modeling how user preferences are processed and translated into final decisions. To address this limitation, we propose CARA, a cognitively inspired recommendation framework that formulates recommendation as a structured decision-making process. The core intuition of CARA is that user decisions are jointly shaped by two complementary mechanisms: intuitive affective preference and deliberate rational evaluation. Accordingly, CARA organizes recommendation into two coordinated stages: candidate filtering, which narrows the search space based on coarse-grained preference constraints, and dual-perspective decision modeling, which captures recommendation decisions through affective and rational judgment. We further introduce a boundary-aware KTO strategy that prioritizes instructions the model can solve occasionally but not consistently, thereby increasing the density of informative preference signals. Extensive experiments on three Amazon Reviews domains show that CARA achieves the best performance on most evaluation metrics, with relative improvements of up to 10.15% over the baseline.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-02T19:57:59Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Weijun Gao</name>
+    </author>
+    <author>
+      <name>Jinyang Dong</name>
+    </author>
+    <author>
+      <name>Chuanru Ren</name>
+    </author>
+    <author>
+      <name>Hengxiao Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.01303v1</id>
+    <title>AlphaG-OPD: Reliability-Gated Sibling Counterfactuals for On-Policy Distillation in Symbolic Alpha Factor Discovery</title>
+    <updated>2026-08-02T15:12:58Z</updated>
+    <link href="https://arxiv.org/abs/2608.01303v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.01303v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Symbolic alpha factor discovery can score a completed expression, but it provides no direct label for the structural decisions that produced it. Generative flow networks (GFlowNets) preserve a diverse, reward-proportional distribution over complete expressions, yet their trajectory-level objective does not compare unchosen sibling actions at an intermediate state. We introduce AlphaG-OPD, a structural on-policy distillation framework that turns terminal factor evaluations into local action guidance. Its design separates three decisions. Component I determines where to teach by exposing grammar-valid siblings at partial abstract-syntax-tree (AST) states visited by the current forward policy. Component II determines what is reliable enough to teach: it evaluates three supported siblings under four shared suffixes and admits a KL-bounded target only when their matched comparisons exhibit sufficient winner agreement and a positive empirical lower confidence bound (LCB). Component III determines how strongly and for how long to teach by consolidating accepted targets through bounded replay, score-indexed expiry, and forward-gradient balancing, without additional factor evaluations. Terminal reward, Trajectory Balance, the backward policy, grammar, and factor-pool rules remain unchanged. An equal-physical-score four-arm ablation tests paired teaching, reliability gating, and consolidation. Across China's CSI300, CSI500, and CSI1000 and the U.S. S&amp;P 500, the complete method delivers strong cross-market performance over multiple random seeds.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-02T15:12:58Z</published>
+    <arxiv:comment>12 pages, 3 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yaoyu Su</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.28418v1</id>
+    <title>WIDE: Boosting Adaptive LLM Inference via Token-level Dynamic Width Pruning</title>
+    <updated>2026-07-30T16:01:03Z</updated>
+    <link href="https://arxiv.org/abs/2607.28418v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.28418v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Pruning is a promising approach for improving the efficiency of LLMs. Existing static structured pruning methods are hardware-friendly and can deliver practical throughput gains, but their input-agnostic computation allocation often causes substantial accuracy degradation under aggressive sparsity. Recent dynamic sparsity methods improve quality retention by adapting computation to individual inputs, yet they remain largely limited to coarse-grained structural decisions and their practical acceleration under real-world inference scenarios remains challenging. To address these challenges, we present WIDE, the first end-to-end differentiable token-level dynamic width pruning framework designed for both prefill and decode scenarios. WIDE enables fine-grained computation allocation by allowing each token to dynamically select attention-head groups and FFN-channel groups, extending dynamic pruning beyond layer-level decisions to neuron-block-level granularity. Through a two-stage training pipeline, WIDE learns effective token-wise sparse execution patterns and achieves substantially better quality retention than existing approaches. To make such fine-grained dynamic pruning practical, we further propose a pruning--kernel co-design framework that decomposes dynamic sparsity acceleration into mask reordering, hardware-agnostic block-level skipping, and hardware-dependent intra-block skipping, enabling efficient execution across different granularities. At 50% sparsity, WIDE provides 55.1% performance boost when compared to the state-of-the-art dynamic depth pruning under calibration-only settings. Under prefill and decoding inference workloads, WIDE achieves close-to-theoretical kernel-level speedups of up to 1.98x for prefill and 4.95x for decoding, as well as 1.68x and 1.55x end-to-end acceleration. Our code is available at https://github.com/EIT-NLP/LLM-Pruning/tree/main/WIDE.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-30T16:01:03Z</published>
+    <arxiv:comment>30 pages, 19 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Haozhe Hu</name>
+    </author>
+    <author>
+      <name>Hao Wu</name>
+    </author>
+    <author>
+      <name>Peiran Yin</name>
+    </author>
+    <author>
+      <name>Chao Han</name>
+    </author>
+    <author>
+      <name>Yunpu Ma</name>
+    </author>
+    <author>
+      <name>Xiaoyu Shen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.17774v1</id>
+    <title>Persona-as-Configuration: Generative Stakeholder Reporting for Agricultural Floods</title>
+    <updated>2026-07-20T10:06:47Z</updated>
+    <link href="https://arxiv.org/abs/2607.17774v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.17774v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cyber-physical systems built on deterministic edge inference, such as on-vehicle flood detection for agricultural fields, produce structured decision logs that must be interpreted differently by heterogeneous stakeholders. Pairing such systems with large language models (LLMs) to generate stakeholder-specific reports introduces a tension: the generative layer is non-deterministic, while the edge plane must remain replayable and auditable. We propose an architectural pattern resting on two invariants: unidirectional consumption, in which the generative layer is a strict read-only consumer of the deterministic plane and never writes back, and persona-as-configuration, in which stakeholder adaptation is a versioned prompt-template artifact rather than runtime improvisation. We instantiate the pattern as a context-aware dashboard layer over the JSON decision logs of a previously published edge-based standing-water detection system, and analyse how the integration boundary admits standard generative-reliability mitigations as configuration- or middleware-level extension points. A structured expert review rated the pattern favourably across five ISO/IEC 25010-aligned quality dimensions, with strongest agreement on separation of concerns. End-user evaluation with agricultural stakeholders is planned for future work.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-20T10:06:47Z</published>
+    <arxiv:comment>Accepted at CASA 2026 (9th Workshop on Context-Aware, Autonomous and Smart Architectures), co-located with ECSA 2026. 16 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Oliver Aleksander Larsen</name>
+    </author>
+    <author>
+      <name>Tiziano Santilli</name>
+    </author>
+    <author>
+      <name>Francesco Daghero</name>
+    </author>
+    <author>
+      <name>Mahyar T. Moghaddam</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.06631v1</id>
+    <title>Dynamic-in-Few-Step: Unifying Dynamic Computation and Few-Step Distillation for Efficient Video Generation</title>
+    <updated>2026-07-07T13:14:33Z</updated>
+    <link href="https://arxiv.org/abs/2607.06631v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.06631v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Video Diffusion Models (VDMs) have demonstrated superior generation quality but suffer from prohibitive computational costs. While recent few-step distillation techniques significantly accelerate inference, they typically enforce a static model architecture across all denoising stages, ignoring the varying computational demands inherent to different noise levels. In this work, we propose a novel post-training acceleration framework that exploits this redundancy by integrating dynamic structural sparsification directly into the distillation process. Unlike conventional post-hoc compression applied to a fixed diffusion pipeline, our approach jointly optimizes the denoising steps and structured model sparsity, transforming a pre-trained VDM into a compact, step-specific Mixture-of-Models (MoM). To address the training instability arising from this joint optimization, we introduce a Progressive Training Strategy coupled with an Output Rollout Mechanism, which ensures the coherent learning of structural decisions across timesteps. Furthermore, we develop a specialized inference engine to deploy the resulting MoM efficiently. Our method is orthogonal to existing acceleration techniques and highly effective: On Wan-14B, it removes 24% of the per-step FLOPs on top of 4-step distillation, adding a 1.2x wall-clock gain and reaching a 30x speedup over the 50-step teacher while preserving competitive generation quality.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-07T13:14:33Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yu Cheng</name>
+    </author>
+    <author>
+      <name>Siyue Yao</name>
+    </author>
+    <author>
+      <name>Zhongang Qi</name>
+    </author>
+    <author>
+      <name>Shanyan Guan</name>
+    </author>
+    <author>
+      <name>Wei Li</name>
+    </author>
+    <author>
+      <name>Fajie Yuan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.05999v1</id>
+    <title>AgoraSim: A Hybrid Agent-Based Modeling Framework</title>
+    <updated>2026-07-07T08:37:17Z</updated>
+    <link href="https://arxiv.org/abs/2607.05999v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.05999v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-agent simulations make natural-language social scenarios easy to instantiate, but their outputs can be overread as predictions and are often difficult to compare with explicit social dynamics. We present AgoraSim, a hybrid agent-based modeling framework for scenario-oriented social reaction analysis. AgoraSim resolves textual or multimodal artifacts into editable ABM configurations, runs ratio-controlled populations that mix LLM, vision-language, custom-endpoint, random, and classical agents, and compares the same scenario against matched classical reference dynamics. All agents emit a shared structured decision object, enabling common action spaces, interaction protocols, metrics, and audit records. Exposed through a local UI, Python SDK/CLI, and REST API, AgoraSim helps users inspect scenario trajectories, compare modeling assumptions, and identify cases that warrant empirical validation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-07T08:37:17Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Chung-Chi Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.05632v1</id>
+    <title>Bridging Stakeholder and Product Requirements: An Empirical Study of Requirement Engineering in the Automotive Industry</title>
+    <updated>2026-07-06T20:48:37Z</updated>
+    <link href="https://arxiv.org/abs/2607.05632v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.05632v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The automotive industry's shift toward software-driven systems has increased system complexity and raised the importance of effective requirement intake and refinement for correctness, compliance, development speed, and systematic reuse. Although prior research has proposed techniques for improving requirement quality, limited empirical evidence exists on how stakeholder-level requirements are evaluated, refined, and transformed into product-level requirements in industrial automotive practice. This paper presents a large-scale empirical study based on an industrial dataset from Infineon, comprising 8,082 stakeholder requirements and 5,870 product requirements enriched with traceability links, decision outcomes, deviation rationales, and domain references. Using a mixed-methods approach, we combine quantitative analyses of requirement structures, decision distributions, and mapping patterns with qualitative analyses of rationales, referenced specifications, and software- and hardware-related artifacts. We investigate structural and contextual differences between stakeholder and product requirements, factors influencing acceptance, rejection, and approval with deviation, and the nature of stakeholder-to-product refinement. The results reveal systematic differences across abstraction levels and show that refinement complexity is driven primarily by architectural scope and missing contextual information rather than linguistic verbosity. We further derive a taxonomy of stakeholder-product mapping patterns and relate these patterns to differing refinement effort. The findings provide concrete insight into industrial requirements intake and refinement practices and identify actionable opportunities for improving intake validation, deviation management, and tool-supported contextual enrichment to support faster and more reusable automotive product development.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-06T20:48:37Z</published>
+    <arxiv:comment>Paper Accepted by the 41st IEEE/ACM International Conference on Automated Software Engineering (ASE 2026) Industry Showcase Track</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zixu Wang</name>
+    </author>
+    <author>
+      <name>Shengcheng Yu</name>
+    </author>
+    <author>
+      <name>Zhenchang Xing</name>
+    </author>
+    <author>
+      <name>Tobias Wenzel</name>
+    </author>
+    <author>
+      <name>Chunyang Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.05007v1</id>
+    <title>Quantum-Inspired Harmonic Decision Models: A Computational Framework for Music Generation</title>
+    <updated>2026-07-06T12:48:21Z</updated>
+    <link href="https://arxiv.org/abs/2607.05007v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.05007v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper introduces a quantum-inspired computational framework for harmonic decision-making in music. The proposed approach formulates harmonization as an optimization problem within a structured combinatorial space, where multiple candidate chord sequences are evaluated under interacting musical constraints. The model combines an interference-based harmonization stage with a classical optimization procedure grounded in tonal harmony. The quantum-inspired component enables the parallel consideration of multiple harmonic alternatives, while the classical stage refines the resulting sequences to ensure structural coherence and stylistic plausibility.
+  The framework is evaluated on selected musical examples, including Autumn Leaves and It's a Long Way to Tipperary. Quantitative analysis shows that the optimization stage significantly reduces chord density, increases harmonic stability, and improves functional organization. At the same time, expert evaluation highlights the importance of stylistic context, demonstrating that increased harmonic complexity is not always perceived as more natural. The results suggest that harmonic generation can be interpreted as a structured decision-making process in a constrained search space. The proposed approach provides a computational model that integrates domain-specific knowledge with an interference-based search mechanism.
+  Although preliminary, this work indicates that quantum-inspired methods may offer a useful framework for modeling complex decision processes in creative domains such as music. The proposed framework contributes to ongoing research on quantum-inspired models of cognition and decision-making in complex biological and creative systems.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-06T12:48:21Z</published>
+    <arxiv:comment>17 pages, 3 figures. Preprint. Code and evaluation data available at GitHub</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Josef Pavlíček</name>
+    </author>
+    <author>
+      <name>Petra Pavlíčková</name>
+    </author>
+    <author>
+      <name>Martin Molhanec</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.03651v2</id>
+    <title>LLM-Guided Transportation Hub Capacity Planning with Textual Business Inputs</title>
+    <updated>2026-07-17T08:58:34Z</updated>
+    <link href="https://arxiv.org/abs/2607.03651v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.03651v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While traditional hub capacity planning models optimize effectively for quantitative inputs, they often fail to digest qualitative business context. We propose a novel framework where a large language model (LLM) agent iteratively proposes hub capacity decisions guided by natural-language business context descriptions. The key mechanism is a chain-of-thought reasoning protocol: the LLM constructs a structured decision table that maps each contextual item to specific capacity adjustments based on the implied direction and magnitude of changes. The new capacity decision is then validated through a feedback loop with an optimization model, which provides routing-based performance metrics to guide the agent's selection. On a real-world 13-hub freight network in the southeastern US, our framework achieves a 2.8% optimality gap relative to the hidden ground-truth, a significant improvement over the 11.0% gap produced by the traditional optimization model without textual business inputs. This demonstrates that LLMs can serve as a contextual bridge, integrating qualitative business insights into Operations Research workflows.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-04T00:26:19Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Xiaoyue Liu</name>
+    </author>
+    <author>
+      <name>Zheng Dong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.31470v1</id>
+    <title>CLOUDADV: Decision-Aligned Instance Sizing with Zero-Shot Foundation Models under Drift</title>
+    <updated>2026-06-30T10:49:04Z</updated>
+    <link href="https://arxiv.org/abs/2606.31470v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.31470v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cloud virtual machines are often overprovisioned, creating avoidable cost and operational inefficiency. We present CLOUDADV, an interactive engineer-facing advisory system for cloud instance sizing under workload drift. The system combines zero-shot time-series forecasting with bounded recommendation generation across day-, week-, and month-scale planning horizons. For each query, CLOUDADV constructs a structured decision context from historical utilization, forecast summaries, current VM metadata, candidate instance options, pricing, and explicit sizing heuristics. A higher-capacity LLM is used offline to generate reference recommendations, while a smaller production model is evaluated on the same prompts to assess deployment-time alignment under latency and cost constraints. Evaluation prioritizes downstream recommendation quality using simulated Azure cost savings and ex-post exceedance, with rolling-origin forecast accuracy reported as a secondary diagnostic against classical and supervised baselines. In a case study of seven production VMs, the reference recommendations reduce simulated monthly cost from about \$1,503 to \$708, yielding \$795/month in savings (52.9%) under conservative heuristic constraints, while the highest observed exceedance rate among downgraded cases is 1.5%. Although Chronos-2 does not minimize every forecasting metric, it often induces recommendation patterns similar to those of a supervised per-VM baseline. These results suggest that zero-shot foundation models can support decision-aligned provisioning in non-stationary cloud environments while reducing the operational burden of repeated per-tenant retraining, revalidation, and redeployment.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-30T10:49:04Z</published>
+    <arxiv:comment>9 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jack Bell</name>
+    </author>
+    <author>
+      <name>Giacomo Carfi</name>
+    </author>
+    <author>
+      <name>Gerlando Gramaglia</name>
+    </author>
+    <author>
+      <name>Andrea Simioni</name>
+    </author>
+    <author>
+      <name>Daniele Fontani</name>
+    </author>
+    <author>
+      <name>Vincenzo Lomonaco</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.31315v1</id>
+    <title>BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding</title>
+    <updated>2026-06-30T08:24:05Z</updated>
+    <link href="https://arxiv.org/abs/2606.31315v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.31315v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Speculative decoding accelerates inference by using a lightweight draft model to generate candidate tokens in parallel, and are then verified by the target model, enabling lossless acceleration. Recently, diffusion-based speculative decoding further improves parallelism by generating multiple tokens per forward pass via block-level diffusion, achieving state-of-the-art (SOTA) performance. However, existing methods adopt a fixed inference block size and assume a uniform optimal decoding strategy across all inputs. In this paper, we show that this assumption is suboptimal, as the optimal block size varies across samples and plays a critical role in speculative decoding performance. Moreover, these values exhibit a clear local structure, concentrating around the training block size, which reduces the problem to a low-dimensional and structured decision space. Based on these insights, we propose BlockPilot, a sample-adaptive policy that predicts the optimal block size from the prefilling representation. Specifically, we formulate block size selection as a lightweight policy learning problem and propose an instance-adaptive decision mechanism that predicts the optimal block size based on the representation of the prefilling stage. The prediction is performed only once after prefilling, allowing for seamless integration. Extensive experiments demonstrate that our method is plug-and-play, introduces minimal overhead, and consistently improves efficiency, achieving an acceptance length of 5.92 and a 4.20$\times$ speedup on Qwen3-4B under temperature $T=1$.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-30T08:24:05Z</published>
+    <arxiv:comment>16 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+    <author>
+      <name>Yiming Hu</name>
+    </author>
+    <author>
+      <name>Yong Wang</name>
+    </author>
+    <author>
+      <name>Mingqiao Mo</name>
+    </author>
+    <author>
+      <name>Xin Xiao</name>
+    </author>
+    <author>
+      <name>Xiangxiang Chu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.29816v1</id>
+    <title>Rethinking Build vs. Buy Decisions in Enterprise Software: Navigating Trade-offs through a Structured Decision-Support Approach</title>
+    <updated>2026-06-29T05:49:40Z</updated>
+    <link href="https://arxiv.org/abs/2606.29816v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.29816v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Build-versus-buy decisions remain a persistent challenge in enterprise software development, shaped by competing strategic, technical, cost, and risk considerations. The increasing availability of third-party solutions alongside the growing feasibility of custom development through cloud-native technologies, APIs, and low-code platforms has further amplified the complexity of these decisions. In practice, organizations often rely on fragmented expertise and informal reasoning, making it difficult to systematically analyze trade-offs or justify decisions over time. This paper presents a structured decision-support approach designed to augment build-versus-buy decision-making in such contexts. The approach is grounded in an ontology of decision factors spanning strategic considerations, application characteristics, cost and budget constraints, and risk dimensions. It combines this factor model with rule-based reasoning and reference-level matching to support decision-making even in cold-start scenarios where historical data is unavailable. The approach is implemented as a lightweight advisory artifact that enables users to evaluate relevant factors, explore trade-offs, and derive recommendations with transparent reasoning. The applicability of the approach is illustrated through a finance domain case, demonstrating how structured factor analysis can clarify decision rationale and highlight conditions under which decisions may change over time. The results suggest that making decision criteria explicit and systematically comparable can improve the quality, transparency, and auditability of build-versus-buy decisions in enterprise settings.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-29T05:49:40Z</published>
+    <arxiv:comment>submitted to a software engineering conference (industrial/experience track)</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Janardan Misra</name>
+    </author>
+    <author>
+      <name>Vikrant Kaulgud</name>
+    </author>
+    <author>
+      <name>Adam Burden</name>
+    </author>
+    <author>
+      <name>Sanjay Podder</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.23283v1</id>
+    <title>Towards Root Memories: Benchmarking and Enhancing Implicit Logical Memory Retrieval for Personalized LLMs</title>
+    <updated>2026-06-22T12:58:10Z</updated>
+    <link href="https://arxiv.org/abs/2606.23283v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.23283v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Memory systems are essential for personalized Large Language Models (LLMs). However, existing retrieval methods in these systems primarily rely on semantic similarity, potentially missing logically critical memories with limited semantic overlap. Current benchmarks remain inadequate for evaluating this problem. To address this gap, we construct IMLogic, the first high-quality benchmark targeting implicit logical memory retrieval in long-dialogue scenarios. Motivated by this challenge, we introduce root memory, a structured, decision-preserving representation that distills reusable personalized logic from long-term user histories. We then propose RootMem, a plug-and-play framework that first distills raw histories into structured root memories and then uses an LLM-based router to activate logically relevant ones, complementing semantic retrieval with personalized decision logic. Extensive experiments demonstrate that RootMem significantly outperforms the strongest retrieval baselines and consistently boosts the accuracy of existing memory agents. Our benchmark and codes will be available at https://anonymous.4open.science/r/IMLogic-DBB3.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-22T12:58:10Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hongxun Ding</name>
+    </author>
+    <author>
+      <name>Xiang Yu</name>
+    </author>
+    <author>
+      <name>Chengbing Wang</name>
+    </author>
+    <author>
+      <name>Jianfei Xiao</name>
+    </author>
+    <author>
+      <name>Keqin Bao</name>
+    </author>
+    <author>
+      <name>Wenjie Wang</name>
+    </author>
+    <author>
+      <name>Xiangnan He</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.22597v2</id>
+    <title>MapReason-OSM: Can Vision-Language Models Make Graph-Verifiable Mobility Decisions from Street Maps ?</title>
+    <updated>2026-06-23T04:17:28Z</updated>
+    <link href="https://arxiv.org/abs/2606.22597v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.22597v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Vision-language models (VLMs) are increasingly used to read maps for logistics, delivery, and accessible navigation, where the output is an actionable decision (a route, a pin, a parking choice) that must respect the road network. Yet most map benchmarks grade free text or multiple-choice answers that cannot be verified against the underlying graph. We present MapReason-OSM, a benchmark and evaluation harness for graph-verifiable mobility decisions on self-rendered OpenStreetMap panels. We render fixed-style maps for ten U.S. downtowns at two aligned zoom scales, overlay a consistent marker grammar, and pair each panel with a hidden street graph and exact oracles, yielding 6,000 instances (12,000 panels across the two zooms) over 12 routing, facility-location, and visual disambiguation tasks. Models return structured decisions that we snap back to the graph and score for validity, legality, optimality, and constraint satisfaction, plus cross-zoom consistency. Across seven VLMs, models read maps and route simply but fail at graph cost reasoning (single-facility pin placement is near chance even for frontier reasoning models), and are frequently scale-inconsistent. We release the benchmark, harness, and deterministic generator. Code and data: https://github.com/Vi-Sri/mapreason-osm</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-21T17:13:35Z</published>
+    <arxiv:comment>9 pages, 7 figures. Submitted to ACM SIGSPATIAL 2026 (Industrial Track). Code and data: https://github.com/Vi-Sri/mapreason-osm</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Srinivas Venkatanarayanan</name>
+    </author>
+    <author>
+      <name>Clement Pakkam Isaac</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20122v2</id>
+    <title>ScaffoldAgent: Utility-Guided Dynamic Outline Optimization for Open-Ended Deep Research</title>
+    <updated>2026-08-30T07:51:28Z</updated>
+    <link href="https://arxiv.org/abs/2606.20122v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20122v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Open-ended deep research (OEDR) requires systems to acquire knowledge through multi-round retrieval and generate coherent long-form reports. The outline plays a central role as a structural scaffold that coordinates retrieval, evidence organization, and generation. However, existing methods either fix the outline before writing or refine it with local heuristics, leading to scaffold drift under continuous information accumulation and delayed feedback for evaluating outline modifications. We propose ScaffoldAgent, a utility-guided dynamic outline optimization framework for OEDR. ScaffoldAgent models outline evolution as a structured decision process with three operations: Expansion, Contraction, and Revision, enabling controlled updates to the report scaffold. It further introduces a utility-guided feedback mechanism that estimates the downstream value of each outline operation from retrieval gain, structural coherence, and trial-generation quality. The resulting utility signal guides node selection, operation scheduling, and termination during inference. Experiments on DeepResearch Bench and DeepResearch Gym show that ScaffoldAgent consistently improves long-form report generation and factual grounding over existing deep research agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-18T11:47:13Z</published>
+    <arxiv:comment>9 pages, 6 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhibang Yang</name>
+    </author>
+    <author>
+      <name>Xinke Jiang</name>
+    </author>
+    <author>
+      <name>Yuzhen Xiao</name>
+    </author>
+    <author>
+      <name>Ruizhe Zhang</name>
+    </author>
+    <author>
+      <name>Yue Fang</name>
+    </author>
+    <author>
+      <name>Xinfei Wan</name>
+    </author>
+    <author>
+      <name>Zhengxing Song</name>
+    </author>
+    <author>
+      <name>Yuxuan Liu</name>
+    </author>
+    <author>
+      <name>Yuheng Huang</name>
+    </author>
+    <author>
+      <name>Junfeng Zhao</name>
+    </author>
+    <author>
+      <name>Yasha Wang</name>
+    </author>
+    <author>
+      <name>Xu Chu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.12395v1</id>
+    <title>MARCIM-WG: A cyber wargame proposal based on math modeling applied in a naval scenario</title>
+    <updated>2026-06-10T17:56:53Z</updated>
+    <link href="https://arxiv.org/abs/2606.12395v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.12395v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As maritime operations increasingly depend on interconnected digital ecosystems, cyber incidents can propagate across maritime networks and degrade critical services. Strengthening strategic Cyber Situational Awareness (CSA) therefore requires training mechanisms that expose decision-makers to evolving attack dynamics, constrained resources, and the need to align actions with incident-response procedures. This paper introduces MARCIM-WG, a learning-oriented maritime cyberdefense wargame designed following the NATO wargaming methodology and implemented as a hybrid tabletop experience combining a physical board (tokens, indicators, and special cards) with analytically-assisted adjudication supported by a computational simulation model. The proposal is specified through High-Level Design (HLD) and Low-Level Design (LLD) specifications and instantiated in a fictional maritime cyber crisis scenario to enable structured decision cycles, friction, and measurable consequences. Validation combines (i) an operational scenario-based assessment under three configurations (pessimistic, neutral/most likely, optimistic) to verify decision sensitivity and outcome coherence, and (ii) a CSA competency and learning-outcome evaluation using a comparative design against an equivalent control group. Results show a +34.0 percentage-point improvement in the intervention group, with the largest gains in comprehension-related competencies.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-10T17:56:53Z</published>
+    <arxiv:comment>8 pages, 5 figures, 2 tables, paper in proceedings of the XI National Cybersecurity Research Conference (JNIC) in Barcelona, Spain, May, 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <arxiv:journal_ref>paper in proceedings of the XI National Cybersecurity Research Conference (JNIC) in Barcelona, Spain, May, 2026</arxiv:journal_ref>
+    <author>
+      <name>Diego Cabuya-Padilla</name>
+    </author>
+    <author>
+      <name>Daniel Díaz-López</name>
+    </author>
+    <author>
+      <name>Carlos Castaneda-Marroquín</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.12293v1</id>
+    <title>LLM-Based Digital Twin Intelligence for Application-Aware Network Selection in 6G Heterogeneous Wireless Networks</title>
+    <updated>2026-06-10T16:31:02Z</updated>
+    <link href="https://arxiv.org/abs/2606.12293v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.12293v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Future 6G heterogeneous wireless networks (HWNs) are expected to support multiple radio access technologies (RATs), dynamic wireless environments, and applications with diverse quality-of-service (QoS) requirements. In such environments, network selection (NS) cannot rely only on instantaneous radio measurements or static ranking rules. Instead, access decisions must account for the evolving wireless state, service intent, packet-level QoS behavior, and candidate-RAT dynamics. This paper proposes a large language model (LLM)-based digital twin (DT) framework for stable, application-aware RAT selection under candidate-set evolution. The main idea is to shift NS from an instantaneous decision-matrix operation to a decision process over an evolving wireless DT state. The constructed DT combines site-specific geometry, Sionna RT-based propagation descriptors, ns-3 packet-level QoS emulation, service context, candidate-RAT information, and decision memory. Rather than acting as a general-purpose controller for 6G networks, the LLM is used for DT-grounded decision intelligence in this specific NS task. On top of this DT, a unified intent agent translates user and service requirements into structured decision priorities for two complementary NS branches: an LLM-assisted multi-attribute decision-making branch (MADM--LLM--NS) and a direct LLM-based ranking branch (LLM--NS). To improve decision stability, the framework further introduces history-aware adaptive normalization (HAAN) and DT-memory-driven retrieval-augmented in-context learning (RA--ICL). Numerical results show that the proposed framework reduces rank-reversal problem and unnecessary handover events, while improving service-aware QoS satisfaction compared with representative MADM-based NS baselines.</summary>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-10T16:31:02Z</published>
+    <arxiv:comment>Submitted to an IEEE venue</arxiv:comment>
+    <arxiv:primary_category term="eess.SP"/>
+    <author>
+      <name>Brahim Mefgouda</name>
+    </author>
+    <author>
+      <name>Anis Bara</name>
+    </author>
+    <author>
+      <name>Lina Bariah</name>
+    </author>
+    <author>
+      <name>Hang Zou</name>
+    </author>
+    <author>
+      <name>Yuzhi Yang</name>
+    </author>
+    <author>
+      <name>Merouane Debbah</name>
+    </author>
+  </entry>
+</feed>

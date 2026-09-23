@@ -1,0 +1,165 @@
+[
+  {
+    "id": "2609.26758v1",
+    "url": "https://arxiv.org/pdf/2609.26758v1",
+    "retrieved_at_utc": "2026-09-23T06:16:04.833777+00:00",
+    "status": "ok",
+    "bytes": 273964,
+    "sha256": "b1cef1e3f68905dd91c71e0b444567575c7040012c09a85ca475fb4687613cd5",
+    "pages": 9,
+    "text_chars": 58369,
+    "github_urls": []
+  },
+  {
+    "id": "2609.26550v1",
+    "url": "https://arxiv.org/pdf/2609.26550v1",
+    "retrieved_at_utc": "2026-09-23T06:16:09.441248+00:00",
+    "status": "ok",
+    "bytes": 3206194,
+    "sha256": "0ee9958b85289d0a878c9f78942149520a48d78d40e14c1d78b931a1d22d7d73",
+    "pages": 31,
+    "text_chars": 176002,
+    "github_urls": []
+  },
+  {
+    "id": "2609.26532v1",
+    "url": "https://arxiv.org/pdf/2609.26532v1",
+    "retrieved_at_utc": "2026-09-23T06:16:12.861304+00:00",
+    "status": "ok",
+    "bytes": 371956,
+    "sha256": "7eaac75e8128eec7dbdb34f6865a9084a5b36b958a8864f4de8080a433d806bd",
+    "pages": 19,
+    "text_chars": 108333,
+    "github_urls": []
+  },
+  {
+    "id": "2609.25845v1",
+    "url": "https://arxiv.org/pdf/2609.25845v1",
+    "retrieved_at_utc": "2026-09-23T06:16:16.121170+00:00",
+    "status": "ok",
+    "bytes": 382410,
+    "sha256": "f481872977c46e39136cadde3d9280ba0986bafdcafaf6c24a60c1ba9de5db96",
+    "pages": 13,
+    "text_chars": 76271,
+    "github_urls": []
+  },
+  {
+    "id": "2609.24965v1",
+    "url": "https://arxiv.org/pdf/2609.24965v1",
+    "retrieved_at_utc": "2026-09-23T06:16:19.362581+00:00",
+    "status": "ok",
+    "bytes": 351323,
+    "sha256": "9cd4f1d91f3b9e6b46a4184b6247f7080c0f275a5a8e0b173c3b509a427bb761",
+    "pages": 11,
+    "text_chars": 63559,
+    "github_urls": []
+  },
+  {
+    "id": "2609.24395v1",
+    "url": "https://arxiv.org/pdf/2609.24395v1",
+    "retrieved_at_utc": "2026-09-23T06:16:22.592955+00:00",
+    "status": "ok",
+    "bytes": 852507,
+    "sha256": "707f6c55d5646a489b6f7780b9fd827a866bb432ec958628aef2dd39e48885e1",
+    "pages": 7,
+    "text_chars": 49822,
+    "github_urls": [
+      "https://github.com/aveq-research/videoparser-ng",
+      "https://github.com/google/uvq",
+      "https://github.com/slhck/vmaf-v1-vs-v0"
+    ]
+  },
+  {
+    "id": "2609.24052v1",
+    "url": "https://arxiv.org/pdf/2609.24052v1",
+    "retrieved_at_utc": "2026-09-23T06:16:26.919316+00:00",
+    "status": "ok",
+    "bytes": 1289080,
+    "sha256": "965c22f3a8d843eec188174907eb7a1ef670558b2b17b0bcd831619ee14ad8c1",
+    "pages": 48,
+    "text_chars": 295522,
+    "github_urls": [
+      "https://github.com/pozapas/jev-calibrated-narra"
+    ]
+  },
+  {
+    "id": "2609.23986v1",
+    "url": "https://arxiv.org/pdf/2609.23986v1",
+    "retrieved_at_utc": "2026-09-23T06:16:30.368596+00:00",
+    "status": "ok",
+    "bytes": 932226,
+    "sha256": "413c592431ce55f8372c1561b7dd572e3603d0e66b447f6e4097e4678bfc5e87",
+    "pages": 16,
+    "text_chars": 90658,
+    "github_urls": [
+      "https://github.com/libingzheren/Jev-Mem"
+    ]
+  },
+  {
+    "id": "2609.23959v1",
+    "url": "https://arxiv.org/pdf/2609.23959v1",
+    "retrieved_at_utc": "2026-09-23T06:16:33.718031+00:00",
+    "status": "ok",
+    "bytes": 389494,
+    "sha256": "3b349825a4835748aa88896d20589b701b115dc0f0756d42c2b852e11a2b2318",
+    "pages": 13,
+    "text_chars": 78305,
+    "github_urls": []
+  },
+  {
+    "id": "2609.23886v1",
+    "url": "https://arxiv.org/pdf/2609.23886v1",
+    "retrieved_at_utc": "2026-09-23T06:16:37.919454+00:00",
+    "status": "ok",
+    "bytes": 385255,
+    "sha256": "e86f357cc583e443a224f2e29e2848d5b8612cce0a2cf98577850ffac31bf5fb",
+    "pages": 16,
+    "text_chars": 62032,
+    "github_urls": []
+  },
+  {
+    "id": "2609.23136v1",
+    "url": "https://arxiv.org/pdf/2609.23136v1",
+    "retrieved_at_utc": "2026-09-23T06:16:41.162936+00:00",
+    "status": "ok",
+    "bytes": 351998,
+    "sha256": "1577bcd6c6f1fed3ed3c226fbe930c19c0d927195e0295d4ae1e760cadc06db6",
+    "pages": 11,
+    "text_chars": 88981,
+    "github_urls": []
+  },
+  {
+    "id": "2609.22753v1",
+    "url": "https://arxiv.org/pdf/2609.22753v1",
+    "retrieved_at_utc": "2026-09-23T06:16:44.414705+00:00",
+    "status": "ok",
+    "bytes": 419493,
+    "sha256": "a6e3eec57fe0016466761048fa8f9845204e1873af56bdf8e0e01d86ef292ba9",
+    "pages": 10,
+    "text_chars": 88156,
+    "github_urls": []
+  },
+  {
+    "id": "2606.22807v3",
+    "url": "https://arxiv.org/pdf/2606.22807v3",
+    "retrieved_at_utc": "2026-09-23T06:16:47.665978+00:00",
+    "status": "ok",
+    "bytes": 6302530,
+    "sha256": "428816b28a69203abff94e166ae58076ce92e368efa40093a205da1981c27647",
+    "pages": 31,
+    "text_chars": 136039,
+    "github_urls": [
+      "https://github.com/Alibaba-NLP/Multi-CPR",
+      "https://github.com/BDBC-KG-NLP/CCL2022-DQAB,",
+      "https://github.com/LiuHC0428/LAW_GPT,",
+      "https://github.com/THU-BPM/CHEF",
+      "https://github.com/allenai/gooaq",
+      "https://github.com/chaitanyamalaviya/ExpertQA",
+      "https://github.com/iai-group/DBpedia-Entity/",
+      "https://github.com/openclaw/openclaw,",
+      "https://github.com/sufengniu/RefGPT",
+      "https://github.com/thunlp/THUCTC,",
+      "https://github.com/thunlp/WebCPM"
+    ]
+  }
+]

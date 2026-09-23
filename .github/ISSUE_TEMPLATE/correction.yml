@@ -1,0 +1,13 @@
+name: Correct a record
+description: Report a wrong number, locator, version, status or relationship.
+title: "[Correction] "
+labels: [correction]
+body:
+  - type: input
+    id: record
+    attributes: {label: Record or claim ID, placeholder: "arxiv:2609.XXXXX or c-XXXXX-..."}
+    validations: {required: true}
+  - type: textarea
+    id: wrong
+    attributes: {label: What is wrong, and the correct value with its source location}
+    validations: {required: true}

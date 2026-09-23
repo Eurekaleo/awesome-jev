@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/x+rZ84oWJQkcj/x8jtofjMFKa5o</id>
+  <title>arXiv Query: search_query=ti:"visual jev" OR abs:"visual jev"&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T08:36:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=ti:%22visual+jev%22+OR+abs:%22visual+jev%22&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.25845v1</id>
+    <title>Visual Jev: Accurate and Efficient Decisions from Shared Visual Context</title>
+    <updated>2026-09-22T08:12:29Z</updated>
+    <link href="https://arxiv.org/abs/2609.25845v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.25845v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Many vision applications ask several independent, forced-choice questions about the same image. Visual Jev encodes the image and public context once, executes isolated question suffixes as a batch, and reads candidate probabilities from the backbone's language-model head. Across four benchmarks, answer-supervised post-training raises equal-weight macro accuracy from 70.6% to 76.1%, with the gain concentrated on the two task families represented in training. At N=32 questions per image, shared batched execution is 8.9x faster in warm amortized time than independent serial execution and remains 3.4x faster than an already-batched baseline that recomputes the prefix, at the cost of higher peak memory. A matched typed-head control offers no consistent accuracy advantage over the language-model-head readout. The supported design is therefore simple: adapt the backbone for quality, retain the existing readout, and share execution for efficiency.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-22T08:12:29Z</published>
+    <arxiv:comment>Code: https://github.com/guanxuyu-sv/Visual-Jev</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Guanxu Yu</name>
+    </author>
+    <author>
+      <name>Yuhang Yao</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,1251 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/sP3CEXRYWY3yjLko/RVQyWmRE+U</id>
+  <title>arXiv Query: search_query=&amp;id_list=1810.04805,2209.11055,2508.07662,2311.08526,1909.00161,2412.13663,1706.04599,1705.08500,1901.09192,2107.07511,2006.01862,2307.13565,2307.09702,2109.05093,2501.10868,2411.15100,2312.07104,2306.05685,2310.08491,2403.13787,2406.18665,2305.05176,2207.05221,2302.09664,2503.15850,2502.17419,2503.24377,2510.01237,2503.02623,1906.02530,2601.07206,2309.04992,2310.11324,2608.08254,2604.25359,2607.20492&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T06:23:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=100&amp;id_list=1810.04805,2209.11055,2508.07662,2311.08526,1909.00161,2412.13663,1706.04599,1705.08500,1901.09192,2107.07511,2006.01862,2307.13565,2307.09702,2109.05093,2501.10868,2411.15100,2312.07104,2306.05685,2310.08491,2403.13787,2406.18665,2305.05176,2207.05221,2302.09664,2503.15850,2502.17419,2503.24377,2510.01237,2503.02623,1906.02530,2601.07206,2309.04992,2310.11324,2608.08254,2604.25359,2607.20492" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>36</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.08254v1</id>
+    <title>Your Prompt Is Not the Only Prompt: How Much Do LLMs Weight Structured-Output Schema Descriptions?</title>
+    <updated>2026-08-08T17:27:22Z</updated>
+    <link href="https://arxiv.org/abs/2608.08254v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.08254v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Structured output, where an LLM populates a predefined JSON schema, has become a default mechanism for data labeling and information extraction, but it also introduces a second instruction channel through schema descriptions. We tested whether classification-label definitions are better placed in the system prompt, user prompt, or schema description using a single-field classification task with nonce labels across ten model configurations from two vendors. Schema descriptions did not consistently outperform prompt-based placement; for GPT-4.1 and GPT-5.4 without reasoning, schema placement underperformed system prompts by 11-13 percentage points. Yet schemas are not inert metadata: when prompts and schemas conflicted, incorrect schema instructions caused accuracy drops of 5-45 points, with Claude Haiku 4.5 falling from 52.5% to 7%, indicating that schema instructions can override prompt instructions, and GPT-5.5 falling from 100% to 73%. Further, adding a required intermediate reasoning field before the label field improved schema-only accuracy by 15-24 points when headroom existed, exceeding system-prompt-only performance in every case tested. The effect held even for Claude Sonnet 4.6 at medium reasoning, where extended thinking alone did not produce a comparable gain. This suggests that schema design can affect how effectively models use information encoded in field descriptions. Overall, these results indicate that schema influence is model-dependent. In practice, the system prompt remains a safe default for definitions, but the bigger discipline is maintaining a single source of truth and preventing prompt/schema drift. More importantly, schema design itself may be a stronger lever than instruction placement. Practitioners should treat prompts and schemas as a unified instruction surface and empirically validate both placement and field design for their target model.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-08T17:27:22Z</published>
+    <arxiv:comment>11 pages, 7 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Sin-Ying Lin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.20492v2</id>
+    <title>PhantomFill: When the Form Demands an Answer, Language Models Invent One</title>
+    <updated>2026-07-27T11:27:09Z</updated>
+    <link href="https://arxiv.org/abs/2607.20492v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.20492v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Language models in production do not write prose. They fill forms: JSON fields, function arguments, extraction templates. We show that the form itself causes hallucination.
+  We ask thirteen models the same question about the same input and change only the answer format. The inputs are built so the question cannot be answered: a viral post showing 12,400 likes but no visible replies, a support ticket whose call was never transcribed. In free text, GPT-5.5 says there is no reply data 98% of the time. Given a required JSON field for sentiment, the same model invents an answer 40 times out of 40. It fabricates the mood of crowds it never saw and quotes customers it never heard.
+  Required fields drive fabrication to 100% in ten of thirteen models. An explicit "insufficient evidence" option rescues only the frontier: all nine open-weight models ignore it. Under grammar-constrained decoding, where the escape token is guaranteed reachable by the sampler, five open models spend it zero times out of 203 trials on the three fields that carry the fabrication, and twelve times on the one field where escaping concedes nothing. They can emit the word. They decline to spend it where it costs them an answer. A direct instruction, do not infer sentiment, is overridden by the schema in four of six models. Resistance does not come with scale: within a single model family, the smallest model refuses, the mid-sized model fabricates, the largest refuses again. Honesty under format pressure is a training outcome that no one is measuring.
+  Fabrication hides where hedging is impossible: in required enums and minimum-count arrays, fields where no disclaimer fits. We release PhantomFill, a benchmark with deterministic scoring and two reportable numbers: the Coerced Fabrication Rate and the Escape Utilization Rate. The fix we test is one line of schema. The failure we measure is everywhere.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-11T12:15:05Z</published>
+    <arxiv:comment>12 pages, 6 figures. Benchmark, 4,500+ raw model outputs, and a schema linter: https://github.com/ranausmanai/phantomfill</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Rana Muhammad Usman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.25359v1</id>
+    <title>The Structured Output Benchmark: A Multi-Source Benchmark for Evaluating Structured Output Quality in Large Language Models</title>
+    <updated>2026-04-28T08:27:01Z</updated>
+    <link href="https://arxiv.org/abs/2604.25359v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.25359v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models are increasingly being deployed to extract structured data from unstructured and semi-structured sources: parsing invoices, medical records, and converting PDF documents to database entries. Yet existing benchmarks for structured output generation either focus on schema compliance alone, or evaluate value correctness within a single source domain. We introduce SOB (The Structured Output Benchmark), a multi-source benchmark spanning three source modalities: native text, images, and audio conversations. All models receive a text-normalized representation of their context regardless of source modality; this deliberate design isolates structured-output capability from raw vision or speech-processing quality, ensuring a fair, source-agnostic comparison. Our benchmark comprises 5,000 text evaluation records derived from multi-hop QA drawn from a 25,091-record full corpus, 209 image records from OCR-processed PDFs across seven document types including multi-column layouts, dense tables, scanned historical documents, small-print text, and mathematical typesetting, and 115 audio records from the AMI corpus. Each record pairs a natural-language question with a JSON schema that the model must follow and a ground-truth answer verified against the source context. We evaluate 21 frontier and open-weight models across three source domains and seven metrics. Our results reveal a consistent pattern: models achieve near-perfect schema compliance, yet the best Value Accuracy, measured by exact leaf-value match, reaches only 83.0% on text, 67.2% on images, and 23.7% on audio, where longer context makes extraction substantially harder. We release the dataset, evaluation pipeline, and all related code.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-28T08:27:01Z</published>
+    <arxiv:comment>19 pages, 4 figures, 11 tables, submitted to NeurIPS 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Abhinav Kumar Singh</name>
+    </author>
+    <author>
+      <name>Harsha Vardhan Khurdula</name>
+    </author>
+    <author>
+      <name>Yoeven D Khemlani</name>
+    </author>
+    <author>
+      <name>Vineet Agarwal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.07206v1</id>
+    <title>LLMRouterBench: A Massive Benchmark and Unified Framework for LLM Routing</title>
+    <updated>2026-01-12T05:01:15Z</updated>
+    <link href="https://arxiv.org/abs/2601.07206v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.07206v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) routing assigns each query to the most suitable model from an ensemble. We introduce LLMRouterBench, a large-scale benchmark and unified framework for LLM routing. It comprises over 400K instances from 21 datasets and 33 models. Moreover, it provides comprehensive metrics for both performance-oriented routing and performance-cost trade-off routing, and integrates 10 representative routing baselines. Using LLMRouterBench, we systematically re-evaluate the field. While confirming strong model complementarity-the central premise of LLM routing-we find that many routing methods exhibit similar performance under unified evaluation, and several recent approaches, including commercial routers, fail to reliably outperform a simple baseline. Meanwhile, a substantial gap remains to the Oracle, driven primarily by persistent model-recall failures. We further show that backbone embedding models have limited impact, that larger ensembles exhibit diminishing returns compared to careful model curation, and that the benchmark also enables latency-aware analysis. All code and data are available at https://github.com/ynulihao/LLMRouterBench.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-12T05:01:15Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Yiqun Zhang</name>
+    </author>
+    <author>
+      <name>Zhaoyan Guo</name>
+    </author>
+    <author>
+      <name>Chenxu Wang</name>
+    </author>
+    <author>
+      <name>Shengji Tang</name>
+    </author>
+    <author>
+      <name>Qiaosheng Zhang</name>
+    </author>
+    <author>
+      <name>Yang Chen</name>
+    </author>
+    <author>
+      <name>Biqing Qi</name>
+    </author>
+    <author>
+      <name>Peng Ye</name>
+    </author>
+    <author>
+      <name>Lei Bai</name>
+    </author>
+    <author>
+      <name>Zhen Wang</name>
+    </author>
+    <author>
+      <name>Shuyue Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.01237v1</id>
+    <title>Confidence-Aware Routing for Large Language Model Reliability Enhancement: A Multi-Signal Approach to Pre-Generation Hallucination Mitigation</title>
+    <updated>2025-09-23T18:34:20Z</updated>
+    <link href="https://arxiv.org/abs/2510.01237v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.01237v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models suffer from hallucination, generating plausible yet factually incorrect content. Current mitigation strategies focus on post-generation correction, which is computationally expensive and fails to prevent unreliable content generation. We propose a confidence-aware routing system that proactively assesses model uncertainty before generation and redirects queries based on estimated reliability. Our approach combines three complementary signals: semantic alignment between internal representations and reference embeddings, internal convergence analysis across model layers, and learned confidence estimation. The unified confidence score determines routing to four pathways: local generation for high confidence, retrieval-augmented generation for medium confidence, larger models for low confidence, and human review for very low confidence. Evaluation on knowledge-intensive QA benchmarks demonstrates significant improvements in hallucination detection (0.74 vs. 0.42 baseline) while reducing computational costs by 40% compared to post-hoc methods. The F1 score improves from 0.61 to 0.82 with low false positive rates (0.09). This paradigm shift from reactive correction to proactive assessment offers a computationally efficient approach to LLM reliability enhancement.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-23T18:34:20Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Nandakishor M</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.07662v1</id>
+    <title>GLiClass: Generalist Lightweight Model for Sequence Classification Tasks</title>
+    <updated>2025-08-11T06:22:25Z</updated>
+    <link href="https://arxiv.org/abs/2508.07662v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.07662v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Classification is one of the most widespread tasks in AI applications, serving often as the first step in filtering, sorting, and categorizing data. Since modern AI systems must handle large volumes of input data and early pipeline stages can propagate errors downstream, achieving high efficiency and accuracy is critical. Moreover, classification requirements can change dynamically based on user needs, necessitating models with strong zero-shot capabilities. While generative LLMs have become mainstream for zero-shot classification due to their versatility, they suffer from inconsistent instruction following and computational inefficiency. Cross-encoders, commonly used as rerankers in RAG pipelines, face a different bottleneck: they must process text-label pairs sequentially, significantly reducing efficiency with large label sets. Embedding-based approaches offer good efficiency but struggle with complex scenarios involving logical and semantic constraints. We propose GLiClass, a novel method that adapts the GLiNER architecture for sequence classification tasks. Our approach achieves strong accuracy and efficiency comparable to embedding-based methods, while maintaining the flexibility needed for zero-shot and few-shot learning scenarios. Additionally, we adapted proximal policy optimization (PPO) for multi-label text classification, enabling training classifiers in data-sparse conditions or from human feedback.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-11T06:22:25Z</published>
+    <arxiv:comment>14 pages, 7 tables, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ihor Stepanov</name>
+    </author>
+    <author>
+      <name>Mykhailo Shtopko</name>
+    </author>
+    <author>
+      <name>Dmytro Vodianytskyi</name>
+    </author>
+    <author>
+      <name>Oleksandr Lukashov</name>
+    </author>
+    <author>
+      <name>Alexander Yavorskyi</name>
+    </author>
+    <author>
+      <name>Mykyta Yaroshenko</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.24377v3</id>
+    <title>Harnessing the Reasoning Economy: A Survey of Efficient Reasoning for Large Language Models</title>
+    <updated>2026-09-08T03:16:17Z</updated>
+    <link href="https://arxiv.org/abs/2503.24377v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.24377v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advancements in Large Language Models (LLMs) have significantly enhanced their ability to perform complex reasoning tasks, transitioning from fast and intuitive thinking (System 1) to slow and deep reasoning (System 2). While System 2 reasoning improves task accuracy, it often incurs substantial computational costs due to its slow thinking nature and inefficient or unnecessary reasoning behaviors. In contrast, System 1 reasoning is computationally efficient but leads to suboptimal performance. Consequently, it is critical to balance the trade-off between performance (benefits) and computational costs (budgets), giving rise to the concept of reasoning economy. In this survey, we provide a comprehensive analysis of reasoning economy in both the post-training and test-time inference stages of LLMs, encompassing i) the cause of reasoning inefficiency, ii) behavior analysis of different reasoning patterns, and iii) potential solutions to achieve reasoning economy. By offering actionable insights and highlighting open challenges, we aim to shed light on strategies for improving the reasoning economy of LLMs, thereby serving as a valuable resource for advancing research in this evolving area. We also provide a public repository to continually track developments in this fast-evolving field.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-31T17:58:07Z</published>
+    <arxiv:comment>In Progress; Paper list Repo: https://github.com/DevoAllen/Awesome-Reasoning-Economy-Papers</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Rui Wang</name>
+    </author>
+    <author>
+      <name>Hongru Wang</name>
+    </author>
+    <author>
+      <name>Boyang Xue</name>
+    </author>
+    <author>
+      <name>Yixia Li</name>
+    </author>
+    <author>
+      <name>Jianhui Pang</name>
+    </author>
+    <author>
+      <name>Shudong Liu</name>
+    </author>
+    <author>
+      <name>Yi Chen</name>
+    </author>
+    <author>
+      <name>Jiahao Qiu</name>
+    </author>
+    <author>
+      <name>Derek Fai Wong</name>
+    </author>
+    <author>
+      <name>Guanhua Chen</name>
+    </author>
+    <author>
+      <name>Heng Ji</name>
+    </author>
+    <author>
+      <name>Kam-Fai Wong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.15850v2</id>
+    <title>Uncertainty Quantification and Confidence Calibration in Large Language Models: A Survey</title>
+    <updated>2025-06-03T22:16:32Z</updated>
+    <link href="https://arxiv.org/abs/2503.15850v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.15850v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) excel in text generation, reasoning, and decision-making, enabling their adoption in high-stakes domains such as healthcare, law, and transportation. However, their reliability is a major concern, as they often produce plausible but incorrect responses. Uncertainty quantification (UQ) enhances trustworthiness by estimating confidence in outputs, enabling risk mitigation and selective prediction. However, traditional UQ methods struggle with LLMs due to computational constraints and decoding inconsistencies. Moreover, LLMs introduce unique uncertainty sources, such as input ambiguity, reasoning path divergence, and decoding stochasticity, that extend beyond classical aleatoric and epistemic uncertainty. To address this, we introduce a new taxonomy that categorizes UQ methods based on computational efficiency and uncertainty dimensions (input, reasoning, parameter, and prediction uncertainty). We evaluate existing techniques, assess their real-world applicability, and identify open challenges, emphasizing the need for scalable, interpretable, and robust UQ approaches to enhance LLM reliability.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-20T05:04:29Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xiaoou Liu</name>
+    </author>
+    <author>
+      <name>Tiejin Chen</name>
+    </author>
+    <author>
+      <name>Longchao Da</name>
+    </author>
+    <author>
+      <name>Chacha Chen</name>
+    </author>
+    <author>
+      <name>Zhen Lin</name>
+    </author>
+    <author>
+      <name>Hua Wei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.02623v6</id>
+    <title>Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models</title>
+    <updated>2026-02-28T17:29:41Z</updated>
+    <link href="https://arxiv.org/abs/2503.02623v6" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.02623v6" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A safe and trustworthy use of Large Language Models (LLMs) requires an accurate expression of confidence in their answers. We propose a novel Reinforcement Learning approach that allows to directly fine-tune LLMs to express calibrated confidence estimates alongside their answers to factual questions. Our method optimizes a reward based on the logarithmic scoring rule, explicitly penalizing both over- and under-confidence. This encourages the model to align its confidence estimates with the actual predictive accuracy. The optimal policy under our reward design would result in perfectly calibrated confidence expressions. Unlike prior approaches that decouple confidence estimation from response generation, our method integrates confidence calibration seamlessly into the generative process of the LLM. Empirically, we demonstrate that models trained with our approach exhibit substantially improved calibration and generalize to unseen tasks without further fine-tuning, suggesting the emergence of general confidence awareness.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-04T13:48:50Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>David Bani-Harouni</name>
+    </author>
+    <author>
+      <name>Chantal Pellegrini</name>
+    </author>
+    <author>
+      <name>Paul Stangel</name>
+    </author>
+    <author>
+      <name>Ege Özsoy</name>
+    </author>
+    <author>
+      <name>Kamilia Zaripova</name>
+    </author>
+    <author>
+      <name>Nassir Navab</name>
+    </author>
+    <author>
+      <name>Matthias Keicher</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.17419v6</id>
+    <title>From System 1 to System 2: A Survey of Reasoning Large Language Models</title>
+    <updated>2025-06-25T02:24:46Z</updated>
+    <link href="https://arxiv.org/abs/2502.17419v6" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.17419v6" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Achieving human-level intelligence requires refining the transition from the fast, intuitive System 1 to the slower, more deliberate System 2 reasoning. While System 1 excels in quick, heuristic decisions, System 2 relies on logical reasoning for more accurate judgments and reduced biases. Foundational Large Language Models (LLMs) excel at fast decision-making but lack the depth for complex reasoning, as they have not yet fully embraced the step-by-step analysis characteristic of true System 2 thinking. Recently, reasoning LLMs like OpenAI's o1/o3 and DeepSeek's R1 have demonstrated expert-level performance in fields such as mathematics and coding, closely mimicking the deliberate reasoning of System 2 and showcasing human-like cognitive abilities. This survey begins with a brief overview of the progress in foundational LLMs and the early development of System 2 technologies, exploring how their combination has paved the way for reasoning LLMs. Next, we discuss how to construct reasoning LLMs, analyzing their features, the core methods enabling advanced reasoning, and the evolution of various reasoning LLMs. Additionally, we provide an overview of reasoning benchmarks, offering an in-depth comparison of the performance of representative reasoning LLMs. Finally, we explore promising directions for advancing reasoning LLMs and maintain a real-time \href{https://github.com/zzli2022/Awesome-Slow-Reason-System}{GitHub Repository} to track the latest developments. We hope this survey will serve as a valuable resource to inspire innovation and drive progress in this rapidly evolving field.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-24T18:50:52Z</published>
+    <arxiv:comment>Slow-thinking, Large Language Models, Human-like Reasoning, Decision Making in AI, AGI</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhong-Zhi Li</name>
+    </author>
+    <author>
+      <name>Duzhen Zhang</name>
+    </author>
+    <author>
+      <name>Ming-Liang Zhang</name>
+    </author>
+    <author>
+      <name>Jiaxin Zhang</name>
+    </author>
+    <author>
+      <name>Zengyan Liu</name>
+    </author>
+    <author>
+      <name>Yuxuan Yao</name>
+    </author>
+    <author>
+      <name>Haotian Xu</name>
+    </author>
+    <author>
+      <name>Junhao Zheng</name>
+    </author>
+    <author>
+      <name>Pei-Jie Wang</name>
+    </author>
+    <author>
+      <name>Xiuyi Chen</name>
+    </author>
+    <author>
+      <name>Yingying Zhang</name>
+    </author>
+    <author>
+      <name>Fei Yin</name>
+    </author>
+    <author>
+      <name>Jiahua Dong</name>
+    </author>
+    <author>
+      <name>Zhiwei Li</name>
+    </author>
+    <author>
+      <name>Bao-Long Bi</name>
+    </author>
+    <author>
+      <name>Ling-Rui Mei</name>
+    </author>
+    <author>
+      <name>Junfeng Fang</name>
+    </author>
+    <author>
+      <name>Xiao Liang</name>
+    </author>
+    <author>
+      <name>Zhijiang Guo</name>
+    </author>
+    <author>
+      <name>Le Song</name>
+    </author>
+    <author>
+      <name>Cheng-Lin Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2501.10868v3</id>
+    <title>JSONSchemaBench: A Rigorous Benchmark of Structured Outputs for Language Models</title>
+    <updated>2025-02-27T15:37:21Z</updated>
+    <link href="https://arxiv.org/abs/2501.10868v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.10868v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reliably generating structured outputs has become a critical capability for modern language model (LM) applications. Constrained decoding has emerged as the dominant technology across sectors for enforcing structured outputs during generation. Despite its growing adoption, little has been done with the systematic evaluation of the behaviors and performance of constrained decoding. Constrained decoding frameworks have standardized around JSON Schema as a structured data format, with most uses guaranteeing constraint compliance given a schema. However, there is poor understanding of the effectiveness of the methods in practice. We present an evaluation framework to assess constrained decoding approaches across three critical dimensions: efficiency in generating constraint-compliant outputs, coverage of diverse constraint types, and quality of the generated outputs. To facilitate this evaluation, we introduce JSONSchemaBench, a benchmark for constrained decoding comprising 10K real-world JSON schemas that encompass a wide range of constraints with varying complexity. We pair the benchmark with the existing official JSON Schema Test Suite and evaluate six state-of-the-art constrained decoding frameworks, including Guidance, Outlines, Llamacpp, XGrammar, OpenAI, and Gemini. Through extensive experiments, we gain insights into the capabilities and limitations of constrained decoding on structured generation with real-world JSON schemas. Our work provides actionable insights for improving constrained decoding frameworks and structured generation tasks, setting a new standard for evaluating constrained decoding and structured generation. We release JSONSchemaBench at https://github.com/guidance-ai/jsonschemabench</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-18T20:26:00Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Saibo Geng</name>
+    </author>
+    <author>
+      <name>Hudson Cooper</name>
+    </author>
+    <author>
+      <name>Michał Moskal</name>
+    </author>
+    <author>
+      <name>Samuel Jenkins</name>
+    </author>
+    <author>
+      <name>Julian Berman</name>
+    </author>
+    <author>
+      <name>Nathan Ranchin</name>
+    </author>
+    <author>
+      <name>Robert West</name>
+    </author>
+    <author>
+      <name>Eric Horvitz</name>
+    </author>
+    <author>
+      <name>Harsha Nori</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.13663v2</id>
+    <title>Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference</title>
+    <updated>2024-12-19T06:32:26Z</updated>
+    <link href="https://arxiv.org/abs/2412.13663v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.13663v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Encoder-only transformer models such as BERT offer a great performance-size tradeoff for retrieval and classification tasks with respect to larger decoder-only models. Despite being the workhorse of numerous production pipelines, there have been limited Pareto improvements to BERT since its release. In this paper, we introduce ModernBERT, bringing modern model optimizations to encoder-only models and representing a major Pareto improvement over older encoders. Trained on 2 trillion tokens with a native 8192 sequence length, ModernBERT models exhibit state-of-the-art results on a large pool of evaluations encompassing diverse classification tasks and both single and multi-vector retrieval on different domains (including code). In addition to strong downstream performance, ModernBERT is also the most speed and memory efficient encoder and is designed for inference on common GPUs.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-18T09:39:44Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Benjamin Warner</name>
+    </author>
+    <author>
+      <name>Antoine Chaffin</name>
+    </author>
+    <author>
+      <name>Benjamin Clavié</name>
+    </author>
+    <author>
+      <name>Orion Weller</name>
+    </author>
+    <author>
+      <name>Oskar Hallström</name>
+    </author>
+    <author>
+      <name>Said Taghadouini</name>
+    </author>
+    <author>
+      <name>Alexis Gallagher</name>
+    </author>
+    <author>
+      <name>Raja Biswas</name>
+    </author>
+    <author>
+      <name>Faisal Ladhak</name>
+    </author>
+    <author>
+      <name>Tom Aarsen</name>
+    </author>
+    <author>
+      <name>Nathan Cooper</name>
+    </author>
+    <author>
+      <name>Griffin Adams</name>
+    </author>
+    <author>
+      <name>Jeremy Howard</name>
+    </author>
+    <author>
+      <name>Iacopo Poli</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2411.15100v3</id>
+    <title>XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models</title>
+    <updated>2025-05-12T08:20:08Z</updated>
+    <link href="https://arxiv.org/abs/2411.15100v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.15100v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The applications of LLM Agents are becoming increasingly complex and diverse, leading to a high demand for structured outputs that can be parsed into code, structured function calls, and embodied agent commands. These developments bring significant demands for structured generation in LLM inference. Context-free grammar is a flexible approach to enable structured generation via constrained decoding. However, executing context-free grammar requires going through several stack states over all tokens in vocabulary during runtime, bringing non-negligible overhead for structured generation. In this paper, we propose XGrammar, a flexible and efficient structure generation engine for large language models. XGrammar accelerates context-free grammar execution by dividing the vocabulary into context-independent tokens that can be prechecked and context-dependent tokens that need to be interpreted during runtime. We further build transformations to expand the grammar context and reduce the number of context-independent tokens. Additionally, we build an efficient persistent stack to accelerate the context-dependent token checks. Finally, we co-design the grammar engine with LLM inference engine to overlap grammar computation with GPU executions. Evaluation results show that XGrammar can achieve up to 100x speedup over existing solutions. Combined with an LLM inference engine, it can generate near-zero overhead structure generation in end-to-end low-LLM serving.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-22T18:01:37Z</published>
+    <arxiv:comment>MLSys '25</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yixin Dong</name>
+    </author>
+    <author>
+      <name>Charlie F. Ruan</name>
+    </author>
+    <author>
+      <name>Yaxing Cai</name>
+    </author>
+    <author>
+      <name>Ruihang Lai</name>
+    </author>
+    <author>
+      <name>Ziyi Xu</name>
+    </author>
+    <author>
+      <name>Yilong Zhao</name>
+    </author>
+    <author>
+      <name>Tianqi Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.18665v4</id>
+    <title>RouteLLM: Learning to Route LLMs with Preference Data</title>
+    <updated>2025-02-23T08:50:33Z</updated>
+    <link href="https://arxiv.org/abs/2406.18665v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.18665v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) exhibit impressive capabilities across a wide range of tasks, yet the choice of which model to use often involves a trade-off between performance and cost. More powerful models, though effective, come with higher expenses, while less capable models are more cost-effective. To address this dilemma, we propose several efficient router models that dynamically select between a stronger and a weaker LLM during inference, aiming to optimize the balance between cost and response quality. We develop a training framework for these routers leveraging human preference data and data augmentation techniques to enhance performance. Our evaluation on widely-recognized benchmarks shows that our approach significantly reduces costs-by over 2 times in certain cases-without compromising the quality of responses. Interestingly, our router models also demonstrate significant transfer learning capabilities, maintaining their performance even when the strong and weak models are changed at test time. This highlights the potential of these routers to provide a cost-effective yet high-performance solution for deploying LLMs.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-26T18:10:22Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Isaac Ong</name>
+    </author>
+    <author>
+      <name>Amjad Almahairi</name>
+    </author>
+    <author>
+      <name>Vincent Wu</name>
+    </author>
+    <author>
+      <name>Wei-Lin Chiang</name>
+    </author>
+    <author>
+      <name>Tianhao Wu</name>
+    </author>
+    <author>
+      <name>Joseph E. Gonzalez</name>
+    </author>
+    <author>
+      <name>M Waleed Kadous</name>
+    </author>
+    <author>
+      <name>Ion Stoica</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2403.13787v2</id>
+    <title>RewardBench: Evaluating Reward Models for Language Modeling</title>
+    <updated>2024-06-08T16:40:12Z</updated>
+    <link href="https://arxiv.org/abs/2403.13787v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.13787v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reward models (RMs) are at the crux of successfully using RLHF to align pretrained models to human preferences, yet there has been relatively little study that focuses on evaluation of those models. Evaluating reward models presents an opportunity to understand the opaque technologies used for alignment of language models and which values are embedded in them. Resources for reward model training and understanding are sparse in the nascent open-source community around them. To enhance scientific understanding of reward models, we present RewardBench, a benchmark dataset and code-base for evaluation. The RewardBench dataset is a collection of prompt-chosen-rejected trios spanning chat, reasoning, and safety, to benchmark how reward models perform on challenging, structured and out-of-distribution queries. We create specific comparison datasets for RMs that have subtle, but verifiable reasons (e.g. bugs, incorrect facts) why one answer should be preferred to another. On the RewardBench leaderboard, we evaluate reward models trained with a variety of methods, such as the direct MLE training of classifiers and the implicit reward modeling of Direct Preference Optimization (DPO). We present many findings on propensity for refusals, reasoning limitations, and instruction following shortcomings of various reward models towards a better understanding of the RLHF process.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-20T17:49:54Z</published>
+    <arxiv:comment>44 pages, 19 figures, 12 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Nathan Lambert</name>
+    </author>
+    <author>
+      <name>Valentina Pyatkin</name>
+    </author>
+    <author>
+      <name>Jacob Morrison</name>
+    </author>
+    <author>
+      <name>LJ Miranda</name>
+    </author>
+    <author>
+      <name>Bill Yuchen Lin</name>
+    </author>
+    <author>
+      <name>Khyathi Chandu</name>
+    </author>
+    <author>
+      <name>Nouha Dziri</name>
+    </author>
+    <author>
+      <name>Sachin Kumar</name>
+    </author>
+    <author>
+      <name>Tom Zick</name>
+    </author>
+    <author>
+      <name>Yejin Choi</name>
+    </author>
+    <author>
+      <name>Noah A. Smith</name>
+    </author>
+    <author>
+      <name>Hannaneh Hajishirzi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2312.07104v2</id>
+    <title>SGLang: Efficient Execution of Structured Language Model Programs</title>
+    <updated>2024-06-06T00:10:06Z</updated>
+    <link href="https://arxiv.org/abs/2312.07104v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.07104v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly used for complex tasks that require multiple generation calls, advanced prompting techniques, control flow, and structured inputs/outputs. However, efficient systems are lacking for programming and executing these applications. We introduce SGLang, a system for efficient execution of complex language model programs. SGLang consists of a frontend language and a runtime. The frontend simplifies programming with primitives for generation and parallelism control. The runtime accelerates execution with novel optimizations like RadixAttention for KV cache reuse and compressed finite state machines for faster structured output decoding. Experiments show that SGLang achieves up to 6.4x higher throughput compared to state-of-the-art inference systems on various large language and multi-modal models on tasks including agent control, logical reasoning, few-shot learning benchmarks, JSON decoding, retrieval-augmented generation pipelines, and multi-turn chat. The code is publicly available at https://github.com/sgl-project/sglang</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-12T09:34:27Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Lianmin Zheng</name>
+    </author>
+    <author>
+      <name>Liangsheng Yin</name>
+    </author>
+    <author>
+      <name>Zhiqiang Xie</name>
+    </author>
+    <author>
+      <name>Chuyue Sun</name>
+    </author>
+    <author>
+      <name>Jeff Huang</name>
+    </author>
+    <author>
+      <name>Cody Hao Yu</name>
+    </author>
+    <author>
+      <name>Shiyi Cao</name>
+    </author>
+    <author>
+      <name>Christos Kozyrakis</name>
+    </author>
+    <author>
+      <name>Ion Stoica</name>
+    </author>
+    <author>
+      <name>Joseph E. Gonzalez</name>
+    </author>
+    <author>
+      <name>Clark Barrett</name>
+    </author>
+    <author>
+      <name>Ying Sheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2311.08526v1</id>
+    <title>GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer</title>
+    <updated>2023-11-14T20:39:12Z</updated>
+    <link href="https://arxiv.org/abs/2311.08526v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2311.08526v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Named Entity Recognition (NER) is essential in various Natural Language Processing (NLP) applications. Traditional NER models are effective but limited to a set of predefined entity types. In contrast, Large Language Models (LLMs) can extract arbitrary entities through natural language instructions, offering greater flexibility. However, their size and cost, particularly for those accessed via APIs like ChatGPT, make them impractical in resource-limited scenarios. In this paper, we introduce a compact NER model trained to identify any type of entity. Leveraging a bidirectional transformer encoder, our model, GLiNER, facilitates parallel entity extraction, an advantage over the slow sequential token generation of LLMs. Through comprehensive testing, GLiNER demonstrate strong performance, outperforming both ChatGPT and fine-tuned LLMs in zero-shot evaluations on various NER benchmarks.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-11-14T20:39:12Z</published>
+    <arxiv:comment>Work in progress</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Urchade Zaratiana</name>
+    </author>
+    <author>
+      <name>Nadi Tomeh</name>
+    </author>
+    <author>
+      <name>Pierre Holat</name>
+    </author>
+    <author>
+      <name>Thierry Charnois</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2310.11324v2</id>
+    <title>Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting</title>
+    <updated>2024-07-01T22:28:01Z</updated>
+    <link href="https://arxiv.org/abs/2310.11324v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.11324v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As large language models (LLMs) are adopted as a fundamental component of language technologies, it is crucial to accurately characterize their performance. Because choices in prompt design can strongly influence model behavior, this design process is critical in effectively using any modern pre-trained generative language model. In this work, we focus on LLM sensitivity to a quintessential class of meaning-preserving design choices: prompt formatting. We find that several widely used open-source LLMs are extremely sensitive to subtle changes in prompt formatting in few-shot settings, with performance differences of up to 76 accuracy points when evaluated using LLaMA-2-13B. Sensitivity remains even when increasing model size, the number of few-shot examples, or performing instruction tuning. Our analysis suggests that work evaluating LLMs with prompting-based methods would benefit from reporting a range of performance across plausible prompt formats, instead of the currently-standard practice of reporting performance on a single format. We also show that format performance only weakly correlates between models, which puts into question the methodological validity of comparing models with an arbitrarily chosen, fixed prompt format. To facilitate systematic analysis we propose FormatSpread, an algorithm that rapidly evaluates a sampled set of plausible prompt formats for a given task, and reports the interval of expected performance without accessing model weights. Furthermore, we present a suite of analyses that characterize the nature of this sensitivity, including exploring the influence of particular atomic perturbations and the internal representation of particular formats.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-17T15:03:30Z</published>
+    <arxiv:comment>ICLR 2024 Camera Ready version. With respect to the original submission, we added text generation experiments, plots of entire accuracy distributions for each task + stdev computations, and prompt length correlation with spread analysis</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Melanie Sclar</name>
+    </author>
+    <author>
+      <name>Yejin Choi</name>
+    </author>
+    <author>
+      <name>Yulia Tsvetkov</name>
+    </author>
+    <author>
+      <name>Alane Suhr</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2310.08491v2</id>
+    <title>Prometheus: Inducing Fine-grained Evaluation Capability in Language Models</title>
+    <updated>2024-03-09T10:44:58Z</updated>
+    <link href="https://arxiv.org/abs/2310.08491v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.08491v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recently, using a powerful proprietary Large Language Model (LLM) (e.g., GPT-4) as an evaluator for long-form responses has become the de facto standard. However, for practitioners with large-scale evaluation tasks and custom criteria in consideration (e.g., child-readability), using proprietary LLMs as an evaluator is unreliable due to the closed-source nature, uncontrolled versioning, and prohibitive costs. In this work, we propose Prometheus, a fully open-source LLM that is on par with GPT-4's evaluation capabilities when the appropriate reference materials (reference answer, score rubric) are accompanied. We first construct the Feedback Collection, a new dataset that consists of 1K fine-grained score rubrics, 20K instructions, and 100K responses and language feedback generated by GPT-4. Using the Feedback Collection, we train Prometheus, a 13B evaluator LLM that can assess any given long-form text based on customized score rubric provided by the user. Experimental results show that Prometheus scores a Pearson correlation of 0.897 with human evaluators when evaluating with 45 customized score rubrics, which is on par with GPT-4 (0.882), and greatly outperforms ChatGPT (0.392). Furthermore, measuring correlation with GPT-4 with 1222 customized score rubrics across four benchmarks (MT Bench, Vicuna Bench, Feedback Bench, Flask Eval) shows similar trends, bolstering Prometheus's capability as an evaluator LLM. Lastly, Prometheus achieves the highest accuracy on two human preference benchmarks (HHH Alignment &amp; MT Bench Human Judgment) compared to open-sourced reward models explicitly trained on human preference datasets, highlighting its potential as an universal reward model. We open-source our code, dataset, and model at https://kaistai.github.io/prometheus/.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-12T16:50:08Z</published>
+    <arxiv:comment>ICLR 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Seungone Kim</name>
+    </author>
+    <author>
+      <name>Jamin Shin</name>
+    </author>
+    <author>
+      <name>Yejin Cho</name>
+    </author>
+    <author>
+      <name>Joel Jang</name>
+    </author>
+    <author>
+      <name>Shayne Longpre</name>
+    </author>
+    <author>
+      <name>Hwaran Lee</name>
+    </author>
+    <author>
+      <name>Sangdoo Yun</name>
+    </author>
+    <author>
+      <name>Seongjin Shin</name>
+    </author>
+    <author>
+      <name>Sungdong Kim</name>
+    </author>
+    <author>
+      <name>James Thorne</name>
+    </author>
+    <author>
+      <name>Minjoon Seo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2309.04992v1</id>
+    <title>Mitigating Word Bias in Zero-shot Prompt-based Classifiers</title>
+    <updated>2023-09-10T10:57:41Z</updated>
+    <link href="https://arxiv.org/abs/2309.04992v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2309.04992v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prompt-based classifiers are an attractive approach for zero-shot classification. However, the precise choice of the prompt template and label words can largely influence performance, with semantically equivalent settings often showing notable performance difference. This discrepancy can be partly attributed to word biases, where the classifier may be biased towards classes. To address this problem, it is possible to optimise classification thresholds on a labelled data set, however, this mitigates some of the advantages of prompt-based classifiers. This paper instead approaches this problem by examining the expected marginal probabilities of the classes. Here, probabilities are reweighted to have a uniform prior over classes, in an unsupervised fashion. Further, we draw a theoretical connection between the class priors and the language models' word prior, and offer the ability to set a threshold in a zero-resource fashion. We show that matching class priors correlates strongly with the oracle upper bound performance and demonstrate large consistent performance gains for prompt settings over a range of NLP tasks.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-09-10T10:57:41Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Adian Liusie</name>
+    </author>
+    <author>
+      <name>Potsawee Manakul</name>
+    </author>
+    <author>
+      <name>Mark J. F. Gales</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2307.13565v4</id>
+    <title>Decision-Focused Learning: Foundations, State of the Art, Benchmark and Future Opportunities</title>
+    <updated>2024-09-04T11:47:12Z</updated>
+    <link href="https://arxiv.org/abs/2307.13565v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.13565v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Decision-focused learning (DFL) is an emerging paradigm that integrates machine learning (ML) and constrained optimization to enhance decision quality by training ML models in an end-to-end system. This approach shows significant potential to revolutionize combinatorial decision-making in real-world applications that operate under uncertainty, where estimating unknown parameters within decision models is a major challenge. This paper presents a comprehensive review of DFL, providing an in-depth analysis of both gradient-based and gradient-free techniques used to combine ML and constrained optimization. It evaluates the strengths and limitations of these techniques and includes an extensive empirical evaluation of eleven methods across seven problems. The survey also offers insights into recent advancements and future research directions in DFL.
+  Code and benchmark: https://github.com/PredOpt/predopt-benchmarks</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-25T15:17:31Z</published>
+    <arxiv:comment>Experimental Survey and Benchmarking</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Journal of Artificial Intelligence Research 81 (2024) 1623-1701</arxiv:journal_ref>
+    <author>
+      <name>Jayanta Mandi</name>
+    </author>
+    <author>
+      <name>James Kotary</name>
+    </author>
+    <author>
+      <name>Senne Berden</name>
+    </author>
+    <author>
+      <name>Maxime Mulamba</name>
+    </author>
+    <author>
+      <name>Victor Bucarey</name>
+    </author>
+    <author>
+      <name>Tias Guns</name>
+    </author>
+    <author>
+      <name>Ferdinando Fioretto</name>
+    </author>
+    <arxiv:doi>10.1613/jair.1.15320</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1613/jair.1.15320" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2307.09702v4</id>
+    <title>Efficient Guided Generation for Large Language Models</title>
+    <updated>2023-08-19T21:27:51Z</updated>
+    <link href="https://arxiv.org/abs/2307.09702v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.09702v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this article we show how the problem of neural text generation can be constructively reformulated in terms of transitions between the states of a finite-state machine. This framework leads to an efficient approach to guiding text generation with regular expressions and context-free grammars by allowing the construction of an index over a language model's vocabulary. The approach is model agnostic, allows one to enforce domain-specific knowledge and constraints, and enables the construction of reliable interfaces by guaranteeing the structure of the generated text. It adds little overhead to the token sequence generation process and significantly outperforms existing solutions. An implementation is provided in the open source Python library Outlines</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-19T01:14:49Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Brandon T. Willard</name>
+    </author>
+    <author>
+      <name>Rémi Louf</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2306.05685v4</id>
+    <title>Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</title>
+    <updated>2023-12-24T02:01:34Z</updated>
+    <link href="https://arxiv.org/abs/2306.05685v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.05685v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Evaluating large language model (LLM) based chat assistants is challenging due to their broad capabilities and the inadequacy of existing benchmarks in measuring human preferences. To address this, we explore using strong LLMs as judges to evaluate these models on more open-ended questions. We examine the usage and limitations of LLM-as-a-judge, including position, verbosity, and self-enhancement biases, as well as limited reasoning ability, and propose solutions to mitigate some of them. We then verify the agreement between LLM judges and human preferences by introducing two benchmarks: MT-bench, a multi-turn question set; and Chatbot Arena, a crowdsourced battle platform. Our results reveal that strong LLM judges like GPT-4 can match both controlled and crowdsourced human preferences well, achieving over 80% agreement, the same level of agreement between humans. Hence, LLM-as-a-judge is a scalable and explainable way to approximate human preferences, which are otherwise very expensive to obtain. Additionally, we show our benchmark and traditional benchmarks complement each other by evaluating several variants of LLaMA and Vicuna. The MT-bench questions, 3K expert votes, and 30K conversations with human preferences are publicly available at https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-09T05:55:52Z</published>
+    <arxiv:comment>NeurIPS 2023 Datasets and Benchmarks Track</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Lianmin Zheng</name>
+    </author>
+    <author>
+      <name>Wei-Lin Chiang</name>
+    </author>
+    <author>
+      <name>Ying Sheng</name>
+    </author>
+    <author>
+      <name>Siyuan Zhuang</name>
+    </author>
+    <author>
+      <name>Zhanghao Wu</name>
+    </author>
+    <author>
+      <name>Yonghao Zhuang</name>
+    </author>
+    <author>
+      <name>Zi Lin</name>
+    </author>
+    <author>
+      <name>Zhuohan Li</name>
+    </author>
+    <author>
+      <name>Dacheng Li</name>
+    </author>
+    <author>
+      <name>Eric P. Xing</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+    <author>
+      <name>Joseph E. Gonzalez</name>
+    </author>
+    <author>
+      <name>Ion Stoica</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2305.05176v1</id>
+    <title>FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance</title>
+    <updated>2023-05-09T05:11:02Z</updated>
+    <link href="https://arxiv.org/abs/2305.05176v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.05176v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>There is a rapidly growing number of large language models (LLMs) that users can query for a fee. We review the cost associated with querying popular LLM APIs, e.g. GPT-4, ChatGPT, J1-Jumbo, and find that these models have heterogeneous pricing structures, with fees that can differ by two orders of magnitude. In particular, using LLMs on large collections of queries and text can be expensive. Motivated by this, we outline and discuss three types of strategies that users can exploit to reduce the inference cost associated with using LLMs: 1) prompt adaptation, 2) LLM approximation, and 3) LLM cascade. As an example, we propose FrugalGPT, a simple yet flexible instantiation of LLM cascade which learns which combinations of LLMs to use for different queries in order to reduce cost and improve accuracy. Our experiments show that FrugalGPT can match the performance of the best individual LLM (e.g. GPT-4) with up to 98% cost reduction or improve the accuracy over GPT-4 by 4% with the same cost. The ideas and findings presented here lay a foundation for using LLMs sustainably and efficiently.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-09T05:11:02Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Lingjiao Chen</name>
+    </author>
+    <author>
+      <name>Matei Zaharia</name>
+    </author>
+    <author>
+      <name>James Zou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2302.09664v3</id>
+    <title>Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation</title>
+    <updated>2023-04-15T12:55:45Z</updated>
+    <link href="https://arxiv.org/abs/2302.09664v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2302.09664v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a method to measure uncertainty in large language models. For tasks like question answering, it is essential to know when we can trust the natural language outputs of foundation models. We show that measuring uncertainty in natural language is challenging because of "semantic equivalence" -- different sentences can mean the same thing. To overcome these challenges we introduce semantic entropy -- an entropy which incorporates linguistic invariances created by shared meanings. Our method is unsupervised, uses only a single model, and requires no modifications to off-the-shelf language models. In comprehensive ablation studies we show that the semantic entropy is more predictive of model accuracy on question answering data sets than comparable baselines.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-02-19T20:10:07Z</published>
+    <arxiv:comment>International Conference on Learning Representations 2023 (Spotlight)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Lorenz Kuhn</name>
+    </author>
+    <author>
+      <name>Yarin Gal</name>
+    </author>
+    <author>
+      <name>Sebastian Farquhar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2209.11055v1</id>
+    <title>Efficient Few-Shot Learning Without Prompts</title>
+    <updated>2022-09-22T14:48:11Z</updated>
+    <link href="https://arxiv.org/abs/2209.11055v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2209.11055v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent few-shot methods, such as parameter-efficient fine-tuning (PEFT) and pattern exploiting training (PET), have achieved impressive results in label-scarce settings. However, they are difficult to employ since they are subject to high variability from manually crafted prompts, and typically require billion-parameter language models to achieve high accuracy. To address these shortcomings, we propose SetFit (Sentence Transformer Fine-tuning), an efficient and prompt-free framework for few-shot fine-tuning of Sentence Transformers (ST). SetFit works by first fine-tuning a pretrained ST on a small number of text pairs, in a contrastive Siamese manner. The resulting model is then used to generate rich text embeddings, which are used to train a classification head. This simple framework requires no prompts or verbalizers, and achieves high accuracy with orders of magnitude less parameters than existing techniques. Our experiments show that SetFit obtains comparable results with PEFT and PET techniques, while being an order of magnitude faster to train. We also show that SetFit can be applied in multilingual settings by simply switching the ST body. Our code is available at https://github.com/huggingface/setfit and our datasets at https://huggingface.co/setfit .</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-09-22T14:48:11Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Lewis Tunstall</name>
+    </author>
+    <author>
+      <name>Nils Reimers</name>
+    </author>
+    <author>
+      <name>Unso Eun Seo Jo</name>
+    </author>
+    <author>
+      <name>Luke Bates</name>
+    </author>
+    <author>
+      <name>Daniel Korat</name>
+    </author>
+    <author>
+      <name>Moshe Wasserblat</name>
+    </author>
+    <author>
+      <name>Oren Pereg</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2207.05221v4</id>
+    <title>Language Models (Mostly) Know What They Know</title>
+    <updated>2022-11-21T16:38:35Z</updated>
+    <link href="https://arxiv.org/abs/2207.05221v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.05221v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study whether language models can evaluate the validity of their own claims and predict which questions they will be able to answer correctly. We first show that larger models are well-calibrated on diverse multiple choice and true/false questions when they are provided in the right format. Thus we can approach self-evaluation on open-ended sampling tasks by asking models to first propose answers, and then to evaluate the probability "P(True)" that their answers are correct. We find encouraging performance, calibration, and scaling for P(True) on a diverse array of tasks. Performance at self-evaluation further improves when we allow models to consider many of their own samples before predicting the validity of one specific possibility. Next, we investigate whether models can be trained to predict "P(IK)", the probability that "I know" the answer to a question, without reference to any particular proposed answer. Models perform well at predicting P(IK) and partially generalize across tasks, though they struggle with calibration of P(IK) on new tasks. The predicted P(IK) probabilities also increase appropriately in the presence of relevant source materials in the context, and in the presence of hints towards the solution of mathematical word problems. We hope these observations lay the groundwork for training more honest models, and for investigating how honesty generalizes to cases where models are trained on objectives other than the imitation of human writing.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-07-11T22:59:39Z</published>
+    <arxiv:comment>23+17 pages; refs added, typos fixed</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Saurav Kadavath</name>
+    </author>
+    <author>
+      <name>Tom Conerly</name>
+    </author>
+    <author>
+      <name>Amanda Askell</name>
+    </author>
+    <author>
+      <name>Tom Henighan</name>
+    </author>
+    <author>
+      <name>Dawn Drain</name>
+    </author>
+    <author>
+      <name>Ethan Perez</name>
+    </author>
+    <author>
+      <name>Nicholas Schiefer</name>
+    </author>
+    <author>
+      <name>Zac Hatfield-Dodds</name>
+    </author>
+    <author>
+      <name>Nova DasSarma</name>
+    </author>
+    <author>
+      <name>Eli Tran-Johnson</name>
+    </author>
+    <author>
+      <name>Scott Johnston</name>
+    </author>
+    <author>
+      <name>Sheer El-Showk</name>
+    </author>
+    <author>
+      <name>Andy Jones</name>
+    </author>
+    <author>
+      <name>Nelson Elhage</name>
+    </author>
+    <author>
+      <name>Tristan Hume</name>
+    </author>
+    <author>
+      <name>Anna Chen</name>
+    </author>
+    <author>
+      <name>Yuntao Bai</name>
+    </author>
+    <author>
+      <name>Sam Bowman</name>
+    </author>
+    <author>
+      <name>Stanislav Fort</name>
+    </author>
+    <author>
+      <name>Deep Ganguli</name>
+    </author>
+    <author>
+      <name>Danny Hernandez</name>
+    </author>
+    <author>
+      <name>Josh Jacobson</name>
+    </author>
+    <author>
+      <name>Jackson Kernion</name>
+    </author>
+    <author>
+      <name>Shauna Kravec</name>
+    </author>
+    <author>
+      <name>Liane Lovitt</name>
+    </author>
+    <author>
+      <name>Kamal Ndousse</name>
+    </author>
+    <author>
+      <name>Catherine Olsson</name>
+    </author>
+    <author>
+      <name>Sam Ringer</name>
+    </author>
+    <author>
+      <name>Dario Amodei</name>
+    </author>
+    <author>
+      <name>Tom Brown</name>
+    </author>
+    <author>
+      <name>Jack Clark</name>
+    </author>
+    <author>
+      <name>Nicholas Joseph</name>
+    </author>
+    <author>
+      <name>Ben Mann</name>
+    </author>
+    <author>
+      <name>Sam McCandlish</name>
+    </author>
+    <author>
+      <name>Chris Olah</name>
+    </author>
+    <author>
+      <name>Jared Kaplan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2109.05093v1</id>
+    <title>PICARD: Parsing Incrementally for Constrained Auto-Regressive Decoding from Language Models</title>
+    <updated>2021-09-10T20:14:08Z</updated>
+    <link href="https://arxiv.org/abs/2109.05093v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2109.05093v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large pre-trained language models for textual data have an unconstrained output space; at each decoding step, they can produce any of 10,000s of sub-word tokens. When fine-tuned to target constrained formal languages like SQL, these models often generate invalid code, rendering it unusable. We propose PICARD (code and trained models available at https://github.com/ElementAI/picard), a method for constraining auto-regressive decoders of language models through incremental parsing. PICARD helps to find valid output sequences by rejecting inadmissible tokens at each decoding step. On the challenging Spider and CoSQL text-to-SQL translation tasks, we show that PICARD transforms fine-tuned T5 models with passable performance into state-of-the-art solutions.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-09-10T20:14:08Z</published>
+    <arxiv:comment>Accepted to EMNLP 2021. 7 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Torsten Scholak</name>
+    </author>
+    <author>
+      <name>Nathan Schucher</name>
+    </author>
+    <author>
+      <name>Dzmitry Bahdanau</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2107.07511v6</id>
+    <title>A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification</title>
+    <updated>2022-12-07T05:08:01Z</updated>
+    <link href="https://arxiv.org/abs/2107.07511v6" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2107.07511v6" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Black-box machine learning models are now routinely used in high-risk settings, like medical diagnostics, which demand uncertainty quantification to avoid consequential model failures. Conformal prediction is a user-friendly paradigm for creating statistically rigorous uncertainty sets/intervals for the predictions of such models. Critically, the sets are valid in a distribution-free sense: they possess explicit, non-asymptotic guarantees even without distributional assumptions or model assumptions. One can use conformal prediction with any pre-trained model, such as a neural network, to produce sets that are guaranteed to contain the ground truth with a user-specified probability, such as 90%. It is easy-to-understand, easy-to-use, and general, applying naturally to problems arising in the fields of computer vision, natural language processing, deep reinforcement learning, and so on.
+  This hands-on introduction is aimed to provide the reader a working understanding of conformal prediction and related distribution-free uncertainty quantification techniques with one self-contained document. We lead the reader through practical theory for and examples of conformal prediction and describe its extensions to complex machine learning tasks involving structured outputs, distribution shift, time-series, outliers, models that abstain, and more. Throughout, there are many explanatory illustrations, examples, and code samples in Python. With each code sample comes a Jupyter notebook implementing the method on a real-data example; the notebooks can be accessed and easily run using our codebase.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.ST" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-07-15T17:59:50Z</published>
+    <arxiv:comment>Blog and tutorial video at http://angelopoulos.ai/blog/posts/gentle-intro/ ; Code is available at https://github.com/aangelopoulos/conformal-prediction</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Anastasios N. Angelopoulos</name>
+    </author>
+    <author>
+      <name>Stephen Bates</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2006.01862v3</id>
+    <title>Consistent Estimators for Learning to Defer to an Expert</title>
+    <updated>2021-01-25T01:43:28Z</updated>
+    <link href="https://arxiv.org/abs/2006.01862v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2006.01862v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Learning algorithms are often used in conjunction with expert decision makers in practical scenarios, however this fact is largely ignored when designing these algorithms. In this paper we explore how to learn predictors that can either predict or choose to defer the decision to a downstream expert. Given only samples of the expert's decisions, we give a procedure based on learning a classifier and a rejector and analyze it theoretically. Our approach is based on a novel reduction to cost sensitive learning where we give a consistent surrogate loss for cost sensitive learning that generalizes the cross entropy loss. We show the effectiveness of our approach on a variety of experimental tasks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-06-02T18:21:38Z</published>
+    <arxiv:comment>ICML 2020</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Hussein Mozannar</name>
+    </author>
+    <author>
+      <name>David Sontag</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1909.00161v1</id>
+    <title>Benchmarking Zero-shot Text Classification: Datasets, Evaluation and Entailment Approach</title>
+    <updated>2019-08-31T07:42:11Z</updated>
+    <link href="https://arxiv.org/abs/1909.00161v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1909.00161v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Zero-shot text classification (0Shot-TC) is a challenging NLU problem to which little attention has been paid by the research community. 0Shot-TC aims to associate an appropriate label with a piece of text, irrespective of the text domain and the aspect (e.g., topic, emotion, event, etc.) described by the label. And there are only a few articles studying 0Shot-TC, all focusing only on topical categorization which, we argue, is just the tip of the iceberg in 0Shot-TC. In addition, the chaotic experiments in literature make no uniform comparison, which blurs the progress.
+  This work benchmarks the 0Shot-TC problem by providing unified datasets, standardized evaluations, and state-of-the-art baselines. Our contributions include: i) The datasets we provide facilitate studying 0Shot-TC relative to conceptually different and diverse aspects: the ``topic'' aspect includes ``sports'' and ``politics'' as labels; the ``emotion'' aspect includes ``joy'' and ``anger''; the ``situation'' aspect includes ``medical assistance'' and ``water shortage''. ii) We extend the existing evaluation setup (label-partially-unseen) -- given a dataset, train on some labels, test on all labels -- to include a more challenging yet realistic evaluation label-fully-unseen 0Shot-TC (Chang et al., 2008), aiming at classifying text snippets without seeing task specific training data at all. iii) We unify the 0Shot-TC of diverse aspects within a textual entailment formulation and study it this way.
+  Code &amp; Data: https://github.com/yinwenpeng/BenchmarkingZeroShot</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-08-31T07:42:11Z</published>
+    <arxiv:comment>EMNLP2019 camera-ready, 10 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Wenpeng Yin</name>
+    </author>
+    <author>
+      <name>Jamaal Hay</name>
+    </author>
+    <author>
+      <name>Dan Roth</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1906.02530v2</id>
+    <title>Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift</title>
+    <updated>2019-12-17T21:30:28Z</updated>
+    <link href="https://arxiv.org/abs/1906.02530v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1906.02530v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern machine learning methods including deep learning have achieved great success in predictive accuracy for supervised learning tasks, but may still fall short in giving useful estimates of their predictive {\em uncertainty}. Quantifying uncertainty is especially critical in real-world settings, which often involve input distributions that are shifted from the training distribution due to a variety of factors including sample bias and non-stationarity. In such settings, well calibrated uncertainty estimates convey information about when a model's output should (or should not) be trusted. Many probabilistic deep learning methods, including Bayesian-and non-Bayesian methods, have been proposed in the literature for quantifying predictive uncertainty, but to our knowledge there has not previously been a rigorous large-scale empirical comparison of these methods under dataset shift. We present a large-scale benchmark of existing state-of-the-art methods on classification problems and investigate the effect of dataset shift on accuracy and calibration. We find that traditional post-hoc calibration does indeed fall short, as do several other previous methods. However, some methods that marginalize over models give surprisingly strong results across a broad spectrum of tasks.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-06-06T11:42:53Z</published>
+    <arxiv:comment>Advances in Neural Information Processing Systems, 2019</arxiv:comment>
+    <arxiv:primary_category term="stat.ML"/>
+    <author>
+      <name>Yaniv Ovadia</name>
+    </author>
+    <author>
+      <name>Emily Fertig</name>
+    </author>
+    <author>
+      <name>Jie Ren</name>
+    </author>
+    <author>
+      <name>Zachary Nado</name>
+    </author>
+    <author>
+      <name>D Sculley</name>
+    </author>
+    <author>
+      <name>Sebastian Nowozin</name>
+    </author>
+    <author>
+      <name>Joshua V. Dillon</name>
+    </author>
+    <author>
+      <name>Balaji Lakshminarayanan</name>
+    </author>
+    <author>
+      <name>Jasper Snoek</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1901.09192v4</id>
+    <title>SelectiveNet: A Deep Neural Network with an Integrated Reject Option</title>
+    <updated>2019-06-26T18:55:09Z</updated>
+    <link href="https://arxiv.org/abs/1901.09192v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1901.09192v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the problem of selective prediction (also known as reject option) in deep neural networks, and introduce SelectiveNet, a deep neural architecture with an integrated reject option. Existing rejection mechanisms are based mostly on a threshold over the prediction confidence of a pre-trained network. In contrast, SelectiveNet is trained to optimize both classification (or regression) and rejection simultaneously, end-to-end. The result is a deep neural network that is optimized over the covered domain. In our experiments, we show a consistently improved risk-coverage trade-off over several well-known classification and regression datasets, thus reaching new state-of-the-art results for deep selective classification.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-01-26T10:09:16Z</published>
+    <arxiv:comment>Accepted to ICML 2019</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yonatan Geifman</name>
+    </author>
+    <author>
+      <name>Ran El-Yaniv</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1810.04805v2</id>
+    <title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title>
+    <updated>2019-05-24T20:37:26Z</updated>
+    <link href="https://arxiv.org/abs/1810.04805v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1810.04805v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications.
+  BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-10-11T00:50:01Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jacob Devlin</name>
+    </author>
+    <author>
+      <name>Ming-Wei Chang</name>
+    </author>
+    <author>
+      <name>Kenton Lee</name>
+    </author>
+    <author>
+      <name>Kristina Toutanova</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1706.04599v2</id>
+    <title>On Calibration of Modern Neural Networks</title>
+    <updated>2017-08-03T13:29:46Z</updated>
+    <link href="https://arxiv.org/abs/1706.04599v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1706.04599v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Confidence calibration -- the problem of predicting probability estimates representative of the true correctness likelihood -- is important for classification models in many applications. We discover that modern neural networks, unlike those from a decade ago, are poorly calibrated. Through extensive experiments, we observe that depth, width, weight decay, and Batch Normalization are important factors influencing calibration. We evaluate the performance of various post-processing calibration methods on state-of-the-art architectures with image and document classification datasets. Our analysis and experiments not only offer insights into neural network learning, but also provide a simple and straightforward recipe for practical settings: on most datasets, temperature scaling -- a single-parameter variant of Platt Scaling -- is surprisingly effective at calibrating predictions.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-06-14T17:33:50Z</published>
+    <arxiv:comment>ICML 2017</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Chuan Guo</name>
+    </author>
+    <author>
+      <name>Geoff Pleiss</name>
+    </author>
+    <author>
+      <name>Yu Sun</name>
+    </author>
+    <author>
+      <name>Kilian Q. Weinberger</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1705.08500v2</id>
+    <title>Selective Classification for Deep Neural Networks</title>
+    <updated>2017-06-01T14:10:34Z</updated>
+    <link href="https://arxiv.org/abs/1705.08500v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1705.08500v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Selective classification techniques (also known as reject option) have not yet been considered in the context of deep neural networks (DNNs). These techniques can potentially significantly improve DNNs prediction performance by trading-off coverage. In this paper we propose a method to construct a selective classifier given a trained neural network. Our method allows a user to set a desired risk level. At test time, the classifier rejects instances as needed, to grant the desired risk (with high probability). Empirical results over CIFAR and ImageNet convincingly demonstrate the viability of our method, which opens up possibilities to operate DNNs in mission-critical applications. For example, using our method an unprecedented 2% error in top-5 ImageNet classification can be guaranteed with probability 99.9%, and almost 60% test coverage.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-05-23T19:43:56Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yonatan Geifman</name>
+    </author>
+    <author>
+      <name>Ran El-Yaniv</name>
+    </author>
+  </entry>
+</feed>

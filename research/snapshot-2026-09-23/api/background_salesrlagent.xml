@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/eNM5AWbLsQARiILUDYN5rXV1PLk</id>
+  <title>arXiv Query: search_query=&amp;id_list=2503.23303&amp;start=0&amp;max_results=10</title>
+  <updated>2026-09-23T05:59:47Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2503.23303" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2503.23303v1</id>
+    <title>SalesRLAgent: A Reinforcement Learning Approach for Real-Time Sales Conversion Prediction and Optimization</title>
+    <updated>2025-03-30T03:56:26Z</updated>
+    <link href="https://arxiv.org/abs/2503.23303v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.23303v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Current approaches to sales conversation analysis and conversion prediction typically rely on Large Language Models (LLMs) combined with basic retrieval augmented generation (RAG). These systems, while capable of answering questions, fail to accurately predict conversion probability or provide strategic guidance in real time. In this paper, we present SalesRLAgent, a novel framework leveraging specialized reinforcement learning to predict conversion probability throughout sales conversations. Unlike systems from Kapa.ai, Mendable, Inkeep, and others that primarily use off-the-shelf LLMs for content generation, our approach treats conversion prediction as a sequential decision problem, training on synthetic data generated using GPT-4O to develop a specialized probability estimation model. Our system incorporates Azure OpenAI embeddings (3072 dimensions), turn-by-turn state tracking, and meta-learning capabilities to understand its own knowledge boundaries. Evaluations demonstrate that SalesRLAgent achieves 96.7% accuracy in conversion prediction, outperforming LLM-only approaches by 34.7% while offering significantly faster inference (85ms vs 3450ms for GPT-4). Furthermore, integration with existing sales platforms shows a 43.2% increase in conversion rates when representatives utilize our system's real-time guidance. SalesRLAgent represents a fundamental shift from content generation to strategic sales intelligence, providing moment-by-moment conversion probability estimation with actionable insights for sales professionals.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-30T03:56:26Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Nandakishor M</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,32 @@
+name: Suggest a study
+description: Propose a paper or preprint for the Jev survey.
+title: "[Study] "
+labels: [add-paper]
+body:
+  - type: input
+    id: link
+    attributes: {label: Canonical link and version read, placeholder: "https://arxiv.org/abs/XXXX.XXXXXvN"}
+    validations: {required: true}
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Relationship to Jev
+      options: [Evaluates hosted Jev, Builds or evaluates an independent Jev-like model, Uses typed decisions inside a system, Adjacent background method]
+    validations: {required: true}
+  - type: textarea
+    id: result
+    attributes: {label: Task, data, baselines and main result, description: "Give the result with its locator (section, table or figure) and sample size."}
+    validations: {required: true}
+  - type: textarea
+    id: limits
+    attributes: {label: Limitations stated by the authors}
+  - type: input
+    id: openness
+    attributes: {label: Code / weights / data / raw predictions, placeholder: "links, or 'not located'"}
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - {label: I searched data/papers.json and did not find this study., required: true}
+        - {label: Numbers above are copied from the source with their locators., required: true}

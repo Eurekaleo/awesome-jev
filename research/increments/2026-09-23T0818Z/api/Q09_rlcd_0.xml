@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/aj8xh388cu1qwAq8XqOr8bo2UMg</id>
+  <title>arXiv Query: search_query=all:RLCD AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T08:18:54Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:RLCD+AND+(cat:cs.AI+OR+(cat:cs.CL+OR+cat:cs.LG))&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2312.11001v1</id>
+    <title>A Versatile Causal Discovery Framework to Allow Causally-Related Hidden Variables</title>
+    <updated>2023-12-18T07:57:39Z</updated>
+    <link href="https://arxiv.org/abs/2312.11001v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.11001v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Most existing causal discovery methods rely on the assumption of no latent confounders, limiting their applicability in solving real-life problems. In this paper, we introduce a novel, versatile framework for causal discovery that accommodates the presence of causally-related hidden variables almost everywhere in the causal network (for instance, they can be effects of observed variables), based on rank information of covariance matrix over observed variables. We start by investigating the efficacy of rank in comparison to conditional independence and, theoretically, establish necessary and sufficient conditions for the identifiability of certain latent structural patterns. Furthermore, we develop a Rank-based Latent Causal Discovery algorithm, RLCD, that can efficiently locate hidden variables, determine their cardinalities, and discover the entire causal structure over both measured and hidden ones. We also show that, under certain graphical conditions, RLCD correctly identifies the Markov Equivalence Class of the whole latent causal graph asymptotically. Experimental results on both synthetic and real-world personality data sets demonstrate the efficacy of the proposed approach in finite-sample cases.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-18T07:57:39Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Xinshuai Dong</name>
+    </author>
+    <author>
+      <name>Biwei Huang</name>
+    </author>
+    <author>
+      <name>Ignavier Ng</name>
+    </author>
+    <author>
+      <name>Xiangchen Song</name>
+    </author>
+    <author>
+      <name>Yujia Zheng</name>
+    </author>
+    <author>
+      <name>Songyao Jin</name>
+    </author>
+    <author>
+      <name>Roberto Legaspi</name>
+    </author>
+    <author>
+      <name>Peter Spirtes</name>
+    </author>
+    <author>
+      <name>Kun Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2307.12950v3</id>
+    <title>RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment</title>
+    <updated>2024-03-16T04:22:09Z</updated>
+    <link href="https://arxiv.org/abs/2307.12950v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.12950v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose Reinforcement Learning from Contrastive Distillation (RLCD), a method for aligning language models to follow principles expressed in natural language (e.g., to be more harmless) without using human feedback. RLCD creates preference pairs from two contrasting model outputs, one using a positive prompt designed to encourage following the given principles, and one using a negative prompt designed to encourage violating them. Using two different prompts causes model outputs to be more differentiated on average, resulting in cleaner preference labels in the absence of human annotations. We then use the preference pairs to train a preference model, which is in turn used to improve a base unaligned language model via reinforcement learning. Empirically, RLCD outperforms RLAIF (Bai et al., 2022b) and context distillation (Huang et al., 2022) baselines across three diverse alignment tasks--harmlessness, helpfulness, and story outline generation--and when using both 7B and 30B model scales for simulating preference data.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-24T17:23:22Z</published>
+    <arxiv:comment>ICLR 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Kevin Yang</name>
+    </author>
+    <author>
+      <name>Dan Klein</name>
+    </author>
+    <author>
+      <name>Asli Celikyilmaz</name>
+    </author>
+    <author>
+      <name>Nanyun Peng</name>
+    </author>
+    <author>
+      <name>Yuandong Tian</name>
+    </author>
+  </entry>
+</feed>

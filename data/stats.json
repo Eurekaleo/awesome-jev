@@ -1,0 +1,135 @@
+{
+ "papers": 67,
+ "core": 13,
+ "peripheral": 1,
+ "background": 53,
+ "background_snapshot": 44,
+ "background_increment": 9,
+ "core_plus": 14,
+ "claims": 62,
+ "claims_by_type": {
+  "author_reported_experiment": 44,
+  "vendor_documentation": 8,
+  "vendor_reported_result": 1,
+  "community_report": 6,
+  "code_inspection": 3
+ },
+ "claims_papers": 44,
+ "findings": 7,
+ "stages": {
+  "contract": 5,
+  "readout": 5,
+  "probability": 5,
+  "control": 5,
+  "use": 12
+ },
+ "families": {
+  "hosted_service": 10,
+  "encoder_head": 2,
+  "frozen_decoder_readout": 1,
+  "finetuned_decoder": 4,
+  "diffusion_readout": 0,
+  "generative_adapter": 1
+ },
+ "relationships": {
+  "commercial_jev": 10,
+  "independent_jev_like": 6,
+  "downstream_system": 6,
+  "adjacent_method": 53
+ },
+ "openness": {
+  "code": {
+   "project_page_only": 1,
+   "not_located": 6,
+   "claimed_not_located": 2,
+   "available": 4,
+   "partial": 1
+  },
+  "weights": {
+   "not_located": 3,
+   "not_applicable": 10,
+   "available": 1
+  },
+  "data": {
+   "available": 3,
+   "partial": 8,
+   "claimed_not_located": 1,
+   "not_located": 1,
+   "restricted": 1
+  },
+  "predictions": {
+   "partial": 2,
+   "not_located": 9,
+   "claimed_not_located": 2,
+   "available": 1
+  },
+  "recomputable": {
+   "partial": 3,
+   "no": 8,
+   "not_assessed": 2,
+   "available": 1
+  },
+  "reproduction": {
+   "not_attempted": 14
+  }
+ },
+ "finding_counts": {
+  "F1": {
+   "supports": 11,
+   "qualifies": 2
+  },
+  "F2": {
+   "qualifies": 2,
+   "supports": 11
+  },
+  "F3": {
+   "supports": 10,
+   "qualifies": 3
+  },
+  "F4": {
+   "supports": 13,
+   "qualifies": 4
+  },
+  "F5": {
+   "supports": 11,
+   "qualifies": 1
+  },
+  "F6": {
+   "supports": 6
+  },
+  "F7": {
+   "supports": 7,
+   "qualifies": 1
+  }
+ },
+ "repos_unique": 109,
+ "priority_repos": 30,
+ "catalogues": 81,
+ "repo_overlap": 2,
+ "readmes": 79,
+ "source_files_read": 12,
+ "source_repos_read": 10,
+ "outgoing_candidates": 4666,
+ "seed_candidates": 793,
+ "github_discovery": 1082,
+ "arxiv_queries": 17,
+ "arxiv_hits": 225,
+ "arxiv_screened": 197,
+ "increment_queries": 19,
+ "increment_new": 128,
+ "increment_added": 9,
+ "sources": 8,
+ "cutoff": "2026-09-23",
+ "years": [
+  2026,
+  2025,
+  2024,
+  2023,
+  2022,
+  2021,
+  2020,
+  2019,
+  2018,
+  2017
+ ]
+}

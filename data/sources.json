@@ -1,0 +1,88 @@
+{
+ "schema": "jev-survey/sources@1",
+ "note": "Official and first-party sources. Snapshot paths are relative to research_pack/ in the handoff package.",
+ "sources": [
+  {
+   "id": "src:typesafe-launch",
+   "title": "Introducing System One Models & Jev",
+   "publisher": "TypeSafe AI",
+   "author": "Diogo Almeida",
+   "date": "2026-09-15",
+   "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+   "snapshot": "sources/official/launch.txt",
+   "accessed": "2026-09-23",
+   "kind": "vendor_blog",
+   "bibtex_key": "typesafe2026launch"
+  },
+  {
+   "id": "src:typesafe-docs-models",
+   "title": "Models (Jev 1.13)",
+   "publisher": "TypeSafe AI",
+   "url": "https://docs.typesafe.ai/models",
+   "snapshot": "sources/official/models.md",
+   "accessed": "2026-09-23",
+   "kind": "vendor_docs",
+   "bibtex_key": "typesafe2026models"
+  },
+  {
+   "id": "src:typesafe-docs-confidence",
+   "title": "Confidence",
+   "publisher": "TypeSafe AI",
+   "url": "https://docs.typesafe.ai/confidence",
+   "snapshot": "sources/official/confidence.md",
+   "accessed": "2026-09-23",
+   "kind": "vendor_docs",
+   "bibtex_key": "typesafe2026confidence"
+  },
+  {
+   "id": "src:typesafe-docs-system-one",
+   "title": "System One",
+   "publisher": "TypeSafe AI",
+   "url": "https://docs.typesafe.ai/concepts/system-one",
+   "snapshot": "sources/official/concepts__system-one.md",
+   "accessed": "2026-09-23",
+   "kind": "vendor_docs",
+   "bibtex_key": "typesafe2026systemone"
+  },
+  {
+   "id": "src:typesafe-docs-state",
+   "title": "State",
+   "publisher": "TypeSafe AI",
+   "url": "https://docs.typesafe.ai/concepts/state",
+   "snapshot": "sources/official/concepts__state.md",
+   "accessed": "2026-09-23",
+   "kind": "vendor_docs",
+   "bibtex_key": "typesafe2026state"
+  },
+  {
+   "id": "src:typesafe-docs-primitives",
+   "title": "Primitives: Choice, Score and Noul",
+   "publisher": "TypeSafe AI",
+   "url": "https://docs.typesafe.ai/primitives",
+   "snapshot": "sources/official/primitives.md",
+   "accessed": "2026-09-23",
+   "kind": "vendor_docs",
+   "bibtex_key": "typesafe2026primitives"
+  },
+  {
+   "id": "src:typesafe-docs-jaggedness",
+   "title": "Jev 1.13 jaggedness",
+   "publisher": "TypeSafe AI",
+   "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+   "snapshot": "sources/official/model-jaggedness__jev-1.13.md",
+   "accessed": "2026-09-23",
+   "kind": "vendor_docs",
+   "bibtex_key": "typesafe2026jaggedness"
+  },
+  {
+   "id": "src:typesafe-docs-routing",
+   "title": "Confidence-gated routing",
+   "publisher": "TypeSafe AI",
+   "url": "https://docs.typesafe.ai/patterns/confidence-routing",
+   "snapshot": "sources/official/patterns__confidence-routing.md",
+   "accessed": "2026-09-23",
+   "kind": "vendor_docs",
+   "bibtex_key": "typesafe2026routing"
+  }
+ ]
+}

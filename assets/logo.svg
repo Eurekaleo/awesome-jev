@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Jev Survey">
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#161b24" stroke="#ffffff" stroke-opacity=".18"/>
+  <path d="M7 24V16" stroke="#9bd7d3" stroke-width="3" stroke-linecap="round"/>
+  <path d="M13 24V9" stroke="#f39a57" stroke-width="3" stroke-linecap="round"/>
+  <path d="M19 24v-5" stroke="#9bd7d3" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 24v-3" stroke="#9bd7d3" stroke-width="3" stroke-linecap="round" stroke-opacity=".7"/>
+  <path d="M5.5 27.5h21" stroke="#ffffff" stroke-opacity=".35" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

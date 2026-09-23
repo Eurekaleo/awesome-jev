@@ -1,0 +1,114 @@
+[
+  {
+    "arxiv_id": "2609.26758", "tier": "core", "category": "可靠性与语义鲁棒性", "relationship": "商业 Jev 黑箱评测 + 两种开放决策头", "priority": "P0",
+    "task_data": "1,200 条带任务专用 rubric 的二分类工作流决策；另有通用 rubric、多选与随机名称实验。",
+    "main_finding": "只交换选项名称与 rubric 的绑定，托管 Jev 的 AUROC 从 0.8146 降到 0.5806；所有条件下类型错误率仍为 0%。",
+    "caveat": "摘要中约 0.94→0.23 的大幅反转来自开放 marker 决策头，不能归给 Jev。开放模型各仅一个 checkpoint；英语、黑箱服务时点与多选基线限制外推。",
+    "survey_value": "将类型合法性、语义等变性、排序质量与测试重测噪声分开；选项顺序交换与名称/rubric 重绑定是不同干预。",
+    "code_url": "", "code_status": "正文声称发布 harness；本轮未定位到可唯一对应的公开仓库。", "evidence_locator": "Abstract; sections 3, 4.6, 4.7, 7; Tables 6–7", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.26550", "tier": "core", "category": "评判器与选择性升级", "relationship": "商业 Jev 与生成式/奖励模型 judge 比较", "priority": "P0",
+    "task_data": "17 种 judge 配置；主扩展包含 1,312 项，另有 RewardBench 2、RM-Bench 等诊断；183 项争议样本的人类复核。",
+    "main_finding": "普通偏好与有证据的事实判断上，Jev 距最强比较器不足 3 个百分点，费用为其 0.36%；冻结的双顺序级联保留约 99% 的比较器准确率，费用约为 57%。",
+    "caveat": "不同任务和级联不能混用分母；部分扩展在看过初步结果后开展。人类复核由一位作者完成，样本按模型分歧选取；推导审查和风格对抗更难。",
+    "survey_value": "区分原生概率和口头概率；双顺序 judge、独立阈值集、无效输出计错、费用与真实级联延迟分别报告。",
+    "code_url": "", "code_status": "正文指向匿名 supplementary ZIP；未确认公开可取的完整包。同名 GitHub 项目不能自动匹配。", "evidence_locator": "Abstract; sections 3, 7; Conclusion; Limitations; Appendix L", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.26532", "tier": "core", "category": "Agent 控制与选择性升级", "relationship": "商业 Jev 控制层 + 强 LLM fallback", "priority": "P0",
+    "task_data": "冻结的 100 任务 REFLEX-Sim；多个 fallback 家族；BFCL 与 300 个 τ 风格 episode 外部验证。",
+    "main_finding": "100 任务上 95% 成功率，相对 strong-only agent 少 72.7% 强模型调用；收益受动作集合和授权边界附近候选影响。",
+    "caveat": "外部任务普通路由接近饱和，相对廉价生成式级联优势有限；300 episode 不是完整 leaderboard，多次线上运行有漂移。",
+    "survey_value": "比较 Jev-only、strong-only、cheap-LLM cascade 与 Jev cascade；用成功率和实际调用预算评价。",
+    "code_url": "", "code_status": "未定位到可唯一对应的作者代码仓库；不能与社区同名 reflex 合并。", "evidence_locator": "Abstract; external evaluation and Limitations", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.25845", "tier": "core", "category": "开放模型与视觉扩展", "relationship": "独立 Visual Jev；并非 TypeSafe 视觉版", "priority": "P0",
+    "task_data": "Qwen3-VL-4B 为主，8B 扩展；GQA、SNLI-VE、TextVQA、TallyQA；单 RTX 5090。",
+    "main_finding": "四任务宏平均准确率 70.6%→76.1%；同图 32 问的共享批处理相对独立串行快 8.9 倍，相对不共享前缀的批处理快 3.4 倍。",
+    "caveat": "5.7 ms 是组耗时除以 32，整组约 182 ms；不是独立请求延迟。收益主要在训练覆盖的任务，专用 typed head 没有稳定超越原 LM head。",
+    "survey_value": "把模型质量、读出方式、共享前缀和批处理四个效应分开；与文本特征输入的 JEVQA 分开分类。",
+    "code_url": "https://github.com/guanxuyu-sv/Visual-Jev", "code_status": "已核实为项目页及结果 JSON；README 明示完整 evaluation tree 不在此仓库，不能标记完整训练/推理代码开放。", "evidence_locator": "sections 4–5; Tables 2–3; Limitations; linked repository README", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.24965", "tier": "core", "category": "科学工作流与决策后果", "relationship": "商业 Jev 语义选择，代码计算", "priority": "P1",
+    "task_data": "10 个科学案例、20 个有来源的 Choice；12 配置，每项重复 5 次。",
+    "main_finding": "Jev 与另外 5 个配置达到全部语义选择正确，并在成功响应中中位延迟最低；错误选择有时改变计算数量却不改变最终结论标签。",
+    "caveat": "样本极小，重复调用不增加独立案例数；所有路由案例的最终参考标签均为 inconsistent，错误集中在一个问题。",
+    "survey_value": "同时评估中间关系、下游数值和最终标签，避免只看终局标签掩盖过程错误。",
+    "code_url": "", "code_status": "正文有详细协议与附录；未确认公开代码仓库。", "evidence_locator": "Abstract; Limitations", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.24574", "tier": "core", "category": "跨任务评测与社会科学标注", "relationship": "商业 Jev + 开放决策模型 + 19 个 LLM", "priority": "P0",
+    "task_data": "18 个 CSS 分类任务、7,977 项；3 任务用于选择、15 任务用于主要评估；附录扩展到 Laya、decider、SemIf、Nimble 等。",
+    "main_finding": "15 个评估任务中 14 个落后于该任务最佳 LLM，macro-F1 中位差 11.6 个百分点，测得费用中位低 44 倍；低置信度升级可在所测任务上匹配或超过独用 LLM。",
+    "caveat": "高置信度并非跨构念可靠：empathy 是显著失败例。LLM 口头置信度与原生概率不完全同构；旧公开语料存在未知训练重叠。",
+    "survey_value": "这是只检索 Jev 名称会漏掉的核心论文；提供 accuracy–cost–calibration 分歧的重要反证。",
+    "code_url": "https://github.com/hazemibrahim97/decision-models-css", "code_status": "已读取作者 replication package README、文件树和 pilot_jev.py；包含原始调用记录与分析脚本，本轮未重跑。", "evidence_locator": "Abstract; sections 3–5; Appendix B; repository", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.24395", "tier": "core", "category": "视频质量的结构化特征判别", "relationship": "商业文本 Jev 读取视频特征，非原生视频输入", "priority": "P1",
+    "task_data": "Study A: 22 源视频、1,936 个编码版本、VMAF；Study B: AVT-VQDB-UHD-1 的 562 个主观评分编码版本。",
+    "main_finding": "A 中仅元数据 PLCC 0.737，加入 bitstream 为 0.797，组合 pixel 特征达 0.824；B 中元数据与 MOS 相关性 0.879。",
+    "caveat": "A 的参考是 VMAF 而非人类 MOS；B 的标准模型见过部分数据库。相同特征上训练的模型仍领先，pixel-only 失败；不能据此说 Jev 能看视频。",
+    "survey_value": "拆分感知预处理、特征设计与决策模型贡献；区分零样本和受监督基线。",
+    "code_url": "", "code_status": "已读全文；文中视频工具的仓库不等于该研究完整复现包。", "evidence_locator": "sections III–VI; Limitations", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.24052", "tier": "core", "category": "规模化标注与概率审计", "relationship": "商业 Jev 编码交通事故叙述", "priority": "P0",
+    "task_data": "筛查 499,500 份 Texas 事故叙述，195,857 份进入 27 问完整 schema；2,416 个人工盲审判断。",
+    "main_finding": "对人工标签 F1 为 0.908；一个 frontier 模型高 0.059，另一个差异不显著；重校准将误差缩小约 3.3 倍。",
+    "caveat": "单地区、单版本、单 schema；底层叙述及带 ID 的记录不可重分发，去标识人工审计表仍受数据许可。不能把拟合重校准结果当新领域保证。",
+    "survey_value": "区分行政编码与人工叙述真值；把概率可靠性落实为人工复核工作量；展示大规模但受限的数据开放。",
+    "code_url": "https://github.com/pozapas/jev-calibrated-narrative-coding", "code_status": "已读取作者仓库；公开 schema/runner/聚合结果，记录级复现受数据协议限制。", "evidence_locator": "Abstract; sections 3–5; Data and code availability", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.23986", "tier": "core", "category": "Agent 记忆", "relationship": "商业 Jev 控制平面 + 图记忆 + System Two", "priority": "P1",
+    "task_data": "LoCoMo；记忆类型、组织、路由、检索预算、遍历、排序、停止等控制环节。",
+    "main_finding": "LoCoMo LLM-as-a-Judge 0.777，相对最强基线提高 11.0%；构建 158 秒，相对最快基线快 6.6 倍；平均查询 0.93 秒，降低 36.7%。",
+    "caveat": "不同数值各自对应不同基线；结果属于完整记忆系统而非 Jev 单模型。需结合消融及 judge 依赖，跨数据集/环境外推待测。",
+    "survey_value": "System One 做资源与访问控制，System Two 做回答；需要逐模块归因，而非以系统增益证明模型普遍优势。",
+    "code_url": "https://github.com/libingzheren/Jev-Mem", "code_status": "已核实 memory/jev_client.py 调用 system_one；未执行实验。", "evidence_locator": "Abstract; Experiments; memory/jev_client.py", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.23959", "tier": "core", "category": "开放决策模型与诈骗电话筛查", "relationship": "JevLite，独立 Qwen3-4B LoRA 实现", "priority": "P1",
+    "task_data": "CallScreenBench 41 个测试场景、577 个逐轮判断；三种训练种子；合成来电。",
+    "main_finding": "三种子集成 AUROC 0.974、ECE 0.052；同挂断规则下早 1.14 轮；报告单消费 GPU 决策 64.5 ms，比生成式同骨干低 4.9 倍。",
+    "caveat": "配方选择接触过测试集，存在选择偏差；ModernBERT 的准确性未显著更差。单次延迟和三模型集成应按表中测量范围分别理解，不能互换。",
+    "survey_value": "相同骨干、不同读出和校准的消融；用误报及决策时刻衡量实际用途。",
+    "code_url": "", "code_status": "未定位到可唯一对应的公开完整代码包；名称类似的 OpenJev 项目不能自动认作本文代码。", "evidence_locator": "Abstract; Experimental protocol; Results", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.23886", "tier": "core", "category": "开放 typed-decision 模型", "relationship": "this-that-model-1.0；开放替代及 Jev 比较", "priority": "P0",
+    "task_data": "约 2B；42-family 内部套件；第三方保存的 68 问；另有与 Jev 共用的 2,250 问子集。",
+    "main_finding": "报告本地 30.9 ms；第三方 68 问准确率 0.941 vs Jev 0.765，Brier 0.042 vs 0.133。多步算术显著弱于强推理模型。",
+    "caveat": "68 问差距依赖少数题；2,250 问比较包含本模型训练过的问题形状。电费边际成本不含硬件/运维，不能与商业 API 总价当同口径。",
+    "survey_value": "本地部署与原生有限支持读出；将硬件、训练覆盖、费用口径和公开权重分别比较。",
+    "code_url": "https://github.com/FLock-io/this-that-model", "code_status": "已读取 thisthat/model.py 的 restricted softmax；模型卡 https://huggingface.co/flock-io/this-that-model-1.0。未下载权重或跑基准。", "evidence_locator": "Abstract; sections 4 and comparison discussion; thisthat/model.py", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.23136", "tier": "core", "category": "边缘服务编排", "relationship": "商业 Jev 解释意图，确定性调度执行", "priority": "P1", "study_family": "Li-Wang-edge-2026",
+    "task_data": "实测 Jev/DeepSeek/Gemini/Qwen 决策 + NR 网络模拟 + 实际图像读取服务。",
+    "main_finding": "相对 DeepSeek/Gemini 决策中位延迟低 22.4%/61.9%；真实服务每组 1,080 请求中，正确及时完成 Jev 459、DeepSeek 463、Qwen 435。",
+    "caveat": "更快决策不保证更高端到端成功率；模拟与真实测量必须分栏。与 2609.22753 同作者、相近服务路径，不能算两次完全独立证据。",
+    "survey_value": "分解解释、网络、排队、调度与执行耗时；辨认决策延迟是否在关键路径。",
+    "code_url": "", "code_status": "已读全文；未确认公开代码仓库。", "evidence_locator": "Abstract; real-service results", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.22753", "tier": "core", "category": "边缘服务编排", "relationship": "商业 Jev 替换结构化 LLM", "priority": "P1", "study_family": "Li-Wang-edge-2026",
+    "task_data": "4 个有界意图字段；3 个连续测量块；8 个配对 OCR 条件，含缓存控制。",
+    "main_finding": "相对 DeepSeek 决策中位延迟低 15.9%–26.5%；无缓存且双方均正确的请求端到端低 11.1%–25.3%，每次正确完成 API 费用低 69.0%–70.6%。",
+    "caveat": "重复请求缓存基本消除延迟差距；结果限于所测服务和时段。与同团队 2609.23136 应按研究家族处理。",
+    "survey_value": "更贴近部署的 matched structured-output 基线；以每次正确完成的成本而非单 token 价格比较。",
+    "code_url": "", "code_status": "已读全文；未确认公开代码仓库。", "evidence_locator": "Abstract; execution and caching comparisons", "independent_rerun": false
+  },
+  {
+    "arxiv_id": "2609.25498", "tier": "peripheral", "category": "相邻决策接口与需复核主张", "relationship": "werr / Universal Fractal，自称 JevBench 替代方案", "priority": "P2",
+    "task_data": "作者报告 1,150+ 决策、3,200+ 问题和分形决策运行时。",
+    "main_finding": "采用 Noul/Choice/Score 类接口并自报速度与准确率，属于检索范围边缘的另类实现。",
+    "caveat": "不是 TypeSafe 官方研究；所谓排名及泛化需要独立复核。文中 0% injection bypass 的区间上界为 30.8%，不能解释为可靠安全保证。",
+    "survey_value": "作为边界/争议条目留档，不能与可靠同协议对照实验合并成性能结论。",
+    "code_url": "https://github.com/pCwOrM/werr", "code_status": "已获取公开仓库 README；未复现。", "evidence_locator": "Abstract; evaluation and claims", "independent_rerun": false
+  }
+]

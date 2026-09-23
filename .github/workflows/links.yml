@@ -1,0 +1,21 @@
+name: Link check (weekly)
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python3 scripts/check-links.py --out reports/link-check.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: link-check, path: reports/link-check.json}

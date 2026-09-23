@@ -1,0 +1,29 @@
+name: Validate and build
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - name: Validate data
+        run: python3 scripts/validate-data.py
+      - name: Generated files are up to date
+        run: python3 scripts/build.py --check
+      - name: Unit tests (data rules, exports)
+        run: python3 -m unittest discover -s tests -v
+      - name: Unit tests (client-side search)
+        run: node --test tests/*.test.mjs
+      - name: Page weight budget
+        run: python3 scripts/measure.py --budget

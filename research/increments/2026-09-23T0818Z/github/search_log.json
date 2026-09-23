@@ -1,0 +1,130 @@
+[
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 1,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:18:38.380007+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 2,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:18:44.038144+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 3,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:18:49.338146+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 4,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:18:54.787325+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 5,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:00.623376+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 6,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:05.727683+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 7,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:11.101546+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 8,
+    "total_count": 897,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:16.596865+00:00"
+  },
+  {
+    "query": "awesome jev in:name fork:true",
+    "page": 9,
+    "total_count": 897,
+    "returned": 97,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:22.344568+00:00"
+  },
+  {
+    "query": "awesome typesafe in:name fork:true",
+    "page": 1,
+    "total_count": 240,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:27.549538+00:00"
+  },
+  {
+    "query": "awesome typesafe in:name fork:true",
+    "page": 2,
+    "total_count": 240,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:33.031463+00:00"
+  },
+  {
+    "query": "awesome typesafe in:name fork:true",
+    "page": 3,
+    "total_count": 240,
+    "returned": 40,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:38.417936+00:00"
+  },
+  {
+    "query": "jev survey in:name,description",
+    "page": 1,
+    "total_count": 6,
+    "returned": 6,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:42.295255+00:00"
+  },
+  {
+    "query": "jev papers in:name,description",
+    "page": 1,
+    "total_count": 11,
+    "returned": 11,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:45.440615+00:00"
+  },
+  {
+    "query": "jev research in:name,description",
+    "page": 1,
+    "total_count": 109,
+    "returned": 100,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:48.734662+00:00"
+  },
+  {
+    "query": "jev research in:name,description",
+    "page": 2,
+    "total_count": 109,
+    "returned": 9,
+    "incomplete_results": false,
+    "retrieved_at_utc": "2026-09-23T08:19:54.377718+00:00"
+  }
+]

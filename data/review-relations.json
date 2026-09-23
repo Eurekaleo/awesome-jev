@@ -1,0 +1,214 @@
+{
+ "schema": "jev-survey/relations@1",
+ "relations": [
+  {
+   "type": "study_family",
+   "id": "li-wang-edge-2026",
+   "members": [
+    "arxiv:2609.23136",
+    "arxiv:2609.22753"
+   ],
+   "note": "Same author group (Li, Wang, Gong, Lang, Yu) and related edge service paths; synthesise as one family, not two independent replications."
+  },
+  {
+   "type": "companion_repository",
+   "source": "arxiv:2609.24574",
+   "target": "gh:hazemibrahim97/decision-models-css",
+   "note": "Author replication package cited in the paper."
+  },
+  {
+   "type": "companion_repository",
+   "source": "arxiv:2609.24052",
+   "target": "gh:pozapas/jev-calibrated-narrative-coding",
+   "note": "Data and code availability statement."
+  },
+  {
+   "type": "companion_repository",
+   "source": "arxiv:2609.23986",
+   "target": "gh:libingzheren/jev-mem",
+   "note": "Code link in the abstract."
+  },
+  {
+   "type": "companion_repository",
+   "source": "arxiv:2609.23886",
+   "target": "gh:flock-io/this-that-model",
+   "note": "Availability section."
+  },
+  {
+   "type": "companion_repository",
+   "source": "arxiv:2609.25845",
+   "target": "gh:guanxuyu-sv/visual-jev",
+   "note": "Project page only."
+  },
+  {
+   "type": "companion_repository",
+   "source": "arxiv:2609.25498",
+   "target": "gh:pcworm/werr",
+   "note": "Correspondence link in the paper."
+  },
+  {
+   "type": "derived_from",
+   "source": "gh:flock-io/this-that-model",
+   "target": "gh:mapika/decider",
+   "note": "this-that-model-1.0 is adapted from decider-2b (Apache-2.0), per the paper’s Availability section."
+  },
+  {
+   "type": "uses_resources_from",
+   "source": "arxiv:2609.23886",
+   "target": "gh:tianyucodings/nanojev",
+   "note": "Environment simulator and the recorded hosted-service cohort (68 questions) come from NanoJev (MIT)."
+  },
+  {
+   "type": "evaluates",
+   "source": "arxiv:2609.24574",
+   "targets": [
+    "gh:nandhakishorm/laya",
+    "gh:mapika/decider",
+    "gh:theoleecj/semif",
+    "gh:bespokelabsai/nimble"
+   ],
+   "note": "Appendix extension to open decision models."
+  },
+  {
+   "type": "evaluates",
+   "source": "gh:instax-dutta/sysone-bench",
+   "targets": [
+    "gh:nandhakishorm/laya"
+   ],
+   "note": "Laya vs hosted Jev on byte-identical inputs."
+  },
+  {
+   "type": "contrasts_with",
+   "source": "gh:githubnext/localjev",
+   "target": "gh:razorback16/openjev",
+   "note": "LocalJev states it is wire-compatible but not mathematically equivalent to OpenJev’s logit read."
+  },
+  {
+   "type": "depends_on_unmerged",
+   "source": "gh:mmastrac/djev",
+   "note": "Uses request extensions from vLLM PR #57250 (not established as merged)."
+  },
+  {
+   "type": "name_collision",
+   "term": "RLCD",
+   "note": "TypeSafe’s “Reinforcement Learning for Calibrated Decisions” is unrelated to “RLCD: Reinforcement Learning from Contrastive Distillation” (2023); 2609.24574 makes the same distinction. Neither adjacency implies the same algorithm or copying."
+  },
+  {
+   "type": "name_collision",
+   "term": "OpenJev",
+   "note": "Three different things: SemIf (formerly OpenJev, frozen-decoder readout), razorback16/openjev (DiffusionGemma server) and the “Open-Jev” title of 2609.23959 (JevLite)."
+  },
+  {
+   "type": "name_collision",
+   "term": "REFLEX",
+   "note": "The agent architecture of 2609.26532 is not any community project named “reflex”."
+  },
+  {
+   "type": "name_collision",
+   "term": "Visual Jev",
+   "note": "An independent research model (2609.25845), not a TypeSafe release; hosted Jev is text-only."
+  },
+  {
+   "type": "name_collision",
+   "term": "System One / System 1",
+   "note": "TypeSafe’s product category borrows Kahneman’s System 1 metaphor; System-1/2 reasoning literature (e.g. 2502.17419) predates and is broader than the product."
+  },
+  {
+   "type": "name_collision",
+   "term": "survey",
+   "note": "jjd-lab/jev-synthetic-survey is a questionnaire experiment, not a literature review."
+  },
+  {
+   "type": "author_name_match",
+   "members": [
+    "arxiv:2503.23303",
+    "arxiv:2510.01237",
+    "gh:nandhakishorm/laya"
+   ],
+   "note": "Both papers list “Nandakishor M”, matching the Laya maintainer’s name. Identity was not verified; a shared author would not establish shared architecture, training or priority."
+  },
+  {
+   "type": "prior_survey",
+   "source": "gh:youzizzz1028/awesome-jev",
+   "note": "“Decisions, Not Tokens” survey draft dated 21 September 2026; see related-surveys."
+  }
+ ],
+ "related_surveys": [
+  {
+   "id": "gh:youzizzz1028/awesome-jev",
+   "title": "Decisions, Not Tokens: A Survey of Typed, Calibrated, and Machine-Native Decision Models from Classical Classifiers to Jev",
+   "authors": "Anonymous Authors (manuscript); “Awesome Jev contributors” (CITATION.cff)",
+   "dated": "2026-09-21 (in-text “Full working draft — 21 September 2026”)",
+   "url": "https://github.com/youzizzz1028/Awesome-Jev/blob/f3703012b0034eefe0d59936c44cd33ea11b2990/paper/main.tex",
+   "commit": "f3703012b0034eefe0d59936c44cd33ea11b2990",
+   "manuscript_commit": "c1347c84a2577ac699fc954fc1b2ef60bd7eb025 (2026-09-21 14:53:42 UTC)",
+   "checked": "2026-09-23: head unchanged since the snapshot (GitHub API).",
+   "status": "public working draft; CITATION.cff type dataset; no arXiv entry located",
+   "bib_entries": 41,
+   "core_ids_cited": 0,
+   "bibtex_key": "decisionsnottokens2026"
+  }
+ ],
+ "survey_matrix": [
+  {
+   "dimension": "Scope",
+   "prior": "Machine-native decision models broadly, from classical classifiers to Jev; Jev as a contemporary case study.",
+   "this_survey": "Jev and finite-option typed decision models: the commercial service, Jev-like implementations and systems that depend on them, with adjacent methods as background.",
+   "evidence": "Prior draft abstract and §2; this survey §1."
+  },
+  {
+   "dimension": "Cutoff",
+   "prior": "21 September 2026 (stated in the draft).",
+   "this_survey": "23 September 2026 (snapshot) plus a same-day incremental rerun (logged).",
+   "evidence": "Draft §2.3; data/search-runs.json."
+  },
+  {
+   "dimension": "Search & screening record",
+   "prior": "Lists databases and keyword families; no query log, hit counts or screening decisions in the repository at the pinned commit (only data/ecosystem.yml and data/resources.yml).",
+   "this_survey": "17 logged arXiv queries (225 hits → 197 screened) plus a logged same-day increment; the rejected query kept; background records added by explicit ID are marked; GitHub discovery with page-level logs; single-reviewer screening disclosed.",
+   "evidence": "Draft §2.3 and repository tree at f3703012; research/."
+  },
+  {
+   "dimension": "Recent empirical coverage",
+   "prior": "None of the 13 core arXiv IDs (2609.22753–2609.26758) appear in its 41-entry bibliography.",
+   "this_survey": "Every core and peripheral paper read in full; each claim stored as an evidence record with locator, scope, sample size and model version.",
+   "evidence": "Draft references.bib at f3703012; data/claims.json."
+  },
+  {
+   "dimension": "Model lineage",
+   "prior": "Five-dimensional taxonomy (output contract, inference, learning objective, uncertainty, control); mentions the official adapter.",
+   "this_survey": "Six readout families with named open implementations, a derived-from edge (this-that ← decider) and explicit non-equivalence of compatible interfaces.",
+   "evidence": "Draft §5; data/taxonomy.json; data/repositories.json."
+  },
+  {
+   "dimension": "Failure analysis",
+   "prior": "Conceptual: open-world inputs, local calibration, parallel consistency, compositional safety.",
+   "this_survey": "Empirical: option-name rebinding, abstain removal, Noul/Choice incoherence, per-construct confident errors, language shift, quantisation — each tied to a source.",
+   "evidence": "Draft §9; this survey §6."
+  },
+  {
+   "dimension": "Openness audit",
+   "prior": "Evidence labels A–D (peer-reviewed, preprint, official, community).",
+   "this_survey": "Six independent fields per work (code, weights, data, predictions, recomputable, reproduced) and seven per repository.",
+   "evidence": "Draft README; data/papers.json."
+  },
+  {
+   "dimension": "Recomputability",
+   "prior": "Figures described as conceptual illustrations; no data release for figures.",
+   "this_survey": "Every count, table and chart is generated from data/*.json by scripts in the repository; checks run in CI.",
+   "evidence": "Draft Fig. 2 caption; scripts/."
+  },
+  {
+   "dimension": "Interactive resources",
+   "prior": "GitHub README index and figures.",
+   "this_survey": "Searchable website with filters, evidence drawers, exports and labelled illustrative explainers.",
+   "evidence": "Both repositories."
+  },
+  {
+   "dimension": "Shared ground",
+   "prior": "Four evaluation layers (validity, semantic correctness, probabilistic reliability, decision utility) and a fair replication protocol.",
+   "this_survey": "This survey adopts the same separation and credits the draft for it; the difference lies in the evidence base, not the layering.",
+   "evidence": "Draft Table 1 and §8.3."
+  }
+ ]
+}

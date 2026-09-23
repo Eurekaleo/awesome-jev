@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/MDtqzrsSqYxYlJBt9/tKa+donCk</id>
+  <title>arXiv Query: search_query=(all:jevbench OR all:callscreenbench OR all:"sysone" OR all:"workflow evals")&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T08:32:36Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:jevbench+OR+(all:callscreenbench+OR+(all:%22sysone%22+OR+all:%22workflow+evals%22))&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>4</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.25498v1</id>
+    <title>Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains</title>
+    <updated>2026-09-21T23:57:31Z</updated>
+    <link href="https://arxiv.org/abs/2609.25498v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.25498v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deploying Large Language Models for runtime operational triage incurs prohibitive latency (&gt;100-500 ms), high VRAM requirements (&gt;4-8 GB), and excessive energy dissipation. Extending Mandelbrot Fractal Neural Synthesis (Dagli et al., 2026), this paper presents the Universal Fractal Natural Language Decision Map, realized via the werr machine-native edge reflex runtime and the production answerr platform (https://answerr.me). Operating entirely without stored weight tensors (0 Bytes VRAM), the engine synthesizes deterministic decisions---noul (Boolean), choice (categorical), and score (ordinal)---by dynamically modulating 24-byte coordinate seeds along the chaotic boundary of the Mandelbrot set and evaluating 4-quadrant escape dynamics. Drawing inspiration from biological System-One reflex arcs, the engine introduces: (i) an Auto-Seed Router with domain projector Phi_D yielding a +28.8% accuracy gain over linear baselines; (ii) an Information-Theoretic Acoustic Damping Filter grounded in token entropy and phonetic spectral density that insulates against prompt injections (0.0% empirical bypass; 95% Wilson CI: [0.0%, 30.8%]) while pruning escape iterations by 45.8% (accelerating throughput 2.5x to 3.31 ms latency); and (iii) an Organic Dynamic Calibration framework using O(1) Exponential Moving Average (EMA, alpha=0.03) and quadrant phase rotation to eliminate positional bias. Benchmarked on bare-metal infrastructure (api.answerr.me:4431) across 1,150+ verified decisions (3,200+ questions) and ranked World #1 on the independent JevBench suite (81.65%), the framework achieves 92.6% macro-accuracy (95% CI: [90.8%, 94.1%]) with 7.08 ms median CPU latency. We provide an OpenAI-compatible API (/v1/chat/completions) and demonstrate feasibility on microcontrollers and 32-byte EVM smart contracts.</summary>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T23:57:31Z</published>
+    <arxiv:comment>10 pages, 5 figures, 3 tables. Companion to Mandelbrot Fractal Neural Synthesis. Live portal: https://answerr.me; Source code: https://github.com/pCwOrM/werr</arxiv:comment>
+    <arxiv:primary_category term="cs.NE"/>
+    <author>
+      <name>Volkan Dağlı</name>
+    </author>
+    <author>
+      <name>Zerrin Dağlı</name>
+    </author>
+    <author>
+      <name>Dağhan Dağlı</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.22867426</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.22867426" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24868v1</id>
+    <title>DualWAM: Dual-System World Action Models for Asynchronous Global Planning and Local Refinement</title>
+    <updated>2026-09-21T16:37:50Z</updated>
+    <link href="https://arxiv.org/abs/2609.24868v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24868v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>World Action Models (WAMs) jointly generate robot actions and predict future world states, transferring priors from video pretraining to robot control. However, future visual prediction is computationally expensive, so existing WAMs often rely on long action chunks to amortize inference cost across control steps, at the cost of closed-loop responsiveness. We present \method, a dual-system WAM that preserves broader-horizon world-action generation while enabling high-frequency closed-loop action updates by decoupling global planning and local refinement. \systwo periodically performs high-noise bidirectional denoising over a broader world-action chunk to establish a global plan, while wrist-only \sysone extracts a temporally aligned short window from the intermediate denoising state and completes low-noise refinement using the latest wrist observations, which provide action-aligned cues about local geometry, motion, and contact during interaction. The two systems operate asynchronously along a shared denoising trajectory: each global plan is reused across multiple local updates, while \sysone repeatedly incorporates fresh interaction feedback. Across zero-shot manipulation tasks on Franka and Galbot, \method improves success over the strongest evaluated baseline by 4.5 percentage points on average, while achieving a 16.6$\times$ critical-path speedup. Further studies show that role-matched egocentric and UMI data improve success by 14 percentage points, and that the decoupled design naturally supports edge--cloud deployment with substantially lower communication overhead than the baseline.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T16:37:50Z</published>
+    <arxiv:comment>Project page: https://steveouo.github.io/DualWAM-Web/</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Yixin Zheng</name>
+    </author>
+    <author>
+      <name>Jiangran Lyu</name>
+    </author>
+    <author>
+      <name>Yuntian Deng</name>
+    </author>
+    <author>
+      <name>Kai Liu</name>
+    </author>
+    <author>
+      <name>Yizhou Zhou</name>
+    </author>
+    <author>
+      <name>Yizhou Wang</name>
+    </author>
+    <author>
+      <name>Xiaoguang Zhao</name>
+    </author>
+    <author>
+      <name>He Wang</name>
+    </author>
+    <author>
+      <name>Zhizheng Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.23959v1</id>
+    <title>Open-Jev Judgments on CallScreenBench: Calibrated One-Pass Scam Screening with a Small Language Model</title>
+    <updated>2026-09-21T00:09:24Z</updated>
+    <link href="https://arxiv.org/abs/2609.23959v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.23959v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Screening a phone call for fraud needs a trustworthy probability after every caller turn, in milliseconds. Jev-style typed decisions promise exactly that: declared options go in, one calibrated probability per option comes out of a single forward pass, with no generated text. We test an open implementation of this readout, JevLite, on scam-call screening: Qwen3-4B is LoRA-tuned so that the temperature-scaled softmax over two answer-label logits is P(scam). On 41 held-out CallScreenBench scenarios (577 per-turn decisions) a three-seed ensemble reaches AUROC .974 with calibration error .052, non-inferior to an LLM judge (MiniMax-M3) at a pre-registered .02 margin, with no false alarms on legitimate calls, decisions 1.14 turns earlier under the same hang-up rule, and 64.5 ms per decision on one consumer GPU, 4.9x lower than the same backbone fine-tuned to generate its answer. The gain is in the readout and calibration, not accuracy: a fine-tuned ModernBERT encoder is not significantly worse, the recipe was selected with test-set exposure, and all callers are synthetic. We claim no architectural novelty; the contribution is the application and an evaluation reporting calibration, false alarms and decision timing alongside AUROC.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T00:09:24Z</published>
+    <arxiv:comment>13 pages, 6 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Simiao Ren</name>
+    </author>
+    <author>
+      <name>Kidus Zewde</name>
+    </author>
+    <author>
+      <name>Xingyu Shen</name>
+    </author>
+    <author>
+      <name>Yuchen Zhou</name>
+    </author>
+    <author>
+      <name>Dennis Ng</name>
+    </author>
+    <author>
+      <name>Ankit Raj</name>
+    </author>
+    <author>
+      <name>Tommy Duong</name>
+    </author>
+    <author>
+      <name>Yuxin Zhang</name>
+    </author>
+    <author>
+      <name>Neo Tiangratanakul</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.01033v2</id>
+    <title>CallScreenBench: Benchmarking Small Language Models as Phone Secretaries</title>
+    <updated>2026-08-21T21:01:52Z</updated>
+    <link href="https://arxiv.org/abs/2608.01033v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.01033v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Language models small enough to run on a handset, quantized to a few bits, are increasingly capable of acting on their user's behalf -- which makes on-device task automation newly plausible. One such task is answering the phone. A phone secretary takes an unknown inbound call on its owner's behalf, and unlike the agents most benchmarks evaluate, it has no cooperative caller-assigned task to complete: the caller holds the goal and may be an adversary, while the secretary must begin deciding how to respond without an oracle. What matters is not task success but whether the owner would endorse how their proxy handled the call. We evaluate only the text-domain conversational decision layer; speech recognition, audio interaction, end-to-end latency, and handset execution are outside scope. We present CallScreenBench, which reports five automated call-and-note measure groups motivated by owner endorsement. Each is paired, where available, with a counter-metric and an uncertainty estimate; no benchmark-wide Q1-Q5 composite or leaderboard score is defined. Three guardedness diagnostics identify candidate cases for a toolless proxy that holds no credentials and calls no tools. Across three model families represented by paired 4-bit checkpoints (0.6-4B), the primary scoring snapshot gives the larger checkpoint higher point estimates on several service, recall, and plausibility measures, while triage discrimination follows a different ordering. Bare scam-side TPR rewards universal suspicion, and pairwise separation changes when legitimate-side false positives are included and across judge snapshots. Scripted degenerate agents expose further floors, including a hangup-and-echo policy with entity recall 1.000. We report quality measures and guardedness channels separately so that a single pass/fail score does not hide their trade-offs.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-02T06:31:25Z</published>
+    <arxiv:comment>24 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jiaqi Gan</name>
+    </author>
+    <author>
+      <name>Haoyuan Tang</name>
+    </author>
+    <author>
+      <name>Jamey Z. Liang</name>
+    </author>
+    <author>
+      <name>Siying Chen</name>
+    </author>
+    <author>
+      <name>Ankit Raj</name>
+    </author>
+    <author>
+      <name>Kidus Zewde</name>
+    </author>
+    <author>
+      <name>Yuchen Zhou</name>
+    </author>
+    <author>
+      <name>Yuxin Zhang</name>
+    </author>
+    <author>
+      <name>Simiao Ren</name>
+    </author>
+  </entry>
+</feed>

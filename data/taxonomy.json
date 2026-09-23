@@ -1,0 +1,796 @@
+{
+ "schema": "jev-survey/taxonomy@1",
+ "note": "An analytical organisation for this survey. It is not the architecture of any commercial model and is not claimed as the first such taxonomy.",
+ "stages": [
+  {
+   "id": "contract",
+   "n": "01",
+   "label": "Decision contract",
+   "question": "What exactly is being asked, and what may the answer be?",
+   "covers": "State, typed question, option names, rubrics, levels, cardinality, abstain options.",
+   "evidence": "Type validity; name and order invariance; closed-set failure when the right option is missing."
+  },
+  {
+   "id": "readout",
+   "n": "02",
+   "label": "Inference & readout",
+   "question": "How is a distribution over the declared options produced?",
+   "covers": "Hosted service, encoder heads, frozen or fine-tuned decoder readouts, diffusion reads, generative adapters.",
+   "evidence": "Same-backbone ablations; readout geometry; what is and is not disclosed."
+  },
+  {
+   "id": "probability",
+   "n": "03",
+   "label": "Probability & calibration",
+   "question": "What does a returned probability or confidence mean, and for which population?",
+   "covers": "Native vs verbalised probabilities, confidence statistics, ECE/Brier/NLL, recalibration, quantisation.",
+   "evidence": "Per-task reliability, high-confidence errors, recalibration on held-out labels."
+  },
+  {
+   "id": "control",
+   "n": "04",
+   "label": "Selective control",
+   "question": "When should software act, ask, escalate or abstain?",
+   "covers": "Thresholds, risk–coverage, cascades to stronger models, human review budgets.",
+   "evidence": "Coverage at fixed risk; escalation rate; thresholds chosen on a separate selection set."
+  },
+  {
+   "id": "use",
+   "n": "05",
+   "label": "Downstream use",
+   "question": "Does the whole workflow get better, cheaper or faster?",
+   "covers": "End-task success, end-to-end latency, cost per correct completion, derived quantities.",
+   "evidence": "System-level baselines; module attribution; matched measurement scope."
+  }
+ ],
+ "method_families": [
+  {
+   "id": "hosted_service",
+   "n": "A",
+   "label": "Hosted System One service",
+   "principle": "A closed, hosted model returns a distribution over declared options for each typed question about a shared text state.",
+   "representatives": [
+    "TypeSafe Jev (jev-1.13.0)"
+   ],
+   "disclosed": "Interface, primitives, pricing, limits, versioning and known failure modes are documented; architecture, training data and the exact confidence statistic are not.",
+   "boundary": "Black-box evaluation only; the served model can change behind aliases; text-only input.",
+   "repos": [
+    "gh:typesafe-ai/typesafe-sdk-python",
+    "gh:typesafe-ai/typesafe-sdk-js"
+   ]
+  },
+  {
+   "id": "encoder_head",
+   "n": "B",
+   "label": "Encoder decision heads",
+   "principle": "A bidirectional encoder reads state, question and options together; a head scores each option and a softmax is taken over the legal set.",
+   "representatives": [
+    "Laya (ModernBERT-large, mmBERT-base)",
+    "open marker-readout and span-mean heads audited in 2609.26758"
+   ],
+   "disclosed": "Weights and inference code for Laya; the readout geometry (marker token vs span mean) changes name sensitivity.",
+   "boundary": "Short context windows; option-name polarity can dominate the rubric; adjacent to GLiClass, SetFit and NLI zero-shot classifiers.",
+   "repos": [
+    "gh:nandhakishorm/laya"
+   ]
+  },
+  {
+   "id": "frozen_decoder_readout",
+   "n": "C",
+   "label": "Frozen decoder option readout",
+   "principle": "An unmodified causal LM is prompted once and the next-token logits of single-token option labels are renormalised over the declared options.",
+   "representatives": [
+    "SemIf (formerly OpenJev)",
+    "AnyJev (permutation and label-based calibration)"
+   ],
+   "disclosed": "Fully open and training-free; the natural low-cost baseline for any trained decision model.",
+   "boundary": "Raw logits are order-sensitive and poorly calibrated without correction; label tokenisation matters.",
+   "repos": [
+    "gh:theoleecj/semif",
+    "gh:nokia-applied-research/anyjev"
+   ]
+  },
+  {
+   "id": "finetuned_decoder",
+   "n": "D",
+   "label": "Fine-tuned decoder decision models",
+   "principle": "A decoder is adapted (LoRA or full fine-tuning) so that a designated position or pointer head yields calibrated option probabilities in one pass.",
+   "representatives": [
+    "Kev",
+    "decider",
+    "this-that-model-1.0",
+    "NanoJev",
+    "Bespoke Nimble",
+    "JevLite (2609.23959)",
+    "Visual Jev (2609.25845)"
+   ],
+   "disclosed": "Several release weights, training code and evaluation data; lineages exist (this-that-model is adapted from decider-2b).",
+   "boundary": "Gains may come from task coverage in training; derived checkpoints are not independent methods.",
+   "repos": [
+    "gh:jaredpalmer/kev",
+    "gh:mapika/decider",
+    "gh:flock-io/this-that-model",
+    "gh:tianyucodings/nanojev",
+    "gh:bespokelabsai/nimble",
+    "gh:guanxuyu-sv/visual-jev"
+   ]
+  },
+  {
+   "id": "diffusion_readout",
+   "n": "E",
+   "label": "Diffusion structured readout",
+   "principle": "A discrete diffusion LM is seeded with the answer template; after one denoising step, the distribution at each answer slot is read directly.",
+   "representatives": [
+    "djev (vLLM example server)",
+    "OpenJev on DiffusionGemma (razorback16)"
+   ],
+   "disclosed": "Open servers with a Jev-compatible wire API; depends on request extensions proposed in an unmerged vLLM PR.",
+   "boundary": "A different mechanism from last-token decoder readout; custom entropy-based confidence.",
+   "repos": [
+    "gh:mmastrac/djev",
+    "gh:razorback16/openjev"
+   ]
+  },
+  {
+   "id": "generative_adapter",
+   "n": "F",
+   "label": "Generative & constrained adapters",
+   "principle": "A general LLM is asked (often under JSON-schema constraints) to emit a decision and probabilities, which are validated and returned in Jev-shaped responses.",
+   "representatives": [
+    "system-one-adapter-python (official, for comparisons)",
+    "LocalJev"
+   ],
+   "disclosed": "Wire compatibility for controlled comparisons; probabilities are generated or verbalised, not read from logits.",
+   "boundary": "Interface compatibility is not mechanism equivalence; retries, parsing and self-reported probabilities remain.",
+   "repos": [
+    "gh:typesafe-ai/system-one-adapter-python",
+    "gh:githubnext/localjev"
+   ]
+  }
+ ],
+ "topics": [
+  {
+   "id": "interface-semantics",
+   "label": "Interface semantics",
+   "desc": "Option names, rubric binding, primitive choice (Noul vs Choice), schema wording."
+  },
+  {
+   "id": "calibration",
+   "label": "Calibration",
+   "desc": "Reliability of probabilities and confidence; recalibration; quantisation."
+  },
+  {
+   "id": "selective-control",
+   "label": "Selective control",
+   "desc": "Thresholds, escalation, cascades, abstention and review budgets."
+  },
+  {
+   "id": "efficiency",
+   "label": "Efficiency & cost",
+   "desc": "Latency scopes, batching, prefix sharing, caching and cost accounting."
+  },
+  {
+   "id": "robustness",
+   "label": "Robustness",
+   "desc": "Perturbations, distribution shift, language variation and adversarial input."
+  },
+  {
+   "id": "open-models",
+   "label": "Open implementations",
+   "desc": "Open-weight or training-free Jev-like models and readouts."
+  },
+  {
+   "id": "evaluation-methodology",
+   "label": "Evaluation methodology",
+   "desc": "Reference labels, invalid-output handling, test–retest noise, attribution."
+  },
+  {
+   "id": "structured-output",
+   "label": "Structured output",
+   "desc": "Constrained decoding, schema validity and forced answers."
+  },
+  {
+   "id": "judging",
+   "label": "Judging & reward",
+   "desc": "LLM-as-a-judge and reward models as comparators or uses."
+  },
+  {
+   "id": "routing",
+   "label": "Routing & cascades",
+   "desc": "Model routing and cascade cost–quality trade-offs."
+  },
+  {
+   "id": "classification",
+   "label": "Classification",
+   "desc": "General discriminative and zero-shot classifiers as baselines."
+  },
+  {
+   "id": "agents",
+   "label": "Agents",
+   "desc": "Decisions inside tool-using or memory-bearing agents."
+  },
+  {
+   "id": "multimodal",
+   "label": "Multimodal inputs",
+   "desc": "Visual or video decisions and how the input reaches the model."
+  }
+ ],
+ "applications": [
+  {
+   "id": "workflow-decisions",
+   "label": "Workflow decisions"
+  },
+  {
+   "id": "judging",
+   "label": "Model judging"
+  },
+  {
+   "id": "agent-control",
+   "label": "Agent control"
+  },
+  {
+   "id": "agent-memory",
+   "label": "Agent memory"
+  },
+  {
+   "id": "annotation",
+   "label": "Annotation & coding"
+  },
+  {
+   "id": "scientific-workflow",
+   "label": "Scientific workflows"
+  },
+  {
+   "id": "video-quality",
+   "label": "Video quality"
+  },
+  {
+   "id": "fraud-screening",
+   "label": "Scam-call screening"
+  },
+  {
+   "id": "edge-orchestration",
+   "label": "Edge orchestration"
+  },
+  {
+   "id": "visual-qa",
+   "label": "Visual questions"
+  },
+  {
+   "id": "triage",
+   "label": "Edge triage"
+  }
+ ],
+ "model_relationships": [
+  {
+   "id": "commercial_jev",
+   "label": "Commercial Jev",
+   "desc": "Evaluates or uses TypeSafe’s hosted Jev."
+  },
+  {
+   "id": "independent_jev_like",
+   "label": "Independent Jev-like",
+   "desc": "Builds or evaluates an open or independent typed-decision model or readout."
+  },
+  {
+   "id": "downstream_system",
+   "label": "Downstream system",
+   "desc": "A larger system whose contribution depends on typed decisions."
+  },
+  {
+   "id": "adjacent_method",
+   "label": "Adjacent method",
+   "desc": "Background: classifiers, calibration, selective prediction, structured output, judging, routing."
+  }
+ ],
+ "test_levels": [
+  {
+   "id": "model_test",
+   "label": "Model test",
+   "desc": "Decisions scored directly against labels."
+  },
+  {
+   "id": "system_test",
+   "label": "System test",
+   "desc": "A full workflow or agent is scored on its end outcome."
+  },
+  {
+   "id": "hybrid",
+   "label": "Hybrid",
+   "desc": "Live model calls combined with simulated components."
+  },
+  {
+   "id": "simulation",
+   "label": "Simulation",
+   "desc": "Outcomes produced by a simulator."
+  },
+  {
+   "id": "not_applicable",
+   "label": "Not applicable",
+   "desc": "Documentation or design claims."
+  }
+ ],
+ "measurement_scopes": [
+  {
+   "id": "single_request",
+   "label": "Single request",
+   "desc": "Latency or cost of one independent decision request."
+  },
+  {
+   "id": "amortized_question",
+   "label": "Amortized per question",
+   "desc": "Batch time divided by the number of questions sharing a context."
+  },
+  {
+   "id": "batch",
+   "label": "Batch / throughput",
+   "desc": "Total time or throughput of a batch."
+  },
+  {
+   "id": "end_to_end",
+   "label": "End to end",
+   "desc": "Includes network, queueing, retries or downstream execution."
+  },
+  {
+   "id": "simulation",
+   "label": "Simulated",
+   "desc": "Timing or completion produced by a simulator."
+  },
+  {
+   "id": "author_estimate",
+   "label": "Author estimate",
+   "desc": "Derived or modelled figures (e.g. electricity-only cost)."
+  },
+  {
+   "id": "vendor_claim",
+   "label": "Vendor claim",
+   "desc": "First-party figure without an independent protocol."
+  },
+  {
+   "id": "not_applicable",
+   "label": "Not applicable",
+   "desc": "Quality or calibration claims."
+  }
+ ],
+ "evidence_types": [
+  {
+   "id": "author_reported_experiment",
+   "label": "Author-reported experiment"
+  },
+  {
+   "id": "vendor_documentation",
+   "label": "Vendor documentation"
+  },
+  {
+   "id": "vendor_reported_result",
+   "label": "Vendor-reported result"
+  },
+  {
+   "id": "community_report",
+   "label": "Community report (repository)"
+  },
+  {
+   "id": "code_inspection",
+   "label": "Code/README inspection by this review"
+  }
+ ],
+ "openness_fields": [
+  {
+   "id": "code",
+   "label": "Code visible"
+  },
+  {
+   "id": "weights",
+   "label": "Weights available"
+  },
+  {
+   "id": "data",
+   "label": "Data available"
+  },
+  {
+   "id": "predictions",
+   "label": "Raw predictions available"
+  },
+  {
+   "id": "recomputable",
+   "label": "Results recomputable"
+  },
+  {
+   "id": "reproduction",
+   "label": "Independently reproduced"
+  }
+ ],
+ "openness_statuses": {
+  "available": "Located and publicly accessible.",
+  "partial": "Some components public; others missing or restricted.",
+  "restricted": "Exists but access is limited by licence or data agreement.",
+  "claimed_not_located": "The paper says it is released; this review did not locate it.",
+  "not_located": "Not located in this review (not evidence that it does not exist).",
+  "project_page_only": "Only a project page or result files are public.",
+  "not_applicable": "Does not apply (e.g. weights of a hosted commercial service).",
+  "not_attempted": "This review did not attempt independent reproduction.",
+  "not_assessed": "Not assessed in this review.",
+  "no": "Cannot be recomputed from the materials located in this review."
+ },
+ "findings": [
+  {
+   "id": "F1",
+   "short": "Valid ≠ correct",
+   "title": "A type-valid answer can still be the wrong answer.",
+   "body": "Typed interfaces remove parse and schema failures by construction. They say nothing about whether the model read the option the way the author intended: rebinding option names to rubrics, removing an abstain option or asking through a different primitive can move answers while the type-error rate stays at zero."
+  },
+  {
+   "id": "F2",
+   "short": "Measurable ≠ calibrated",
+   "title": "A native probability makes calibration measurable, not guaranteed.",
+   "body": "Every call returns a distribution, so reliability can be audited on each run. Measured calibration varies by task and construct, confident errors occur, probabilities are quantised to two decimals, and recalibration fitted on in-distribution labels helps substantially. Calibration is a property to verify per workload, not a certificate."
+  },
+  {
+   "id": "F3",
+   "short": "First pass, then escalate",
+   "title": "The most consistent use is a bounded first pass with confidence-gated escalation.",
+   "body": "Across judging, annotation and agent control, the typed model is usually cheaper and faster but not the most accurate component. Gains appear when uncertain cases are routed to a stronger model or a person, thresholds are chosen on separate data, and cheap generative cascades are included as baselines."
+  },
+  {
+   "id": "F4",
+   "short": "Fast is not one number",
+   "title": "Speed and cost claims decompose into different mechanisms and scopes.",
+   "body": "Single-request latency, per-question amortized time, batch throughput, end-to-end task time, simulated timing, electricity-only cost and API bills are different quantities. Prefix sharing, batching and caching can explain as much as the readout does. None of the figures can be pooled into a single leaderboard."
+  },
+  {
+   "id": "F5",
+   "short": "Compatible ≠ equivalent",
+   "title": "Interface compatibility is not mechanism equivalence.",
+   "body": "Open projects reproduce the request and response shape with encoders, frozen or fine-tuned decoders, diffusion reads or prompted generators. Their probabilities come from different mechanisms, they differ in what is released, and none establishes the architecture of the commercial model."
+  },
+  {
+   "id": "F6",
+   "short": "Attribute the gain",
+   "title": "System-level gains need module-level attribution and the right reference.",
+   "body": "Memory systems, orchestration pipelines and scientific workflows improve for many reasons at once. Attribution requires ablations, matched baselines and references that measure what the workflow reuses (derived quantities, narrative-grounded labels) rather than only final labels."
+  },
+  {
+   "id": "F7",
+   "short": "Young, clustered evidence",
+   "title": "The evidence base is young, clustered and unreplicated.",
+   "body": "Thirteen core preprints appeared within four days, each as a single version; two share a study family; many community results are self-reported; several comparisons rest on a handful of items or on test-set-informed choices. None of the core results has been independently reproduced."
+  }
+ ],
+ "background_groups": [
+  {
+   "id": "classification",
+   "label": "Classifiers & general discrimination",
+   "label_zh": "分类器与通用判别"
+  },
+  {
+   "id": "calibration",
+   "label": "Calibration & uncertainty",
+   "label_zh": "概率校准与不确定性"
+  },
+  {
+   "id": "selective",
+   "label": "Selective prediction & deferral",
+   "label_zh": "选择性预测与升级"
+  },
+  {
+   "id": "decision-calibration",
+   "label": "Decision-focused calibration & utility",
+   "label_zh": "决策相关校准与效用"
+  },
+  {
+   "id": "structured-output",
+   "label": "Structured output & efficient inference",
+   "label_zh": "结构化输出与高效推理"
+  },
+  {
+   "id": "judging",
+   "label": "Judging & reward models",
+   "label_zh": "模型评判与奖励"
+  },
+  {
+   "id": "routing",
+   "label": "Routing & reasoning budgets",
+   "label_zh": "路由与推理资源分配"
+  },
+  {
+   "id": "label-robustness",
+   "label": "Label, format & semantic robustness",
+   "label_zh": "标签、格式与语义鲁棒性"
+  }
+ ],
+ "repository_types": [
+  {
+   "id": "model",
+   "label": "Model",
+   "desc": "Releases or describes a typed decision model (weights may or may not be public)."
+  },
+  {
+   "id": "adapter",
+   "label": "Readout / adapter / server",
+   "desc": "Turns an existing model into typed decisions, or serves a Jev-compatible API."
+  },
+  {
+   "id": "sdk",
+   "label": "SDK",
+   "desc": "Client library for a hosted service."
+  },
+  {
+   "id": "system",
+   "label": "System",
+   "desc": "An application or research system that uses typed decisions."
+  },
+  {
+   "id": "evaluation",
+   "label": "Evaluation",
+   "desc": "An audit or study with its own protocol and results."
+  },
+  {
+   "id": "benchmark",
+   "label": "Benchmark",
+   "desc": "A reusable benchmark or leaderboard."
+  },
+  {
+   "id": "project_page",
+   "label": "Project page",
+   "desc": "A page and result files, not a full code release."
+  },
+  {
+   "id": "catalogue",
+   "label": "Catalogue",
+   "desc": "A curated list or directory (discovery source, not evidence)."
+  },
+  {
+   "id": "guide",
+   "label": "Research guide",
+   "desc": "An evidence-graded guide or survey draft."
+  }
+ ],
+ "failure_modes": [
+  {
+   "id": "name-binding",
+   "title": "Option name outweighs the rubric",
+   "stage": "contract",
+   "desc": "Rebinding which rubric sits behind “no/yes” moves answers far more than the same swap behind neutral names; a 0% type-error rate hides it.",
+   "claims": [
+    "c-26758-hosted-swap",
+    "c-26758-open-inversion",
+    "c-26758-type-errors"
+   ],
+   "mitigation": "Neutral identifiers with meaning carried in the rubric; name-invariance checks next to type-error rates."
+  },
+  {
+   "id": "order-vs-binding",
+   "title": "Order is a different intervention",
+   "stage": "contract",
+   "desc": "Reordering options and rebinding names test different things: one community audit found no argmax flips under order changes on hosted Jev, while frozen open readouts are order-sensitive until calibrated.",
+   "claims": [
+    "r-calibration-audit",
+    "r-anyjev"
+   ],
+   "mitigation": "Report order permutation and name rebinding as separate arms."
+  },
+  {
+   "id": "primitive-choice",
+   "title": "The primitive changes the answer",
+   "stage": "contract",
+   "desc": "A Noul and a two-option Choice over the same question can disagree, and the choice of primitive can reverse a comparison with an LLM baseline.",
+   "claims": [
+    "r-calibration-audit",
+    "r-synthetic-survey"
+   ],
+   "mitigation": "Fix the primitive in a protocol; test both when a result depends on it."
+  },
+  {
+   "id": "closed-set",
+   "title": "Forced choice without an exit",
+   "stage": "contract",
+   "desc": "When the correct answer is not among the options, a typed model must still choose; removing an abstain option collapsed accuracy on unanswerable items at high confidence.",
+   "claims": [
+    "r-calibration-audit"
+   ],
+   "mitigation": "Include an explicit unknown/abstain option and test with it removed."
+  },
+  {
+   "id": "construct-confidence",
+   "title": "Confident on the wrong construct",
+   "stage": "probability",
+   "desc": "Calibration varies by task: on one construct the model was confident while near chance, and audits disagree across datasets.",
+   "claims": [
+    "c-24574-empathy",
+    "c-24574-ece",
+    "r-assay-001"
+   ],
+   "mitigation": "Audit reliability per task and construct, not with one global ECE."
+  },
+  {
+   "id": "shift",
+   "title": "Unknowable rules and distribution shift",
+   "stage": "probability",
+   "desc": "On labels not recoverable from the text, probabilities stayed concentrated; a large post-hoc temperature was needed to make them honest.",
+   "claims": [
+    "r-ood"
+   ],
+   "mitigation": "Hold out domains and rule changes; recalibrate on target-domain labels."
+  },
+  {
+   "id": "language",
+   "title": "Language shift costs accuracy",
+   "stage": "probability",
+   "desc": "A Spanish state with English instructions lost accuracy on every tested dataset; calibration worsened on the hardest tasks.",
+   "claims": [
+    "r-acento",
+    "v-text-only"
+   ],
+   "mitigation": "Evaluate in the deployment language; pin the model version."
+  },
+  {
+   "id": "quantisation",
+   "title": "Two-decimal probabilities",
+   "stage": "probability",
+   "desc": "Probabilities are returned on a 0.01 grid, which puts a floor under calibration error for rare events and can place exactly zero on a correct answer.",
+   "claims": [
+    "c-24052-quantisation",
+    "r-ood"
+   ],
+   "mitigation": "Treat rare-event probabilities with care; smooth before log-loss."
+  },
+  {
+   "id": "nondeterminism",
+   "title": "Same request, different answer",
+   "stage": "readout",
+   "desc": "Repeated identical requests to the hosted model do not always return the same answer, which sets a floor under any flip-rate comparison.",
+   "claims": [
+    "c-26758-retest",
+    "r-calibration-audit"
+   ],
+   "mitigation": "Measure a test–retest floor and report effects relative to it."
+  },
+  {
+   "id": "format-vs-content",
+   "title": "Validity effects masquerade as quality",
+   "stage": "use",
+   "desc": "When comparing with generative baselines, parse failures and repairs change accuracy independently of reasoning; typed outputs remove the failure but not the confound in comparisons.",
+   "claims": [
+    "c-26550-quality"
+   ],
+   "background": [
+    "arxiv:2608.04355"
+   ],
+   "mitigation": "Count invalid outputs as errors and report parse rates separately."
+  },
+  {
+   "id": "hidden-process",
+   "title": "Right label, wrong quantity",
+   "stage": "use",
+   "desc": "A wrong intermediate selection can change a derived count while leaving the final label correct.",
+   "claims": [
+    "c-24965-hidden-errors"
+   ],
+   "mitigation": "Score intermediate relations and derived quantities, not only final labels."
+  },
+  {
+   "id": "vendor-boundaries",
+   "title": "Vendor-listed jagged edges",
+   "stage": "contract",
+   "desc": "The vendor lists literal reading, arithmetic and counting, date comparison, indirection, large irrelevant state, adversarial content and contradictory criteria as known weaknesses.",
+   "claims": [
+    "v-jaggedness"
+   ],
+   "mitigation": "Keep arithmetic and date logic in code; filter state; split indirect questions."
+  }
+ ],
+ "application_cards": [
+  {
+   "id": "judging",
+   "decides": "Which of two responses is better, or whether an answer is supported.",
+   "papers": [
+    "arxiv:2609.26550"
+   ],
+   "claims": [
+    "c-26550-quality",
+    "c-26550-cascade"
+   ],
+   "caution": "Derivation checking and style-adversarial pairs remain hard; adjudication by one author."
+  },
+  {
+   "id": "annotation",
+   "decides": "Labels for social-science text and crash narratives, with a probability per label.",
+   "papers": [
+    "arxiv:2609.24574",
+    "arxiv:2609.24052"
+   ],
+   "claims": [
+    "c-24574-accuracy-cost",
+    "c-24574-cascade",
+    "c-24052-f1",
+    "c-24052-recalibration"
+   ],
+   "caution": "Per-construct failures; recalibration fitted on in-distribution labels."
+  },
+  {
+   "id": "agent-control",
+   "decides": "Which tool or action to take next inside an agent, escalating to a strong LLM when unsure.",
+   "papers": [
+    "arxiv:2609.26532"
+   ],
+   "claims": [
+    "c-26532-calls",
+    "c-26532-external"
+   ],
+   "caution": "A cheap generative cascade is competitive where routing is already accurate."
+  },
+  {
+   "id": "agent-memory",
+   "decides": "How memories are typed, routed, budgeted, traversed and when retrieval stops.",
+   "papers": [
+    "arxiv:2609.23986"
+   ],
+   "claims": [
+    "c-23986-system"
+   ],
+   "caution": "System-level gains with a different baseline per number; LLM-judge metric."
+  },
+  {
+   "id": "scientific-workflow",
+   "decides": "Which scientific relation governs a calculation that code then performs.",
+   "papers": [
+    "arxiv:2609.24965"
+   ],
+   "claims": [
+    "c-24965-correct-latency",
+    "c-24965-hidden-errors"
+   ],
+   "caution": "Twenty Choices in ten cases; not discriminative across strong models."
+  },
+  {
+   "id": "video-quality",
+   "decides": "A quality level from extracted metadata, bitstream and pixel features — never from the video itself.",
+   "papers": [
+    "arxiv:2609.24395"
+   ],
+   "claims": [
+    "c-24395-study-a",
+    "c-24395-study-b"
+   ],
+   "caution": "Trained models on the same features remain ahead."
+  },
+  {
+   "id": "fraud-screening",
+   "decides": "Whether a call is a scam, after every caller turn (open JevLite model).",
+   "papers": [
+    "arxiv:2609.23959"
+   ],
+   "claims": [
+    "c-23959-quality",
+    "c-23959-latency"
+   ],
+   "caution": "Synthetic callers; recipe selected with test-set exposure."
+  },
+  {
+   "id": "edge-orchestration",
+   "decides": "Bounded intent fields and service contracts for an edge scheduler.",
+   "papers": [
+    "arxiv:2609.23136",
+    "arxiv:2609.22753"
+   ],
+   "claims": [
+    "c-23136-completion",
+    "c-22753-e2e-fees",
+    "c-22753-cache"
+   ],
+   "caution": "One study family; caching largely removes the latency gap."
+  },
+  {
+   "id": "visual-qa",
+   "decides": "Several forced-choice questions about one image (independent Visual Jev model).",
+   "papers": [
+    "arxiv:2609.25845"
+   ],
+   "claims": [
+    "c-25845-quality",
+    "c-25845-speed"
+   ],
+   "caution": "Amortized timing; gains concentrated on trained task families."
+  }
+ ]
+}

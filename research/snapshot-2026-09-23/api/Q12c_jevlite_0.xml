@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/VnlIazAvKSknTvFF4n7ofBqn+N4</id>
+  <title>arXiv Query: search_query=ti:jevlite OR abs:jevlite&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T06:24:51Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=ti:jevlite+OR+abs:jevlite&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.23959v1</id>
+    <title>Open-Jev Judgments on CallScreenBench: Calibrated One-Pass Scam Screening with a Small Language Model</title>
+    <updated>2026-09-21T00:09:24Z</updated>
+    <link href="https://arxiv.org/abs/2609.23959v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.23959v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Screening a phone call for fraud needs a trustworthy probability after every caller turn, in milliseconds. Jev-style typed decisions promise exactly that: declared options go in, one calibrated probability per option comes out of a single forward pass, with no generated text. We test an open implementation of this readout, JevLite, on scam-call screening: Qwen3-4B is LoRA-tuned so that the temperature-scaled softmax over two answer-label logits is P(scam). On 41 held-out CallScreenBench scenarios (577 per-turn decisions) a three-seed ensemble reaches AUROC .974 with calibration error .052, non-inferior to an LLM judge (MiniMax-M3) at a pre-registered .02 margin, with no false alarms on legitimate calls, decisions 1.14 turns earlier under the same hang-up rule, and 64.5 ms per decision on one consumer GPU, 4.9x lower than the same backbone fine-tuned to generate its answer. The gain is in the readout and calibration, not accuracy: a fine-tuned ModernBERT encoder is not significantly worse, the recipe was selected with test-set exposure, and all callers are synthetic. We claim no architectural novelty; the contribution is the application and an evaluation reporting calibration, false alarms and decision timing alongside AUROC.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T00:09:24Z</published>
+    <arxiv:comment>13 pages, 6 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Simiao Ren</name>
+    </author>
+    <author>
+      <name>Kidus Zewde</name>
+    </author>
+    <author>
+      <name>Xingyu Shen</name>
+    </author>
+    <author>
+      <name>Yuchen Zhou</name>
+    </author>
+    <author>
+      <name>Dennis Ng</name>
+    </author>
+    <author>
+      <name>Ankit Raj</name>
+    </author>
+    <author>
+      <name>Tommy Duong</name>
+    </author>
+    <author>
+      <name>Yuxin Zhang</name>
+    </author>
+    <author>
+      <name>Neo Tiangratanakul</name>
+    </author>
+  </entry>
+</feed>

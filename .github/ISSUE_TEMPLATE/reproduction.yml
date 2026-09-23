@@ -1,0 +1,21 @@
+name: Report a reproduction
+description: Share a rerun of a reported result, with its protocol and run log.
+title: "[Reproduction] "
+labels: [reproduction]
+body:
+  - type: input
+    id: claim
+    attributes: {label: Claim or paper reproduced, placeholder: "claim ID or arXiv ID"}
+    validations: {required: true}
+  - type: textarea
+    id: protocol
+    attributes: {label: Protocol, versions, hardware and dates}
+    validations: {required: true}
+  - type: input
+    id: log
+    attributes: {label: Public run log (outputs and scripts)}
+    validations: {required: true}
+  - type: textarea
+    id: result
+    attributes: {label: Result and differences from the original}
+    validations: {required: true}

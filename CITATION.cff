@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  If you use this survey, its data or its website, please cite it with the metadata below.
+  It is a working draft: it has no DOI and has not been peer-reviewed.
+title: "Jev and Typed Decision Models: An Empirical Survey of Calibration, Selective Control, and Open Implementations"
+type: dataset
+authors:
+  - family-names: "Luo"
+    given-names: "Meng"
+    website: "https://eurekaleo.github.io/"
+version: 0.1.0
+date-released: "2026-09-23"
+license: CC-BY-4.0
+repository-code: "https://github.com/Eurekaleo/awesome-jev-survey"
+url: "https://eurekaleo.github.io/awesome-jev-survey/"
+abstract: >-
+  An evidence survey and audit of TypeSafe's Jev and Jev-like typed decision models (data cutoff 2026-09-23):
+  13 core studies, 1 peripheral study and 53 background references; 62 claim-level evidence records with
+  locators and measurement scope; an openness audit of 30 implementation and evaluation resources; a searchable
+  website and a manuscript draft. Values are as reported by their sources; no experiment was re-run.
+  Original text, figures and data are licensed CC BY 4.0; the code is MIT-licensed.
+keywords:
+  - typed decision models
+  - Jev
+  - calibration
+  - selective prediction
+  - evidence audit
+  - survey

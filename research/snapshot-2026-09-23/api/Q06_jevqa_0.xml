@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/S/b5m1fx21pizG9b0Haw4n7NSkE</id>
+  <title>arXiv Query: search_query=all:jevqa&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T06:11:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:jevqa&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24395v1</id>
+    <title>JEVQA - Video Quality from Metadata, Bitstream, and Pixel Features with a General-Purpose Decision Model</title>
+    <updated>2026-09-21T10:45:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.24395v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24395v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Instrumental quality models for video quality prediction are usually trained for a fixed set of codecs or other input features, and every new input variable requires retraining. Novel, general-purpose decision models can answer questions without task-specific training, but it is unclear whether they can judge video quality. We evaluate Jev, a commercial ``System One'' model that returns probability distributions over a provided answer scale, as a zero-shot video quality model. We call the resulting method JEVQA. In a first study on 1,936 AV1, H.264, HEVC, and VP9 encodes of 22 sources, scored against VMAF as ground truth, using encoding metadata only, JEVQA reached a Pearson correlation of 0.737, on par with the standardized ITU-T P.1204.1 model (0.733). Giving the model bitstream data raised the accuracy to 0.797, and combined pixel-based and bitstream features raised it to 0.824. A pixel-only variant failed in our tests. In a second study, using H.264, HEVC, and VP9 encodes in the AVT-VQDB-UHD-1 database, the metadata-only model reached a correlation of 0.879 with MOS, close to P.1204.1 (0.898). Bitstream statistics did not help there. Our results show that trained models on the same features remain clearly ahead in both studies, but that zero-shot classifiers are promising.</summary>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T10:45:00Z</published>
+    <arxiv:primary_category term="eess.IV"/>
+    <author>
+      <name>Werner Robitza</name>
+    </author>
+  </entry>
+</feed>

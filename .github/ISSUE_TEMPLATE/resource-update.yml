@@ -1,0 +1,13 @@
+name: Update code, weights or availability
+description: Report a new release, commit, licence or availability change for a resource.
+title: "[Resource] "
+labels: [resource-update]
+body:
+  - type: input
+    id: repo
+    attributes: {label: Repository or model card, placeholder: "owner/name at commit ..."}
+    validations: {required: true}
+  - type: textarea
+    id: change
+    attributes: {label: What changed, description: "Per field: code, weights, training code, inference code, evaluation, data, raw predictions, licence."}
+    validations: {required: true}

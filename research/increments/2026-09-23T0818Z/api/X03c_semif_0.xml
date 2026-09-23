@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/KvRz0heaPwd+eIlCTUbJJYqdE7I</id>
+  <title>arXiv Query: search_query=ti:semif OR abs:semif&amp;id_list=&amp;start=0&amp;max_results=100</title>
+  <updated>2026-09-23T08:35:52Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=ti:semif+OR+abs:semif&amp;start=0&amp;max_results=100&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2108.09412v1</id>
+    <title>SemiFed: Semi-supervised Federated Learning with Consistency and Pseudo-Labeling</title>
+    <updated>2021-08-21T01:14:27Z</updated>
+    <link href="https://arxiv.org/abs/2108.09412v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2108.09412v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Federated learning enables multiple clients, such as mobile phones and organizations, to collaboratively learn a shared model for prediction while protecting local data privacy. However, most recent research and applications of federated learning assume that all clients have fully labeled data, which is impractical in real-world settings. In this work, we focus on a new scenario for cross-silo federated learning, where data samples of each client are partially labeled. We borrow ideas from semi-supervised learning methods where a large amount of unlabeled data is utilized to improve the model's accuracy despite limited access to labeled examples. We propose a new framework dubbed SemiFed that unifies two dominant approaches for semi-supervised learning: consistency regularization and pseudo-labeling. SemiFed first applies advanced data augmentation techniques to enforce consistency regularization and then generates pseudo-labels using the model's predictions during training. SemiFed takes advantage of the federation so that for a given image, the pseudo-label holds only if multiple models from different clients produce a high-confidence prediction and agree on the same label. Extensive experiments on two image benchmarks demonstrate the effectiveness of our approach under both homogeneous and heterogeneous data distribution settings</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-08-21T01:14:27Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Haowen Lin</name>
+    </author>
+    <author>
+      <name>Jian Lou</name>
+    </author>
+    <author>
+      <name>Li Xiong</name>
+    </author>
+    <author>
+      <name>Cyrus Shahabi</name>
+    </author>
+  </entry>
+</feed>
