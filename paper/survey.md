@@ -439,7 +439,3 @@ Typed decision models make an old requirement concrete: software needs answers i
 ## Appendix B · Evidence record fields
 
 Each record in `data/claims.json` contains: `id`, `subject` (paper, repository or vendor source), `claim_text`, `headline`, `source_url`, `locator`, `evidence_type`, `reported_by`, `independently_reproduced` (false unless a public run log exists), `metric`, `value`, `unit`, `baseline`, `task`, `sample_size` (n and unit, or a reason), `model`, `model_version` (value or reason), `hardware` (value or reason), `test_level`, `measurement_scope`, `findings` (F1–F7 with relation), `limitations` and `note`.
-
-## Appendix C · Corrections to the handoff notes
-
-The audit corrected four details relative to the research notes it started from. (1) The community calibration audit ran about 7,000 API calls in seven experiments; 11,759 is the size of a source dataset. (2) The 6G study's "real service" was reached over simulated New Radio access and is recorded as a hybrid test. (3) The this-that-model weights live at `flock-io/this-that-model-1.0`; the PDF text shows a line-break artefact. (4) Jev versions were recorded as stated in each paper, including three studies that state none.

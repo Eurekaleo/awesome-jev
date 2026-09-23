@@ -25,7 +25,7 @@ What this survey adds, and what still needs verification, is in the matrix. The 
 
 ## Adjacent surveys cited as background
 
-- [Uncertainty Quantification and Confidence Calibration in Large Language Models: A Survey](https://arxiv.org/abs/2503.15850v2) — uncertainty quantification and calibration in LLMs. Survey of uncertainty quantification and calibration in LLMs: locates the boundary of existing reviews.
+- [Uncertainty Quantification and Confidence Calibration in Large Language Models: A Survey](https://arxiv.org/abs/2503.15850v2) — uncertainty quantification and calibration in LLMs. Survey of uncertainty quantification and calibration in LLMs.
 - [From System 1 to System 2: A Survey of Reasoning Large Language Models](https://arxiv.org/abs/2502.17419v6) — System 1 to System 2 reasoning LLMs. From System 1 to System 2: a reasoning-LLM survey whose terminology predates and is broader than the product.
 - [Harnessing the Reasoning Economy: A Survey of Efficient Reasoning for Large Language Models](https://arxiv.org/abs/2503.24377v3) — efficient reasoning / reasoning economy. Reasoning economy: compare inference budgets, not only parameter counts.
 - [Decision-Focused Learning: Foundations, State of the Art, Benchmark and Future Opportunities](https://arxiv.org/abs/2307.13565v4) — decision-focused learning. Decision-focused learning survey; its optimisation semantics differ from an API returning a choice.

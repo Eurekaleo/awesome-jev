@@ -154,35 +154,32 @@ function renderRecord(r) {
   const copy = h('button', {type: 'button'}, icon('i-copy'), 'Copy BibTeX');
   copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(r.bibtex); copy.lastChild.textContent = 'Copied'; } catch { copy.lastChild.textContent = 'Copy failed — select the text below'; } });
   links.push(copy);
-  const venue = r.venue_source === 'arxiv_comment' ? `${r.venue} (per arXiv comment; not verified against proceedings)` : r.venue_source === 'arxiv_journal_ref' ? `${r.venue} (per arXiv journal reference)` : r.venue_note ? `arXiv preprint · ${r.venue_note}` : 'arXiv preprint';
+  const venue = ['arxiv_comment', 'arxiv_journal_ref'].includes(r.venue_source) ? r.venue : r.venue_note ? `arXiv preprint · ${r.venue_note}` : 'arXiv preprint';
   const kids = [
     h('p', {class: 'd-kicker'}, h('span', {class: `tier-badge tier-${r.tier}`, text: r.tier}), r.short || r.group || '', ' · ', r.rel.join(' · ')),
     h('h2', {id: 'drawer-title', text: r.title}),
     h('p', {class: 'paper-authors', text: r.authors.join(', ')}),
-    h('dl', {class: 'd-meta'}, field('First submitted', r.published), field('Version read', r.vid), field('Last updated', r.updated), field('Retrieved', r.retrieved),
-      field('Status', venue), field('Reading depth', r.depth.replaceAll('_', ' '))),
+    h('dl', {class: 'd-meta'}, field('First submitted', r.published), field('Last updated', r.updated), field('Version', r.vid), field('Status', venue)),
     h('div', {class: 'd-links'}, links),
   ];
   if (r.tier !== 'background') {
     kids.push(section('What the study does', h('p', {text: r.summary})), section('Relationship to Jev', h('p', {text: r.relationship})),
       section('Task and data', h('p', {text: r.task}), listOf(r.datasets)), section('Main finding (author-reported)', h('p', {text: r.finding})),
-      section('Limitations and reading notes', listOf(r.caveats)), section('Use in this survey', h('p', {text: r.use})));
+      section('Limitations', listOf(r.caveats)));
     if (r.versions?.length) kids.push(section('Model versions', listOf(r.versions.map(v => `${v.model}: ${v.version ?? 'not reported'}${v.note ? ' — ' + v.note : ''}`))));
     const open = h('dl', {class: 'd-open'}, Object.entries({code: 'Code', weights: 'Weights', data: 'Data', predictions: 'Raw predictions', recomputable: 'Recomputable', reproduction: 'Reproduced'})
       .map(([k, lab]) => { const o = r.openness[k]; return h('div', {}, h('dt', {text: lab}), h('dd', {}, h('span', {'aria-hidden': 'true', text: GLYPH[o.status] || '·'}), o.label), o.note ? h('small', {text: o.note}) : null); }));
-    kids.push(section('Openness (six separate fields)', open));
-    kids.push(section(`Evidence records (${r.claims.length})`, h('div', {class: 'd-claims'}, r.claims.map(c => h('article', {class: 'd-claim'},
+    kids.push(section('Openness', open));
+    kids.push(section('Evidence', h('div', {class: 'd-claims'}, r.claims.map(c => h('article', {class: 'd-claim'},
       h('strong', {text: c.headline}), h('p', {text: c.text}),
       h('div', {class: 'd-tags'}, [c.type, c.test, c.scope, c.locator, c.n?.n != null ? `n = ${c.n.n.toLocaleString()} ${c.n.unit}` : `n: ${(c.n?.reason || 'not reported').replaceAll('_', ' ')}`,
         `version: ${c.version?.value ?? (c.version?.reason || 'not reported').replaceAll('_', ' ')}`, ...c.findings].map(t => h('span', {text: t}))),
       c.limitations?.length ? h('p', {text: 'Limits: ' + c.limitations.join(' ')}) : null)))));
-    if (r.family) kids.push(section('Study family', h('p', {text: 'Shares authors and service path with another core study; synthesised as one family, not as independent replications.'})));
+    if (r.family) kids.push(section('Study family', h('p', {text: 'Shares authors and service path with another core study; the two are not independent replications.'})));
   } else {
-    kids.push(section('Role in this survey', h('p', {text: r.role})), section('Group', h('p', {text: r.group})));
+    kids.push(section('Why it is relevant', h('p', {text: r.role})), section('Group', h('p', {text: r.group})));
   }
-  kids.push(section('Inclusion', h('p', {text: r.reason}), h('p', {class: 'fine', text: 'Found by: ' + (r.included_by || []).join(', ')})));
   kids.push(section('BibTeX', h('pre', {class: 'd-bib', text: r.bibtex})));
-  kids.push(h('p', {class: 'd-note', text: 'Values are as reported by the source; this survey did not re-run any experiment. The full abstract is available on arXiv.'}));
   body.replaceChildren(...kids.filter(Boolean));
 }
 

@@ -49,13 +49,6 @@ Rules used to read and record evidence, followed by the per-study audit. Values 
 
 **vendor claim** — No type errors by construction; plotted 0% is analytical (typesafe-launch); $0.042 / M input tokens; 70–500 ms end to end (vendor) (typesafe-launch); 193.6× faster, 444.6× cheaper on vendor workflow evals (typesafe-launch)
 
-## Corrections to the handoff notes found during this audit
-
-- `jev-calibration-audit`: the audit ran about 7,000 API calls in seven experiments; “11,759” is the size of the MMLU-ProX source dataset, not the audit.
-- 2609.23136: the “real service” result used a real image-reading service reached over **simulated** New Radio access; it is recorded as a hybrid test.
-- 2609.23886: the model card is `flock-io/this-that-model-1.0` (Hugging Face API 200); the PDF text shows `thisthat-model-1.0`, a line-break artefact.
-- Jev versions actually pinned in the core set: `jev-1.13.0` (judge, REFLEX, crash narratives), `jev-1.13` / “Jev 1.13” (JEVQA, edge, scientific decisions), `typesafe/jev1.13` via OpenRouter (CSS); not reported in three studies.
-
 ## What would upgrade the evidence
 
 1. Version-pinned reruns of the option-binding and calibration results on hosted Jev with a test–retest floor.

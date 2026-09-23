@@ -11,14 +11,13 @@ authors:
 version: 0.1.0
 date-released: "2026-09-23"
 license: CC-BY-4.0
-repository-code: "https://github.com/Eurekaleo/awesome-jev-survey"
-url: "https://eurekaleo.github.io/awesome-jev-survey/"
+repository-code: "https://github.com/Eurekaleo/awesome-jev"
+url: "https://eurekaleo.github.io/awesome-jev/"
 abstract: >-
-  An evidence survey and audit of TypeSafe's Jev and Jev-like typed decision models (data cutoff 2026-09-23):
-  13 core studies, 1 peripheral study and 53 background references; 62 claim-level evidence records with
-  locators and measurement scope; an openness audit of 30 implementation and evaluation resources; a searchable
-  website and a manuscript draft. Values are as reported by their sources; no experiment was re-run.
-  Original text, figures and data are licensed CC BY 4.0; the code is MIT-licensed.
+  An evidence survey of TypeSafe's Jev and Jev-like typed decision models: what their probabilities mean,
+  when software should act on them, and what open implementations release. It combines claim-level evidence
+  records with source locators, an openness audit of implementation and evaluation resources, a searchable
+  website and a manuscript draft. Values are as reported by their sources.
 keywords:
   - typed decision models
   - Jev

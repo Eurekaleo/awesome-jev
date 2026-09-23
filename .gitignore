@@ -14,3 +14,4 @@ paper/*.out
 paper/*.toc
 paper/*.synctex.gz
 paper/*.xdv
+reports/

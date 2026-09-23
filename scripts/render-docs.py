@@ -2,7 +2,7 @@
 """Render the data-bearing documentation from data/*.json (called by scripts/build.py).
 
 Generates docs/methodology.md, docs/related-surveys.md, docs/evidence-audit.md and data/README.md.
-Hand-written docs (limitations, reference-study, deployment, handoff-zh) are not touched.
+Hand-written docs (limitations, deployment) are not touched.
 """
 import pathlib
 import sys
@@ -125,12 +125,7 @@ def audit(d, s):
         if rows:
             L.append(f'**{scope.replace("_", " ")}** — ' + '; '.join(f'{md(c["headline"])} ({c["subject"].split(":", 1)[-1]})' for c in rows))
             L.append('')
-    L += ['## Corrections to the handoff notes found during this audit', '',
-          '- `jev-calibration-audit`: the audit ran about 7,000 API calls in seven experiments; “11,759” is the size of the MMLU-ProX source dataset, not the audit.',
-          '- 2609.23136: the “real service” result used a real image-reading service reached over **simulated** New Radio access; it is recorded as a hybrid test.',
-          '- 2609.23886: the model card is `flock-io/this-that-model-1.0` (Hugging Face API 200); the PDF text shows `thisthat-model-1.0`, a line-break artefact.',
-          '- Jev versions actually pinned in the core set: `jev-1.13.0` (judge, REFLEX, crash narratives), `jev-1.13` / “Jev 1.13” (JEVQA, edge, scientific decisions), `typesafe/jev1.13` via OpenRouter (CSS); not reported in three studies.', '',
-          '## What would upgrade the evidence', '',
+    L += ['## What would upgrade the evidence', '',
           '1. Version-pinned reruns of the option-binding and calibration results on hosted Jev with a test–retest floor.',
           '2. Same-protocol comparisons of hosted Jev, open decision models, frozen readouts and structured-output LLMs (paper §10).',
           '3. Public raw predictions for the studies that claim them (2609.26758, 2609.26550).', '']

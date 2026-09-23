@@ -1,14 +1,22 @@
 {
   "_comment": "Publication settings. Leave values null until they exist; the build never invents URLs, authors or DOIs.",
-  "site_url": "https://eurekaleo.github.io/awesome-jev-survey/",
-  "repository_url": "https://github.com/Eurekaleo/awesome-jev-survey",
+  "site_url": "https://eurekaleo.github.io/awesome-jev/",
+  "repository_url": "https://github.com/Eurekaleo/awesome-jev",
   "repository_default_branch": "main",
   "authors": [
-    {"name": "Meng Luo", "given_names": "Meng", "family_names": "Luo", "url": "https://eurekaleo.github.io/"}
+    {
+      "name": "Meng Luo",
+      "given_names": "Meng",
+      "family_names": "Luo",
+      "url": "https://eurekaleo.github.io/"
+    }
   ],
   "affiliations": [],
   "doi": null,
   "arxiv_id": null,
-  "licenses": {"code": "MIT", "content": "CC-BY-4.0"},
-  "footer_credit": "© 2026 Meng Luo · code MIT · original text, figures and data CC BY 4.0 · third-party material keeps its own terms"
+  "licenses": {
+    "code": "MIT",
+    "content": "CC-BY-4.0"
+  },
+  "footer_credit": "© 2026 Meng Luo · Code MIT · Content CC BY 4.0"
 }

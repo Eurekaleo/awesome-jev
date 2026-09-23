@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0f1219">
   <title>Jev and Typed Decision Models · An Evidence Survey</title>
-  <meta name="description" content="A research companion to Jev and Jev-like typed decision models: {{core}} core studies, {{claims}} evidence records, an openness audit of {{priority_repos}} resources and a searchable bibliography of {{papers}} references. Cutoff {{cutoff_long}}.">
+  <meta name="description" content="A research companion to Jev and Jev-like typed decision models: what their probabilities mean, when software should act on them, and what open implementations release.">
   {{meta_author}}
   {{canonical}}
   <meta property="og:title" content="Jev and Typed Decision Models">
-  <meta property="og:description" content="An empirical survey and evidence audit of calibration, selective control and open implementations. Cutoff {{cutoff_long}}.">
+  <meta property="og:description" content="An evidence survey of calibration, selective control and open implementations.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="{{og_image}}">
   <meta name="twitter:card" content="summary_large_image">
@@ -55,7 +55,7 @@
       <div class="hero-art" aria-hidden="true">{{hero_art}}</div>
       <div class="shell hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-rule"></span>AN EVIDENCE SURVEY · CUTOFF {{cutoff_upper}}</p>
+          <p class="eyebrow"><span class="eyebrow-rule"></span>AN EVIDENCE SURVEY</p>
           <h1 id="hero-title">Jev and <em>typed</em><span>decision models</span></h1>
           <p class="hero-statement">Every answer type-checks.<br>The evidence decides the rest.</p>
           <p class="hero-description">A research companion to the first wave of studies on TypeSafe’s Jev and Jev-like models: what their probabilities mean, when software should act on them, and what open implementations actually release.</p>
@@ -64,17 +64,10 @@
             <a class="button button-ghost" href="#map">Explore the map <svg class="icon"><use href="#i-arrow"/></svg></a>
             <a class="button button-ghost" href="{{repo_href}}"><svg class="icon"><use href="#i-git"/></svg>{{repo_label}}</a>
           </div>
-          <p class="publication-note">{{byline}}Survey draft &amp; evidence audit · not peer-reviewed · numbers are author-reported unless stated</p>
+          <p class="publication-note">{{byline}}</p>
         </div>
-        <div class="hero-art-note"><span>CONCEPT · STATE → TYPED QUESTION → DISTRIBUTION → GATE</span><span>Schematic artwork, not measured data</span></div>
       </div>
       <div class="shell hero-bottom">
-        <div class="hero-index">
-          <div><strong>{{core}}</strong><span>core studies read in full</span></div>
-          <div><strong>{{claims}}</strong><span>evidence records with locators</span></div>
-          <div><strong>{{priority_repos}}</strong><span>open resources audited</span></div>
-          <div><strong>{{findings}}</strong><span>cross-cutting findings</span></div>
-        </div>
         <a class="scroll-cue" href="#what">What is Jev? <span aria-hidden="true">↓</span></a>
       </div>
     </section>
@@ -89,7 +82,7 @@
         <div class="what-grid">
           <div class="what-request">
             <figure class="code-card">
-              <figcaption><span>Request shape</span><span>abridged from the public documentation</span></figcaption>
+              <figcaption><span>Request shape</span><span>abridged from the documentation</span></figcaption>
 <pre><code><span class="tk">POST</span> /v1/systemone
 {
   <span class="k">"model"</span>: <span class="s">"jev-1.13.0"</span>,
@@ -107,7 +100,7 @@
         </div>
 
         <div class="three-objects">
-          <p class="aside-caption">THREE OBJECTS, KEPT APART THROUGHOUT</p>
+          <p class="aside-caption">THREE THINGS CALLED “JEV”</p>
           <div class="objects-grid">
             <article><span class="obj-n">A</span><h3>The commercial model</h3><p>TypeSafe’s hosted Jev, version <code>jev-1.13.0</code> at the cutoff. Its interface, prices, limits and known failure modes are documented; its architecture, training data and exact confidence statistic are not.</p><p class="obj-foot">Evidence: black-box evaluations only.</p></article>
             <article><span class="obj-n">B</span><h3>The paradigm</h3><p>Jev-like typed decision models: encoders, frozen or fine-tuned decoders, diffusion reads and adapters that reproduce the request and response shape with other mechanisms.</p><p class="obj-foot">Evidence: open code and weights, of uneven completeness.</p></article>
@@ -139,10 +132,9 @@
       <div class="shell">
         <div class="section-heading">
           <div><p class="section-label"><span>02</span> THE ORGANIZING MAP</p><h2 id="map-title">Five places a claim<br><em>can live.</em></h2></div>
-          <p>We read every study by where its claim sits on the path from a declared question to a workflow outcome. This is an analytical frame for comparing evidence — not the internal architecture of Jev or of any other model.</p>
+          <p>Each study is placed where its claim sits on the path from a declared question to a workflow outcome — a frame for comparing evidence, not a model architecture.</p>
         </div>
         <ol class="stage-flow">{{stages}}</ol>
-        <p class="map-note">Counts are multi-label: a study appears at every stage where it contributes evidence, so the numbers add up to more than {{core_plus}} studies.</p>
 
         <div class="rq-block">
           <p class="aside-caption">SIX RESEARCH QUESTIONS</p>
@@ -158,7 +150,7 @@
 
         <figure class="timeline-figure viz-root" aria-labelledby="timeline-title">
           <figcaption class="viz-head">
-            <div><h3 id="timeline-title">The first wave arrived within a week of launch</h3><p>Submission dates of the {{core}} core studies and the peripheral study (arXiv v1), grouped by their primary relationship to Jev.</p></div>
+            <div><h3 id="timeline-title">The first wave arrived within a week of launch</h3><p>Submission dates of the core and peripheral studies (arXiv v1), grouped by their primary relationship to Jev.</p></div>
             <button class="table-toggle" type="button" aria-pressed="false" data-table-toggle="timeline">Table view</button>
           </figcaption>
           {{timeline}}
@@ -182,21 +174,21 @@
     <section id="findings" class="findings section-light" aria-labelledby="findings-title">
       <div class="shell">
         <div class="section-heading">
-          <div><p class="section-label"><span>04</span> WHAT THE EVIDENCE SAYS</p><h2 id="findings-title">Seven findings, with<br><em>their counter-evidence.</em></h2></div>
-          <p>Each finding is stated at the strength its sources allow, with the records that support or qualify it. Values are as reported; none were re-run for this survey.</p>
+          <div><p class="section-label"><span>04</span> WHAT THE EVIDENCE SAYS</p><h2 id="findings-title">Findings, with<br><em>their counter-evidence.</em></h2></div>
+          <p>Each finding lists the evidence that supports or qualifies it. Values are as reported by their sources.</p>
         </div>
         <div class="finding-list">{{findings_list}}</div>
 
         <figure class="matrix-figure" aria-labelledby="matrix-title">
           <figcaption class="viz-head">
-            <div><h3 id="matrix-title">Which study bears on which finding</h3><p>Derived from the evidence records: ● supports · ◐ qualifies. Blank means the study makes no claim on that finding, not that it contradicts it.</p></div>
+            <div><h3 id="matrix-title">Which study bears on which finding</h3><p>● supports · ◐ qualifies. A blank cell means the study makes no claim on that finding.</p></div>
           </figcaption>
           <div class="table-scroll" tabindex="0" role="region" aria-label="Study by finding matrix">{{evidence_matrix}}</div>
         </figure>
 
         <figure class="scope-figure" aria-labelledby="scope-title">
           <figcaption class="viz-head">
-            <div><h3 id="scope-title">Numbers that cannot share a leaderboard</h3><p>Every speed and cost figure in the evidence records, grouped by what it measures. Figures in different groups are not comparable.</p></div>
+            <div><h3 id="scope-title">Numbers that cannot share a leaderboard</h3><p>Speed and cost figures grouped by what they measure. Figures in different groups are not comparable.</p></div>
           </figcaption>
           <div class="scope-grid">{{scope_groups}}</div>
         </figure>
@@ -208,7 +200,7 @@
       <div class="shell">
         <div class="section-heading">
           <div><p class="section-label"><span>05</span> RELIABILITY &amp; FAILURE MODES</p><h2 id="lab-title">Where a valid answer<br><em>goes wrong.</em></h2></div>
-          <p>Four explainers show the mechanics behind reported failures. Panels marked <b class="tag-illus">Illustrative</b> use hand-made numbers; panels marked <b class="tag-reported">Reported</b> reproduce published values with their source.</p>
+          <p>How reported failures arise. <b class="tag-illus">Illustrative</b> panels use hand-made numbers; <b class="tag-reported">Reported</b> panels show published values with their source.</p>
         </div>
         <div class="lab-tabs" role="tablist" aria-label="Reliability explainers">
           <button role="tab" id="lab-tab-binding" aria-selected="true" aria-controls="lab-binding" data-lab="binding"><span>01</span>Names vs rubrics</button>
@@ -218,7 +210,7 @@
         </div>
         {{lab_panels}}
         <div class="failure-catalogue">
-          <div class="catalogue-head"><p class="aside-caption">FAILURE-MODE CATALOGUE</p><p>Every entry points to its source and evidence type. Community reports are unreviewed repositories; vendor entries are the vendor’s own boundary statements.</p></div>
+          <div class="catalogue-head"><p class="aside-caption">FAILURE-MODE CATALOGUE</p><p>Each entry links to its sources. Community reports are not peer-reviewed; vendor entries are the vendor’s own statements.</p></div>
           <div class="failure-grid">{{failure_modes}}</div>
         </div>
       </div>
@@ -233,7 +225,6 @@
         </div>
         {{control_explorer}}
         <div class="app-grid">{{applications}}</div>
-        <p class="control-note">Demonstrations (games, browser agents, live dashboards) appear in the ecosystem, not here: a working demo shows that an integration runs, not how well it generalises.</p>
       </div>
     </section>
 
@@ -242,11 +233,10 @@
       <div class="shell">
         <div class="section-heading">
           <div><p class="section-label"><span>07</span> THE OPEN ECOSYSTEM</p><h2 id="eco-title">“Open” is six<br><em>different things.</em></h2></div>
-          <p>Code, weights, training recipes, evaluation material, data and raw predictions are separate properties. The matrix records what this review located at pinned commits — “not located” is not evidence of absence.</p>
+          <p>Code, weights, training recipes, evaluation material, data and raw predictions are separate properties, released separately. “Not located” does not mean absent.</p>
         </div>
         {{openness}}
         <div class="lineage-grid">{{lineage}}</div>
-        <div class="catalogue-stats">{{catalogue_stats}}</div>
       </div>
     </section>
 
@@ -255,7 +245,7 @@
       <div class="shell">
         <div class="section-heading">
           <div><p class="section-label"><span>08</span> THE READING ROOM</p><h2 id="papers-title">Search the evidence.</h2></div>
-          <p>{{papers}} references: {{core}} core studies, {{peripheral}} peripheral study and {{background}} background works. Filter by stage, method family, relationship to Jev or openness; open any record for its evidence.</p>
+          <p>Filter by stage, method family, relationship to Jev or openness, and open any record for its evidence.</p>
         </div>
         <div class="library-layout">
           <aside class="library-sidebar" aria-label="Collection filters">
@@ -263,7 +253,7 @@
             <div id="tier-filters" class="tier-filters">{{tier_buttons}}</div>
             <div class="sidebar-note">
               <p class="sidebar-label">EXPORT</p>
-              <a class="dl-link" href="data/references.bib" download><svg class="icon"><use href="#i-down"/></svg>BibTeX · all {{papers}}</a>
+              <a class="dl-link" href="data/references.bib" download><svg class="icon"><use href="#i-down"/></svg>BibTeX · all references</a>
               <button class="dl-link" type="button" data-export="bib"><svg class="icon"><use href="#i-down"/></svg>BibTeX · current results</button>
               <button class="dl-link" type="button" data-export="csv"><svg class="icon"><use href="#i-down"/></svg>CSV · current results</button>
               <a class="dl-link" href="data/papers.json" download><svg class="icon"><use href="#i-data"/></svg>JSON · canonical records</a>
@@ -296,16 +286,12 @@
     <section id="method" class="method section-dark" aria-labelledby="method-title">
       <div class="shell">
         <div class="section-heading">
-          <div><p class="section-label"><span>09</span> METHOD, DATA &amp; MAINTENANCE</p><h2 id="method-title">Every number<br><em>has a source file.</em></h2></div>
-          <p>Counts on this page are computed from the same JSON files that generate the README, the BibTeX and the manuscript tables. The search log, screening decisions and increments are public.</p>
+          <div><p class="section-label"><span>09</span> METHOD &amp; DATA</p><h2 id="method-title">How the evidence<br><em>was gathered.</em></h2></div>
+          <p>What counts as a study here, how each one is read, and the data behind every section.</p>
         </div>
         <div class="method-grid">{{method_blocks}}</div>
-        <div class="related-block">
-          <div class="catalogue-head"><p class="aside-caption">PRIOR WORK · HOW THIS SURVEY DIFFERS</p><p>A public survey draft, <em>Decisions, Not Tokens</em> (working draft dated 21 September 2026), precedes this one. It is compared dimension by dimension below; shared ground is credited, and no priority claim is made.</p></div>
-          <div class="table-scroll" tabindex="0" role="region" aria-label="Comparison with prior survey">{{survey_matrix}}</div>
-        </div>
         <div class="contribute" id="contribute">
-          <div><p class="section-label"><span>10</span> AN OPEN, VERSIONED REVIEW</p><h2>Found a study,<br>or an <em>error?</em></h2><p>Four kinds of contribution keep the review current: a new paper, a correction to a record, a code or weights update, and a reproduction report with its run log.</p></div>
+          <div><p class="section-label"><span>10</span> AN OPEN, VERSIONED REVIEW</p><h2>Found a study,<br>or an <em>error?</em></h2><p>Suggest a new paper, correct a record, report a code or weights release, or share a reproduction.</p></div>
           <div class="contribute-actions">{{contribute}}</div>
         </div>
       </div>
@@ -314,7 +300,7 @@
 
   <footer class="site-footer section-dark">
     <div class="shell footer-inner"><a class="brand" href="#top"><img src="assets/logo.svg" width="26" height="26" alt=""><span>JEV <span class="brand-sub">survey</span></span></a><p>Evidence you can trace. Decisions you can check.</p><a href="#top" class="back-top">Back to top ↑</a></div>
-    <div class="shell footer-bottom"><span>{{footer_credit}}</span><span>Data cutoff {{cutoff_long}} · build {{build_date}}</span><a href="paper/main.pdf">Survey draft (PDF)</a><a href="{{md_href}}">Markdown</a><a href="{{data_href}}">Data</a><a href="{{license_href}}">Code licence</a><a href="{{content_license_href}}">Content licence</a></div>
+    <div class="shell footer-bottom"><span>{{footer_credit}}</span><span>Updated {{cutoff_long}}</span><a href="paper/main.pdf">Survey draft (PDF)</a><a href="{{md_href}}">Markdown</a><a href="{{data_href}}">Data</a><a href="{{license_href}}">Code licence</a><a href="{{content_license_href}}">Content licence</a></div>
   </footer>
 
   <dialog id="paper-drawer" class="drawer" aria-labelledby="drawer-title">

@@ -67,21 +67,21 @@ class DataRules(unittest.TestCase):
         self.assertEqual(len(keys), len(set(keys)))
         self.assertEqual(len(keys), self.stats['papers'])
 
-    def test_readme_and_citation_numbers_match_stats(self):
+    def test_reader_pages_carry_no_summary_counts_or_process_notes(self):
+        """Headline tallies date quickly and process notes are for maintainers; neither belongs on reader-facing pages."""
         s = self.stats
-        readme = (ROOT / 'README.md').read_text(encoding='utf-8')
-        self.assertIn(f"{s['papers']} references ({s['core']} core · {s['peripheral']} peripheral · {s['background']} background)", readme)
-        cff = (ROOT / 'CITATION.cff').read_text(encoding='utf-8')
-        for token in (f"{s['core']} core studies", f"{s['peripheral']} peripheral study", f"{s['background']} background references",
-                      f"{s['claims']} claim-level evidence records", f"{s['priority_repos']} implementation"):
-            self.assertIn(token, cff)
+        pages = {path: (ROOT / path).read_text(encoding='utf-8') for path in ('index.html', 'README.md', 'CITATION.cff')}
+        pages['drawer.json'] = (ROOT / 'site' / 'data' / 'drawer.json').read_text(encoding='utf-8')
+        tallies = [f"{s['papers']} references (", 'core studies read in full', 'evidence records with locators', 'open resources audited',
+                   f"{s['core']} core studies", f"{s['claims']} claim-level evidence records", '4,666', '1,082']
+        process = ['handoff', 'Jev_Claude', 'this review', 'pinned commit', 'same-day increment', 'per arXiv comment', 'AI-assisted', 'Use in this survey']
+        for path, text in pages.items():
+            for token in tallies + process:
+                self.assertNotIn(token, text, f'{path}: {token}')
 
-    def test_site_counts_match_stats(self):
+    def test_site_lists_every_record(self):
         html = (ROOT / 'index.html').read_text(encoding='utf-8')
-        s = self.stats
-        self.assertIn(f"<strong>{s['core']}</strong><span>core studies", html)
-        self.assertIn(f"<strong>{s['claims']}</strong><span>evidence records", html)
-        self.assertEqual(html.count('class="paper-row '), s['papers'])
+        self.assertEqual(html.count('class="paper-row '), self.stats['papers'])
 
     def test_site_has_no_reference_domain_residue(self):
         html = (ROOT / 'index.html').read_text(encoding='utf-8').lower()

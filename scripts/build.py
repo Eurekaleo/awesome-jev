@@ -22,7 +22,7 @@ import pathlib
 import re
 import subprocess
 import sys
-from collections import Counter, defaultdict
+from collections import defaultdict
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import jevlib as J  # noqa: E402
@@ -62,9 +62,6 @@ PRIMITIVES = [
          url='https://docs.typesafe.ai/primitives/noul'),
 ]
 
-
-def fnum(n):
-    return f'{n:,}'
 
 
 class Ctx:
@@ -128,7 +125,7 @@ def render_stages(x):
         studies = [p for p in primary if s['id'] in p['stages']]
         chips = ''.join(f'<a class="finding-chip" href="#finding-{f}">{f} · {esc(x.T["findings"][f]["short"])}</a>' for f in STAGE_FINDINGS[s['id']])
         names = ', '.join(esc(J.label(p)) for p in studies[:4]) + (f' and {len(studies) - 4} more' if len(studies) > 4 else '')
-        out.append(f'''<li class="stage" id="stage-{s["id"]}"><div class="stage-top"><span class="stage-n">{s["n"]}</span><span class="stage-count"><b>{len(studies)}</b> studies</span></div>
+        out.append(f'''<li class="stage" id="stage-{s["id"]}"><div class="stage-top"><span class="stage-n">{s["n"]}</span></div>
 <h3>{esc(s["label"])}</h3><p class="stage-q">{esc(s["question"])}</p><p class="stage-covers">{esc(s["covers"])}</p>
 <p class="stage-evidence"><span>Evidence to look for</span>{esc(s["evidence"])}</p><div class="stage-chips">{chips}</div>
 <p class="stage-studies">{names}</p></li>''')
@@ -136,12 +133,9 @@ def render_stages(x):
 
 
 def render_timeline(x):
-    days = [f'2026-09-{d:02d}' for d in range(15, 24)]
+    days = [f'2026-09-{d:02d}' for d in range(15, 23)]
     events = defaultdict(list)
     events['2026-09-15'].append(('event', 'Jev released in early access (vendor launch post)', None, None))
-    events['2026-09-17'].append(('event', 'Vendor “jaggedness” page last reviewed', None, None))
-    events['2026-09-21'].append(('event', 'Prior survey draft “Decisions, Not Tokens” dated', None, None))
-    events['2026-09-23'].append(('event', 'Snapshot cutoff and same-day increment', None, None))
     for p in sorted([p for p in x.papers if p['tier'] in ('core', 'peripheral')], key=lambda p: p['published_at']):
         rel = p['model_relationship'][0]
         events[p['published_at'][:10]].append(('paper', J.label(p), rel, p))
@@ -199,11 +193,11 @@ def render_atlas(x):
         reps = ''.join(f'<li>{esc(r)}</li>' for r in f['representatives'])
         panels.append(f'''<article class="atlas-panel{' is-active' if sel else ''}" role="tabpanel" id="atlas-{f["id"]}" aria-labelledby="atlas-tab-{f["id"]}" data-panel="{f["id"]}">
 <div class="atlas-visual"><p class="atlas-kicker">{f["n"]} / {esc(f["label"].upper())}</p><ol class="mech">{mech}</ol>
-<p class="mech-note">Schematic of where probabilities come from. Not an architecture diagram of any specific model.</p></div>
+</div>
 <div class="atlas-copy"><h3>{esc(f["label"])}</h3><p class="atlas-principle">{esc(f["principle"])}</p>
 <dl class="atlas-facts"><div><dt>What is public</dt><dd>{esc(f["disclosed"])}</dd></div><div><dt>Where evidence stops</dt><dd>{esc(f["boundary"])}</dd></div>
 <div><dt>Representatives</dt><dd><ul class="reps">{reps}</ul></dd></div></dl>
-<div class="atlas-repos"><span class="aside-caption">AUDITED REPOSITORIES (PINNED COMMITS)</span><ul>{"".join(repo_rows)}</ul></div>
+<div class="atlas-repos"><span class="aside-caption">REPOSITORIES</span><ul>{"".join(repo_rows)}</ul></div>
 <div class="atlas-papers"><span class="aside-caption">STUDIES IN THIS FAMILY</span><div>{plinks}</div></div></div></article>''')
     return f'<div class="atlas-tabs" role="tablist" aria-label="Method families">{"".join(tabs)}</div><div class="atlas-panels">{"".join(panels)}</div>'
 
@@ -227,13 +221,11 @@ def render_findings(x):
         first, rest = sup[:4], sup[4:]
         rest_html = ''
         if rest:
-            rest_html = f'<details class="more"><summary>{len(rest)} more supporting records</summary><ul class="claims">{"".join(claim_item(x, c, "supports") for c in rest)}</ul></details>'
+            rest_html = f'<details class="more"><summary>More supporting evidence</summary><ul class="claims">{"".join(claim_item(x, c, "supports") for c in rest)}</ul></details>'
         qual_html = ''
         if qual:
             qual_html = f'<p class="claims-label claims-label-q">Qualified or limited by</p><ul class="claims">{"".join(claim_item(x, c, "qualifies") for c in qual)}</ul>'
-        n_sources = len({c['subject'] for c in sup + qual})
-        out.append(f'''<article class="finding" id="finding-{f["id"]}"><div class="finding-side"><span class="finding-n">{f["id"]}</span><span class="finding-short">{esc(f["short"])}</span>
-<span class="finding-count">{len(sup)} supporting · {len(qual)} qualifying<br>{n_sources} sources</span></div>
+        out.append(f'''<article class="finding" id="finding-{f["id"]}"><div class="finding-side"><span class="finding-n">{f["id"]}</span><span class="finding-short">{esc(f["short"])}</span></div>
 <div class="finding-main"><h3>{esc(f["title"])}</h3><p class="finding-body">{esc(f["body"])}</p>
 <div class="finding-evidence"><div><p class="claims-label">Supported by</p><ul class="claims">{"".join(claim_item(x, c, "supports") for c in first)}</ul>{rest_html}</div>
 <div>{qual_html}</div></div></div></article>''')
@@ -272,7 +264,7 @@ def render_scope_groups(x):
             continue
         m = x.T['measurement_scopes'][s]
         items = ''.join(f'<li><strong>{esc(c["headline"])}</strong><span>{x.subject_link(c["subject"])}</span></li>' for c in groups[s])
-        out.append(f'<article class="scope scope-{s}"><h4>{esc(m["label"])}<span>{len(groups[s])}</span></h4><p>{esc(m["desc"])}</p><ul>{items}</ul></article>')
+        out.append(f'<article class="scope scope-{s}"><h4>{esc(m["label"])}</h4><p>{esc(m["desc"])}</p><ul>{items}</ul></article>')
     return '\n'.join(out)
 
 
@@ -400,32 +392,31 @@ def render_openness(x):
     pri = [r for r in x.repos if 'priority' in r['sets']]
     type_order = ['model', 'adapter', 'sdk', 'system', 'evaluation', 'benchmark', 'project_page', 'guide', 'catalogue']
     pri.sort(key=lambda r: (type_order.index(r['type']), r['full_name'].lower()))
-    counts = Counter(r['type'] for r in pri)
-    chips = '<button type="button" aria-pressed="true" data-eco-filter="">All <b>' + str(len(pri)) + '</b></button>' + ''.join(
-        f'<button type="button" aria-pressed="false" data-eco-filter="{t}">{esc(x.T["repository_types"][t]["label"])} <b>{counts[t]}</b></button>' for t in type_order if counts[t])
+    present = {r['type'] for r in pri}
+    chips = '<button type="button" aria-pressed="true" data-eco-filter="">All</button>' + ''.join(
+        f'<button type="button" aria-pressed="false" data-eco-filter="{t}">{esc(x.T["repository_types"][t]["label"])}</button>' for t in type_order if t in present)
     cols = [('code', 'Code'), ('weights', 'Weights'), ('training_code', 'Training'), ('inference_code', 'Inference'), ('evaluation', 'Evaluation'), ('data', 'Data'), ('raw_predictions', 'Raw predictions')]
     head = ''.join(f'<th scope="col">{c}</th>' for _, c in cols)
     rows = []
     for r in pri:
         a = r['availability']
-        depth = {'README_metadata_and_selected_source': 'README + source read', 'README_metadata': 'README read'}.get(r['audit_depth'], r['audit_depth'])
         fam = x.T['method_families'][r['method_family']]['label'] if r.get('method_family') else '—'
         lic = r.get('license') or '—'
         rows.append(f'<tr data-type="{esc(r["type"])}"><th scope="row"><a href="{esc(r.get("readme_url") or r["url"])}" target="_blank" rel="noopener noreferrer">{esc(r["full_name"])}</a>'
                     f'<span>{esc(x.T["repository_types"][r["type"]]["label"])} · {esc(fam)}</span></th>'
                     + ''.join(f'<td>{avail_cell(a.get(k, "not_assessed"))}</td>' for k, _ in cols)
-                    + f'<td class="depth">{esc(depth)}</td><td class="lic">{esc(lic)}</td></tr>')
+                    + f'<td class="lic">{esc(lic)}</td></tr>')
     legend = ''.join(f'<span>{avail_cell(k)} {esc(AVAIL[k][2])}</span>' for k in ('available', 'partial', 'restricted', 'project_page_only', 'not_located', 'not_applicable'))
     return f'''<div class="eco-filters" role="group" aria-label="Filter resources by type">{chips}</div>
-<div class="table-scroll eco-scroll" tabindex="0" role="region" aria-label="Openness of priority resources"><table class="eco-table"><thead><tr><th scope="col">Resource</th>{head}<th scope="col">Audit depth</th><th scope="col">Licence field</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
-<div class="av-legend">{legend}<span class="av-note">No resource was executed. Licence shows GitHub’s detected field; NOASSERTION means “not identified”, not “no licence”.</span></div>'''
+<div class="table-scroll eco-scroll" tabindex="0" role="region" aria-label="Openness of priority resources"><table class="eco-table"><thead><tr><th scope="col">Resource</th>{head}<th scope="col">Licence</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
+<div class="av-legend">{legend}<span class="av-note">Licence is the field GitHub detects; NOASSERTION means “not identified”, not “no licence”.</span></div>'''
 
 
 def render_lineage(x):
     out = []
     for rel in x.d['review-relations']['relations']:
         t = rel['type']
-        if t in ('companion_repository', 'evaluates', 'prior_survey', 'depends_on_unmerged'):
+        if t in ('companion_repository', 'evaluates', 'prior_survey', 'depends_on_unmerged', 'author_name_match') or rel.get('term') == 'survey':
             continue
         title = {'study_family': 'Study family', 'derived_from': 'Derived from', 'uses_resources_from': 'Uses resources from',
                  'contrasts_with': 'Compatible, not equivalent', 'name_collision': 'Same name, different thing', 'author_name_match': 'Author-name match'}[t]
@@ -439,16 +430,6 @@ def render_lineage(x):
     return '\n'.join(out)
 
 
-def render_catalogue_stats(x):
-    s = x.stats
-    tiles = [(fnum(s['github_discovery']), 'GitHub discovery results', 'Five repository searches, de-duplicated, at the snapshot.'),
-             (fnum(s['catalogues']), 'catalogues and guides audited', f'{s["readmes"]} READMEs fetched at pinned commits; 2 repositories were empty.'),
-             (fnum(s['outgoing_candidates']), 'outgoing links — unverified', 'Normalised GitHub links found in those READMEs. Candidates, not validated Jev projects.'),
-             (fnum(s['priority_repos']), 'priority resources audited', f'{s["source_files_read"]} source files read in {s["source_repos_read"]} repositories; none executed.')]
-    t = ''.join(f'<div class="stat"><strong>{v}</strong><span>{esc(l)}</span><p>{esc(d)}</p></div>' for v, l, d in tiles)
-    return f'<div class="stat-row">{t}</div><p class="fine">The four numbers have different denominators and screening states; they must not be added or compared as “projects”. The {fnum(s["outgoing_candidates"])} candidates are kept in <code>research/snapshot-2026-09-23/repository_candidates.csv</code> for future screening and are never loaded by this page.</p>'
-
-
 def paper_row(x, p):
     t = x.T
     authors = p['authors'][:3]
@@ -459,8 +440,6 @@ def paper_row(x, p):
     if p['tier'] != 'background' and op['code']['status'] in ('not_located', 'claimed_not_located'):
         open_flags.append('none')
     venue = p['venue'] if p['venue_source'] != 'arxiv_metadata' else 'arXiv preprint'
-    if p['venue_source'] == 'arxiv_comment':
-        venue += ' (per arXiv comment)'
     rels = ' '.join(p['model_relationship'])
     topics = ''.join(f'<span class="topic">{esc(t["topics"][k]["label"])}</span>' for k in p['topics'][:3])
     chips = []
@@ -470,7 +449,7 @@ def paper_row(x, p):
             if st in ('available', 'partial', 'project_page_only'):
                 chips.append(f'<span class="res res-{st}">{lab}{"" if st == "available" else " (" + AVAIL[st][2].lower() + ")"}</span>')
         if op['code']['status'] in ('not_located', 'claimed_not_located'):
-            chips.append(f'<span class="res res-none">{"Code claimed, not located" if op["code"]["status"] == "claimed_not_located" else "Code not located in this review"}</span>')
+            chips.append(f'<span class="res res-none">{"Code announced, not found" if op["code"]["status"] == "claimed_not_located" else "Code not located"}</span>')
     lead = p.get('short_title') if p['tier'] != 'background' else x.T['background_groups'][p['background_group']]['label']
     blurb = p.get('main_finding') if p['tier'] != 'background' else p.get('role')
     return f'''<li class="paper-row tier-{p["tier"]}" id="paper-{esc(p["arxiv_id"])}" data-id="{esc(p["id"])}" data-tier="{p["tier"]}" data-year="{p["year"]}" data-date="{esc(p["published_at"][:10])}"
@@ -489,68 +468,38 @@ def render_rows(x):
 
 
 def render_tier_buttons(x):
-    s = x.stats
-    b = [('', 'All references', s['papers']), ('core', 'Core studies', s['core']), ('peripheral', 'Peripheral', s['peripheral']), ('background', 'Background', s['background'])]
-    return ''.join(f'<button class="filter-button{" active" if k == "" else ""}" type="button" data-tier-filter="{k}" aria-pressed="{str(k == "").lower()}"><span>{esc(lab)}</span><b>{n}</b></button>' for k, lab, n in b)
+    b = [('', 'All references'), ('core', 'Core studies'), ('peripheral', 'Peripheral'), ('background', 'Background')]
+    return ''.join(f'<button class="filter-button{" active" if k == "" else ""}" type="button" data-tier-filter="{k}" aria-pressed="{str(k == "").lower()}"><span>{esc(lab)}</span></button>' for k, lab in b)
 
 
 def options(items, counts=None):
     out = []
     for i in items:
-        suffix = f' ({counts[i["id"]]})' if counts else ''
-        out.append(f'<option value="{esc(i["id"])}">{esc(i["label"])}{suffix}</option>')
+        if counts is not None and not counts[i['id']]:
+            continue  # no record uses this value; an empty option would only return nothing
+        out.append(f'<option value="{esc(i["id"])}">{esc(i["label"])}</option>')
     return ''.join(out)
 
 
 def render_method_blocks(x):
-    runs = J.by_id(x.d['search-runs']['runs'])
-    snap = runs['snapshot-arxiv-2026-09-23']
-    inc = runs['increment-arxiv-2026-09-23T0818Z']
-    rej = runs['snapshot-arxiv-rejected']
-    q_rows = ''.join(f'<tr><td><code>{esc(q["id"])}</code></td><td><code class="query">{esc(q["query"])}</code></td><td>{q["total"] if q["total"] is not None else "—"}</td></tr>' for q in snap['queries'])
-    x_rows = ''.join(f'<tr class="{"rejected" if q["status"] != "ok" else ""}"><td><code>{esc(q["id"])}</code></td><td><code class="query">{esc(q["query"])}</code></td><td>{("rejected (" + fnum(q["total"]) + ")") if q["status"] != "ok" else q["total"]}</td></tr>' for q in inc['expansion'])
-    dec = inc['decisions']
-    s = x.stats
-    log = changelog_html()
-    return f'''<article class="mblock mblock-wide"><h3>Search protocol</h3>
-<p>The snapshot ran <b>{s["arxiv_queries"]}</b> accepted arXiv queries on 23 September 2026: <b>{s["arxiv_hits"]}</b> hits, <b>{s["arxiv_screened"]}</b> unique records after de-duplication by unversioned arXiv ID. One compound query reported {fnum(rej["reported_total"] or 0)} results and was rejected rather than screened. {s["background_snapshot"] - 6} background records were then added by explicit ID.</p>
-<p>A same-day increment re-ran all {inc["accepted_rerun"]["queries"]} queries — totals were {"identical" if inc["accepted_rerun"]["reproduced_snapshot_totals"] else "different"} — and added {len(inc["expansion"])} expansion queries on interface vocabulary and open-model names ({sum(1 for q in inc["expansion"] if q["status"] != "ok")} rejected as implausibly broad). Of {inc["new_candidates"]} new records, {dec.get("include_background", 0)} became background references and {dec.get("outside_core_scope", 0) + dec.get("outside_core_scope_linked_dataset", 0)} were excluded with reasons. arXiv announces new submissions around 00:00 UTC, so a same-day rerun mostly verifies the snapshot.</p>
-<details class="more"><summary>All {len(snap["queries"])} accepted queries</summary><div class="table-scroll" tabindex="0" role="region" aria-label="Accepted arXiv queries"><table class="q-table"><thead><tr><th scope="col">ID</th><th scope="col">Query (arXiv API syntax)</th><th scope="col">Hits</th></tr></thead><tbody>{q_rows}</tbody></table></div></details>
-<details class="more"><summary>{len(inc["expansion"])} expansion queries (increment)</summary><div class="table-scroll" tabindex="0" role="region" aria-label="Expansion queries"><table class="q-table"><thead><tr><th scope="col">ID</th><th scope="col">Query</th><th scope="col">Hits</th></tr></thead><tbody>{x_rows}</tbody></table></div></details></article>
-<article class="mblock"><h3>Screening &amp; reading depth</h3><ul class="check-list">
-<li>Core and peripheral studies: full text read, key tables and limitation sections checked; every number traced to a locator.</li>
-<li>Background references: arXiv metadata and abstract; one reranker paper spot-checked in full text.</li>
-<li>Repositories: README at a pinned commit; {s["source_files_read"]} source files read in {s["source_repos_read"]} repositories; nothing executed.</li>
-<li>One AI-assisted reviewer, not a registered or PRISMA-compliant review; no second independent screener yet.</li>
-<li>No model experiment was re-run. Every value is author-, vendor- or community-reported.</li></ul></article>
-<article class="mblock"><h3>Rebuild everything</h3><pre class="cmd"><code>python3 scripts/validate-data.py
-python3 scripts/build.py
-python3 scripts/check-links.py   # network
-python3 scripts/update-metadata.py  # new increment</code></pre>
-<ul class="dl-list"><li><a href="data/references.bib" download>references.bib</a></li><li><a href="data/exports/papers.csv" download>papers.csv</a></li><li><a href="data/exports/claims.csv" download>claims.csv</a></li><li><a href="data/exports/repositories.csv" download>repositories.csv</a></li><li><a href="data/stats.json">stats.json</a></li><li><a href="data/search-runs.json">search-runs.json</a></li></ul></article>
-<article class="mblock"><h3>Update log</h3>{log}</article>'''
-
-
-def changelog_html():
-    path = ROOT / 'CHANGELOG.md'
-    if not path.exists():
-        return '<p class="fine">No changelog yet.</p>'
-    text = path.read_text(encoding='utf-8')
-    blocks = re.split(r'\n## ', '\n' + text)[1:3]
-    out = []
-    for b in blocks:
-        head, *lines = b.strip().split('\n')
-        items = [re.sub(r'^[-*] ', '', l).strip() for l in lines if l.startswith(('- ', '* '))][:6]
-        out.append(f'<div class="log"><h4>{esc(head)}</h4><ul>{"".join("<li>" + esc(re.sub(r"[`*]", "", i)) + "</li>" for i in items)}</ul></div>')
-    return ''.join(out)
-
-
-def render_survey_matrix(x):
-    rel = x.d['review-relations']
-    rows = ''.join(f'<tr><th scope="row">{esc(m["dimension"])}</th><td>{esc(m["prior"])}</td><td>{esc(m["this_survey"])}</td><td class="ev">{esc(m["evidence"])}</td></tr>' for m in rel['survey_matrix'])
-    s = rel['related_surveys'][0]
-    return (f'<table class="survey-table"><thead><tr><th scope="col">Dimension</th><th scope="col"><a href="{esc(s["url"])}" target="_blank" rel="noopener noreferrer">Decisions, Not Tokens</a> (prior draft)</th>'
-            f'<th scope="col">This survey</th><th scope="col">Basis</th></tr></thead><tbody>{rows}</tbody></table>')
+    repo = J.safe_url(x.cfg.get('repository_url'))
+    branch = x.cfg.get('repository_default_branch') or 'main'
+    doc = lambda path: f'{repo.rstrip("/")}/blob/{branch}/{path}' if repo else path
+    prior = x.d['review-relations']['related_surveys'][0]
+    files = [('data/references.bib', 'references.bib'), ('data/exports/papers.csv', 'papers.csv'), ('data/exports/claims.csv', 'claims.csv'),
+             ('data/exports/repositories.csv', 'repositories.csv'), ('data/search-runs.json', 'search log (JSON)')]
+    dl = ''.join(f'<li><a href="{f}"{" download" if not f.endswith(".json") else ""}>{esc(lab)}</a></li>' for f, lab in files)
+    return f'''<article class="mblock"><h3>Scope &amp; sources</h3><ul class="check-list">
+<li><b>Core studies</b> evaluate Jev, build a Jev-like typed decision model, or depend on one inside a system.</li>
+<li><b>Background</b> references cover adjacent work: calibration, selective prediction, structured output, routing and judging.</li>
+<li>Studies are found through arXiv and GitHub searches; queries and screening decisions are published with the data.</li></ul></article>
+<article class="mblock"><h3>Reading the evidence</h3><ul class="check-list">
+<li>Core studies are read in full; every evidence record points to the section or table it comes from.</li>
+<li>Values are as reported by authors, the vendor or community repositories; they were not re-run.</li>
+<li>Openness is recorded field by field — code, weights, data, predictions — because each can be released on its own.</li></ul>
+<p class="fine">Details: <a href="{esc(doc("docs/methodology.md"))}">methodology</a> · <a href="{esc(doc("docs/limitations.md"))}">limitations</a></p></article>
+<article class="mblock"><h3>Data</h3><ul class="dl-list">{dl}</ul>
+<p class="fine">Related survey: <a href="{esc(prior["url"])}" target="_blank" rel="noopener noreferrer"><em>Decisions, Not Tokens</em></a> (working draft, 2026) covers machine-native decision models more broadly, from classical classifiers to Jev.</p></article>'''
 
 
 def render_contribute(x):
@@ -580,17 +529,17 @@ def drawer_data(x):
                                n=c['sample_size'], version=c['model_version'], limitations=c['limitations'],
                                findings=[f'{l["id"]} {l["relation"]}' for l in c['findings']]))
         rec = dict(id=p['id'], arxiv=p['arxiv_id'], vid=p['versioned_id'], title=p['title'], short=p.get('short_title'), authors=p['authors'],
-                   tier=p['tier'], year=p['year'], published=p['published_at'][:10], updated=p['updated_at'][:10], retrieved=p['retrieved_at'],
+                   tier=p['tier'], year=p['year'], published=p['published_at'][:10], updated=p['updated_at'][:10],
                    venue=p['venue'], venue_source=p['venue_source'], venue_note=p.get('venue_note'), doi=p.get('doi'), url=p['url'], pdf=p['pdf_url'],
                    relationship=p.get('relationship'), summary=p.get('summary'), task=p.get('task'), datasets=p.get('datasets'), baselines=p.get('baselines'),
-                   finding=p.get('main_finding'), caveats=p.get('caveats'), use=p.get('survey_use'), locator=p.get('evidence_locator'),
+                   finding=p.get('main_finding'), caveats=p.get('caveats'), locator=p.get('evidence_locator'),
                    test=x.T['test_levels'][p['test_level']]['label'] if p.get('test_level') else None, versions=p.get('model_versions'),
                    openness={k: dict(v, label=AVAIL.get(v['status'], ('', '', v['status']))[2]) for k, v in p['openness'].items()},
                    claims=claims, role=p.get('role'), group=x.T['background_groups'][p['background_group']]['label'] if p.get('background_group') else None,
                    topics=[x.T['topics'][k]['label'] for k in p['topics']], stages=[x.T['stages'][k]['label'] for k in p['stages']],
                    families=[x.T['method_families'][k]['label'] for k in p['method_families']],
                    rel=[x.T['model_relationships'][k]['label'] for k in p['model_relationship']],
-                   family=p.get('study_family_id'), depth=p['review_depth'], included_by=p['included_by'], reason=p['inclusion_reason'],
+                   family=p.get('study_family_id'),
                    bibtex=J.bibtex_for_paper(p), key=p['bibtex_key'])
         out[p['id']] = rec
     return out
@@ -654,8 +603,6 @@ def render_page(x):
     def repo_file(kind, path):
         """Repository view of a file or folder once the repository exists; a relative path before that."""
         return f'{repo.rstrip("/")}/{kind}/{branch}/{path}' if repo else (path + '/' if kind == 'tree' else path)
-    import datetime as dt
-    build_date = dt.date.today().isoformat()
     t = x.tax
     primary = [p for p in x.papers if p['tier'] in ('core', 'peripheral')]
     fam_counts = {f['id']: sum(1 for p in x.papers if f['id'] in p['method_families']) for f in t['method_families']}
@@ -665,24 +612,24 @@ def render_page(x):
     values = {
         'core': s['core'], 'peripheral': s['peripheral'], 'background': s['background'], 'papers': s['papers'], 'claims': s['claims'],
         'priority_repos': s['priority_repos'], 'findings': s['findings'], 'core_plus': s['core_plus'],
-        'cutoff_long': J.fmt_date(s['cutoff']), 'cutoff_upper': J.fmt_date(s['cutoff']).upper(), 'build_date': build_date,
+        'cutoff_long': J.fmt_date(s['cutoff']), 'cutoff_upper': J.fmt_date(s['cutoff']).upper(),
         'canonical': f'<link rel="canonical" href="{esc(site_url)}">' if site_url else '',
         'og_image': esc((site_url.rstrip('/') + '/assets/og-image.png') if site_url else 'assets/og-image.png'),
         'repo_href': esc(repo) if repo else '#method', 'repo_label': 'Repository' if repo else 'Data &amp; code',
         'footer_credit': esc(cfg.get('footer_credit') or ''),
         'meta_author': ''.join(f'<meta name="author" content="{esc(a["name"])}">' for a in authors[:1]),
-        'byline': ('By ' + ', '.join(f'<a href="{esc(J.safe_url(a.get("url")) or "#top")}" rel="author">{esc(a["name"])}</a>' for a in authors) + ' · ') if authors else '',
+        'byline': ('By ' + ', '.join(f'<a href="{esc(J.safe_url(a.get("url")) or "#top")}" rel="author">{esc(a["name"])}</a>' for a in authors)) if authors else '',
         'md_href': esc(repo_file('blob', 'paper/survey.md')), 'data_href': esc(repo_file('tree', 'data')),
         'license_href': esc(repo_file('blob', 'LICENSE')), 'content_license_href': esc(repo_file('blob', 'LICENSE-CONTENT.md')),
         'hero_art': (ROOT / 'site' / 'hero.svg').read_text(encoding='utf-8'),
         'primitives': render_primitives(x), 'vendor_claims': render_vendor_claims(x), 'stages': render_stages(x), 'timeline': render_timeline(x),
         'atlas': render_atlas(x), 'findings_list': render_findings(x), 'evidence_matrix': render_matrix(x), 'scope_groups': render_scope_groups(x),
         'lab_panels': render_lab(x), 'failure_modes': render_failure_modes(x), 'control_explorer': render_control_explorer(x),
-        'applications': render_applications(x), 'openness': render_openness(x), 'lineage': render_lineage(x), 'catalogue_stats': render_catalogue_stats(x),
+        'applications': render_applications(x), 'openness': render_openness(x), 'lineage': render_lineage(x), 
         'tier_buttons': render_tier_buttons(x), 'stage_options': options(t['stages'], stage_counts), 'family_options': options(t['method_families'], fam_counts),
         'rel_options': options(t['model_relationships'], rel_counts), 'topic_options': options(t['topics'], topic_counts),
         'year_options': ''.join(f'<option value="{y}">{y}</option>' for y in s['years']),
-        'paper_rows': render_rows(x), 'method_blocks': render_method_blocks(x), 'survey_matrix': render_survey_matrix(x), 'contribute': render_contribute(x),
+        'paper_rows': render_rows(x), 'method_blocks': render_method_blocks(x), 'contribute': render_contribute(x),
     }
     css_js = b''.join((ROOT / 'site' / f).read_bytes() for f in ('site.css', 'site.js', 'lab.js', 'catalog.mjs') if (ROOT / 'site' / f).exists())
     values['build_hash'] = hashlib.sha256(css_js).hexdigest()[:10]
@@ -714,8 +661,6 @@ def main():
     export_bibtex(x)
     export_csvs(x)
     html = render_page(x)
-    if args.check:
-        html = re.sub(r'build \d{4}-\d{2}-\d{2}', 'build ' + re.search(r'build (\d{4}-\d{2}-\d{2})', (before['index.html'] or b'build 0000-00-00').decode()).group(1), html)
     (ROOT / 'index.html').write_text(html, encoding='utf-8')
     subprocess.run([sys.executable, str(ROOT / 'scripts' / 'render-readme.py')], check=True)
     subprocess.run([sys.executable, str(ROOT / 'scripts' / 'render-docs.py')], check=True)

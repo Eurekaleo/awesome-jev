@@ -1,2753 +1,2752 @@
 {
- "meta": {
-  "schema": "jev-survey/claims@1",
-  "cutoff": "2026-09-23",
-  "note": "Author- or vendor-reported values; none independently reproduced by this review."
- },
- "claims": [
-  {
-   "id": "c-26758-hosted-swap",
-   "subject": "arxiv:2609.26758",
-   "claim_text": "Swapping the rubrics behind the option names no/yes changed 32.50% of the hosted model’s answers (neutral names: 2.08% and 1.67%), lowered balanced accuracy from .7127 to .5163 and AUROC from .8146 to .5806.",
-   "source_url": "https://arxiv.org/abs/2609.26758v1",
-   "locator": "§4.6; Table 6",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "AUROC",
-   "value": {
-    "aligned": 0.8146,
-    "swapped": 0.5806
-   },
-   "unit": null,
-   "baseline": "aligned name–rubric binding; neutral-name controls",
-   "task": "binary workflow decisions with task-specific rubrics",
-   "sample_size": {
-    "n": 1200,
-    "unit": "items"
-   },
-   "model": "hosted TypeSafe model",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Hosted model is non-deterministic; observed at one point in time.",
-    "Contrast 30.42 pts, 95% CI [27.58, 33.33]."
-   ],
-   "note": null,
-   "headline": "Hosted Jev AUROC .8146 → .5806 after name–rubric swap; 0% type errors"
+  "meta": {
+    "schema": "jev-survey/claims@1",
+    "cutoff": "2026-09-23",
+    "note": "Author-, vendor- or community-reported values; none independently reproduced."
   },
-  {
-   "id": "c-26758-retest",
-   "subject": "arxiv:2609.26758",
-   "claim_text": "Asking the aligned arm twice (300 items × 2 name pairs), the hosted model changed at most 1.33% of answers; the name swap produced 24× that test–retest floor, and at most 36.33% of probabilities repeated bit-for-bit.",
-   "source_url": "https://arxiv.org/abs/2609.26758v1",
-   "locator": "§4.6",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "answer flip rate (test–retest)",
-   "value": 0.0133,
-   "unit": null,
-   "baseline": null,
-   "task": "repeat identical requests",
-   "sample_size": {
-    "n": 600,
-    "unit": "item × name-pair repeats"
-   },
-   "model": "hosted TypeSafe model",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
+  "claims": [
     {
-     "id": "F1",
-     "relation": "supports"
+      "id": "c-26758-hosted-swap",
+      "subject": "arxiv:2609.26758",
+      "claim_text": "Swapping the rubrics behind the option names no/yes changed 32.50% of the hosted model’s answers (neutral names: 2.08% and 1.67%), lowered balanced accuracy from .7127 to .5163 and AUROC from .8146 to .5806.",
+      "source_url": "https://arxiv.org/abs/2609.26758v1",
+      "locator": "§4.6; Table 6",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "AUROC",
+      "value": {
+        "aligned": 0.8146,
+        "swapped": 0.5806
+      },
+      "unit": null,
+      "baseline": "aligned name–rubric binding; neutral-name controls",
+      "task": "binary workflow decisions with task-specific rubrics",
+      "sample_size": {
+        "n": 1200,
+        "unit": "items"
+      },
+      "model": "hosted TypeSafe model",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Hosted model is non-deterministic; observed at one point in time.",
+        "Contrast 30.42 pts, 95% CI [27.58, 33.33]."
+      ],
+      "note": null,
+      "headline": "Hosted Jev AUROC .8146 → .5806 after name–rubric swap; 0% type errors"
     },
     {
-     "id": "F7",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Floor measured on a subset (300 items)."
-   ],
-   "note": null,
-   "headline": "Test–retest floor ≤1.33% answer flips; swap = 24× the floor"
-  },
-  {
-   "id": "c-26758-open-inversion",
-   "subject": "arxiv:2609.26758",
-   "claim_text": "In an open ModernBERT-large marker-readout head, the same swap changed 76.92% of answers against 6.50% behind 0/1 (difference-in-differences 70.42 pts) and inverted AUROC from .9376 to .2315.",
-   "source_url": "https://arxiv.org/abs/2609.26758v1",
-   "locator": "Abstract; §§4.1–4.2",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "AUROC",
-   "value": {
-    "aligned": 0.9376,
-    "swapped": 0.2315
-   },
-   "unit": null,
-   "baseline": "neutral names 0/1",
-   "task": "binary workflow decisions",
-   "sample_size": {
-    "n": 1200,
-    "unit": "items"
-   },
-   "model": "open marker-readout encoder head (not Jev)",
-   "model_version": {
-    "value": "one released checkpoint (name in unlocated harness)"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
+      "id": "c-26758-retest",
+      "subject": "arxiv:2609.26758",
+      "claim_text": "Asking the aligned arm twice (300 items × 2 name pairs), the hosted model changed at most 1.33% of answers; the name swap produced 24× that test–retest floor, and at most 36.33% of probabilities repeated bit-for-bit.",
+      "source_url": "https://arxiv.org/abs/2609.26758v1",
+      "locator": "§4.6",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "answer flip rate (test–retest)",
+      "value": 0.0133,
+      "unit": null,
+      "baseline": null,
+      "task": "repeat identical requests",
+      "sample_size": {
+        "n": 600,
+        "unit": "item × name-pair repeats"
+      },
+      "model": "hosted TypeSafe model",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        },
+        {
+          "id": "F7",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Floor measured on a subset (300 items)."
+      ],
+      "note": null,
+      "headline": "Test–retest floor ≤1.33% answer flips; swap = 24× the floor"
     },
     {
-     "id": "F5",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "This result is for an open checkpoint and must not be attributed to hosted Jev.",
-    "A mean-pooling span head flips 4.1× less often."
-   ],
-   "note": null,
-   "headline": "Open marker head: AUROC .9376 → .2315 (inversion), 76.92% flips"
-  },
-  {
-   "id": "c-26758-type-errors",
-   "subject": "arxiv:2609.26758",
-   "claim_text": "The type-error rate was 0% in every condition, including those where decision accuracy collapsed; the paper shows this follows from the renormalised softmax over the declared options (Lemma 1).",
-   "source_url": "https://arxiv.org/abs/2609.26758v1",
-   "locator": "Abstract; §3 (Lemma 1)",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "type-error rate",
-   "value": 0.0,
-   "unit": null,
-   "baseline": null,
-   "task": "all arms",
-   "sample_size": {
-    "n": null,
-    "reason": "all_conditions"
-   },
-   "model": "hosted model and two open heads",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "A 0% type-error rate is a property of the read-out, so it carries no information about decision quality."
-   ],
-   "note": null,
-   "headline": "Type-error rate 0% in every condition, by construction"
-  },
-  {
-   "id": "c-26758-random-names",
-   "subject": "arxiv:2609.26758",
-   "claim_text": "Replacing option names with random character strings returned flip rates to the neutral-control regime in all three families (6.86%, 11.67%, 2.02%) while aligned balanced accuracy stayed within .03 of the neutral class.",
-   "source_url": "https://arxiv.org/abs/2609.26758v1",
-   "locator": "§4.7; Table 7",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "answer flip rate",
-   "value": {
-    "marker": 0.0686,
-    "span_mean": 0.1167,
-    "hosted": 0.0202
-   },
-   "unit": null,
-   "baseline": "neutral names 0/1 and A/B",
-   "task": null,
-   "sample_size": {
-    "n": 1200,
-    "unit": "items (hosted arm)"
-   },
-   "model": "three read-out families",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Suggests neutral identifiers as a mitigation; the mitigation itself was not evaluated in deployment."
-   ],
-   "note": null,
-   "headline": "Random-string names return flips to the neutral regime (2–12%)"
-  },
-  {
-   "id": "c-26758-multiway",
-   "subject": "arxiv:2609.26758",
-   "claim_text": "On 683 multi-way questions, renaming members to neutral letters without touching descriptions changed 52.42% of answers and dropped accuracy from .5637 to .2782 (open marker head).",
-   "source_url": "https://arxiv.org/abs/2609.26758v1",
-   "locator": "§4.5; Table 4",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "accuracy",
-   "value": {
-    "shipped": 0.5637,
-    "neutral_renamed": 0.2782
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 683,
-    "unit": "questions"
-   },
-   "model": "open marker-readout encoder head (not Jev)",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Pool accuracy is low (.5637); authors treat the arm as directional."
-   ],
-   "note": null,
-   "headline": "Multi-way: neutral renaming flips 52.42%; accuracy .5637 → .2782"
-  },
-  {
-   "id": "c-26550-quality",
-   "subject": "arxiv:2609.26550",
-   "claim_text": "On RewardBench Jev scored 92.2% against GPT-6’s 93.5% (paired difference −1.25 points, 95% cluster interval [−3.8, 1.5]); on HaluEval 87.5% against 86.7%. Blind adjudication of disagreements put Jev within three points of GPT-6.",
-   "source_url": "https://arxiv.org/abs/2609.26550v1",
-   "locator": "§5 (ordinary preference and evidence-grounded factuality)",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "accuracy",
-   "value": {
-    "RewardBench": {
-     "jev": 0.922,
-     "gpt6": 0.935
-    },
-    "HaluEval": {
-     "jev": 0.875,
-     "gpt6": 0.867
-    }
-   },
-   "unit": null,
-   "baseline": "GPT-6 Astra (strongest comparator)",
-   "task": "pairwise preference; evidence-grounded factuality",
-   "sample_size": {
-    "n": null,
-    "reason": "per_benchmark_sizes_in_paper"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Adjudication by one author on disagreement-selected items.",
-    "Larger gaps on derivation checking and style-adversarial pairs."
-   ],
-   "note": null,
-   "headline": "RewardBench 92.2% vs 93.5%; HaluEval 87.5% vs 86.7% (GPT-6)"
-  },
-  {
-   "id": "c-26550-fee",
-   "subject": "arxiv:2609.26550",
-   "claim_text": "Jev’s fee on the latency panel was 0.36% of the strongest comparator’s; the authors summarise it as about $0.04 per 1,000 judgments at 0.15 s.",
-   "source_url": "https://arxiv.org/abs/2609.26550v1",
-   "locator": "Abstract; §4 (latency and fees); Conclusion",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "fee ratio",
-   "value": 0.0036,
-   "unit": "fraction of comparator fee",
-   "baseline": "GPT-6 Astra",
-   "task": null,
-   "sample_size": {
-    "n": 120,
-    "unit": "decisions (latency panel)"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Fees are estimates from reported usage at collection-time prices, not invoices.",
-    "One client location, pacing and provider load."
-   ],
-   "note": null,
-   "headline": "0.36% of the comparator’s fee; ≈$0.04 per 1,000 judgments at 0.15 s"
-  },
-  {
-   "id": "c-26550-cascade",
-   "subject": "arxiv:2609.26550",
-   "claim_text": "A frozen two-order cascade that accepts confident Jev verdicts and escalates uncertain ones kept 99% of GPT-6’s accuracy at 57% of its fee.",
-   "source_url": "https://arxiv.org/abs/2609.26550v1",
-   "locator": "Abstract; §7; Conclusion",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "accuracy retained / fee",
-   "value": {
-    "accuracy_retained": 0.99,
-    "fee_fraction": 0.57
-   },
-   "unit": null,
-   "baseline": "GPT-6 Astra alone",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "per_benchmark_sizes_in_paper"
-   },
-   "model": "Jev → GPT-6 cascade",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "simulation",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "supports"
+      "id": "c-26758-open-inversion",
+      "subject": "arxiv:2609.26758",
+      "claim_text": "In an open ModernBERT-large marker-readout head, the same swap changed 76.92% of answers against 6.50% behind 0/1 (difference-in-differences 70.42 pts) and inverted AUROC from .9376 to .2315.",
+      "source_url": "https://arxiv.org/abs/2609.26758v1",
+      "locator": "Abstract; §§4.1–4.2",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "AUROC",
+      "value": {
+        "aligned": 0.9376,
+        "swapped": 0.2315
+      },
+      "unit": null,
+      "baseline": "neutral names 0/1",
+      "task": "binary workflow decisions",
+      "sample_size": {
+        "n": 1200,
+        "unit": "items"
+      },
+      "model": "open marker-readout encoder head (not Jev)",
+      "model_version": {
+        "value": "one released checkpoint (name in unlocated harness)"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        },
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "This result is for an open checkpoint and must not be attributed to hosted Jev.",
+        "A mean-pooling span head flips 4.1× less often."
+      ],
+      "note": null,
+      "headline": "Open marker head: AUROC .9376 → .2315 (inversion), 76.92% flips"
     },
     {
-     "id": "F4",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Simulated cascade fees say nothing about real cascade latency.",
-    "Thresholds chosen on a selection set did not transfer for every fallback."
-   ],
-   "note": null,
-   "headline": "Frozen two-order cascade: 99% of GPT-6 accuracy at 57% of its fee"
-  },
-  {
-   "id": "c-26550-confidence",
-   "subject": "arxiv:2609.26550",
-   "claim_text": "Jev’s native confidence had Spearman correlation 0.971, 0.999 and 0.948 with the maximum label probability on RewardBench, JudgeBench and HaluEval, so the authors used max-probability for deferral.",
-   "source_url": "https://arxiv.org/abs/2609.26550v1",
-   "locator": "§4 (JEV and the shared contract)",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "Spearman ρ",
-   "value": {
-    "RewardBench": 0.971,
-    "JudgeBench": 0.999,
-    "HaluEval": 0.948
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "per_benchmark_sizes_in_paper"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Correlation of rankings, not a description of how confidence is computed."
-   ],
-   "note": null,
-   "headline": "Native confidence ~ max probability (Spearman .948–.999)"
-  },
-  {
-   "id": "c-26532-calls",
-   "subject": "arxiv:2609.26532",
-   "claim_text": "At τ = 0.5 REFLEX reached 95% success with 1.12 strong-model calls per task, against 88% and 4.10 calls for the strong-only agent — 72.7% fewer strong calls.",
-   "source_url": "https://arxiv.org/abs/2609.26532v1",
-   "locator": "Abstract; §5.1; Table 1",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "task success; strong calls per task",
-   "value": {
-    "reflex": {
-     "success": 0.95,
-     "strong_calls": 1.12
-    },
-    "strong_only": {
-     "success": 0.88,
-     "strong_calls": 4.1
-    }
-   },
-   "unit": null,
-   "baseline": "strong-only agent (B0)",
-   "task": "tool-using agent tasks (REFLEX-Sim)",
-   "sample_size": {
-    "n": 100,
-    "unit": "frozen tasks"
-   },
-   "model": "Jev + strong LLM fallback",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "system_test",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Controlled benchmark shows ceiling effects for 2026 frontier models."
-   ],
-   "note": null,
-   "headline": "95% success with 1.12 strong calls/task vs 88% and 4.10 (−72.7%)"
-  },
-  {
-   "id": "c-26532-external",
-   "subject": "arxiv:2609.26532",
-   "claim_text": "On external BFCL tasks and 300 τ-style episodes, advantages over a cheap generative cascade with self-escalation were limited where ordinary routing was already highly accurate.",
-   "source_url": "https://arxiv.org/abs/2609.26532v1",
-   "locator": "Abstract; external evaluation; Limitations",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "task success; cost",
-   "value": null,
-   "unit": null,
-   "baseline": "cheap generative cascade",
-   "task": "BFCL; τ-style multi-turn episodes",
-   "sample_size": {
-    "n": 300,
-    "unit": "episodes (60 paired tasks)"
-   },
-   "model": "Jev + strong LLM fallback",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "system_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Held-out validation, not a full leaderboard with multiple trials."
-   ],
-   "note": null,
-   "headline": "BFCL / τ-style: limited edge over a cheap generative cascade"
-  },
-  {
-   "id": "c-26532-action-set",
-   "subject": "arxiv:2609.26532",
-   "claim_text": "Controlled interventions showed that reliability depends on action-set size and on near-valid alternatives near authorisation boundaries.",
-   "source_url": "https://arxiv.org/abs/2609.26532v1",
-   "locator": "Abstract; controlled interventions",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": "agent decisions with varied action sets",
-   "sample_size": {
-    "n": null,
-    "reason": "see_paper"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "system_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
+      "id": "c-26758-type-errors",
+      "subject": "arxiv:2609.26758",
+      "claim_text": "The type-error rate was 0% in every condition, including those where decision accuracy collapsed; the paper shows this follows from the renormalised softmax over the declared options (Lemma 1).",
+      "source_url": "https://arxiv.org/abs/2609.26758v1",
+      "locator": "Abstract; §3 (Lemma 1)",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "type-error rate",
+      "value": 0.0,
+      "unit": null,
+      "baseline": null,
+      "task": "all arms",
+      "sample_size": {
+        "n": null,
+        "reason": "all_conditions"
+      },
+      "model": "hosted model and two open heads",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "A 0% type-error rate is a property of the read-out, so it carries no information about decision quality."
+      ],
+      "note": null,
+      "headline": "Type-error rate 0% in every condition, by construction"
     },
     {
-     "id": "F3",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Effects concentrate in authority and risk families."
-   ],
-   "note": null,
-   "headline": "Reliability depends on action-set size and near-valid alternatives"
-  },
-  {
-   "id": "c-25845-quality",
-   "subject": "arxiv:2609.25845",
-   "claim_text": "Answer-supervised post-training raised equal-weight macro accuracy across four benchmarks from 0.706 to 0.761, with the gain concentrated on the two task families represented in training.",
-   "source_url": "https://arxiv.org/abs/2609.25845v1",
-   "locator": "Abstract; §4; Table 2",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "macro accuracy",
-   "value": {
-    "before": 0.706,
-    "after": 0.761
-   },
-   "unit": null,
-   "baseline": "untuned Qwen3-VL-4B read through its LM head",
-   "task": "GQA, SNLI-VE, TextVQA, TallyQA",
-   "sample_size": {
-    "n": null,
-    "reason": "per_benchmark_sizes_in_paper"
-   },
-   "model": "Visual Jev (Qwen3-VL-4B)",
-   "model_version": {
-    "value": "paper v1"
-   },
-   "hardware": {
-    "value": "1× RTX 5090"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F6",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Seen-family gains; limited transfer to unseen families."
-   ],
-   "note": null,
-   "headline": "Macro accuracy 0.706 → 0.761 after post-training (seen families)"
-  },
-  {
-   "id": "c-25845-speed",
-   "subject": "arxiv:2609.25845",
-   "claim_text": "With 32 questions per image, shared batched execution was 8.9× faster in warm amortized time than independent serial execution and 3.4× faster than batching that recomputes the prefix (5.7 ms per question; about 182 ms per 32-question batch).",
-   "source_url": "https://arxiv.org/abs/2609.25845v1",
-   "locator": "Abstract; §5; Limitations",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "speed-up",
-   "value": {
-    "vs_serial": 8.9,
-    "vs_batched_no_reuse": 3.4,
-    "amortized_ms": 5.7,
-    "batch_ms": 182
-   },
-   "unit": null,
-   "baseline": "independent serial; batched without prefix reuse",
-   "task": null,
-   "sample_size": {
-    "n": 32,
-    "unit": "questions per image"
-   },
-   "model": "Visual Jev (Qwen3-VL-4B)",
-   "model_version": {
-    "value": "paper v1"
-   },
-   "hardware": {
-    "value": "1× RTX 5090 (bfloat16)"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "amortized_question",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Amortized throughput, not independent-request latency; higher peak memory; queueing excluded."
-   ],
-   "note": null,
-   "headline": "8.9× vs serial, 3.4× vs no-reuse batch; 5.7 ms/question amortized"
-  },
-  {
-   "id": "c-25845-typed-head",
-   "subject": "arxiv:2609.25845",
-   "claim_text": "A matched typed-head control offered no consistent accuracy advantage over reading candidate probabilities from the backbone’s LM head.",
-   "source_url": "https://arxiv.org/abs/2609.25845v1",
-   "locator": "Abstract; §5",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "accuracy",
-   "value": null,
-   "unit": null,
-   "baseline": "LM-head readout",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "per_benchmark_sizes_in_paper"
-   },
-   "model": "Visual Jev variants",
-   "model_version": {
-    "value": "paper v1"
-   },
-   "hardware": {
-    "value": "1× RTX 5090"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F5",
-     "relation": "supports"
+      "id": "c-26758-random-names",
+      "subject": "arxiv:2609.26758",
+      "claim_text": "Replacing option names with random character strings returned flip rates to the neutral-control regime in all three families (6.86%, 11.67%, 2.02%) while aligned balanced accuracy stayed within .03 of the neutral class.",
+      "source_url": "https://arxiv.org/abs/2609.26758v1",
+      "locator": "§4.7; Table 7",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "answer flip rate",
+      "value": {
+        "marker": 0.0686,
+        "span_mean": 0.1167,
+        "hosted": 0.0202
+      },
+      "unit": null,
+      "baseline": "neutral names 0/1 and A/B",
+      "task": null,
+      "sample_size": {
+        "n": 1200,
+        "unit": "items (hosted arm)"
+      },
+      "model": "three read-out families",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Suggests neutral identifiers as a mitigation; the mitigation itself was not evaluated in deployment."
+      ],
+      "note": null,
+      "headline": "Random-string names return flips to the neutral regime (2–12%)"
     },
     {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "One backbone family."
-   ],
-   "note": null,
-   "headline": "Typed head: no consistent gain over LM-head readout"
-  },
-  {
-   "id": "c-24965-correct-latency",
-   "subject": "arxiv:2609.24965",
-   "claim_text": "Jev matched five other configurations at complete semantic correctness on 20 Choices × 5 repetitions and had the lowest observed median latency among successful responses (0.335 s; p95 0.442 s), at about $0.000060 per successful response.",
-   "source_url": "https://arxiv.org/abs/2609.24965v1",
-   "locator": "Abstract; §3.2; Table 1",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "semantic correctness; median latency",
-   "value": {
-    "median_s": 0.335,
-    "p95_s": 0.442,
-    "cost_usd_per_success": 6e-05
-   },
-   "unit": null,
-   "baseline": "eleven other configurations",
-   "task": "source-grounded scientific Choices",
-   "sample_size": {
-    "n": 100,
-    "unit": "requests (20 Choices × 5)"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "Jev 1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "single_request",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "supports"
+      "id": "c-26758-multiway",
+      "subject": "arxiv:2609.26758",
+      "claim_text": "On 683 multi-way questions, renaming members to neutral letters without touching descriptions changed 52.42% of answers and dropped accuracy from .5637 to .2782 (open marker head).",
+      "source_url": "https://arxiv.org/abs/2609.26758v1",
+      "locator": "§4.5; Table 4",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy",
+      "value": {
+        "shipped": 0.5637,
+        "neutral_renamed": 0.2782
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 683,
+        "unit": "questions"
+      },
+      "model": "open marker-readout encoder head (not Jev)",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Pool accuracy is low (.5637); authors treat the arm as directional."
+      ],
+      "note": null,
+      "headline": "Multi-way: neutral renaming flips 52.42%; accuracy .5637 → .2782"
     },
     {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Ten cases; six configurations reach complete correctness, so the set is not discriminative."
-   ],
-   "note": null,
-   "headline": "Full semantic correctness; median 0.335 s, p95 0.442 s"
-  },
-  {
-   "id": "c-24965-hidden-errors",
-   "subject": "arxiv:2609.24965",
-   "claim_text": "Across three comparison models, seven wrong selections on one culture-history question changed downstream counts while preserving the correct final claim label.",
-   "source_url": "https://arxiv.org/abs/2609.24965v1",
-   "locator": "Abstract; §3 (correct labels can conceal wrong quantities)",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "derived-quantity errors",
-   "value": 7,
-   "unit": "wrong selections",
-   "baseline": null,
-   "task": "Luria–Delbrück culture-history case",
-   "sample_size": {
-    "n": null,
-    "reason": "single_case"
-   },
-   "model": "three comparison LLMs (not Jev)",
-   "model_version": {
-    "value": null,
-    "reason": "see_paper"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "system_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F6",
-     "relation": "supports"
+      "id": "c-26550-quality",
+      "subject": "arxiv:2609.26550",
+      "claim_text": "On RewardBench Jev scored 92.2% against GPT-6’s 93.5% (paired difference −1.25 points, 95% cluster interval [−3.8, 1.5]); on HaluEval 87.5% against 86.7%. Blind adjudication of disagreements put Jev within three points of GPT-6.",
+      "source_url": "https://arxiv.org/abs/2609.26550v1",
+      "locator": "§5 (ordinary preference and evidence-grounded factuality)",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy",
+      "value": {
+        "RewardBench": {
+          "jev": 0.922,
+          "gpt6": 0.935
+        },
+        "HaluEval": {
+          "jev": 0.875,
+          "gpt6": 0.867
+        }
+      },
+      "unit": null,
+      "baseline": "GPT-6 Astra (strongest comparator)",
+      "task": "pairwise preference; evidence-grounded factuality",
+      "sample_size": {
+        "n": null,
+        "reason": "per_benchmark_sizes_in_paper"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Adjudication by one author on disagreement-selected items.",
+        "Larger gaps on derivation checking and style-adversarial pairs."
+      ],
+      "note": null,
+      "headline": "RewardBench 92.2% vs 93.5%; HaluEval 87.5% vs 86.7% (GPT-6)"
     },
     {
-     "id": "F1",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Errors were made by comparison models; the point is about evaluation design, not about Jev."
-   ],
-   "note": null,
-   "headline": "7 wrong selections changed counts but not the final label"
-  },
-  {
-   "id": "c-24574-accuracy-cost",
-   "subject": "arxiv:2609.24574",
-   "claim_text": "Jev trailed the per-task best LLM on 14 of 15 evaluation tasks, by a median 11.6 macro-F1 points, at a median 44 times lower measured cost.",
-   "source_url": "https://arxiv.org/abs/2609.24574v1",
-   "locator": "Abstract; §4",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "macro-F1 deficit; cost ratio",
-   "value": {
-    "tasks_trailing": "14/15",
-    "median_f1_deficit_pts": 11.6,
-    "median_cost_ratio": 44
-   },
-   "unit": null,
-   "baseline": "per-task best of 19 LLMs",
-   "task": "15 CSS classification tasks",
-   "sample_size": {
-    "n": 7977,
-    "unit": "items (18-task grid)"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "typesafe/jev1.13 (OpenRouter)"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Zero-shot protocol for every model; tasks from one established suite; older corpora may overlap with training data."
-   ],
-   "note": "The authors report the deficit as significant after false-discovery-rate correction.",
-   "headline": "Behind best LLM on 14/15 tasks (−11.6 F1) at 44× lower cost"
-  },
-  {
-   "id": "c-24574-ece",
-   "subject": "arxiv:2609.24574",
-   "claim_text": "Jev’s median expected calibration error over the evaluation tasks was 0.157 (95% CI [0.108, 0.233]) — lower than the verbalised-confidence error of 16 of 19 LLMs but higher than three frontier Claude models (Opus 5: 0.066).",
-   "source_url": "https://arxiv.org/abs/2609.24574v1",
-   "locator": "Abstract; §4 (calibration); Appendix B",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "median ECE (15 equal-width bins)",
-   "value": {
-    "jev": 0.157,
-    "best_baseline": 0.066
-   },
-   "unit": null,
-   "baseline": "verbalised confidence of 19 LLMs",
-   "task": null,
-   "sample_size": {
-    "n": 15,
-    "unit": "tasks (≤500 items each)"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "typesafe/jev1.13 (OpenRouter)"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Median intervals overlap.",
-    "Under equal-mass binning Sonnet 5 falls slightly behind Jev; Opus 5 stays ahead."
-   ],
-   "note": null,
-   "headline": "Median ECE 0.157 vs 0.066 for the best (verbalised) LLM"
-  },
-  {
-   "id": "c-24574-empathy",
-   "subject": "arxiv:2609.24574",
-   "claim_text": "On the empathy task the model reported high confidence while performing near chance; the task contributes a calibration error of 0.538, and removing it lowers the median only to 0.142.",
-   "source_url": "https://arxiv.org/abs/2609.24574v1",
-   "locator": "Abstract; §4",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "task ECE",
-   "value": 0.538,
-   "unit": null,
-   "baseline": null,
-   "task": "empathy in peer-support dialogues",
-   "sample_size": {
-    "n": null,
-    "reason": "per_task_size_in_paper"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "typesafe/jev1.13 (OpenRouter)"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "One construct; the authors do not claim the failure generalises."
-   ],
-   "note": null,
-   "headline": "Empathy: confident near chance; task ECE 0.538"
-  },
-  {
-   "id": "c-24574-cascade",
-   "subject": "arxiv:2609.24574",
-   "claim_text": "Routing low-confidence items to an LLM matched or exceeded that LLM alone at roughly a quarter to half of its measured cost; items at or above 0.9 confidence reached a median accuracy of 0.815 at 0.376 coverage.",
-   "source_url": "https://arxiv.org/abs/2609.24574v1",
-   "locator": "Abstract; §4 (cascades)",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "accuracy; cost fraction",
-   "value": {
-    "cost_fraction_range": [
-     0.25,
-     0.5
-    ],
-    "acc_at_conf_0.9": 0.815,
-    "coverage_at_conf_0.9": 0.376
-   },
-   "unit": null,
-   "baseline": "LLM alone",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "per_task_sizes_in_paper"
-   },
-   "model": "Jev → LLM cascade",
-   "model_version": {
-    "value": "typesafe/jev1.13 (OpenRouter)"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Measured on the tested tasks and LLMs only."
-   ],
-   "note": null,
-   "headline": "Low-confidence routing matches the LLM at ¼–½ of its cost"
-  },
-  {
-   "id": "c-24395-study-a",
-   "subject": "arxiv:2609.24395",
-   "claim_text": "Against VMAF, metadata-only JEVQA reached PLCC 0.737 (ITU-T P.1204.1: 0.733); adding bitstream data gave 0.797 and bitstream plus pixel features 0.824; a pixel-only variant failed.",
-   "source_url": "https://arxiv.org/abs/2609.24395v1",
-   "locator": "Abstract; §§IV–V",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "PLCC",
-   "value": {
-    "metadata": 0.737,
-    "bitstream": 0.797,
-    "bitstream_pixel": 0.824,
-    "p1204_1": 0.733
-   },
-   "unit": null,
-   "baseline": "ITU-T P.1204.1; models trained on the same features",
-   "task": "video quality vs VMAF",
-   "sample_size": {
-    "n": 1936,
-    "unit": "encodes (22 sources)"
-   },
-   "model": "Jev reading extracted features",
-   "model_version": {
-    "value": "jev-1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F6",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Target is VMAF, not human MOS.",
-    "Trained models on the same features remain clearly ahead."
-   ],
-   "note": null,
-   "headline": "PLCC vs VMAF: 0.737 (metadata) → 0.824 (+bitstream, pixel)"
-  },
-  {
-   "id": "c-24395-study-b",
-   "subject": "arxiv:2609.24395",
-   "claim_text": "Against subjective MOS on AVT-VQDB-UHD-1, metadata-only JEVQA reached a correlation of 0.879, close to P.1204.1 (0.898); bitstream statistics did not help.",
-   "source_url": "https://arxiv.org/abs/2609.24395v1",
-   "locator": "Abstract; §V",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "correlation with MOS",
-   "value": {
-    "jevqa_metadata": 0.879,
-    "p1204_1": 0.898
-   },
-   "unit": null,
-   "baseline": "ITU-T P.1204.1",
-   "task": "video quality vs MOS",
-   "sample_size": {
-    "n": 562,
-    "unit": "processed video sequences"
-   },
-   "model": "Jev reading extracted features",
-   "model_version": {
-    "value": "jev-1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Standard models have seen part of this database."
-   ],
-   "note": null,
-   "headline": "Correlation with MOS 0.879 vs P.1204.1 0.898"
-  },
-  {
-   "id": "c-24052-scale",
-   "subject": "arxiv:2609.24052",
-   "claim_text": "A first-stage screen returned answers for 499,500 Texas narratives at a cost of $25.23; the second stage coded 195,857 narratives with a 27-question schema. Cost is governed by schema size rather than narrative length.",
-   "source_url": "https://arxiv.org/abs/2609.24052v1",
-   "locator": "Abstract; §3; §4.1",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "records coded; cost",
-   "value": {
-    "screened": 499500,
-    "screen_cost_usd": 25.23,
-    "coded_full_schema": 195857
-   },
-   "unit": null,
-   "baseline": null,
-   "task": "crash narrative coding",
-   "sample_size": {
-    "n": 499500,
-    "unit": "narratives screened"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "system_test",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Single region and schema."
-   ],
-   "note": null,
-   "headline": "499,500 narratives screened for $25.23; 195,857 fully coded"
-  },
-  {
-   "id": "c-24052-f1",
-   "subject": "arxiv:2609.24052",
-   "claim_text": "Against 2,416 blinded human judgments the typed model reached F1 0.908; one frontier model was 0.059 higher and the other indistinguishable.",
-   "source_url": "https://arxiv.org/abs/2609.24052v1",
-   "locator": "Abstract; §4.3–4.4",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "F1",
-   "value": {
-    "jev": 0.908,
-    "frontier_gain": 0.059
-   },
-   "unit": null,
-   "baseline": "two frontier LLMs on the same records",
-   "task": null,
-   "sample_size": {
-    "n": 2416,
-    "unit": "usable human judgments (effective ≈1,265)"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F3",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Sampling design gives an effective sample of about 1,265."
-   ],
-   "note": null,
-   "headline": "F1 0.908 vs 2,416 human judgments; one frontier LLM +0.059"
-  },
-  {
-   "id": "c-24052-recalibration",
-   "subject": "arxiv:2609.24052",
-   "claim_text": "Probabilities ranked well but overstated prevalence until recalibrated; recalibration fitted on half of the human labels reduced calibration error by a factor of about 3.3 (isotonic), with calibration varying by model rather than by paradigm.",
-   "source_url": "https://arxiv.org/abs/2609.24052v1",
-   "locator": "Highlights; Abstract; §4.2; Table 6",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "calibration error reduction",
-   "value": 3.3,
-   "unit": "× (factor)",
-   "baseline": "raw model probabilities",
-   "task": null,
-   "sample_size": {
-    "n": 2416,
-    "unit": "human judgments"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Same-distribution labels; not a guarantee for new regions or schemas."
-   ],
-   "note": null,
-   "headline": "Recalibration on held-out labels cut calibration error ~3.3×"
-  },
-  {
-   "id": "c-24052-quantisation",
-   "subject": "arxiv:2609.24052",
-   "claim_text": "Because probabilities are returned on a two-decimal grid, calibration error has a resolution floor for rare variables; the paper derives a bound that applies to any model reporting probabilities on a discrete grid.",
-   "source_url": "https://arxiv.org/abs/2609.24052v1",
-   "locator": "Highlights; Abstract; §3",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "resolution floor",
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "analytical"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Matters most for rare positives."
-   ],
-   "note": null,
-   "headline": "Two-decimal probabilities set a calibration-error floor"
-  },
-  {
-   "id": "c-24052-reference",
-   "subject": "arxiv:2609.24052",
-   "claim_text": "Agreement with administrative coded fields understated fidelity to the narrative by a median of 0.26 in kappa.",
-   "source_url": "https://arxiv.org/abs/2609.24052v1",
-   "locator": "Abstract; §4.3",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "kappa gap",
-   "value": 0.26,
-   "unit": null,
-   "baseline": "coded fields vs human narrative labels",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "per_variable"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F6",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Specific to Texas CRIS fields."
-   ],
-   "note": null,
-   "headline": "Coded fields understate narrative fidelity by 0.26 kappa"
-  },
-  {
-   "id": "c-23986-system",
-   "subject": "arxiv:2609.23986",
-   "claim_text": "On LoCoMo, Jev-Mem reached an overall LLM-as-a-Judge score of 0.777 (+11.0% relative to the strongest baseline), built memory in 158 s (6.6× faster than the fastest competing memory system) and averaged 0.93 s per query (36.7% lower than the fastest memory baseline at 1.47 s).",
-   "source_url": "https://arxiv.org/abs/2609.23986v1",
-   "locator": "Abstract; Experiments; Table 1",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "judge score; build time; query latency",
-   "value": {
-    "judge_score": 0.777,
-    "rel_improvement": 0.11,
-    "build_s": 158,
-    "build_speedup": 6.6,
-    "query_s": 0.93,
-    "query_reduction": 0.367
-   },
-   "unit": null,
-   "baseline": "different strongest/fastest baseline per metric",
-   "task": "long-horizon conversational memory",
-   "sample_size": {
-    "n": null,
-    "reason": "benchmark_size_in_paper"
-   },
-   "model": "Jev control plane + System-Two LLM",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "system_test",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F6",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Gains belong to the whole system; each number has a different baseline; LLM-judge metric."
-   ],
-   "note": null,
-   "headline": "LoCoMo judge 0.777 (+11.0%); build 158 s; 0.93 s/query"
-  },
-  {
-   "id": "c-23959-quality",
-   "subject": "arxiv:2609.23959",
-   "claim_text": "A three-seed JevLite ensemble reached AUROC .974 with calibration error .052 on 577 turn-level decisions, non-inferior to an LLM judge (MiniMax-M3) at a pre-registered .02 margin, with no false alarms on legitimate calls and decisions 1.14 turns earlier.",
-   "source_url": "https://arxiv.org/abs/2609.23959v1",
-   "locator": "Abstract; results",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "AUROC; calibration error",
-   "value": {
-    "auroc": 0.974,
-    "ece": 0.052,
-    "turns_earlier": 1.14
-   },
-   "unit": null,
-   "baseline": "LLM judge (MiniMax-M3); fine-tuned ModernBERT",
-   "task": "per-turn scam screening",
-   "sample_size": {
-    "n": 577,
-    "unit": "turn decisions (41 scenarios)"
-   },
-   "model": "JevLite (Qwen3-4B + LoRA; three seeds)",
-   "model_version": {
-    "value": "paper v1"
-   },
-   "hardware": {
-    "value": "one consumer GPU"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F5",
-     "relation": "supports"
+      "id": "c-26550-fee",
+      "subject": "arxiv:2609.26550",
+      "claim_text": "Jev’s fee on the latency panel was 0.36% of the strongest comparator’s; the authors summarise it as about $0.04 per 1,000 judgments at 0.15 s.",
+      "source_url": "https://arxiv.org/abs/2609.26550v1",
+      "locator": "Abstract; §4 (latency and fees); Conclusion",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "fee ratio",
+      "value": 0.0036,
+      "unit": "fraction of comparator fee",
+      "baseline": "GPT-6 Astra",
+      "task": null,
+      "sample_size": {
+        "n": 120,
+        "unit": "decisions (latency panel)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Fees are estimates from reported usage at collection-time prices, not invoices.",
+        "One client location, pacing and provider load."
+      ],
+      "note": null,
+      "headline": "0.36% of the comparator’s fee; ≈$0.04 per 1,000 judgments at 0.15 s"
     },
     {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Recipe selection had test-set exposure.",
-    "All callers synthetic.",
-    "Fine-tuned ModernBERT not significantly worse."
-   ],
-   "note": null,
-   "headline": "JevLite ensemble AUROC .974, ECE .052; no false alarms"
-  },
-  {
-   "id": "c-23959-latency",
-   "subject": "arxiv:2609.23959",
-   "claim_text": "JevLite took 64.5 ms per decision on one consumer GPU, 4.9× lower than the same backbone fine-tuned to generate its answer.",
-   "source_url": "https://arxiv.org/abs/2609.23959v1",
-   "locator": "Abstract; Table 1",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "median latency per decision",
-   "value": 64.5,
-   "unit": "ms",
-   "baseline": "same Qwen3-4B backbone fine-tuned to generate",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "see_paper"
-   },
-   "model": "JevLite (single model)",
-   "model_version": {
-    "value": "paper v1"
-   },
-   "hardware": {
-    "value": "one consumer GPU"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "single_request",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
+      "id": "c-26550-cascade",
+      "subject": "arxiv:2609.26550",
+      "claim_text": "A frozen two-order cascade that accepts confident Jev verdicts and escalates uncertain ones kept 99% of GPT-6’s accuracy at 57% of its fee.",
+      "source_url": "https://arxiv.org/abs/2609.26550v1",
+      "locator": "Abstract; §7; Conclusion",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy retained / fee",
+      "value": {
+        "accuracy_retained": 0.99,
+        "fee_fraction": 0.57
+      },
+      "unit": null,
+      "baseline": "GPT-6 Astra alone",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "per_benchmark_sizes_in_paper"
+      },
+      "model": "Jev → GPT-6 cascade",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "simulation",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        },
+        {
+          "id": "F4",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Simulated cascade fees say nothing about real cascade latency.",
+        "Thresholds chosen on a selection set did not transfer for every fallback."
+      ],
+      "note": null,
+      "headline": "Frozen two-order cascade: 99% of GPT-6 accuracy at 57% of its fee"
     },
     {
-     "id": "F5",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Single-model latency; the three-model ensemble quality is a different scope."
-   ],
-   "note": null,
-   "headline": "64.5 ms/decision; 4.9× faster than same backbone generating"
-  },
-  {
-   "id": "c-23886-latency",
-   "subject": "arxiv:2609.23886",
-   "claim_text": "this-that-model-1.0 decided in 30.9 ms end to end on one laptop GPU and sustained 32 decisions per second, generating no output tokens.",
-   "source_url": "https://arxiv.org/abs/2609.23886v1",
-   "locator": "Abstract; §4",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "latency per decision",
-   "value": 30.9,
-   "unit": "ms",
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "see_paper"
-   },
-   "model": "this-that-model-1.0 (~2B)",
-   "model_version": {
-    "value": "1.0"
-   },
-   "hardware": {
-    "value": "laptop RTX 5080 (per repository README)"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "single_request",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Local timing; not comparable to hosted end-to-end latency that includes the network."
-   ],
-   "note": null,
-   "headline": "30.9 ms per decision on one laptop GPU; 32 decisions/s"
-  },
-  {
-   "id": "c-23886-cohort",
-   "subject": "arxiv:2609.23886",
-   "claim_text": "On a third party’s recorded cohort of 68 questions over 17 states, this-that-model scored 0.941 accuracy (Brier 0.042) against Jev’s 0.765 (0.133); the authors note the 18-point gap rests on 12 questions.",
-   "source_url": "https://arxiv.org/abs/2609.23886v1",
-   "locator": "Abstract; Table 1; comparison discussion",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "accuracy; Brier",
-   "value": {
-    "this_that": {
-     "acc": 0.941,
-     "brier": 0.042
-    },
-    "jev": {
-     "acc": 0.765,
-     "brier": 0.133
-    }
-   },
-   "unit": null,
-   "baseline": "hosted Jev on the same items",
-   "task": null,
-   "sample_size": {
-    "n": 68,
-    "unit": "questions"
-   },
-   "model": "this-that-model-1.0 vs Jev",
-   "model_version": {
-    "value": "1.0 (Jev version not stated)"
-   },
-   "hardware": {
-    "value": "laptop GPU"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F5",
-     "relation": "supports"
+      "id": "c-26550-confidence",
+      "subject": "arxiv:2609.26550",
+      "claim_text": "Jev’s native confidence had Spearman correlation 0.971, 0.999 and 0.948 with the maximum label probability on RewardBench, JudgeBench and HaluEval, so the authors used max-probability for deferral.",
+      "source_url": "https://arxiv.org/abs/2609.26550v1",
+      "locator": "§4 (JEV and the shared contract)",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "Spearman ρ",
+      "value": {
+        "RewardBench": 0.971,
+        "JudgeBench": 0.999,
+        "HaluEval": 0.948
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "per_benchmark_sizes_in_paper"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Correlation of rankings, not a description of how confidence is computed."
+      ],
+      "note": null,
+      "headline": "Native confidence ~ max probability (Spearman .948–.999)"
     },
     {
-     "id": "F7",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Small cohort; wording chosen by the third party."
-   ],
-   "note": null,
-   "headline": "68 questions: 0.941 (Brier .042) vs Jev 0.765 (.133); gap = 12 items"
-  },
-  {
-   "id": "c-23886-subset",
-   "subject": "arxiv:2609.23886",
-   "claim_text": "On the 2,250-question subset of the released benchmark every hosted system answered, Jev scored 0.803 against this-that-model’s 0.844 — a comparison the authors call not clean because their model was trained on those question shapes (training moved it from 0.409 to 0.844).",
-   "source_url": "https://arxiv.org/abs/2609.23886v1",
-   "locator": "Comparison discussion; Table 3",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "accuracy",
-   "value": {
-    "jev": 0.803,
-    "this_that": 0.844,
-    "before_training": 0.409
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 2250,
-    "unit": "questions"
-   },
-   "model": "this-that-model-1.0 vs Jev",
-   "model_version": {
-    "value": "1.0 (Jev version not stated)"
-   },
-   "hardware": {
-    "value": "laptop GPU"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F7",
-     "relation": "supports"
+      "id": "c-26532-calls",
+      "subject": "arxiv:2609.26532",
+      "claim_text": "At τ = 0.5 REFLEX reached 95% success with 1.12 strong-model calls per task, against 88% and 4.10 calls for the strong-only agent — 72.7% fewer strong calls.",
+      "source_url": "https://arxiv.org/abs/2609.26532v1",
+      "locator": "Abstract; §5.1; Table 1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "task success; strong calls per task",
+      "value": {
+        "reflex": {
+          "success": 0.95,
+          "strong_calls": 1.12
+        },
+        "strong_only": {
+          "success": 0.88,
+          "strong_calls": 4.1
+        }
+      },
+      "unit": null,
+      "baseline": "strong-only agent (B0)",
+      "task": "tool-using agent tasks (REFLEX-Sim)",
+      "sample_size": {
+        "n": 100,
+        "unit": "frozen tasks"
+      },
+      "model": "Jev + strong LLM fallback",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Controlled benchmark shows ceiling effects for 2026 frontier models."
+      ],
+      "note": null,
+      "headline": "95% success with 1.12 strong calls/task vs 88% and 4.10 (−72.7%)"
     },
     {
-     "id": "F5",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Training-distribution advantage for the open model."
-   ],
-   "note": null,
-   "headline": "2,250 questions: 0.844 vs Jev 0.803 — on the open model’s training shapes"
-  },
-  {
-   "id": "c-23886-cost",
-   "subject": "arxiv:2609.23886",
-   "claim_text": "One pass of the 42-family internal suite cost $0.000217 of electricity (80 W at $0.30/kWh) against $10.636 and 155.2 minutes for the most accurate hosted model measured.",
-   "source_url": "https://arxiv.org/abs/2609.23886v1",
-   "locator": "Abstract; Table 1 notes",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "cost per suite pass",
-   "value": {
-    "this_that_usd": 0.000217,
-    "best_hosted_usd": 10.636,
-    "best_hosted_minutes": 155.2
-   },
-   "unit": null,
-   "baseline": "most accurate hosted model",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "internal_suite_not_released"
-   },
-   "model": "this-that-model-1.0",
-   "model_version": {
-    "value": "1.0"
-   },
-   "hardware": {
-    "value": "laptop GPU (80 W)"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "author_estimate",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Electricity-only marginal cost excludes hardware, operations and margin; not an API price.",
-    "Internal suite is not released."
-   ],
-   "note": null,
-   "headline": "$0.000217 electricity per suite pass vs $10.636 for a hosted model"
-  },
-  {
-   "id": "c-23136-latency",
-   "subject": "arxiv:2609.23136",
-   "claim_text": "With correct interpretation on all evaluated contracts, Jev reduced median decision latency by 22.4% against DeepSeek and 61.9% against Gemini.",
-   "source_url": "https://arxiv.org/abs/2609.23136v1",
-   "locator": "Abstract; interpretation results",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "median decision latency reduction",
-   "value": {
-    "vs_deepseek": 0.224,
-    "vs_gemini": 0.619
-   },
-   "unit": null,
-   "baseline": "DeepSeek; Gemini",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "see_paper"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "Jev 1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "single_request",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Live API timing from one location and period."
-   ],
-   "note": null,
-   "headline": "Median decision latency −22.4% vs DeepSeek, −61.9% vs Gemini"
-  },
-  {
-   "id": "c-23136-completion",
-   "subject": "arxiv:2609.23136",
-   "claim_text": "In the real image-reading service reached over simulated NR access, Jev completed 459 of 1,080 requests correctly and on time, against 463 for DeepSeek and 435 for Qwen.",
-   "source_url": "https://arxiv.org/abs/2609.23136v1",
-   "locator": "Abstract; real image service results",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "correct on-time completions",
-   "value": {
-    "jev": 459,
-    "deepseek": 463,
-    "qwen": 435
-   },
-   "unit": "of 1,080",
-   "baseline": "DeepSeek; self-hosted Qwen",
-   "task": null,
-   "sample_size": {
-    "n": 1080,
-    "unit": "arrivals per method"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "Jev 1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "hybrid",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
+      "id": "c-26532-external",
+      "subject": "arxiv:2609.26532",
+      "claim_text": "On external BFCL tasks and 300 τ-style episodes, advantages over a cheap generative cascade with self-escalation were limited where ordinary routing was already highly accurate.",
+      "source_url": "https://arxiv.org/abs/2609.26532v1",
+      "locator": "Abstract; external evaluation; Limitations",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "task success; cost",
+      "value": null,
+      "unit": null,
+      "baseline": "cheap generative cascade",
+      "task": "BFCL; τ-style multi-turn episodes",
+      "sample_size": {
+        "n": 300,
+        "unit": "episodes (60 paired tasks)"
+      },
+      "model": "Jev + strong LLM fallback",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Held-out validation, not a full leaderboard with multiple trials."
+      ],
+      "note": null,
+      "headline": "BFCL / τ-style: limited edge over a cheap generative cascade"
     },
     {
-     "id": "F6",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Faster decisions did not raise completions above DeepSeek.",
-    "Radio access simulated."
-   ],
-   "note": null,
-   "headline": "Correct & on time: Jev 459, DeepSeek 463, Qwen 435 of 1,080"
-  },
-  {
-   "id": "c-23136-modeled",
-   "subject": "arxiv:2609.23136",
-   "claim_text": "In modeled update scenarios, completion rose by 3.50 and 8.35 percentage points against DeepSeek and Gemini; a direct-attribute Qwen comparison retained a 53.0% latency reduction and a 4.78-point completion gain.",
-   "source_url": "https://arxiv.org/abs/2609.23136v1",
-   "locator": "Abstract",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "completion gain",
-   "value": {
-    "vs_deepseek_pts": 3.5,
-    "vs_gemini_pts": 8.35,
-    "vs_qwen_pts": 4.78
-   },
-   "unit": null,
-   "baseline": "DeepSeek; Gemini; Qwen",
-   "task": null,
-   "sample_size": {
-    "n": 12,
-    "unit": "trajectories per comparison"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "Jev 1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "simulation",
-   "measurement_scope": "simulation",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Simulation results; separate from the real-service counts."
-   ],
-   "note": null,
-   "headline": "Simulated completion +3.50 / +8.35 points"
-  },
-  {
-   "id": "c-22753-latency",
-   "subject": "arxiv:2609.22753",
-   "claim_text": "Across three consecutive measurement blocks, Jev reduced median client decision latency by 15.9–26.5% against a short structured-output DeepSeek deployment.",
-   "source_url": "https://arxiv.org/abs/2609.22753v1",
-   "locator": "Abstract; §§ on decision latency",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "median decision latency reduction",
-   "value": {
-    "min": 0.159,
-    "max": 0.265
-   },
-   "unit": null,
-   "baseline": "structured-output DeepSeek",
-   "task": null,
-   "sample_size": {
-    "n": 3,
-    "unit": "measurement blocks"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "single_request",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Provider, region and time-window specific."
-   ],
-   "note": null,
-   "headline": "Median client decision latency −15.9% to −26.5%"
-  },
-  {
-   "id": "c-22753-e2e-fees",
-   "subject": "arxiv:2609.22753",
-   "claim_text": "Without caching, median end-to-end latency on requests both systems completed correctly was 11.1–25.3% lower and API fees per correct completion 69.0–70.6% lower; correct on-time completion matched DeepSeek in 7 of 8 conditions and exceeded it in 1.",
-   "source_url": "https://arxiv.org/abs/2609.22753v1",
-   "locator": "Abstract; end-to-end latency section",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "e2e latency reduction; fee per correct completion",
-   "value": {
-    "e2e_reduction": [
-     0.111,
-     0.253
-    ],
-    "fee_reduction": [
-     0.69,
-     0.706
-    ],
-    "completion_matched": "7/8"
-   },
-   "unit": null,
-   "baseline": "structured-output DeepSeek",
-   "task": null,
-   "sample_size": {
-    "n": 8,
-    "unit": "paired OCR conditions"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13"
-   },
-   "hardware": {
-    "value": "two-node OCR service"
-   },
-   "test_level": "hybrid",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
+      "id": "c-26532-action-set",
+      "subject": "arxiv:2609.26532",
+      "claim_text": "Controlled interventions showed that reliability depends on action-set size and on near-valid alternatives near authorisation boundaries.",
+      "source_url": "https://arxiv.org/abs/2609.26532v1",
+      "locator": "Abstract; controlled interventions",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": "agent decisions with varied action sets",
+      "sample_size": {
+        "n": null,
+        "reason": "see_paper"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        },
+        {
+          "id": "F3",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Effects concentrate in authority and risk families."
+      ],
+      "note": null,
+      "headline": "Reliability depends on action-set size and near-valid alternatives"
     },
     {
-     "id": "F3",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Caching-disabled conditions only for the latency figure."
-   ],
-   "note": null,
-   "headline": "No cache: e2e −11.1–25.3%; fees per correct completion −69–71%"
-  },
-  {
-   "id": "c-22753-cache",
-   "subject": "arxiv:2609.22753",
-   "claim_text": "Applying the same repeated-request cache to all backends largely removed the latency difference: the savings are concentrated in fresh interpretation.",
-   "source_url": "https://arxiv.org/abs/2609.22753v1",
-   "locator": "Abstract; cache boundary section",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "latency difference with caching",
-   "value": null,
-   "unit": null,
-   "baseline": "cache-enabled DeepSeek",
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "see_paper"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13"
-   },
-   "hardware": {
-    "value": "two-node OCR service"
-   },
-   "test_level": "hybrid",
-   "measurement_scope": "end_to_end",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Cache policy specific to the tested service."
-   ],
-   "note": null,
-   "headline": "Repeated-request caching largely removes the latency gap"
-  },
-  {
-   "id": "c-25498-self",
-   "subject": "arxiv:2609.25498",
-   "claim_text": "The authors report 92.6% macro-accuracy (95% CI 90.8–94.1%) on their own corpus of 1,150+ decisions, a 7.08 ms median latency on commodity CPU and a first-place result (81.65%) on the community JevBench board.",
-   "source_url": "https://arxiv.org/abs/2609.25498v1",
-   "locator": "Abstract",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "macro-accuracy; latency",
-   "value": {
-    "macro_acc": 0.926,
-    "latency_ms": 7.08,
-    "jevbench": 0.8165
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 1150,
-    "unit": "decisions (author corpus)"
-   },
-   "model": "werr runtime",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": "commodity CPU (authors’ infrastructure)"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "single_request",
-   "findings": [
-    {
-     "id": "F7",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Self-reported; leaderboard claim relies on a community submission."
-   ],
-   "note": null,
-   "headline": "Self-reported 92.6% macro-accuracy, 7.08 ms on CPU, “#1” on JevBench"
-  },
-  {
-   "id": "c-25498-injection",
-   "subject": "arxiv:2609.25498",
-   "claim_text": "The reported 0.0% empirical prompt-injection bypass carries a 95% Wilson interval of 0.0–30.8%, which implies a very small number of evaluated vectors.",
-   "source_url": "https://arxiv.org/abs/2609.25498v1",
-   "locator": "Abstract",
-   "evidence_type": "author_reported_experiment",
-   "reported_by": "authors",
-   "independently_reproduced": false,
-   "metric": "bypass rate",
-   "value": {
-    "point": 0.0,
-    "ci95": [
-     0.0,
-     0.308
-    ]
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "small_unreported_count"
-   },
-   "model": "werr runtime",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F7",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Not a security guarantee."
-   ],
-   "note": null,
-   "headline": "“0% bypass” with a 95% interval up to 30.8%"
-  },
-  {
-   "id": "v-types",
-   "subject": "src:typesafe-launch",
-   "claim_text": "TypeSafe states that Jev never makes type errors because possible outputs are defined in advance, and that its plotted 0% is analytical rather than empirical.",
-   "source_url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-   "locator": "“Hallucination and Type-safety” and “Nuance”",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": "type-error rate",
-   "value": 0.0,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "analytical"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": null,
-    "reason": "launch_post"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "vendor_claim",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Schema conformance only; says nothing about semantic correctness."
-   ],
-   "note": null,
-   "headline": "No type errors by construction; plotted 0% is analytical"
-  },
-  {
-   "id": "v-price-latency",
-   "subject": "src:typesafe-launch",
-   "claim_text": "Launch materials report input pricing of $0.042 per million tokens with free output and an end-to-end response time of 70–500 ms, measured from the vendor’s West Coast laptops.",
-   "source_url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-   "locator": "Comparison table; “Evidence / Technical Results”",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": "price; latency",
-   "value": {
-    "usd_per_mtok_input": 0.042,
-    "latency_ms": [
-     70,
-     500
-    ]
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "not_reported"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0 (docs/models)"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "vendor_claim",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Vendor notes it cannot prove the price is not subsidised.",
-    "Region- and load-dependent."
-   ],
-   "note": null,
-   "headline": "$0.042 / M input tokens; 70–500 ms end to end (vendor)"
-  },
-  {
-   "id": "v-workflow-evals",
-   "subject": "src:typesafe-launch",
-   "claim_text": "The “193.6× faster, 444.6× cheaper” headline comes from the vendor’s workflow evaluations, whose reference answers average two external frontier models; the vendor expects these to be on the higher end of real-world gains and notes the workflows were written by its capabilities team.",
-   "source_url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-   "locator": "“Workflow evals” and “Nuance”",
-   "evidence_type": "vendor_reported_result",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": "speed and cost ratios",
-   "value": {
-    "faster": 193.6,
-    "cheaper": 444.6
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 4,
-    "unit": "published workflows"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": null,
-    "reason": "launch_post"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "vendor_claim",
-   "findings": [
-    {
-     "id": "F4",
-     "relation": "qualifies"
+      "id": "c-25845-quality",
+      "subject": "arxiv:2609.25845",
+      "claim_text": "Answer-supervised post-training raised equal-weight macro accuracy across four benchmarks from 0.706 to 0.761, with the gain concentrated on the two task families represented in training.",
+      "source_url": "https://arxiv.org/abs/2609.25845v1",
+      "locator": "Abstract; §4; Table 2",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "macro accuracy",
+      "value": {
+        "before": 0.706,
+        "after": 0.761
+      },
+      "unit": null,
+      "baseline": "untuned Qwen3-VL-4B read through its LM head",
+      "task": "GQA, SNLI-VE, TextVQA, TallyQA",
+      "sample_size": {
+        "n": null,
+        "reason": "per_benchmark_sizes_in_paper"
+      },
+      "model": "Visual Jev (Qwen3-VL-4B)",
+      "model_version": {
+        "value": "paper v1"
+      },
+      "hardware": {
+        "value": "1× RTX 5090"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Seen-family gains; limited transfer to unseen families."
+      ],
+      "note": null,
+      "headline": "Macro accuracy 0.706 → 0.761 after post-training (seen families)"
     },
     {
-     "id": "F7",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Reference answers are model outputs, not ground truth.",
-    "Possible selection bias acknowledged by the vendor."
-   ],
-   "note": null,
-   "headline": "193.6× faster, 444.6× cheaper on vendor workflow evals"
-  },
-  {
-   "id": "v-confidence",
-   "subject": "src:typesafe-docs-confidence",
-   "claim_text": "Choice and Score answers return a probability for every option or level and a confidence value computed from that distribution; Noul answers return only the probability of yes. The documentation calls confidence a convenient statistic and recommends thresholds tested on the user’s own data.",
-   "source_url": "https://docs.typesafe.ai/confidence",
-   "locator": "“Confidence is derived from the probabilities”",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "The exact statistic is not specified in the prose; the interactive demo’s formula is labelled as how the demo computes it."
-   ],
-   "note": null,
-   "headline": "Confidence = a statistic of the returned distribution"
-  },
-  {
-   "id": "v-calibration-group",
-   "subject": "src:typesafe-docs-system-one",
-   "claim_text": "The vendor states that calibration is measured across groups of predictions and does not guarantee that an individual answer is correct.",
-   "source_url": "https://docs.typesafe.ai/concepts/system-one",
-   "locator": "“How it differs from an LLM”",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "System One models",
-   "model_version": {
-    "value": null,
-    "reason": "documentation"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [],
-   "note": null,
-   "headline": "Calibration is a group property, not a per-answer guarantee"
-  },
-  {
-   "id": "v-text-only",
-   "subject": "src:typesafe-docs-models",
-   "claim_text": "jev-1.13.0 accepts text only (a string, JSON object or array of text values); images, audio and video must be pre-processed into text or structured fields. English is the primary training language.",
-   "source_url": "https://docs.typesafe.ai/models",
-   "locator": "Current models table; State",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F5",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [
-    "Visual Jev and JEVQA do not change this: one is an independent model, the other feeds text features."
-   ],
-   "note": null,
-   "headline": "Text-only input; English is the primary training language"
-  },
-  {
-   "id": "v-jaggedness",
-   "subject": "src:typesafe-docs-jaggedness",
-   "claim_text": "The vendor’s jev-1.13 “jaggedness” page lists known failure modes: literal reading, arithmetic and counting, date comparison, indirection, large irrelevant state, adversarial content, contradictory instructions and criteria, structural invariants, and generation.",
-   "source_url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
-   "locator": "Failure-mode table (last reviewed 2026-09-17)",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
+      "id": "c-25845-speed",
+      "subject": "arxiv:2609.25845",
+      "claim_text": "With 32 questions per image, shared batched execution was 8.9× faster in warm amortized time than independent serial execution and 3.4× faster than batching that recomputes the prefix (5.7 ms per question; about 182 ms per 32-question batch).",
+      "source_url": "https://arxiv.org/abs/2609.25845v1",
+      "locator": "Abstract; §5; Limitations",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "speed-up",
+      "value": {
+        "vs_serial": 8.9,
+        "vs_batched_no_reuse": 3.4,
+        "amortized_ms": 5.7,
+        "batch_ms": 182
+      },
+      "unit": null,
+      "baseline": "independent serial; batched without prefix reuse",
+      "task": null,
+      "sample_size": {
+        "n": 32,
+        "unit": "questions per image"
+      },
+      "model": "Visual Jev (Qwen3-VL-4B)",
+      "model_version": {
+        "value": "paper v1"
+      },
+      "hardware": {
+        "value": "1× RTX 5090 (bfloat16)"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "amortized_question",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Amortized throughput, not independent-request latency; higher peak memory; queueing excluded."
+      ],
+      "note": null,
+      "headline": "8.9× vs serial, 3.4× vs no-reuse batch; 5.7 ms/question amortized"
     },
     {
-     "id": "F3",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "A boundary statement by the vendor, not a neutral evaluation."
-   ],
-   "note": null,
-   "headline": "Vendor-listed failure modes for jev-1.13"
-  },
-  {
-   "id": "v-versioning",
-   "subject": "src:typesafe-docs-models",
-   "claim_text": "Aliases jev-latest and jev-preview both pointed to jev-1.13.0 at the time of review; the vendor advises pinning the versioned ID when thresholds were tuned to a specific version.",
-   "source_url": "https://docs.typesafe.ai/models",
-   "locator": "Aliases",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F7",
-     "relation": "qualifies"
-    }
-   ],
-   "limitations": [],
-   "note": null,
-   "headline": "Aliases point to jev-1.13.0; pin versions when tuning thresholds"
-  },
-  {
-   "id": "v-no-per-account",
-   "subject": "src:typesafe-docs-models",
-   "claim_text": "Jev is not fine-tuned or LoRA-adapted with customer data; it is trained with RLCD and the same weights serve every account. Architecture and training data are not documented.",
-   "source_url": "https://docs.typesafe.ai/models",
-   "locator": "“Customizing Jev”",
-   "evidence_type": "vendor_documentation",
-   "reported_by": "vendor",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F5",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [],
-   "note": null,
-   "headline": "Same weights for all accounts; architecture undisclosed"
-  },
-  {
-   "id": "r-calibration-audit",
-   "subject": "gh:jujumilk3/jev-calibration-audit",
-   "claim_text": "Seven API-only experiments (about 7,000 calls) report that removing the abstain option drove accuracy on unanswerable items from 0.950 to 0.000 at 0.79 confidence, that a Noul and a two-option Choice over the same question differed by 0.125 on average, that 50 identical requests gave 15 distinct answers, and that option order produced no argmax flips in 400 trials.",
-   "source_url": "https://github.com/jujumilk3/jev-calibration-audit/blob/daab9e2c2d5d5683bf07f3482deb653c26856219/README.md",
-   "locator": "README “Results” table",
-   "evidence_type": "community_report",
-   "reported_by": "repository author",
-   "independently_reproduced": false,
-   "metric": "several",
-   "value": {
-    "abstain_removed_acc": [
-     0.95,
-     0.0
-    ],
-    "noul_vs_choice_gap": 0.125,
-    "distinct_answers_of_50": 15,
-    "order_flips_of_400": 0
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 7000,
-    "unit": "API calls (approx.)"
-   },
-   "model": "Jev (API)",
-   "model_version": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
+      "id": "c-25845-typed-head",
+      "subject": "arxiv:2609.25845",
+      "claim_text": "A matched typed-head control offered no consistent accuracy advantage over reading candidate probabilities from the backbone’s LM head.",
+      "source_url": "https://arxiv.org/abs/2609.25845v1",
+      "locator": "Abstract; §5",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy",
+      "value": null,
+      "unit": null,
+      "baseline": "LM-head readout",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "per_benchmark_sizes_in_paper"
+      },
+      "model": "Visual Jev variants",
+      "model_version": {
+        "value": "paper v1"
+      },
+      "hardware": {
+        "value": "1× RTX 5090"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "supports"
+        },
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "One backbone family."
+      ],
+      "note": null,
+      "headline": "Typed head: no consistent gain over LM-head readout"
     },
     {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Community report; not peer-reviewed; not re-run by this review.",
-    "Earlier summaries misread the 11,759 items of the MMLU-ProX source set as the audit size."
-   ],
-   "note": null,
-   "headline": "Abstain removed: acc 0.95 → 0; Noul vs Choice differ by 0.125"
-  },
-  {
-   "id": "r-assay-001",
-   "subject": "gh:jourdanlabs/assay-001",
-   "claim_text": "A pre-registered audit reports Jev’s chosen-option probabilities as calibrated on CLINC150 (ECE 0.0204) but systematically overconfident on Banking77 (ECE 0.0936), with zero type errors across 8,576 responses.",
-   "source_url": "https://github.com/jourdanlabs/assay-001/blob/b7f71053a88025a5af80af00801c5ce725c9547d/README.md",
-   "locator": "README verdict",
-   "evidence_type": "community_report",
-   "reported_by": "repository author",
-   "independently_reproduced": false,
-   "metric": "ECE",
-   "value": {
-    "CLINC150": 0.0204,
-    "Banking77": 0.0936
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 8576,
-    "unit": "responses"
-   },
-   "model": "Jev (API)",
-   "model_version": {
-    "value": null,
-    "reason": "see_repository"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
+      "id": "c-24965-correct-latency",
+      "subject": "arxiv:2609.24965",
+      "claim_text": "Jev matched five other configurations at complete semantic correctness on 20 Choices × 5 repetitions and had the lowest observed median latency among successful responses (0.335 s; p95 0.442 s), at about $0.000060 per successful response.",
+      "source_url": "https://arxiv.org/abs/2609.24965v1",
+      "locator": "Abstract; §3.2; Table 1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "semantic correctness; median latency",
+      "value": {
+        "median_s": 0.335,
+        "p95_s": 0.442,
+        "cost_usd_per_success": 6e-05
+      },
+      "unit": null,
+      "baseline": "eleven other configurations",
+      "task": "source-grounded scientific Choices",
+      "sample_size": {
+        "n": 100,
+        "unit": "requests (20 Choices × 5)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "Jev 1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "single_request",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        },
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Ten cases; six configurations reach complete correctness, so the set is not discriminative."
+      ],
+      "note": null,
+      "headline": "Full semantic correctness; median 0.335 s, p95 0.442 s"
     },
     {
-     "id": "F1",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Community report; protocol frozen before queries per the README; not re-run by this review."
-   ],
-   "note": null,
-   "headline": "ECE 0.0204 (CLINC150) vs 0.0936 (Banking77); 0 type errors"
-  },
-  {
-   "id": "r-acento",
-   "subject": "gh:marcosmartinez/jev-acento",
-   "claim_text": "With English instructions and a Spanish state, jev-1.13.0 lost 3.0–6.4 accuracy points on all four datasets (XNLI, PAWS-X, MASSIVE, Belebele) across 3,200 paired items and 19,200 calls; ECE roughly doubled on the two hardest tasks.",
-   "source_url": "https://github.com/marcosmartinez/jev-acento/blob/7e007b4c2bd552471b56eff035f9a3df7593f9fe/README.md",
-   "locator": "README “Findings”",
-   "evidence_type": "community_report",
-   "reported_by": "repository author",
-   "independently_reproduced": false,
-   "metric": "accuracy change",
-   "value": {
-    "min_pp": -3.0,
-    "max_pp": -6.4
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 3200,
-    "unit": "paired items"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Community report; pre-registered per README; not re-run by this review."
-   ],
-   "note": null,
-   "headline": "Spanish state: −3.0 to −6.4 accuracy points on 4 datasets"
-  },
-  {
-   "id": "r-ood",
-   "subject": "gh:scienthoon/jev-ood-calibration",
-   "claim_text": "On a rule-based task whose label is not recoverable from the text, the chosen level averaged 0.74 probability and a temperature of about 3.4 was needed to make probabilities honest; the returned probabilities were quantised to 0.01 and the gateway exposed no model version.",
-   "source_url": "https://github.com/scienthoon/jev-ood-calibration/blob/914d87ab16517f14e833cff63d73b51235b14bd6/README.md",
-   "locator": "README “Results” and synthetic-task section",
-   "evidence_type": "community_report",
-   "reported_by": "repository author",
-   "independently_reproduced": false,
-   "metric": "refit temperature",
-   "value": 3.4,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 900,
-    "unit": "synthetic items (+3,721 public items)"
-   },
-   "model": "Jev via Vercel AI Gateway (typesafe-ai/jev)",
-   "model_version": {
-    "value": null,
-    "reason": "gateway_exposes_no_version"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
+      "id": "c-24965-hidden-errors",
+      "subject": "arxiv:2609.24965",
+      "claim_text": "Across three comparison models, seven wrong selections on one culture-history question changed downstream counts while preserving the correct final claim label.",
+      "source_url": "https://arxiv.org/abs/2609.24965v1",
+      "locator": "Abstract; §3 (correct labels can conceal wrong quantities)",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "derived-quantity errors",
+      "value": 7,
+      "unit": "wrong selections",
+      "baseline": null,
+      "task": "Luria–Delbrück culture-history case",
+      "sample_size": {
+        "n": null,
+        "reason": "single_case"
+      },
+      "model": "three comparison LLMs (not Jev)",
+      "model_version": {
+        "value": null,
+        "reason": "see_paper"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F6",
+          "relation": "supports"
+        },
+        {
+          "id": "F1",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Errors were made by comparison models; the point is about evaluation design, not about Jev."
+      ],
+      "note": null,
+      "headline": "7 wrong selections changed counts but not the final label"
     },
     {
-     "id": "F7",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Unpinned model alias; post-hoc temperature diagnostic."
-   ],
-   "note": null,
-   "headline": "Unknowable-rule task: temperature ≈3.4 needed; 0.01 quantisation"
-  },
-  {
-   "id": "r-synthetic-survey",
-   "subject": "gh:jjd-lab/jev-synthetic-survey",
-   "claim_text": "Playing 300 survey respondents, jev-1.13.0 asked through Noul led GPT-4.1 on all six distribution measures, but asked through a two-option Choice it trailed on the distribution gap (0.1985 vs 0.1789): the primitive changes the conclusion.",
-   "source_url": "https://github.com/jjd-lab/jev-synthetic-survey/blob/8dbb40db3a69e4d174b5962ffef3bdb8ee7e7a68/README.md",
-   "locator": "README summary",
-   "evidence_type": "community_report",
-   "reported_by": "repository author",
-   "independently_reproduced": false,
-   "metric": "distribution gap",
-   "value": {
-    "jev_choice": 0.1985,
-    "gpt41": 0.1789
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 24596,
-    "unit": "answered cells per arm"
-   },
-   "model": "Jev",
-   "model_version": {
-    "value": "jev-1.13.0"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable_hosted"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F1",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "“Survey” here means a questionnaire study, not a literature review.",
-    "Community report; not re-run."
-   ],
-   "note": null,
-   "headline": "Noul vs Choice framing reverses the comparison with GPT-4.1"
-  },
-  {
-   "id": "r-anyjev",
-   "subject": "gh:nokia-applied-research/anyjev",
-   "claim_text": "For a frozen Qwen3-8B on BANKING77 (20-way, 300 items), label-free permutation calibration reduced answer flips under option reversal from 0.230 to 0.073 and ECE from 0.240 to 0.184; with 100–500 labels ECE fell to 0.095 and the share decidable at ≤5% error rose from 7.7% to 52.0%.",
-   "source_url": "https://github.com/nokia-applied-research/AnyJev/blob/54f1b3533639f52a406941706a4fdf08b2193589/README.md",
-   "locator": "README “What it does” table",
-   "evidence_type": "community_report",
-   "reported_by": "repository authors",
-   "independently_reproduced": false,
-   "metric": "flip rate; ECE; auto-decidable share",
-   "value": {
-    "flips": [
-     0.23,
-     0.073
-    ],
-    "ece_L0": 0.184,
-    "ece_L1": 0.095,
-    "auto_decidable": [
-     0.077,
-     0.52
-    ]
-   },
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": 300,
-    "unit": "test items"
-   },
-   "model": "frozen Qwen3-8B via AnyJev",
-   "model_version": {
-    "value": "README at commit 54f1b35"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_reported"
-   },
-   "test_level": "model_test",
-   "measurement_scope": "not_applicable",
-   "findings": [
-    {
-     "id": "F2",
-     "relation": "supports"
+      "id": "c-24574-accuracy-cost",
+      "subject": "arxiv:2609.24574",
+      "claim_text": "Jev trailed the per-task best LLM on 14 of 15 evaluation tasks, by a median 11.6 macro-F1 points, at a median 44 times lower measured cost.",
+      "source_url": "https://arxiv.org/abs/2609.24574v1",
+      "locator": "Abstract; §4",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "macro-F1 deficit; cost ratio",
+      "value": {
+        "tasks_trailing": "14/15",
+        "median_f1_deficit_pts": 11.6,
+        "median_cost_ratio": 44
+      },
+      "unit": null,
+      "baseline": "per-task best of 19 LLMs",
+      "task": "15 CSS classification tasks",
+      "sample_size": {
+        "n": 7977,
+        "unit": "items (18-task grid)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "typesafe/jev1.13 (OpenRouter)"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Zero-shot protocol for every model; tasks from one established suite; older corpora may overlap with training data."
+      ],
+      "note": "The authors report the deficit as significant after false-discovery-rate correction.",
+      "headline": "Behind best LLM on 14/15 tasks (−11.6 F1) at 44× lower cost"
     },
     {
-     "id": "F3",
-     "relation": "supports"
+      "id": "c-24574-ece",
+      "subject": "arxiv:2609.24574",
+      "claim_text": "Jev’s median expected calibration error over the evaluation tasks was 0.157 (95% CI [0.108, 0.233]) — lower than the verbalised-confidence error of 16 of 19 LLMs but higher than three frontier Claude models (Opus 5: 0.066).",
+      "source_url": "https://arxiv.org/abs/2609.24574v1",
+      "locator": "Abstract; §4 (calibration); Appendix B",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "median ECE (15 equal-width bins)",
+      "value": {
+        "jev": 0.157,
+        "best_baseline": 0.066
+      },
+      "unit": null,
+      "baseline": "verbalised confidence of 19 LLMs",
+      "task": null,
+      "sample_size": {
+        "n": 15,
+        "unit": "tasks (≤500 items each)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "typesafe/jev1.13 (OpenRouter)"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Median intervals overlap.",
+        "Under equal-mass binning Sonnet 5 falls slightly behind Jev; Opus 5 stays ahead."
+      ],
+      "note": null,
+      "headline": "Median ECE 0.157 vs 0.066 for the best (verbalised) LLM"
     },
     {
-     "id": "F5",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [
-    "Point estimate at n=300; wide interval per README."
-   ],
-   "note": null,
-   "headline": "Frozen Qwen3-8B: order flips 0.230 → 0.073; auto-decidable 7.7% → 52%"
-  },
-  {
-   "id": "r-localjev",
-   "subject": "gh:githubnext/localjev",
-   "claim_text": "LocalJev returns Jev-shaped responses by asking a model for JSON probabilities, validating, retrying and normalising them; its README states this is wire-compatible but not mathematically equivalent to a logit read.",
-   "source_url": "https://github.com/githubnext/localjev/blob/3f23e36e1a3bff46c7e83e8e3781d3512bc82021/README.md",
-   "locator": "README “Why a bridge is needed”",
-   "evidence_type": "code_inspection",
-   "reported_by": "this review (README)",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "DiffusionGemma via chat completions",
-   "model_version": {
-    "value": "README at commit 3f23e36"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
+      "id": "c-24574-empathy",
+      "subject": "arxiv:2609.24574",
+      "claim_text": "On the empathy task the model reported high confidence while performing near chance; the task contributes a calibration error of 0.538, and removing it lowers the median only to 0.142.",
+      "source_url": "https://arxiv.org/abs/2609.24574v1",
+      "locator": "Abstract; §4",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "task ECE",
+      "value": 0.538,
+      "unit": null,
+      "baseline": null,
+      "task": "empathy in peer-support dialogues",
+      "sample_size": {
+        "n": null,
+        "reason": "per_task_size_in_paper"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "typesafe/jev1.13 (OpenRouter)"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "One construct; the authors do not claim the failure generalises."
+      ],
+      "note": null,
+      "headline": "Empathy: confident near chance; task ECE 0.538"
+    },
     {
-     "id": "F5",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [],
-   "note": null,
-   "headline": "Wire-compatible, not a logit read: probabilities are generated"
-  },
-  {
-   "id": "r-semif",
-   "subject": "gh:theoleecj/semif",
-   "claim_text": "SemIf (formerly OpenJev) reproduces the interface pattern with a frozen open model’s option-token probabilities and states that it does not reproduce Jev’s undisclosed model or training.",
-   "source_url": "https://github.com/TheoLeeCJ/SemIf/blob/1f2dea3e25379f9dfc98cb83c324f00ab5deda37/README.md",
-   "locator": "README introduction",
-   "evidence_type": "code_inspection",
-   "reported_by": "this review (README)",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "frozen Qwen3.5-4B (and others)",
-   "model_version": {
-    "value": "README at commit 1f2dea3"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
+      "id": "c-24574-cascade",
+      "subject": "arxiv:2609.24574",
+      "claim_text": "Routing low-confidence items to an LLM matched or exceeded that LLM alone at roughly a quarter to half of its measured cost; items at or above 0.9 confidence reached a median accuracy of 0.815 at 0.376 coverage.",
+      "source_url": "https://arxiv.org/abs/2609.24574v1",
+      "locator": "Abstract; §4 (cascades)",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy; cost fraction",
+      "value": {
+        "cost_fraction_range": [
+          0.25,
+          0.5
+        ],
+        "acc_at_conf_0.9": 0.815,
+        "coverage_at_conf_0.9": 0.376
+      },
+      "unit": null,
+      "baseline": "LLM alone",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "per_task_sizes_in_paper"
+      },
+      "model": "Jev → LLM cascade",
+      "model_version": {
+        "value": "typesafe/jev1.13 (OpenRouter)"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Measured on the tested tasks and LLMs only."
+      ],
+      "note": null,
+      "headline": "Low-confidence routing matches the LLM at ¼–½ of its cost"
+    },
     {
-     "id": "F5",
-     "relation": "supports"
-    }
-   ],
-   "limitations": [],
-   "note": null,
-   "headline": "Reproduces the interface pattern, not Jev’s model or training"
-  },
-  {
-   "id": "r-kev",
-   "subject": "gh:jaredpalmer/kev",
-   "claim_text": "Kev states that it follows an architecture described in a third-party blog post about Jev; that description is community speculation, not a disclosure by TypeSafe.",
-   "source_url": "https://github.com/jaredpalmer/kev/blob/557598fced1dada75dfbf36ed144dce309ac6ceb/README.md",
-   "locator": "README introduction",
-   "evidence_type": "code_inspection",
-   "reported_by": "this review (README)",
-   "independently_reproduced": false,
-   "metric": null,
-   "value": null,
-   "unit": null,
-   "baseline": null,
-   "task": null,
-   "sample_size": {
-    "n": null,
-    "reason": "documentation"
-   },
-   "model": "Kev (Qwen3.5 base)",
-   "model_version": {
-    "value": "README at commit 557598f"
-   },
-   "hardware": {
-    "value": null,
-    "reason": "not_applicable"
-   },
-   "test_level": "not_applicable",
-   "measurement_scope": "not_applicable",
-   "findings": [
+      "id": "c-24395-study-a",
+      "subject": "arxiv:2609.24395",
+      "claim_text": "Against VMAF, metadata-only JEVQA reached PLCC 0.737 (ITU-T P.1204.1: 0.733); adding bitstream data gave 0.797 and bitstream plus pixel features 0.824; a pixel-only variant failed.",
+      "source_url": "https://arxiv.org/abs/2609.24395v1",
+      "locator": "Abstract; §§IV–V",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "PLCC",
+      "value": {
+        "metadata": 0.737,
+        "bitstream": 0.797,
+        "bitstream_pixel": 0.824,
+        "p1204_1": 0.733
+      },
+      "unit": null,
+      "baseline": "ITU-T P.1204.1; models trained on the same features",
+      "task": "video quality vs VMAF",
+      "sample_size": {
+        "n": 1936,
+        "unit": "encodes (22 sources)"
+      },
+      "model": "Jev reading extracted features",
+      "model_version": {
+        "value": "jev-1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Target is VMAF, not human MOS.",
+        "Trained models on the same features remain clearly ahead."
+      ],
+      "note": null,
+      "headline": "PLCC vs VMAF: 0.737 (metadata) → 0.824 (+bitstream, pixel)"
+    },
     {
-     "id": "F5",
-     "relation": "supports"
+      "id": "c-24395-study-b",
+      "subject": "arxiv:2609.24395",
+      "claim_text": "Against subjective MOS on AVT-VQDB-UHD-1, metadata-only JEVQA reached a correlation of 0.879, close to P.1204.1 (0.898); bitstream statistics did not help.",
+      "source_url": "https://arxiv.org/abs/2609.24395v1",
+      "locator": "Abstract; §V",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "correlation with MOS",
+      "value": {
+        "jevqa_metadata": 0.879,
+        "p1204_1": 0.898
+      },
+      "unit": null,
+      "baseline": "ITU-T P.1204.1",
+      "task": "video quality vs MOS",
+      "sample_size": {
+        "n": 562,
+        "unit": "processed video sequences"
+      },
+      "model": "Jev reading extracted features",
+      "model_version": {
+        "value": "jev-1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Standard models have seen part of this database."
+      ],
+      "note": null,
+      "headline": "Correlation with MOS 0.879 vs P.1204.1 0.898"
+    },
+    {
+      "id": "c-24052-scale",
+      "subject": "arxiv:2609.24052",
+      "claim_text": "A first-stage screen returned answers for 499,500 Texas narratives at a cost of $25.23; the second stage coded 195,857 narratives with a 27-question schema. Cost is governed by schema size rather than narrative length.",
+      "source_url": "https://arxiv.org/abs/2609.24052v1",
+      "locator": "Abstract; §3; §4.1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "records coded; cost",
+      "value": {
+        "screened": 499500,
+        "screen_cost_usd": 25.23,
+        "coded_full_schema": 195857
+      },
+      "unit": null,
+      "baseline": null,
+      "task": "crash narrative coding",
+      "sample_size": {
+        "n": 499500,
+        "unit": "narratives screened"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Single region and schema."
+      ],
+      "note": null,
+      "headline": "499,500 narratives screened for $25.23; 195,857 fully coded"
+    },
+    {
+      "id": "c-24052-f1",
+      "subject": "arxiv:2609.24052",
+      "claim_text": "Against 2,416 blinded human judgments the typed model reached F1 0.908; one frontier model was 0.059 higher and the other indistinguishable.",
+      "source_url": "https://arxiv.org/abs/2609.24052v1",
+      "locator": "Abstract; §4.3–4.4",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "F1",
+      "value": {
+        "jev": 0.908,
+        "frontier_gain": 0.059
+      },
+      "unit": null,
+      "baseline": "two frontier LLMs on the same records",
+      "task": null,
+      "sample_size": {
+        "n": 2416,
+        "unit": "usable human judgments (effective ≈1,265)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Sampling design gives an effective sample of about 1,265."
+      ],
+      "note": null,
+      "headline": "F1 0.908 vs 2,416 human judgments; one frontier LLM +0.059"
+    },
+    {
+      "id": "c-24052-recalibration",
+      "subject": "arxiv:2609.24052",
+      "claim_text": "Probabilities ranked well but overstated prevalence until recalibrated; recalibration fitted on half of the human labels reduced calibration error by a factor of about 3.3 (isotonic), with calibration varying by model rather than by paradigm.",
+      "source_url": "https://arxiv.org/abs/2609.24052v1",
+      "locator": "Highlights; Abstract; §4.2; Table 6",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "calibration error reduction",
+      "value": 3.3,
+      "unit": "× (factor)",
+      "baseline": "raw model probabilities",
+      "task": null,
+      "sample_size": {
+        "n": 2416,
+        "unit": "human judgments"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Same-distribution labels; not a guarantee for new regions or schemas."
+      ],
+      "note": null,
+      "headline": "Recalibration on held-out labels cut calibration error ~3.3×"
+    },
+    {
+      "id": "c-24052-quantisation",
+      "subject": "arxiv:2609.24052",
+      "claim_text": "Because probabilities are returned on a two-decimal grid, calibration error has a resolution floor for rare variables; the paper derives a bound that applies to any model reporting probabilities on a discrete grid.",
+      "source_url": "https://arxiv.org/abs/2609.24052v1",
+      "locator": "Highlights; Abstract; §3",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "resolution floor",
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "analytical"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Matters most for rare positives."
+      ],
+      "note": null,
+      "headline": "Two-decimal probabilities set a calibration-error floor"
+    },
+    {
+      "id": "c-24052-reference",
+      "subject": "arxiv:2609.24052",
+      "claim_text": "Agreement with administrative coded fields understated fidelity to the narrative by a median of 0.26 in kappa.",
+      "source_url": "https://arxiv.org/abs/2609.24052v1",
+      "locator": "Abstract; §4.3",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "kappa gap",
+      "value": 0.26,
+      "unit": null,
+      "baseline": "coded fields vs human narrative labels",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "per_variable"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Specific to Texas CRIS fields."
+      ],
+      "note": null,
+      "headline": "Coded fields understate narrative fidelity by 0.26 kappa"
+    },
+    {
+      "id": "c-23986-system",
+      "subject": "arxiv:2609.23986",
+      "claim_text": "On LoCoMo, Jev-Mem reached an overall LLM-as-a-Judge score of 0.777 (+11.0% relative to the strongest baseline), built memory in 158 s (6.6× faster than the fastest competing memory system) and averaged 0.93 s per query (36.7% lower than the fastest memory baseline at 1.47 s).",
+      "source_url": "https://arxiv.org/abs/2609.23986v1",
+      "locator": "Abstract; Experiments; Table 1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "judge score; build time; query latency",
+      "value": {
+        "judge_score": 0.777,
+        "rel_improvement": 0.11,
+        "build_s": 158,
+        "build_speedup": 6.6,
+        "query_s": 0.93,
+        "query_reduction": 0.367
+      },
+      "unit": null,
+      "baseline": "different strongest/fastest baseline per metric",
+      "task": "long-horizon conversational memory",
+      "sample_size": {
+        "n": null,
+        "reason": "benchmark_size_in_paper"
+      },
+      "model": "Jev control plane + System-Two LLM",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Gains belong to the whole system; each number has a different baseline; LLM-judge metric."
+      ],
+      "note": null,
+      "headline": "LoCoMo judge 0.777 (+11.0%); build 158 s; 0.93 s/query"
+    },
+    {
+      "id": "c-23959-quality",
+      "subject": "arxiv:2609.23959",
+      "claim_text": "A three-seed JevLite ensemble reached AUROC .974 with calibration error .052 on 577 turn-level decisions, non-inferior to an LLM judge (MiniMax-M3) at a pre-registered .02 margin, with no false alarms on legitimate calls and decisions 1.14 turns earlier.",
+      "source_url": "https://arxiv.org/abs/2609.23959v1",
+      "locator": "Abstract; results",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "AUROC; calibration error",
+      "value": {
+        "auroc": 0.974,
+        "ece": 0.052,
+        "turns_earlier": 1.14
+      },
+      "unit": null,
+      "baseline": "LLM judge (MiniMax-M3); fine-tuned ModernBERT",
+      "task": "per-turn scam screening",
+      "sample_size": {
+        "n": 577,
+        "unit": "turn decisions (41 scenarios)"
+      },
+      "model": "JevLite (Qwen3-4B + LoRA; three seeds)",
+      "model_version": {
+        "value": "paper v1"
+      },
+      "hardware": {
+        "value": "one consumer GPU"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "supports"
+        },
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Recipe selection had test-set exposure.",
+        "All callers synthetic.",
+        "Fine-tuned ModernBERT not significantly worse."
+      ],
+      "note": null,
+      "headline": "JevLite ensemble AUROC .974, ECE .052; no false alarms"
+    },
+    {
+      "id": "c-23959-latency",
+      "subject": "arxiv:2609.23959",
+      "claim_text": "JevLite took 64.5 ms per decision on one consumer GPU, 4.9× lower than the same backbone fine-tuned to generate its answer.",
+      "source_url": "https://arxiv.org/abs/2609.23959v1",
+      "locator": "Abstract; Table 1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "median latency per decision",
+      "value": 64.5,
+      "unit": "ms",
+      "baseline": "same Qwen3-4B backbone fine-tuned to generate",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "see_paper"
+      },
+      "model": "JevLite (single model)",
+      "model_version": {
+        "value": "paper v1"
+      },
+      "hardware": {
+        "value": "one consumer GPU"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "single_request",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        },
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Single-model latency; the three-model ensemble quality is a different scope."
+      ],
+      "note": null,
+      "headline": "64.5 ms/decision; 4.9× faster than same backbone generating"
+    },
+    {
+      "id": "c-23886-latency",
+      "subject": "arxiv:2609.23886",
+      "claim_text": "this-that-model-1.0 decided in 30.9 ms end to end on one laptop GPU and sustained 32 decisions per second, generating no output tokens.",
+      "source_url": "https://arxiv.org/abs/2609.23886v1",
+      "locator": "Abstract; §4",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "latency per decision",
+      "value": 30.9,
+      "unit": "ms",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "see_paper"
+      },
+      "model": "this-that-model-1.0 (~2B)",
+      "model_version": {
+        "value": "1.0"
+      },
+      "hardware": {
+        "value": "laptop RTX 5080 (per repository README)"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "single_request",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Local timing; not comparable to hosted end-to-end latency that includes the network."
+      ],
+      "note": null,
+      "headline": "30.9 ms per decision on one laptop GPU; 32 decisions/s"
+    },
+    {
+      "id": "c-23886-cohort",
+      "subject": "arxiv:2609.23886",
+      "claim_text": "On a third party’s recorded cohort of 68 questions over 17 states, this-that-model scored 0.941 accuracy (Brier 0.042) against Jev’s 0.765 (0.133); the authors note the 18-point gap rests on 12 questions.",
+      "source_url": "https://arxiv.org/abs/2609.23886v1",
+      "locator": "Abstract; Table 1; comparison discussion",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy; Brier",
+      "value": {
+        "this_that": {
+          "acc": 0.941,
+          "brier": 0.042
+        },
+        "jev": {
+          "acc": 0.765,
+          "brier": 0.133
+        }
+      },
+      "unit": null,
+      "baseline": "hosted Jev on the same items",
+      "task": null,
+      "sample_size": {
+        "n": 68,
+        "unit": "questions"
+      },
+      "model": "this-that-model-1.0 vs Jev",
+      "model_version": {
+        "value": "1.0 (Jev version not stated)"
+      },
+      "hardware": {
+        "value": "laptop GPU"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "supports"
+        },
+        {
+          "id": "F7",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Small cohort; wording chosen by the third party."
+      ],
+      "note": null,
+      "headline": "68 questions: 0.941 (Brier .042) vs Jev 0.765 (.133); gap = 12 items"
+    },
+    {
+      "id": "c-23886-subset",
+      "subject": "arxiv:2609.23886",
+      "claim_text": "On the 2,250-question subset of the released benchmark every hosted system answered, Jev scored 0.803 against this-that-model’s 0.844 — a comparison the authors call not clean because their model was trained on those question shapes (training moved it from 0.409 to 0.844).",
+      "source_url": "https://arxiv.org/abs/2609.23886v1",
+      "locator": "Comparison discussion; Table 3",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy",
+      "value": {
+        "jev": 0.803,
+        "this_that": 0.844,
+        "before_training": 0.409
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 2250,
+        "unit": "questions"
+      },
+      "model": "this-that-model-1.0 vs Jev",
+      "model_version": {
+        "value": "1.0 (Jev version not stated)"
+      },
+      "hardware": {
+        "value": "laptop GPU"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F7",
+          "relation": "supports"
+        },
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Training-distribution advantage for the open model."
+      ],
+      "note": null,
+      "headline": "2,250 questions: 0.844 vs Jev 0.803 — on the open model’s training shapes"
+    },
+    {
+      "id": "c-23886-cost",
+      "subject": "arxiv:2609.23886",
+      "claim_text": "One pass of the 42-family internal suite cost $0.000217 of electricity (80 W at $0.30/kWh) against $10.636 and 155.2 minutes for the most accurate hosted model measured.",
+      "source_url": "https://arxiv.org/abs/2609.23886v1",
+      "locator": "Abstract; Table 1 notes",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "cost per suite pass",
+      "value": {
+        "this_that_usd": 0.000217,
+        "best_hosted_usd": 10.636,
+        "best_hosted_minutes": 155.2
+      },
+      "unit": null,
+      "baseline": "most accurate hosted model",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "internal_suite_not_released"
+      },
+      "model": "this-that-model-1.0",
+      "model_version": {
+        "value": "1.0"
+      },
+      "hardware": {
+        "value": "laptop GPU (80 W)"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "author_estimate",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Electricity-only marginal cost excludes hardware, operations and margin; not an API price.",
+        "Internal suite is not released."
+      ],
+      "note": null,
+      "headline": "$0.000217 electricity per suite pass vs $10.636 for a hosted model"
+    },
+    {
+      "id": "c-23136-latency",
+      "subject": "arxiv:2609.23136",
+      "claim_text": "With correct interpretation on all evaluated contracts, Jev reduced median decision latency by 22.4% against DeepSeek and 61.9% against Gemini.",
+      "source_url": "https://arxiv.org/abs/2609.23136v1",
+      "locator": "Abstract; interpretation results",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "median decision latency reduction",
+      "value": {
+        "vs_deepseek": 0.224,
+        "vs_gemini": 0.619
+      },
+      "unit": null,
+      "baseline": "DeepSeek; Gemini",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "see_paper"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "Jev 1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "single_request",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Live API timing from one location and period."
+      ],
+      "note": null,
+      "headline": "Median decision latency −22.4% vs DeepSeek, −61.9% vs Gemini"
+    },
+    {
+      "id": "c-23136-completion",
+      "subject": "arxiv:2609.23136",
+      "claim_text": "In the real image-reading service reached over simulated NR access, Jev completed 459 of 1,080 requests correctly and on time, against 463 for DeepSeek and 435 for Qwen.",
+      "source_url": "https://arxiv.org/abs/2609.23136v1",
+      "locator": "Abstract; real image service results",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "correct on-time completions",
+      "value": {
+        "jev": 459,
+        "deepseek": 463,
+        "qwen": 435
+      },
+      "unit": "of 1,080",
+      "baseline": "DeepSeek; self-hosted Qwen",
+      "task": null,
+      "sample_size": {
+        "n": 1080,
+        "unit": "arrivals per method"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "Jev 1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "hybrid",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        },
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Faster decisions did not raise completions above DeepSeek.",
+        "Radio access simulated."
+      ],
+      "note": null,
+      "headline": "Correct & on time: Jev 459, DeepSeek 463, Qwen 435 of 1,080"
+    },
+    {
+      "id": "c-23136-modeled",
+      "subject": "arxiv:2609.23136",
+      "claim_text": "In modeled update scenarios, completion rose by 3.50 and 8.35 percentage points against DeepSeek and Gemini; a direct-attribute Qwen comparison retained a 53.0% latency reduction and a 4.78-point completion gain.",
+      "source_url": "https://arxiv.org/abs/2609.23136v1",
+      "locator": "Abstract",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "completion gain",
+      "value": {
+        "vs_deepseek_pts": 3.5,
+        "vs_gemini_pts": 8.35,
+        "vs_qwen_pts": 4.78
+      },
+      "unit": null,
+      "baseline": "DeepSeek; Gemini; Qwen",
+      "task": null,
+      "sample_size": {
+        "n": 12,
+        "unit": "trajectories per comparison"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "Jev 1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "simulation",
+      "measurement_scope": "simulation",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Simulation results; separate from the real-service counts."
+      ],
+      "note": null,
+      "headline": "Simulated completion +3.50 / +8.35 points"
+    },
+    {
+      "id": "c-22753-latency",
+      "subject": "arxiv:2609.22753",
+      "claim_text": "Across three consecutive measurement blocks, Jev reduced median client decision latency by 15.9–26.5% against a short structured-output DeepSeek deployment.",
+      "source_url": "https://arxiv.org/abs/2609.22753v1",
+      "locator": "Abstract; §§ on decision latency",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "median decision latency reduction",
+      "value": {
+        "min": 0.159,
+        "max": 0.265
+      },
+      "unit": null,
+      "baseline": "structured-output DeepSeek",
+      "task": null,
+      "sample_size": {
+        "n": 3,
+        "unit": "measurement blocks"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "single_request",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Provider, region and time-window specific."
+      ],
+      "note": null,
+      "headline": "Median client decision latency −15.9% to −26.5%"
+    },
+    {
+      "id": "c-22753-e2e-fees",
+      "subject": "arxiv:2609.22753",
+      "claim_text": "Without caching, median end-to-end latency on requests both systems completed correctly was 11.1–25.3% lower and API fees per correct completion 69.0–70.6% lower; correct on-time completion matched DeepSeek in 7 of 8 conditions and exceeded it in 1.",
+      "source_url": "https://arxiv.org/abs/2609.22753v1",
+      "locator": "Abstract; end-to-end latency section",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "e2e latency reduction; fee per correct completion",
+      "value": {
+        "e2e_reduction": [
+          0.111,
+          0.253
+        ],
+        "fee_reduction": [
+          0.69,
+          0.706
+        ],
+        "completion_matched": "7/8"
+      },
+      "unit": null,
+      "baseline": "structured-output DeepSeek",
+      "task": null,
+      "sample_size": {
+        "n": 8,
+        "unit": "paired OCR conditions"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13"
+      },
+      "hardware": {
+        "value": "two-node OCR service"
+      },
+      "test_level": "hybrid",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        },
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Caching-disabled conditions only for the latency figure."
+      ],
+      "note": null,
+      "headline": "No cache: e2e −11.1–25.3%; fees per correct completion −69–71%"
+    },
+    {
+      "id": "c-22753-cache",
+      "subject": "arxiv:2609.22753",
+      "claim_text": "Applying the same repeated-request cache to all backends largely removed the latency difference: the savings are concentrated in fresh interpretation.",
+      "source_url": "https://arxiv.org/abs/2609.22753v1",
+      "locator": "Abstract; cache boundary section",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "latency difference with caching",
+      "value": null,
+      "unit": null,
+      "baseline": "cache-enabled DeepSeek",
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "see_paper"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13"
+      },
+      "hardware": {
+        "value": "two-node OCR service"
+      },
+      "test_level": "hybrid",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Cache policy specific to the tested service."
+      ],
+      "note": null,
+      "headline": "Repeated-request caching largely removes the latency gap"
+    },
+    {
+      "id": "c-25498-self",
+      "subject": "arxiv:2609.25498",
+      "claim_text": "The authors report 92.6% macro-accuracy (95% CI 90.8–94.1%) on their own corpus of 1,150+ decisions, a 7.08 ms median latency on commodity CPU and a first-place result (81.65%) on the community JevBench board.",
+      "source_url": "https://arxiv.org/abs/2609.25498v1",
+      "locator": "Abstract",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "macro-accuracy; latency",
+      "value": {
+        "macro_acc": 0.926,
+        "latency_ms": 7.08,
+        "jevbench": 0.8165
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 1150,
+        "unit": "decisions (author corpus)"
+      },
+      "model": "werr runtime",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": "commodity CPU (authors’ infrastructure)"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "single_request",
+      "findings": [
+        {
+          "id": "F7",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Self-reported; leaderboard claim relies on a community submission."
+      ],
+      "note": null,
+      "headline": "Self-reported 92.6% macro-accuracy, 7.08 ms on CPU, “#1” on JevBench"
+    },
+    {
+      "id": "c-25498-injection",
+      "subject": "arxiv:2609.25498",
+      "claim_text": "The reported 0.0% empirical prompt-injection bypass carries a 95% Wilson interval of 0.0–30.8%, which implies a very small number of evaluated vectors.",
+      "source_url": "https://arxiv.org/abs/2609.25498v1",
+      "locator": "Abstract",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "bypass rate",
+      "value": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.308
+        ]
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "small_unreported_count"
+      },
+      "model": "werr runtime",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F7",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Not a security guarantee."
+      ],
+      "note": null,
+      "headline": "“0% bypass” with a 95% interval up to 30.8%"
+    },
+    {
+      "id": "v-types",
+      "subject": "src:typesafe-launch",
+      "claim_text": "TypeSafe states that Jev never makes type errors because possible outputs are defined in advance, and that its plotted 0% is analytical rather than empirical.",
+      "source_url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "locator": "“Hallucination and Type-safety” and “Nuance”",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": "type-error rate",
+      "value": 0.0,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "analytical"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": null,
+        "reason": "launch_post"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "vendor_claim",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Schema conformance only; says nothing about semantic correctness."
+      ],
+      "note": null,
+      "headline": "No type errors by construction; plotted 0% is analytical"
+    },
+    {
+      "id": "v-price-latency",
+      "subject": "src:typesafe-launch",
+      "claim_text": "Launch materials report input pricing of $0.042 per million tokens with free output and an end-to-end response time of 70–500 ms, measured from the vendor’s West Coast laptops.",
+      "source_url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "locator": "Comparison table; “Evidence / Technical Results”",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": "price; latency",
+      "value": {
+        "usd_per_mtok_input": 0.042,
+        "latency_ms": [
+          70,
+          500
+        ]
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "not_reported"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0 (docs/models)"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "vendor_claim",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Vendor notes it cannot prove the price is not subsidised.",
+        "Region- and load-dependent."
+      ],
+      "note": null,
+      "headline": "$0.042 / M input tokens; 70–500 ms end to end (vendor)"
+    },
+    {
+      "id": "v-workflow-evals",
+      "subject": "src:typesafe-launch",
+      "claim_text": "The “193.6× faster, 444.6× cheaper” headline comes from the vendor’s workflow evaluations, whose reference answers average two external frontier models; the vendor expects these to be on the higher end of real-world gains and notes the workflows were written by its capabilities team.",
+      "source_url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "locator": "“Workflow evals” and “Nuance”",
+      "evidence_type": "vendor_reported_result",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": "speed and cost ratios",
+      "value": {
+        "faster": 193.6,
+        "cheaper": 444.6
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 4,
+        "unit": "published workflows"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": null,
+        "reason": "launch_post"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "vendor_claim",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "qualifies"
+        },
+        {
+          "id": "F7",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Reference answers are model outputs, not ground truth.",
+        "Possible selection bias acknowledged by the vendor."
+      ],
+      "note": null,
+      "headline": "193.6× faster, 444.6× cheaper on vendor workflow evals"
+    },
+    {
+      "id": "v-confidence",
+      "subject": "src:typesafe-docs-confidence",
+      "claim_text": "Choice and Score answers return a probability for every option or level and a confidence value computed from that distribution; Noul answers return only the probability of yes. The documentation calls confidence a convenient statistic and recommends thresholds tested on the user’s own data.",
+      "source_url": "https://docs.typesafe.ai/confidence",
+      "locator": "“Confidence is derived from the probabilities”",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "The exact statistic is not specified in the prose; the interactive demo’s formula is labelled as how the demo computes it."
+      ],
+      "note": null,
+      "headline": "Confidence = a statistic of the returned distribution"
+    },
+    {
+      "id": "v-calibration-group",
+      "subject": "src:typesafe-docs-system-one",
+      "claim_text": "The vendor states that calibration is measured across groups of predictions and does not guarantee that an individual answer is correct.",
+      "source_url": "https://docs.typesafe.ai/concepts/system-one",
+      "locator": "“How it differs from an LLM”",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "System One models",
+      "model_version": {
+        "value": null,
+        "reason": "documentation"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [],
+      "note": null,
+      "headline": "Calibration is a group property, not a per-answer guarantee"
+    },
+    {
+      "id": "v-text-only",
+      "subject": "src:typesafe-docs-models",
+      "claim_text": "jev-1.13.0 accepts text only (a string, JSON object or array of text values); images, audio and video must be pre-processed into text or structured fields. English is the primary training language.",
+      "source_url": "https://docs.typesafe.ai/models",
+      "locator": "Current models table; State",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [
+        "Visual Jev and JEVQA do not change this: one is an independent model, the other feeds text features."
+      ],
+      "note": null,
+      "headline": "Text-only input; English is the primary training language"
+    },
+    {
+      "id": "v-jaggedness",
+      "subject": "src:typesafe-docs-jaggedness",
+      "claim_text": "The vendor’s jev-1.13 “jaggedness” page lists known failure modes: literal reading, arithmetic and counting, date comparison, indirection, large irrelevant state, adversarial content, contradictory instructions and criteria, structural invariants, and generation.",
+      "source_url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+      "locator": "Failure-mode table (last reviewed 2026-09-17)",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        },
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "A boundary statement by the vendor, not a neutral evaluation."
+      ],
+      "note": null,
+      "headline": "Vendor-listed failure modes for jev-1.13"
+    },
+    {
+      "id": "v-versioning",
+      "subject": "src:typesafe-docs-models",
+      "claim_text": "Aliases jev-latest and jev-preview both pointed to jev-1.13.0 at the time of review; the vendor advises pinning the versioned ID when thresholds were tuned to a specific version.",
+      "source_url": "https://docs.typesafe.ai/models",
+      "locator": "Aliases",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F7",
+          "relation": "qualifies"
+        }
+      ],
+      "limitations": [],
+      "note": null,
+      "headline": "Aliases point to jev-1.13.0; pin versions when tuning thresholds"
+    },
+    {
+      "id": "v-no-per-account",
+      "subject": "src:typesafe-docs-models",
+      "claim_text": "Jev is not fine-tuned or LoRA-adapted with customer data; it is trained with RLCD and the same weights serve every account. Architecture and training data are not documented.",
+      "source_url": "https://docs.typesafe.ai/models",
+      "locator": "“Customizing Jev”",
+      "evidence_type": "vendor_documentation",
+      "reported_by": "vendor",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [],
+      "note": null,
+      "headline": "Same weights for all accounts; architecture undisclosed"
+    },
+    {
+      "id": "r-calibration-audit",
+      "subject": "gh:jujumilk3/jev-calibration-audit",
+      "claim_text": "Seven API-only experiments (about 7,000 calls) report that removing the abstain option drove accuracy on unanswerable items from 0.950 to 0.000 at 0.79 confidence, that a Noul and a two-option Choice over the same question differed by 0.125 on average, that 50 identical requests gave 15 distinct answers, and that option order produced no argmax flips in 400 trials.",
+      "source_url": "https://github.com/jujumilk3/jev-calibration-audit/blob/daab9e2c2d5d5683bf07f3482deb653c26856219/README.md",
+      "locator": "README “Results” table",
+      "evidence_type": "community_report",
+      "reported_by": "repository author",
+      "independently_reproduced": false,
+      "metric": "several",
+      "value": {
+        "abstain_removed_acc": [
+          0.95,
+          0.0
+        ],
+        "noul_vs_choice_gap": 0.125,
+        "distinct_answers_of_50": 15,
+        "order_flips_of_400": 0
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 7000,
+        "unit": "API calls (approx.)"
+      },
+      "model": "Jev (API)",
+      "model_version": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        },
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Community report; not peer-reviewed."
+      ],
+      "note": null,
+      "headline": "Abstain removed: acc 0.95 → 0; Noul vs Choice differ by 0.125"
+    },
+    {
+      "id": "r-assay-001",
+      "subject": "gh:jourdanlabs/assay-001",
+      "claim_text": "A pre-registered audit reports Jev’s chosen-option probabilities as calibrated on CLINC150 (ECE 0.0204) but systematically overconfident on Banking77 (ECE 0.0936), with zero type errors across 8,576 responses.",
+      "source_url": "https://github.com/jourdanlabs/assay-001/blob/b7f71053a88025a5af80af00801c5ce725c9547d/README.md",
+      "locator": "README verdict",
+      "evidence_type": "community_report",
+      "reported_by": "repository author",
+      "independently_reproduced": false,
+      "metric": "ECE",
+      "value": {
+        "CLINC150": 0.0204,
+        "Banking77": 0.0936
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 8576,
+        "unit": "responses"
+      },
+      "model": "Jev (API)",
+      "model_version": {
+        "value": null,
+        "reason": "see_repository"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        },
+        {
+          "id": "F1",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Community report; protocol frozen before queries, per the README."
+      ],
+      "note": null,
+      "headline": "ECE 0.0204 (CLINC150) vs 0.0936 (Banking77); 0 type errors"
+    },
+    {
+      "id": "r-acento",
+      "subject": "gh:marcosmartinez/jev-acento",
+      "claim_text": "With English instructions and a Spanish state, jev-1.13.0 lost 3.0–6.4 accuracy points on all four datasets (XNLI, PAWS-X, MASSIVE, Belebele) across 3,200 paired items and 19,200 calls; ECE roughly doubled on the two hardest tasks.",
+      "source_url": "https://github.com/marcosmartinez/jev-acento/blob/7e007b4c2bd552471b56eff035f9a3df7593f9fe/README.md",
+      "locator": "README “Findings”",
+      "evidence_type": "community_report",
+      "reported_by": "repository author",
+      "independently_reproduced": false,
+      "metric": "accuracy change",
+      "value": {
+        "min_pp": -3.0,
+        "max_pp": -6.4
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 3200,
+        "unit": "paired items"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Community report; pre-registered, per the README."
+      ],
+      "note": null,
+      "headline": "Spanish state: −3.0 to −6.4 accuracy points on 4 datasets"
+    },
+    {
+      "id": "r-ood",
+      "subject": "gh:scienthoon/jev-ood-calibration",
+      "claim_text": "On a rule-based task whose label is not recoverable from the text, the chosen level averaged 0.74 probability and a temperature of about 3.4 was needed to make probabilities honest; the returned probabilities were quantised to 0.01 and the gateway exposed no model version.",
+      "source_url": "https://github.com/scienthoon/jev-ood-calibration/blob/914d87ab16517f14e833cff63d73b51235b14bd6/README.md",
+      "locator": "README “Results” and synthetic-task section",
+      "evidence_type": "community_report",
+      "reported_by": "repository author",
+      "independently_reproduced": false,
+      "metric": "refit temperature",
+      "value": 3.4,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 900,
+        "unit": "synthetic items (+3,721 public items)"
+      },
+      "model": "Jev via Vercel AI Gateway (typesafe-ai/jev)",
+      "model_version": {
+        "value": null,
+        "reason": "gateway_exposes_no_version"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        },
+        {
+          "id": "F7",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Unpinned model alias; post-hoc temperature diagnostic."
+      ],
+      "note": null,
+      "headline": "Unknowable-rule task: temperature ≈3.4 needed; 0.01 quantisation"
+    },
+    {
+      "id": "r-synthetic-survey",
+      "subject": "gh:jjd-lab/jev-synthetic-survey",
+      "claim_text": "Playing 300 survey respondents, jev-1.13.0 asked through Noul led GPT-4.1 on all six distribution measures, but asked through a two-option Choice it trailed on the distribution gap (0.1985 vs 0.1789): the primitive changes the conclusion.",
+      "source_url": "https://github.com/jjd-lab/jev-synthetic-survey/blob/8dbb40db3a69e4d174b5962ffef3bdb8ee7e7a68/README.md",
+      "locator": "README summary",
+      "evidence_type": "community_report",
+      "reported_by": "repository author",
+      "independently_reproduced": false,
+      "metric": "distribution gap",
+      "value": {
+        "jev_choice": 0.1985,
+        "gpt41": 0.1789
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 24596,
+        "unit": "answered cells per arm"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "“Survey” here means a questionnaire study, not a literature review.",
+        "Community report."
+      ],
+      "note": null,
+      "headline": "Noul vs Choice framing reverses the comparison with GPT-4.1"
+    },
+    {
+      "id": "r-anyjev",
+      "subject": "gh:nokia-applied-research/anyjev",
+      "claim_text": "For a frozen Qwen3-8B on BANKING77 (20-way, 300 items), label-free permutation calibration reduced answer flips under option reversal from 0.230 to 0.073 and ECE from 0.240 to 0.184; with 100–500 labels ECE fell to 0.095 and the share decidable at ≤5% error rose from 7.7% to 52.0%.",
+      "source_url": "https://github.com/nokia-applied-research/AnyJev/blob/54f1b3533639f52a406941706a4fdf08b2193589/README.md",
+      "locator": "README “What it does” table",
+      "evidence_type": "community_report",
+      "reported_by": "repository authors",
+      "independently_reproduced": false,
+      "metric": "flip rate; ECE; auto-decidable share",
+      "value": {
+        "flips": [
+          0.23,
+          0.073
+        ],
+        "ece_L0": 0.184,
+        "ece_L1": 0.095,
+        "auto_decidable": [
+          0.077,
+          0.52
+        ]
+      },
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 300,
+        "unit": "test items"
+      },
+      "model": "frozen Qwen3-8B via AnyJev",
+      "model_version": {
+        "value": "README at commit 54f1b35"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_reported"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        },
+        {
+          "id": "F3",
+          "relation": "supports"
+        },
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Point estimate at n=300; wide interval per README."
+      ],
+      "note": null,
+      "headline": "Frozen Qwen3-8B: order flips 0.230 → 0.073; auto-decidable 7.7% → 52%"
+    },
+    {
+      "id": "r-localjev",
+      "subject": "gh:githubnext/localjev",
+      "claim_text": "LocalJev returns Jev-shaped responses by asking a model for JSON probabilities, validating, retrying and normalising them; its README states this is wire-compatible but not mathematically equivalent to a logit read.",
+      "source_url": "https://github.com/githubnext/localjev/blob/3f23e36e1a3bff46c7e83e8e3781d3512bc82021/README.md",
+      "locator": "README “Why a bridge is needed”",
+      "evidence_type": "code_inspection",
+      "reported_by": "code and README inspection",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "DiffusionGemma via chat completions",
+      "model_version": {
+        "value": "README at commit 3f23e36"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [],
+      "note": null,
+      "headline": "Wire-compatible, not a logit read: probabilities are generated"
+    },
+    {
+      "id": "r-semif",
+      "subject": "gh:theoleecj/semif",
+      "claim_text": "SemIf (formerly OpenJev) reproduces the interface pattern with a frozen open model’s option-token probabilities and states that it does not reproduce Jev’s undisclosed model or training.",
+      "source_url": "https://github.com/TheoLeeCJ/SemIf/blob/1f2dea3e25379f9dfc98cb83c324f00ab5deda37/README.md",
+      "locator": "README introduction",
+      "evidence_type": "code_inspection",
+      "reported_by": "code and README inspection",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "frozen Qwen3.5-4B (and others)",
+      "model_version": {
+        "value": "README at commit 1f2dea3"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [],
+      "note": null,
+      "headline": "Reproduces the interface pattern, not Jev’s model or training"
+    },
+    {
+      "id": "r-kev",
+      "subject": "gh:jaredpalmer/kev",
+      "claim_text": "Kev states that it follows an architecture described in a third-party blog post about Jev; that description is community speculation, not a disclosure by TypeSafe.",
+      "source_url": "https://github.com/jaredpalmer/kev/blob/557598fced1dada75dfbf36ed144dce309ac6ceb/README.md",
+      "locator": "README introduction",
+      "evidence_type": "code_inspection",
+      "reported_by": "code and README inspection",
+      "independently_reproduced": false,
+      "metric": null,
+      "value": null,
+      "unit": null,
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": null,
+        "reason": "documentation"
+      },
+      "model": "Kev (Qwen3.5 base)",
+      "model_version": {
+        "value": "README at commit 557598f"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable"
+      },
+      "test_level": "not_applicable",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F5",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [],
+      "note": null,
+      "headline": "Architecture follows third-party speculation, not a disclosure"
     }
-   ],
-   "limitations": [],
-   "note": null,
-   "headline": "Architecture follows third-party speculation, not a disclosure"
-  }
- ]
+  ]
 }

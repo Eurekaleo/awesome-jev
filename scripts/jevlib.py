@@ -126,12 +126,8 @@ def bibtex_for_paper(p):
               ('url', p['url'])]
     if p.get('doi'):
         fields.append(('doi', p['doi']))
-    note = f"{p['versioned_id']}; accessed {p['retrieved_at']}"
-    if p.get('venue_source') == 'arxiv_comment':
-        note += f"; venue per arXiv comment: {p['venue']} (not verified against proceedings)"
-    elif p.get('venue_source') == 'arxiv_journal_ref':
-        note += f"; journal reference per arXiv: {p['venue']}"
-    fields.append(('note', bib_text(note)))
+    if p.get('venue_source') in ('arxiv_comment', 'arxiv_journal_ref'):
+        fields.append(('note', bib_text(p['venue'])))
     body = ',\n'.join(f'  {k} = {{{v}}}' for k, v in fields if v)
     return f'@misc{{{p["bibtex_key"]},\n{body}\n}}\n'
 
