@@ -132,7 +132,10 @@ def render_stages(x):
 
 
 def render_timeline(x):
-    days = [f'2026-09-{d:02d}' for d in range(15, 23)]
+    import datetime as dt
+    last = max(p['published_at'][:10] for p in x.papers if p['tier'] in ('core', 'peripheral'))
+    first = dt.date(2026, 9, 15)  # launch
+    days = [(first + dt.timedelta(days=i)).isoformat() for i in range((dt.date.fromisoformat(last) - first).days + 1)]
     events = defaultdict(list)
     events['2026-09-15'].append(('event', 'Jev released in early access (vendor launch post)', None, None))
     for p in sorted([p for p in x.papers if p['tier'] in ('core', 'peripheral')], key=lambda p: p['published_at']):
@@ -150,7 +153,7 @@ def render_timeline(x):
                              f'<span>{esc(text)}</span></button></li>')
                 rows.append(f'<tr><td>{esc(J.fmt_date(day))}</td><td>{esc(p["title"])}</td><td>{esc(p["tier"])}</td><td>{esc(REL_PRIMARY_LABEL.get(rel, rel))}</td></tr>')
         d = int(day[-2:])
-        cols.append(f'<div class="tl-day{" tl-empty" if not items else ""}"><div class="tl-date"><b>{d}</b><span>Sep</span></div><ul>{"".join(items)}</ul></div>')
+        cols.append(f'<div class="tl-day{" tl-empty" if not items else ""}"><div class="tl-date"><b>{d}</b><span>{dt.date.fromisoformat(day).strftime("%b")}</span></div><ul>{"".join(items)}</ul></div>')
     legend = ''.join(f'<span class="lg rel-{k}"><i aria-hidden="true"></i>{esc(v)}</span>' for k, v in REL_PRIMARY_LABEL.items())
     legend += '<span class="lg lg-event"><i aria-hidden="true"></i>Context event</span><span class="lg lg-peri"><i aria-hidden="true"></i>Peripheral (dashed ring)</span>'
     table = ('<table class="viz-table" data-table="timeline" hidden><caption class="sr-only">Submission dates of core and peripheral studies</caption>'

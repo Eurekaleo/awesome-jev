@@ -18,10 +18,11 @@ Confident on the wrong construct & Probability \& calibration & Audit reliabilit
 Unknowable rules and distribution shift & Probability \& calibration & Hold out domains and rule changes; recalibrate on target-domain labels. & \citep{gh_scienthoon_jev_ood_calibration} \\
 Language shift costs accuracy & Probability \& calibration & Evaluate in the deployment language; pin the model version. & \citep{gh_marcosmartinez_jev_acento,typesafe2026models} \\
 Two-decimal probabilities & Probability \& calibration & Treat rare-event probabilities with care; smooth before log-loss. & \citep{arxiv2609_24052,gh_scienthoon_jev_ood_calibration} \\
-Same request, different answer & Inference \& readout & Measure a test–retest floor and report effects relative to it. & \citep{arxiv2609_26758,gh_jujumilk3_jev_calibration_audit} \\
+Same request, different answer & Inference \& readout & Measure a test–retest floor and report effects relative to it. & \citep{arxiv2609_26758,gh_jujumilk3_jev_calibration_audit,arxiv2609_27678} \\
 Validity effects masquerade as quality & Downstream use & Count invalid outputs as errors and report parse rates separately. & \citep{arxiv2609_26550} \\
 Right label, wrong quantity & Downstream use & Score intermediate relations and derived quantities, not only final labels. & \citep{arxiv2609_24965} \\
 Vendor-listed jagged edges & Decision contract & Keep arithmetic and date logic in code; filter state; split indirect questions. & \citep{typesafe2026jaggedness} \\
+Consistent is not correct & Decision contract & Score every repeat against gold labels and report stable errors separately from changing ones. & \citep{arxiv2609_27678} \\
 \bottomrule
 \end{tabularx}
 \end{table}

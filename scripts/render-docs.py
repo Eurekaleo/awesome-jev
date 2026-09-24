@@ -48,6 +48,13 @@ def methodology(d, s):
     if ghi:
         L += [f'The increment re-ran the searches: {ghi["unique_results"]:,} results, {ghi["new_unverified_candidates"]} new unverified candidates (none added). Watched repositories: ' +
               '; '.join(f'`{w["repo"]}` head `{w.get("head", "?")[:10]}`' for w in ghi['watched']) + '.']
+    for run in d['search-runs']['runs']:
+        if run['kind'] != 'arxiv_keyword_increment' or run['id'] == inc['id']:
+            continue
+        dd = run['decisions']
+        L += ['', f'**Increment {run["id"].split("-", 2)[-1]}.** {run["accepted_rerun"]["queries"]} accepted and {len(run["expansion"])} expansion queries; '
+              f'{run["new_candidates"]} records not screened before: {dd.get("include_core", 0)} added as core studies, {dd.get("include_background", 0)} as background, '
+              f'{dd.get("outside_core_scope", 0)} excluded with a recorded reason. {run.get("note") or ""}'.rstrip()]
     L += ['', '## 3. Eligibility', '',
           '- **Core:** evaluates TypeSafe Jev, a clearly identified Jev-like typed-decision implementation, or a system whose contribution materially depends on such decisions.',
           '- **Peripheral:** within reach of the scope but with contested or self-reported claims; kept visible, not pooled.',

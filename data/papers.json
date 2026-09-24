@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema": "jev-survey/papers@1",
-    "cutoff": "2026-09-23",
+    "cutoff": "2026-09-24",
     "timezone": "Asia/Singapore",
     "note": "Counts are derived by scripts/build.py. Venues are stated only as given in arXiv metadata (journal_ref or author comment); proceedings were not checked (venue_verified_at is null)."
   },
@@ -998,7 +998,7 @@
         "Yasir Zaki"
       ],
       "published_at": "2026-09-21T13:41:54Z",
-      "updated_at": "2026-09-21T13:41:54Z",
+      "updated_at": "2026-09-23T08:36:11Z",
       "retrieved_at": "2026-09-23",
       "year": 2026,
       "month": 9,
@@ -1125,7 +1125,7 @@
         "Xinhong Xie"
       ],
       "published_at": "2026-09-21T17:51:50Z",
-      "updated_at": "2026-09-21T17:51:50Z",
+      "updated_at": "2026-09-23T04:04:31Z",
       "retrieved_at": "2026-09-23",
       "year": 2026,
       "month": 9,
@@ -6372,6 +6372,513 @@
       "background_group": "selective",
       "role": "Selective classification: risk–coverage and rejection; confidence gating long predates typed decision models.",
       "claims": []
+    },
+    {
+      "id": "arxiv:2609.27678",
+      "arxiv_id": "2609.27678",
+      "versioned_id": "2609.27678v1",
+      "doi": null,
+      "title": "Same Scores, Different Decisions: Evaluating JEV and Language Models for Legal Document Understanding",
+      "short_title": "Jev on Contract Inference",
+      "authors": [
+        "Fan Zhang",
+        "Yankai Chen",
+        "Zhuohan Xie",
+        "Yixi Zhou",
+        "Sijia Peng",
+        "Lei Fan",
+        "Xinhua Ji",
+        "Cunyuan Zheng",
+        "Huangyong Shan",
+        "Philip S. Yu",
+        "Xue Liu",
+        "Yu Chen",
+        "Preslav Nakov",
+        "Songwei He"
+      ],
+      "published_at": "2026-09-23T10:53:01Z",
+      "updated_at": "2026-09-23T10:53:01Z",
+      "retrieved_at": "2026-09-24",
+      "year": 2026,
+      "month": 9,
+      "tier": "core",
+      "publication_type": "preprint",
+      "venue": "arXiv",
+      "venue_source": "arxiv_metadata",
+      "venue_verified_at": null,
+      "categories": [
+        "cs.CL"
+      ],
+      "url": "https://arxiv.org/abs/2609.27678v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.27678v1",
+      "bibtex_key": "arxiv2609_27678",
+      "included_by": [
+        "Q01_jev"
+      ],
+      "inclusion_reason": "Evaluates hosted Jev against nine language models on contract inference.",
+      "relationship": "Evaluates hosted jev-1.13.0 against nine language models on legal contract inference.",
+      "summary": "Compares Jev with nine language models on ContractNLI, measuring cost, response time, baseline accuracy and whether individual judgments stay correct when the visible hypotheses, requested outputs and output order change.",
+      "task": "Three-way contract inference (entailment, contradiction, not mentioned) over 17 hypotheses per contract, plus controlled request conditions on one fixed anchor per contract.",
+      "datasets": [
+        "ContractNLI official test split (123 contracts, 2,091 judgments)",
+        "Stability panel: 30 contracts × 4 conditions × 3 repeats",
+        "ContractNLI development contracts (diagnostics)"
+      ],
+      "baselines": [
+        "Gemini 3.5 Flash-Lite",
+        "Gemini 3.1 Pro Preview",
+        "GPT-5.6 Luna and Terra",
+        "GPT-6 Astra",
+        "Claude Sonnet 5",
+        "Claude Haiku 4.5",
+        "Qwen3.5-4B and 9B (local)"
+      ],
+      "models": [
+        "TypeSafe Jev (jev-1.13.0)"
+      ],
+      "main_finding": "Jev had the lowest cost ($0.000228 per contract) and median response time (1.24 s) but lower baseline accuracy (77.38%) than all seven hosted language models (78.96–83.21%). On 30 fixed anchors it kept 23 correct in all twelve responses, one fewer than Claude Sonnet 5, while five of its anchors were answered wrongly every time.",
+      "caveats": [
+        "Stability panel of 30 anchors; paired intervals are descriptive and not adjusted for multiple comparisons.",
+        "Three comparators were added after earlier results were inspected.",
+        "Jev’s output-order condition changes question-key order, which is not the same as autoregressive output order.",
+        "Latency is measured from one client across different providers and collection times."
+      ],
+      "survey_use": "Report persistent correctness and stable errors next to accuracy, and tie cost and latency to a stated workload.",
+      "topics": [
+        "evaluation-methodology",
+        "efficiency",
+        "robustness",
+        "classification"
+      ],
+      "stages": [
+        "contract",
+        "use"
+      ],
+      "method_families": [
+        "hosted_service"
+      ],
+      "applications": [
+        "legal-review"
+      ],
+      "model_relationship": [
+        "commercial_jev"
+      ],
+      "test_level": "model_test",
+      "model_versions": [
+        {
+          "model": "Jev",
+          "version": "jev-1.13.0"
+        }
+      ],
+      "study_family_id": null,
+      "openness": {
+        "code": {
+          "status": "available",
+          "note": "Benchmark code, configurations and analysis.",
+          "url": "https://github.com/ZF-Utokyo/Jev-Benchmark"
+        },
+        "weights": {
+          "status": "not_applicable"
+        },
+        "data": {
+          "status": "available",
+          "note": "ContractNLI (CC BY 4.0) with the study’s splits."
+        },
+        "predictions": {
+          "status": "available",
+          "note": "Per-request predictions released as predictions.jsonl."
+        },
+        "recomputable": {
+          "status": "available",
+          "note": "Reported metrics can be recomputed from the released predictions."
+        },
+        "reproduction": {
+          "status": "not_attempted"
+        }
+      },
+      "evidence_locator": "Abstract; §§2–4 (Tables 1–2, Figure 3); Limitations",
+      "priority": "P1",
+      "review_depth": "full_text_and_selected_tables",
+      "background_group": null,
+      "role": null,
+      "claims": [
+        "c-27678-cost",
+        "c-27678-accuracy",
+        "c-27678-persistent"
+      ],
+      "abstract": "Contract inference requires multiple judgments about a shared document, but aggregate accuracy can conceal changes in the individual decisions. Repeated agreement is also insufficient: a model may consistently return the wrong answer. In this paper, we compare Jev with nine language models on ContractNLI, evaluating inference cost, response time, average correctness, and correctness across repeated request conditions. Controlled comparisons vary hypothesis visibility, requested outputs, and output order while keeping the contract and target judgment fixed. Jev has the lowest cost and median response time among the evaluated configurations, while hosted language models achieve higher baseline accuracy. Rankings by baseline accuracy differ from rankings by correctness across every condition and repeat, although small differences in the latter do not establish a general stability advantage. Development diagnostics further reveal compensating corrections and regressions, as well as persistent errors. These findings motivate evaluating cost and response time alongside whether individual judgments remain correct as the request configuration changes. Code: https://github.com/ZF-Utokyo/Jev-Benchmark"
+    },
+    {
+      "id": "arxiv:2609.27607",
+      "arxiv_id": "2609.27607",
+      "versioned_id": "2609.27607v1",
+      "doi": null,
+      "title": "Can Jev Judge Radiology Reports? Evaluating a System One Model for Clinical Factuality",
+      "short_title": "Jev as a Radiology Report Judge",
+      "authors": [
+        "Jiaju Huang",
+        "Hao Yang",
+        "Xinyu Ma",
+        "Xinglong Liang",
+        "Kunyan Cai",
+        "Junqiang Ma",
+        "Shaobin Chen",
+        "Yue Sun",
+        "Tao Tan"
+      ],
+      "published_at": "2026-09-23T09:26:46Z",
+      "updated_at": "2026-09-23T09:26:46Z",
+      "retrieved_at": "2026-09-24",
+      "year": 2026,
+      "month": 9,
+      "tier": "core",
+      "publication_type": "preprint",
+      "venue": "arXiv",
+      "venue_source": "arxiv_metadata",
+      "venue_verified_at": null,
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "url": "https://arxiv.org/abs/2609.27607v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.27607v1",
+      "bibtex_key": "arxiv2609_27607",
+      "included_by": [
+        "Q01_jev",
+        "Q03_system_one",
+        "Q10_recent_decision_models",
+        "Q11_recent_systemone",
+        "X04_system1_model",
+        "X08_decision_models_plural"
+      ],
+      "inclusion_reason": "Uses hosted Jev as a factuality judge for generated radiology reports.",
+      "relationship": "Uses hosted jev-1.13.0 as a statement-level support judge for generated radiology reports.",
+      "summary": "Scores factual disagreement between a generated and a reference radiology report by asking Jev whether each extracted statement is supported, contradicted or not addressed by the other report, in both directions.",
+      "task": "Report-level agreement with expert error counts; sentence-level detection of injected errors.",
+      "datasets": [
+        "RadEvalX (100 report pairs)",
+        "RadEvalExpert (624 pairs from 208 studies)",
+        "ReXErr sentence test set (19,513 sentences)",
+        "RaTE-Eval (supplementary)"
+      ],
+      "baselines": [
+        "Open NLI judge (DeBERTa-v3-large)",
+        "GREEN",
+        "RadCliQ",
+        "RadGraph F1",
+        "BERTScore",
+        "RadFact and RadMatch on a local Qwen 27B backend",
+        "Finding-count baseline"
+      ],
+      "models": [
+        "TypeSafe Jev (jev-1.13.0)"
+      ],
+      "main_finding": "A one-question Jev configuration reached Kendall τ 0.573 (RadEvalX) and 0.398 (RadEvalExpert) with expert error counts, above an open NLI judge in the same pipeline, at under US$0.03 per 100 report pairs for the judgment calls; RadMatch on a local 27B model agreed better on clinically significant errors.",
+      "caveats": [
+        "Agreement is measured against reference text, not against the image.",
+        "Statements are extracted by a local Qwen3.5-9B model whose cost is excluded.",
+        "Raw probabilities need task-specific calibration before thresholding.",
+        "One Jev version and small expert benchmarks."
+      ],
+      "survey_use": "Separate the judge from decomposition and aggregation, compare with a count baseline, and calibrate before thresholding.",
+      "topics": [
+        "judging",
+        "calibration",
+        "efficiency",
+        "evaluation-methodology"
+      ],
+      "stages": [
+        "probability",
+        "use"
+      ],
+      "method_families": [
+        "hosted_service"
+      ],
+      "applications": [
+        "judging"
+      ],
+      "model_relationship": [
+        "commercial_jev"
+      ],
+      "test_level": "model_test",
+      "model_versions": [
+        {
+          "model": "Jev",
+          "version": "jev-1.13.0"
+        }
+      ],
+      "study_family_id": null,
+      "openness": {
+        "code": {
+          "status": "not_located",
+          "note": "The authors state that analysis scripts and aggregate results are being prepared for release."
+        },
+        "weights": {
+          "status": "not_applicable"
+        },
+        "data": {
+          "status": "restricted",
+          "note": "Benchmarks are available through PhysioNet and their own distributions under their terms."
+        },
+        "predictions": {
+          "status": "not_located"
+        },
+        "recomputable": {
+          "status": "no"
+        },
+        "reproduction": {
+          "status": "not_attempted"
+        }
+      },
+      "evidence_locator": "Abstract; §§3–5 (Tables 1–3); §6.1",
+      "priority": "P1",
+      "review_depth": "full_text_and_selected_tables",
+      "background_group": null,
+      "role": null,
+      "claims": [
+        "c-27607-agreement",
+        "c-27607-cost",
+        "c-27607-calibration"
+      ],
+      "abstract": "An AI-generated radiology report can resemble a physician's report while omitting an abnormality, adding an unsupported finding, or reversing its presence. Measuring these factual differences is essential for evaluating report generators. We study Jev, a System One decision model, as a simple, low-cost judge of agreement with physician-written reference reports. Our evaluator checks whether each statement is supported by the other report and combines these judgments in both directions to capture unsupported claims and omissions. A single-question configuration reaches Kendall correlations of 0.573 on RadEvalX and 0.398 on RadEvalExpert with expert error counts, outperforming an open natural language inference judge under matched decomposition and aggregation. One support question per statement retains similar expert agreement to seven while using 43-45% fewer judgment input tokens. At the documented API price, judgments cost under three cents per hundred report pairs, excluding local decomposition. In a separate controlled-error test, Jev detects false negation with an AUROC of 0.977. Local RadMatch achieves stronger agreement on clinically significant errors in both expert datasets and on total errors in the shared RadEvalExpert subset. Finding-count and error-scope analyses show that benchmark agreement reflects report size and error definitions as well as medical error detection. These results support Jev as a practical judgment component for measuring factual differences in generated radiology reports and identify where more elaborate evaluation remains valuable."
+    },
+    {
+      "id": "arxiv:2609.27535",
+      "arxiv_id": "2609.27535",
+      "versioned_id": "2609.27535v1",
+      "doi": null,
+      "title": "KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration",
+      "short_title": "KITE",
+      "authors": [
+        "Hengyu Li"
+      ],
+      "published_at": "2026-09-23T08:28:15Z",
+      "updated_at": "2026-09-23T08:28:15Z",
+      "retrieved_at": "2026-09-24",
+      "year": 2026,
+      "month": 9,
+      "tier": "core",
+      "publication_type": "preprint",
+      "venue": "arXiv",
+      "venue_source": "arxiv_metadata",
+      "venue_verified_at": null,
+      "categories": [
+        "cs.MA",
+        "cs.CY"
+      ],
+      "url": "https://arxiv.org/abs/2609.27535v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.27535v1",
+      "bibtex_key": "arxiv2609_27535",
+      "included_by": [
+        "Q01_jev"
+      ],
+      "inclusion_reason": "Uses hosted Jev as the typed behavioural kernel of a population-experiment system.",
+      "relationship": "Uses hosted jev-1.13.0 as a typed behavioural kernel for population experiments, corrected with sparse GPT-6 Astra anchors.",
+      "summary": "Queries Jev once per unique respondent state for a distribution over survey answers, runs populations of any size from the resulting table, corrects intervention effects with sparse flagship-model anchors, and carries measured human–model discrepancy into every conclusion.",
+      "task": "Simulating survey responses and intervention effects in social-science and misinformation experiments.",
+      "datasets": [
+        "SocSci210 (TESS experiments; 37 held-out studies)",
+        "Arechar et al. 2023 COVID headlines (16 countries)",
+        "Epstein et al. 2021 (9,070 participants)"
+      ],
+      "baselines": [
+        "GPT-6 Astra (flagship)",
+        "GPT-5.6 Luna",
+        "Human half-sample pilot",
+        "Sampling-only intervals"
+      ],
+      "models": [
+        "TypeSafe Jev (jev-1.13.0)"
+      ],
+      "main_finding": "Flagship anchors covering 1.7% of states cut Epstein effect error by 41% (MAE 0.0305 → 0.0180), and 0.5–1.5% anchor coverage raised captured decision gain on 37 held-out SocSci210 experiments from 0.27 to 0.39; Jev alone passed content-fidelity gates but failed the intervention-sensitivity gates.",
+      "caveats": [
+        "Only two held-out human-referenced datasets test the hybrid; two preregistered primary endpoints were not shown.",
+        "Corrections can import the flagship’s errors.",
+        "The Jev response cache is not released, and vendor updates prevent guaranteed regeneration of outputs.",
+        "Single-author work with recent code."
+      ],
+      "survey_use": "Keep cheap typed prediction apart from validity against people; a provider’s confidence field is not a calibrated probability about human conclusions.",
+      "topics": [
+        "calibration",
+        "efficiency",
+        "evaluation-methodology",
+        "agents"
+      ],
+      "stages": [
+        "probability",
+        "use"
+      ],
+      "method_families": [
+        "hosted_service"
+      ],
+      "applications": [
+        "social-simulation"
+      ],
+      "model_relationship": [
+        "downstream_system"
+      ],
+      "test_level": "system_test",
+      "model_versions": [
+        {
+          "model": "Jev",
+          "version": "jev-1.13.0",
+          "note": "One Noul question per answer option, renormalised."
+        }
+      ],
+      "study_family_id": null,
+      "openness": {
+        "code": {
+          "status": "available",
+          "note": "MIT-licensed package, frozen criteria and provenance records.",
+          "url": "https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator"
+        },
+        "weights": {
+          "status": "not_applicable"
+        },
+        "data": {
+          "status": "partial",
+          "note": "Aggregates only; source microdata are not redistributed."
+        },
+        "predictions": {
+          "status": "not_located",
+          "note": "The authors state the Jev response cache is not released."
+        },
+        "recomputable": {
+          "status": "partial",
+          "note": "Aggregates and provenance records are released."
+        },
+        "reproduction": {
+          "status": "not_attempted"
+        }
+      },
+      "evidence_locator": "Abstract; §§3, 5–9; §11; Table 2",
+      "priority": "P1",
+      "review_depth": "full_text_and_selected_tables",
+      "background_group": null,
+      "role": null,
+      "claims": [
+        "c-27535-anchors",
+        "c-27535-gates",
+        "c-27535-cost",
+        "c-27535-discrepancy"
+      ],
+      "abstract": "KITE queries a typed behavioral kernel once per unique state, then executes populations of any size from the table with event-keyed randomness and common random numbers. An expensive flagship model is reserved for sparse paired anchors that estimate intervention effects. Measured human-model discrepancy is propagated as shared error into every conclusion. Population-experiment cost thus scales with unique states and anchors, while uncertainty is governed by evidence about people rather than Monte Carlo noise. On Epstein experiments with 9,070 participants, anchors covering 1.7% of states reduced effect error by 41% (absolute MAE reduction 0.0125). On 37 held-out SocSci210 experiments, 0.5-1.5% anchor coverage raised captured decision gain from 0.27 to 0.39. The kernel passed content-fidelity criteria in all 15 new countries of a 16-country study. Shared discrepancy yielded retrospective coverage of 93% and 96% at nominal 80% and 90%, versus 29% and 36% from human sampling uncertainty alone. A million agents executed 20 tabulated steps in 0.9 seconds on a laptop. This architecture offers a route to screening candidate interventions before human trials, multi-country content audits, and uncertainty-aware policy comparison at the cost of a few thousand kernel calls with sparse flagship anchors. Property-specific evidence records connect each use to its validation scope, correction provenance, and uncertainty, making these applications auditable."
+    },
+    {
+      "id": "arxiv:2609.27331",
+      "arxiv_id": "2609.27331",
+      "versioned_id": "2609.27331v1",
+      "doi": null,
+      "title": "JEV-Star: Fast, Low-Cost StarCraft II Control with Language-Model Planning",
+      "short_title": "JEV-Star",
+      "authors": [
+        "Weiyu Ma",
+        "Liangbing Zhao",
+        "Yongcheng Zeng",
+        "Jian Zhao"
+      ],
+      "published_at": "2026-09-23T04:09:10Z",
+      "updated_at": "2026-09-23T04:09:10Z",
+      "retrieved_at": "2026-09-24",
+      "year": 2026,
+      "month": 9,
+      "tier": "core",
+      "publication_type": "preprint",
+      "venue": "arXiv",
+      "venue_source": "arxiv_metadata",
+      "venue_verified_at": null,
+      "categories": [
+        "cs.GT"
+      ],
+      "url": "https://arxiv.org/abs/2609.27331v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.27331v1",
+      "bibtex_key": "arxiv2609_27331",
+      "included_by": [
+        "Q01_jev"
+      ],
+      "inclusion_reason": "Uses hosted Jev for action selection in a StarCraft II controller.",
+      "relationship": "Uses hosted Jev 1.13 for frequent action selection in a StarCraft II controller, with GPT-6 Astra writing persistent plans.",
+      "summary": "Lets Jev choose among enumerated legal actions for full-game and unit control while GPT-6 periodically writes plans that reserve resources and fix army posture; compares the combined system with an earlier Jev-only controller.",
+      "task": "StarCraft II full-game control against the built-in AI and SMAC-Hard micromanagement.",
+      "datasets": [
+        "StarCraft II 5.0.16 on AltitudeLE (Protoss vs Zerg)",
+        "35 SMAC-Hard maps × 3 episodes"
+      ],
+      "baselines": [
+        "Initial Jev-only controller",
+        "LLM Play SC2 (reported results, not matched)"
+      ],
+      "models": [
+        "TypeSafe Jev (Jev 1.13)"
+      ],
+      "main_finding": "With GPT-6 planning, the controller won all four completed non-cheating games, including two against Lv7, at a median Jev response of 0.422 s and about USD 3.71 per game (USD 0.15 for Jev); across 35 battle maps mean enemy elimination rose from 16.50% to 37.69% and wins from 3 to 7 of 105.",
+      "caveats": [
+        "Observational: the two controllers also differ in candidate descriptions and execution handling, so planning’s contribution is not isolated.",
+        "Four full games and three episodes per map; one map and matchup for full games.",
+        "Planning accounts for 96% of full-game model cost."
+      ],
+      "survey_use": "Attribute system gains to modules with matched ablations, and report action-layer and planning costs separately.",
+      "topics": [
+        "agents",
+        "efficiency",
+        "selective-control"
+      ],
+      "stages": [
+        "control",
+        "use"
+      ],
+      "method_families": [
+        "hosted_service"
+      ],
+      "applications": [
+        "agent-control"
+      ],
+      "model_relationship": [
+        "downstream_system"
+      ],
+      "test_level": "system_test",
+      "model_versions": [
+        {
+          "model": "Jev",
+          "version": "Jev 1.13"
+        }
+      ],
+      "study_family_id": null,
+      "openness": {
+        "code": {
+          "status": "available",
+          "note": "Controller code; GitHub detects no licence file.",
+          "url": "https://github.com/sc2musa/Jev_Star"
+        },
+        "weights": {
+          "status": "not_applicable"
+        },
+        "data": {
+          "status": "partial",
+          "note": "Winning replays are released; full event logs are not in the repository."
+        },
+        "predictions": {
+          "status": "partial",
+          "note": "Selected decision logs."
+        },
+        "recomputable": {
+          "status": "no"
+        },
+        "reproduction": {
+          "status": "not_attempted"
+        }
+      },
+      "evidence_locator": "Abstract; §§3–4 (Tables 1–6); §5",
+      "priority": "P1",
+      "review_depth": "full_text_and_selected_tables",
+      "background_group": null,
+      "role": null,
+      "claims": [
+        "c-27331-games",
+        "c-27331-micro",
+        "c-27331-cost"
+      ],
+      "abstract": "We present JEV-Star, a StarCraft II controller that defeats the strongest non-cheating built-in AI, Lv7, by combining fast JEV action selection with persistent GPT-6 planning. The combined system wins four full games at Lv5--Lv7, including two Lv7 victories with different seeds, while retaining a median JEV response time of 0.422 seconds. Mean estimated model cost across these games is USD~3.71 per game: USD~0.15 for JEV and USD~3.56 for GPT-6. We compare this system with an initial JEV-only controller in full-game macro control and multi-unit micromanagement. The standalone controller reaches a 20-minute limit against Lv2 without expanding. Across 35 battle maps with three episodes per map and controller, the combined system raises mean enemy elimination from 16.50\\% to 37.69\\% and wins from 3 to 7 out of 105. Replay frames and decision logs document resource reservation, persistent economic goals, and stable army objectives in successful full games. The results demonstrate a practical division between inexpensive, subsecond decisions and longer-horizon planning. The comparison evaluates complete systems; concurrent interface improvements mean that planning's contribution is not isolated by a controlled ablation. Code is available at https://github.com/sc2musa/Jev_Star"
     }
   ]
 }

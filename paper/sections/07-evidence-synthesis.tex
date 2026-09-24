@@ -3,7 +3,7 @@
 
 \subsection{The evidence base}
 
-The thirteen core studies appeared over four days, beginning four days after the launch (Figure 1). Relationships overlap: 10 studies evaluate or use hosted Jev, 5 build or evaluate independent Jev-like models, and 6 embed typed decisions in a larger system (Table 3). Of the 11 studies that query hosted Jev, 8 state the version they called (\texttt{jev-1.13.0} or \texttt{jev-1.13}; one uses \texttt{typesafe/jev1.13} through OpenRouter \citep{arxiv2609_24574}) and 3 state none. Every core study is an arXiv v1 preprint.
+The core studies appeared between 19 and 23 September 2026, beginning four days after the launch (Figure 1). Relationships overlap: 12 studies evaluate or use hosted Jev, 5 build or evaluate independent Jev-like models, and 8 embed typed decisions in a larger system (Table 3). Of the 15 studies that query hosted Jev, 12 state the version they called (\texttt{jev-1.13.0} or \texttt{jev-1.13}; one uses \texttt{typesafe/jev1.13} through OpenRouter \citep{arxiv2609_24574}) and 3 state none. Every core study is an arXiv preprint; two had a second version by 24 September, and their evidence was read on the first.
 
 \begin{figure}[tbp]
 \centering
@@ -32,6 +32,10 @@ Visual Jev & 09-22 & Model test & paper v1 & Macro accuracy 0.706 → 0.761 afte
 REFLEX with Jev & 09-22 & System test & jev-1.13.0 & 95\% success with 1.12 strong calls/task vs 88\% and 4.10 (−72.7\%) & \citep{arxiv2609_26532} \\
 JEV-as-a-Judge & 09-22 & Model test & jev-1.13.0 & RewardBench 92.2\% vs 93.5\%; HaluEval 87.5\% vs 86.7\% (GPT-6) & \citep{arxiv2609_26550} \\
 Type-Safe Is Not Error-Free & 09-22 & Model test & not reported & Hosted Jev AUROC .8146 → .5806 after name–rubric swap; 0\% type errors & \citep{arxiv2609_26758} \\
+JEV-Star & 09-23 & System test & Jev 1.13 & 4/4 full-game wins incl. two vs Lv7 with GPT-6 plans; Jev-only never expanded & \citep{arxiv2609_27331} \\
+KITE & 09-23 & System test & jev-1.13.0 & 1.7\% flagship anchors cut effect error 41\%; decision gain 0.27 → 0.39 & \citep{arxiv2609_27535} \\
+Jev as a Radiology Report Judge & 09-23 & Model test & jev-1.13.0 & Kendall τ 0.573 / 0.398 with expert error counts; beats open NLI & \citep{arxiv2609_27607} \\
+Jev on Contract Inference & 09-23 & Model test & jev-1.13.0 & \$0.000228 and 1.24 s per contract — lowest of ten models & \citep{arxiv2609_27678} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -42,11 +46,15 @@ Typed interfaces remove parse and schema failures by construction, and nothing m
 
 Two qualifications matter. Order is a different intervention from binding: one community audit saw no argmax flips in 400 order permutations on hosted Jev \citep{gh_jujumilk3_jev_calibration_audit}, whereas frozen open readouts are order-sensitive until calibrated \citep{gh_nokia_applied_research_anyjev}. And the mitigations the authors propose (neutral identifiers, randomised names in training) have not been evaluated. Related work outside the Jev literature reaches the same conclusion from other directions: schema descriptions act as prompts \citep{arxiv2608_08254}, forced forms invite invented answers \citep{arxiv2607_20492}, and tool-using agents fail by binding the right action to the wrong entity \citep{arxiv2606_30531}.
 
+Consistency is not correctness either. On contract inference, five of Jev's 30 fixed anchors received the same wrong label in all twelve responses across request conditions and repeats \citep{arxiv2609_27678}.
+
 \subsection{F2 · A native probability makes calibration measurable, not guaranteed}
 
 Every call returns a distribution, so reliability can be audited on each run. Measured reliability varies. Across 15 computational-social-science tasks, Jev's median ECE was 0.157 (95\% CI 0.108–0.233). That beat the verbalised confidence of 16 of 19 LLMs but not three frontier Claude models (best 0.066) \citep{arxiv2609_24574}. The same study shows how a global average hides a local failure: on empathy in peer-support dialogues the model was confident while near chance, a task ECE of 0.538. On crash narratives, probabilities ranked well but overstated prevalence. Recalibration fitted on half of 2,416 blinded human judgments cut calibration error by about 3.3×, and calibration varied by model rather than by paradigm \citep{arxiv2609_24052}. Community audits disagree across datasets. One pre-registered audit found ECE 0.0204 on CLINC150 and 0.0936 on Banking77 \citep{gh_jourdanlabs_assay_001}. Another found that a temperature of about 3.4 was needed on a task whose rule is not recoverable from the text \citep{gh_scienthoon_jev_ood_calibration}. A third found that a Spanish state cost 3.0–6.4 accuracy points and doubled ECE on the hardest tasks \citep{gh_marcosmartinez_jev_acento}. Open models show the same pattern: JevLite reaches calibration error .052 with a temperature-scaled two-label readout, but on synthetic calls and with a recipe chosen under test-set exposure \citep{arxiv2609_23959}.
 
 The qualifications are specific. Native confidence is essentially the maximum probability \citep{arxiv2609_26550}, and the vendor presents calibration as a group property \citep{typesafe2026systemone}. The probabilities are quantised to two decimals \citep{arxiv2609_24052}. The background literature explains the rest: calibration degrades under shift \citep{arxiv1906_02530}; the ranking of confidence signals changes out of domain \citep{arxiv2608_19558}; answer-preserving attacks can move confidence readouts \citep{arxiv2608_06571}; and conformal certificates can fail under a change in how scores are produced \citep{arxiv2609_04445}. Calibration is therefore a property to verify per workload and per construct, with recalibration on held-out target labels. It is not a certificate.
+
+Two new studies point the same way. On radiology report factuality, raw sentence-level probabilities had ECE 0.1192, lowered to 0.0077 on a held-out half by isotonic calibration \citep{arxiv2609_27607}. In population simulation, honest intervals needed a fitted human–model discrepancy: coverage was 0.93 and 0.96 at nominal 0.80 and 0.90, against 0.29 and 0.36 from sampling alone \citep{arxiv2609_27535}.
 
 \subsection{F3 · A bounded first pass with confidence-gated escalation}
 
@@ -54,9 +62,13 @@ Across judging, annotation and agent control, the typed model is usually the che
 
 Every one of these gains is conditional. Thresholds chosen on a selection set did not transfer for every fallback, and simulated cascade fees say nothing about real cascade latency \citep{arxiv2609_26550}. On BFCL and τ-style episodes, where ordinary routing is already accurate, a cheap generative cascade remained competitive \citep{arxiv2609_26532}. Trained feature models still beat zero-shot JEVQA on video quality \citep{arxiv2609_24395}. On multi-step arithmetic, an open typed model trails strong reasoning models \citep{arxiv2609_23886}. The prior art is also clear. Cascades and routers have long traded cost against quality \citep{arxiv2305_05176,arxiv2406_18665,arxiv2601_07206}. In one recent comparison a cheap trained ensemble beat every LLM configuration outright, and a hybrid escalated only its least-confident predictions to an LLM \citep{arxiv2609_17977}. The lesson for RQ4 is to include cheap trained and generative cascades as baselines, and to fix thresholds on data separate from the test set.
 
+The pattern extends to new domains. On contract inference, Jev was the cheapest and fastest of ten configurations but below all seven hosted LLMs on accuracy (77.38\% against 78.96–83.21\%) \citep{arxiv2609_27678}. As a radiology report judge, a one-question configuration beat an open NLI judge but trailed a local 27B RadMatch on clinically significant errors \citep{arxiv2609_27607}. In population experiments, the Jev kernel passed content-fidelity gates but failed intervention-sensitivity gates until sparse flagship anchors, on 1.7\% of states, cut effect error by 41\% \citep{arxiv2609_27535}.
+
 \subsection{F4 · Speed and cost claims decompose into different mechanisms and scopes}
 
 Speed figures in this literature measure different things (Table 4). Single-request latencies include 0.335 s median for scientific Choices \citep{arxiv2609_24965}, 64.5 ms for JevLite on a consumer GPU \citep{arxiv2609_23959} and 30.9 ms for this-that-model on a laptop GPU \citep{arxiv2609_23886}. Visual Jev's 5.7 ms is amortized over 32 questions sharing one image: the batch takes about 182 ms \citep{arxiv2609_25845}. End-to-end figures include network, queueing and retries \citep{arxiv2609_26550,arxiv2609_22753}. Electricity-only marginal cost excludes hardware and operations and cannot be compared with an API bill \citep{arxiv2609_23886}. Several mechanisms produce speed-ups: avoiding autoregressive decoding (JevLite's 4.9× on the same backbone), prefix sharing and batching (Visual Jev's 8.9× and 3.4×), and caching. Caching alone largely removed the latency advantage of Jev over a structured-output LLM in an edge service \citep{arxiv2609_22753}. Faster decisions did not raise end-to-end success: in a real image service reached over simulated radio access, Jev completed 459 of 1,080 requests correctly and on time, against 463 for DeepSeek \citep{arxiv2609_23136}. Serving systems explain part of the effect independently of the model \citep{arxiv2312_07104}. For RQ3 the answer is that no single speed or cost number describes a typed decision model; each figure is valid only within its scope.
+
+Newer figures keep the scopes apart: \$0.000228 per contract at a 1.24 s median, measured end to end \citep{arxiv2609_27678}; judgment calls priced at under three cents per hundred radiology report pairs, excluding local statement extraction \citep{arxiv2609_27607}; \$0.0227 per thousand predictions at a 213 ms median \citep{arxiv2609_27535}; and a 0.422 s median action response inside a StarCraft II controller whose planning calls take 27.6 s and 96\% of the model cost \citep{arxiv2609_27331}.
 
 \begin{table}[tbp]
 \centering\footnotesize
@@ -81,9 +93,13 @@ End to end & LoCoMo judge 0.777 (+11.0\%); build 158 s; 0.93 s/query & \citep{ar
 End to end & Correct \& on time: Jev 459, DeepSeek 463, Qwen 435 of 1,080 & \citep{arxiv2609_23136} \\
 End to end & No cache: e2e −11.1–25.3\%; fees per correct completion −69–71\% & \citep{arxiv2609_22753} \\
 End to end & Repeated-request caching largely removes the latency gap & \citep{arxiv2609_22753} \\
+End to end & \$0.000228 and 1.24 s per contract — lowest of ten models & \citep{arxiv2609_27678} \\
+End to end & \$0.0227 per 1,000 predictions; median 213 ms & \citep{arxiv2609_27535} \\
+End to end & Jev 0.422 s median; \$0.15 of \$3.71 per game & \citep{arxiv2609_27331} \\
 Simulated & Frozen two-order cascade: 99\% of GPT-6 accuracy at 57\% of its fee & \citep{arxiv2609_26550} \\
 Simulated & Simulated completion +3.50 / +8.35 points & \citep{arxiv2609_23136} \\
 Author estimate & \$0.000217 electricity per suite pass vs \$10.636 for a hosted model & \citep{arxiv2609_23886} \\
+Author estimate & Under \$0.03 per 100 report pairs (judgment calls only) & \citep{arxiv2609_27607} \\
 Vendor claim & No type errors by construction; plotted 0\% is analytical & \citep{typesafe2026launch} \\
 Vendor claim & \$0.042 / M input tokens; 70–500 ms end to end (vendor) & \citep{typesafe2026launch} \\
 Vendor claim & 193.6× faster, 444.6× cheaper on vendor workflow evals & \citep{typesafe2026launch} \\
@@ -99,9 +115,11 @@ Vendor claim & 193.6× faster, 444.6× cheaper on vendor workflow evals & \citep
 
 Systems improve for many reasons at once. Jev-Mem reports a LoCoMo judge score of 0.777 (+11.0\% relative), memory construction in 158 s and 0.93 s per query. Each figure is measured against a different baseline, and the quality metric is itself an LLM judge \citep{arxiv2609_23986}. JEVQA's quality depends mainly on feature engineering: metadata-only PLCC 0.737 rose to 0.824 with bitstream and pixel features, while a pixel-only variant failed \citep{arxiv2609_24395}. The choice of reference matters as much as the model. Administrative crash codes understated narrative fidelity by a median 0.26 kappa \citep{arxiv2609_24052}, and correct final labels concealed wrong intermediate quantities in scientific workflows \citep{arxiv2609_24965}. Attribution needs ablations, matched baselines and references that measure what the workflow reuses.
 
+JEV-Star wins full games against the strongest non-cheating built-in StarCraft II AI only with GPT-6 plans added, and its two controllers also differ in candidate descriptions and execution handling, so the planner's share of the gain is not isolated \citep{arxiv2609_27331}.
+
 \subsection{F7 · The evidence is young, clustered and unreplicated}
 
-Thirteen core preprints appeared within four days, each as a single version (Figure 2). Two form one study family \citep{arxiv2609_23136,arxiv2609_22753}. The hosted model is non-deterministic: the test–retest floor was up to 1.33\% answer flips \citep{arxiv2609_26758}, and 50 identical requests produced 15 distinct answers in one audit \citep{gh_jujumilk3_jev_calibration_audit}. Several comparisons rest on small or test-informed samples. The recipe selection in one study had test-set exposure \citep{arxiv2609_23959}, and the 68-question comparison above rests on 12 items. The peripheral study reports “0.0\% injection bypass” with a 95\% interval up to 30.8\% \citep{arxiv2609_25498}. The vendor's workflow evaluations use model outputs as references \citep{typesafe2026launch}. None of the core results has been independently reproduced, and several claimed releases of code and raw predictions could not be located (§9).
+The core preprints appeared within five days of one another, most as a single version (Figure 2). Two form one study family \citep{arxiv2609_23136,arxiv2609_22753}. The hosted model is non-deterministic: the test–retest floor was up to 1.33\% answer flips \citep{arxiv2609_26758}, and 50 identical requests produced 15 distinct answers in one audit \citep{gh_jujumilk3_jev_calibration_audit}. Several comparisons rest on small or test-informed samples. The recipe selection in one study had test-set exposure \citep{arxiv2609_23959}, and the 68-question comparison above rests on 12 items. The peripheral study reports “0.0\% injection bypass” with a 95\% interval up to 30.8\% \citep{arxiv2609_25498}. The vendor's workflow evaluations use model outputs as references \citep{typesafe2026launch}. None of the core results has been independently reproduced, and several claimed releases of code and raw predictions could not be located (§9).
 
 \begin{figure}[tbp]
 \centering

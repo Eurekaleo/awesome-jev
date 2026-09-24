@@ -259,6 +259,14 @@
     {
       "id": "triage",
       "label": "Edge triage"
+    },
+    {
+      "id": "legal-review",
+      "label": "Legal document review"
+    },
+    {
+      "id": "social-simulation",
+      "label": "Population simulation"
     }
   ],
   "model_relationships": [
@@ -453,7 +461,7 @@
       "id": "F7",
       "short": "Young, clustered evidence",
       "title": "The evidence base is young, clustered and unreplicated.",
-      "body": "Thirteen core preprints appeared within four days, each as a single version; two share a study family; many community results are self-reported; several comparisons rest on a handful of items or on test-set-informed choices. None of the core results has been independently reproduced."
+      "body": "The core preprints appeared within five days of one another, most as a single version; two share a study family; many community results are self-reported; several comparisons rest on a handful of items or on test-set-informed choices. None of the core results has been independently reproduced."
     }
   ],
   "background_groups": [
@@ -641,7 +649,8 @@
       "desc": "Repeated identical requests to the hosted model do not always return the same answer, which sets a floor under any flip-rate comparison.",
       "claims": [
         "c-26758-retest",
-        "r-calibration-audit"
+        "r-calibration-audit",
+        "c-27678-persistent"
       ],
       "mitigation": "Measure a test–retest floor and report effects relative to it."
     },
@@ -677,6 +686,16 @@
         "v-jaggedness"
       ],
       "mitigation": "Keep arithmetic and date logic in code; filter state; split indirect questions."
+    },
+    {
+      "stage": "contract",
+      "title": "Consistent is not correct",
+      "desc": "A model can return the same wrong label under every request condition and repeat; agreement across repeats then hides a stable error.",
+      "mitigation": "Score every repeat against gold labels and report stable errors separately from changing ones.",
+      "claims": [
+        "c-27678-persistent"
+      ],
+      "background": []
     }
   ],
   "application_cards": [
@@ -684,11 +703,13 @@
       "id": "judging",
       "decides": "Which of two responses is better, or whether an answer is supported.",
       "papers": [
-        "arxiv:2609.26550"
+        "arxiv:2609.26550",
+        "arxiv:2609.27607"
       ],
       "claims": [
         "c-26550-quality",
-        "c-26550-cascade"
+        "c-26550-cascade",
+        "c-27607-agreement"
       ],
       "caution": "Derivation checking and style-adversarial pairs remain hard; adjudication by one author."
     },
@@ -711,11 +732,13 @@
       "id": "agent-control",
       "decides": "Which tool or action to take next inside an agent, escalating to a strong LLM when unsure.",
       "papers": [
-        "arxiv:2609.26532"
+        "arxiv:2609.26532",
+        "arxiv:2609.27331"
       ],
       "claims": [
         "c-26532-calls",
-        "c-26532-external"
+        "c-26532-external",
+        "c-27331-games"
       ],
       "caution": "A cheap generative cascade is competitive where routing is already accurate."
     },
@@ -791,6 +814,31 @@
         "c-25845-speed"
       ],
       "caution": "Amortized timing; gains concentrated on trained task families."
+    },
+    {
+      "id": "legal-review",
+      "decides": "Entailment, contradiction or no mention for each hypothesis about one contract.",
+      "papers": [
+        "arxiv:2609.27678"
+      ],
+      "claims": [
+        "c-27678-cost",
+        "c-27678-accuracy",
+        "c-27678-persistent"
+      ],
+      "caution": "Cheapest and fastest, but below every hosted LLM on accuracy; small stability panel."
+    },
+    {
+      "id": "social-simulation",
+      "decides": "The distribution of a described respondent’s survey answers, once per unique state.",
+      "papers": [
+        "arxiv:2609.27535"
+      ],
+      "claims": [
+        "c-27535-anchors",
+        "c-27535-gates"
+      ],
+      "caution": "Fails intervention-sensitivity gates without flagship anchors; two human-referenced tests."
     }
   ]
 }

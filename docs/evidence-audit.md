@@ -32,6 +32,10 @@ Rules used to read and record evidence, followed by the per-study audit. Values 
 | [REFLEX with Jev](https://arxiv.org/abs/2609.26532v1) (2026-09-22) | commercial_jev, downstream_system | System test | Jev: jev-1.13.0 | not_located | not_applicable | partial | not_located | 3 |
 | [JEV-as-a-Judge](https://arxiv.org/abs/2609.26550v1) (2026-09-22) | commercial_jev | Model test | Jev: jev-1.13.0 | claimed_not_located | not_applicable | partial | claimed_not_located | 4 |
 | [Type-Safe Is Not Error-Free](https://arxiv.org/abs/2609.26758v1) (2026-09-22) | commercial_jev, independent_jev_like | Model test | TypeSafe hosted model: not reported | claimed_not_located | not_located | claimed_not_located | claimed_not_located | 6 |
+| [JEV-Star](https://arxiv.org/abs/2609.27331v1) (2026-09-23) | downstream_system | System test | Jev: Jev 1.13 | available | not_applicable | partial | partial | 3 |
+| [KITE](https://arxiv.org/abs/2609.27535v1) (2026-09-23) | downstream_system | System test | Jev: jev-1.13.0 | available | not_applicable | partial | not_located | 4 |
+| [Jev as a Radiology Report Judge](https://arxiv.org/abs/2609.27607v1) (2026-09-23) | commercial_jev | Model test | Jev: jev-1.13.0 | not_located | not_applicable | restricted | not_located | 3 |
+| [Jev on Contract Inference](https://arxiv.org/abs/2609.27678v1) (2026-09-23) | commercial_jev | Model test | Jev: jev-1.13.0 | available | not_applicable | available | available | 3 |
 
 ¹ Study family `li-wang-edge-2026`.
 
@@ -41,11 +45,11 @@ Rules used to read and record evidence, followed by the per-study audit. Values 
 
 **amortized question** — 8.9× vs serial, 3.4× vs no-reuse batch; 5.7 ms/question amortized (2609.25845)
 
-**end to end** — 0.36% of the comparator’s fee; ≈$0.04 per 1,000 judgments at 0.15 s (2609.26550); 95% success with 1.12 strong calls/task vs 88% and 4.10 (−72.7%) (2609.26532); Behind best LLM on 14/15 tasks (−11.6 F1) at 44× lower cost (2609.24574); Low-confidence routing matches the LLM at ¼–½ of its cost (2609.24574); 499,500 narratives screened for $25.23; 195,857 fully coded (2609.24052); LoCoMo judge 0.777 (+11.0%); build 158 s; 0.93 s/query (2609.23986); Correct & on time: Jev 459, DeepSeek 463, Qwen 435 of 1,080 (2609.23136); No cache: e2e −11.1–25.3%; fees per correct completion −69–71% (2609.22753); Repeated-request caching largely removes the latency gap (2609.22753)
+**end to end** — 0.36% of the comparator’s fee; ≈$0.04 per 1,000 judgments at 0.15 s (2609.26550); 95% success with 1.12 strong calls/task vs 88% and 4.10 (−72.7%) (2609.26532); Behind best LLM on 14/15 tasks (−11.6 F1) at 44× lower cost (2609.24574); Low-confidence routing matches the LLM at ¼–½ of its cost (2609.24574); 499,500 narratives screened for $25.23; 195,857 fully coded (2609.24052); LoCoMo judge 0.777 (+11.0%); build 158 s; 0.93 s/query (2609.23986); Correct & on time: Jev 459, DeepSeek 463, Qwen 435 of 1,080 (2609.23136); No cache: e2e −11.1–25.3%; fees per correct completion −69–71% (2609.22753); Repeated-request caching largely removes the latency gap (2609.22753); $0.000228 and 1.24 s per contract — lowest of ten models (2609.27678); $0.0227 per 1,000 predictions; median 213 ms (2609.27535); Jev 0.422 s median; $0.15 of $3.71 per game (2609.27331)
 
 **simulation** — Frozen two-order cascade: 99% of GPT-6 accuracy at 57% of its fee (2609.26550); Simulated completion +3.50 / +8.35 points (2609.23136)
 
-**author estimate** — $0.000217 electricity per suite pass vs $10.636 for a hosted model (2609.23886)
+**author estimate** — $0.000217 electricity per suite pass vs $10.636 for a hosted model (2609.23886); Under $0.03 per 100 report pairs (judgment calls only) (2609.27607)
 
 **vendor claim** — No type errors by construction; plotted 0% is analytical (typesafe-launch); $0.042 / M input tokens; 70–500 ms end to end (vendor) (typesafe-launch); 193.6× faster, 444.6× cheaper on vendor workflow evals (typesafe-launch)
 

@@ -1182,6 +1182,120 @@
           "2609.15982"
         ]
       }
+    },
+    {
+      "id": "gh:zf-utokyo/jev-benchmark",
+      "full_name": "ZF-Utokyo/Jev-Benchmark",
+      "url": "https://github.com/ZF-Utokyo/Jev-Benchmark",
+      "sets": [
+        "priority"
+      ],
+      "commit": "57b42a356de9369fa07f9a67bb224228e9c4047b",
+      "commit_date": null,
+      "readme_url": "https://github.com/ZF-Utokyo/Jev-Benchmark/blob/57b42a356de9369fa07f9a67bb224228e9c4047b/README.md",
+      "accessed_at": "2026-09-24",
+      "license": null,
+      "stars_at_snapshot": null,
+      "description": "Cost, accuracy and consistent correctness of Jev and nine language models on ContractNLI.",
+      "audit_depth": "README_metadata",
+      "readme_fetched": true,
+      "selected_source_read": [],
+      "executed": false,
+      "type": "evaluation",
+      "summary": "Benchmark code, configurations, per-request predictions and analysis for the contract-inference study.",
+      "boundary": "Not independently reproduced.",
+      "method_family": "hosted_service",
+      "base_model": null,
+      "related_papers": [
+        "arxiv:2609.27678"
+      ],
+      "affiliation": "independent",
+      "availability": {
+        "code": "available",
+        "weights": "not_applicable",
+        "training_code": "not_applicable",
+        "inference_code": "not_applicable",
+        "evaluation": "available",
+        "data": "available",
+        "raw_predictions": "available"
+      },
+      "notes": "GitHub detects no licence file."
+    },
+    {
+      "id": "gh:hengyuli-ozaki-lab/kite_population_simulator",
+      "full_name": "HengyuLi-Ozaki-lab/kite_population_simulator",
+      "url": "https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator",
+      "sets": [
+        "priority"
+      ],
+      "commit": "69057c07a23f6575e6565fd7af08b4b3bbda43db",
+      "commit_date": null,
+      "readme_url": "https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator/blob/69057c07a23f6575e6565fd7af08b4b3bbda43db/README.md",
+      "accessed_at": "2026-09-24",
+      "license": "MIT",
+      "stars_at_snapshot": null,
+      "description": "KITE: population experiments with a typed Jev kernel and sparse flagship calibration.",
+      "audit_depth": "README_metadata",
+      "readme_fetched": true,
+      "selected_source_read": [],
+      "executed": false,
+      "type": "system",
+      "summary": "The kite package, frozen evaluation criteria, aggregate results and provenance records; the Jev response cache is not released.",
+      "boundary": "Not independently reproduced.",
+      "method_family": "hosted_service",
+      "base_model": null,
+      "related_papers": [
+        "arxiv:2609.27535"
+      ],
+      "affiliation": "independent",
+      "availability": {
+        "code": "available",
+        "weights": "not_applicable",
+        "training_code": "not_applicable",
+        "inference_code": "available",
+        "evaluation": "available",
+        "data": "partial",
+        "raw_predictions": "not_located"
+      },
+      "notes": null
+    },
+    {
+      "id": "gh:sc2musa/jev_star",
+      "full_name": "sc2musa/Jev_Star",
+      "url": "https://github.com/sc2musa/Jev_Star",
+      "sets": [
+        "priority"
+      ],
+      "commit": "23930349ee8206f58572aff24daea4ddc0eb82ff",
+      "commit_date": null,
+      "readme_url": "https://github.com/sc2musa/Jev_Star/blob/23930349ee8206f58572aff24daea4ddc0eb82ff/README.md",
+      "accessed_at": "2026-09-24",
+      "license": null,
+      "stars_at_snapshot": null,
+      "description": "StarCraft II controller combining Jev action selection with GPT-6 planning.",
+      "audit_depth": "README_metadata",
+      "readme_fetched": true,
+      "selected_source_read": [],
+      "executed": false,
+      "type": "system",
+      "summary": "Macro and micro controllers, winning replays and selected decision logs.",
+      "boundary": "Not independently reproduced.",
+      "method_family": "hosted_service",
+      "base_model": null,
+      "related_papers": [
+        "arxiv:2609.27331"
+      ],
+      "affiliation": "independent",
+      "availability": {
+        "code": "available",
+        "weights": "not_applicable",
+        "training_code": "not_applicable",
+        "inference_code": "available",
+        "evaluation": "partial",
+        "data": "partial",
+        "raw_predictions": "partial"
+      },
+      "notes": "GitHub detects no licence file."
     }
   ]
 }

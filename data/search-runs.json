@@ -367,6 +367,151 @@
         }
       ],
       "note": "New candidates are unverified (mostly awesome-list copies created on 2026-09-23); none added. Prior survey head unchanged at f3703012."
+    },
+    {
+      "id": "increment-arxiv-2026-09-24T0502Z",
+      "kind": "arxiv_keyword_increment",
+      "date": "2026-09-24",
+      "retrieved_between": [
+        "2026-09-24T05:02:01.367073+00:00",
+        "2026-09-24T05:04:31.459814+00:00"
+      ],
+      "accepted_rerun": {
+        "queries": 17,
+        "hits_before_dedup": 234,
+        "reproduced_snapshot_totals": false
+      },
+      "expansion": [
+        {
+          "id": "X01_machine_native",
+          "query": "all:\"machine-native\" AND submittedDate:[202601010000 TO 202609242359]",
+          "total": 3,
+          "returned": 3,
+          "status": "ok"
+        },
+        {
+          "id": "X02_decision_head",
+          "query": "(abs:\"decision head\" OR abs:\"decision heads\") AND submittedDate:[202606010000 TO 202609242359]",
+          "total": 3,
+          "returned": 3,
+          "status": "ok"
+        },
+        {
+          "id": "X03a_laya",
+          "query": "(ti:laya OR abs:laya) AND submittedDate:[202609010000 TO 202609242359]",
+          "total": 0,
+          "returned": 0,
+          "status": "ok"
+        },
+        {
+          "id": "X03b_anyjev",
+          "query": "ti:anyjev OR abs:anyjev",
+          "total": 0,
+          "returned": 0,
+          "status": "ok"
+        },
+        {
+          "id": "X03c_semif",
+          "query": "ti:semif OR abs:semif",
+          "total": 1,
+          "returned": 1,
+          "status": "ok"
+        },
+        {
+          "id": "X03d_djev",
+          "query": "ti:djev OR abs:djev",
+          "total": 0,
+          "returned": 0,
+          "status": "ok"
+        },
+        {
+          "id": "X03e_localjev",
+          "query": "ti:localjev OR abs:localjev",
+          "total": 0,
+          "returned": 0,
+          "status": "ok"
+        },
+        {
+          "id": "X03f_this_that",
+          "query": "ti:\"this-that-model\" OR abs:\"this-that-model\"",
+          "total": 1232004,
+          "returned": 0,
+          "status": "rejected"
+        },
+        {
+          "id": "X03g_visual_jev",
+          "query": "ti:\"visual jev\" OR abs:\"visual jev\"",
+          "total": 1,
+          "returned": 1,
+          "status": "ok"
+        },
+        {
+          "id": "X04_system1_model",
+          "query": "(all:\"System 1 model\" OR all:\"System-1 model\" OR all:\"system one model\" OR all:\"System One models\") AND submittedDate:[202609010000 TO 202609242359]",
+          "total": 3,
+          "returned": 3,
+          "status": "ok"
+        },
+        {
+          "id": "X05_typed_outputs",
+          "query": "(abs:\"typed output\" OR abs:\"typed outputs\" OR abs:\"typed probabilistic\" OR abs:\"option probabilities\") AND submittedDate:[202606010000 TO 202609242359]",
+          "total": 5,
+          "returned": 5,
+          "status": "ok"
+        },
+        {
+          "id": "X06_confidence_gating",
+          "query": "(abs:\"confidence-gated\" OR abs:\"confidence gated\" OR abs:\"selective escalation\" OR abs:\"escalate when\") AND submittedDate:[202606010000 TO 202609242359]",
+          "total": 73,
+          "returned": 73,
+          "status": "ok"
+        },
+        {
+          "id": "X07_benchmark_names",
+          "query": "(all:jevbench OR all:callscreenbench OR all:\"sysone\" OR all:\"workflow evals\")",
+          "total": 4,
+          "returned": 4,
+          "status": "ok"
+        },
+        {
+          "id": "X08_decision_models_plural",
+          "query": "(ti:\"decision models\" OR abs:\"decision models\") AND (cat:cs.CL OR cat:cs.AI OR cat:cs.LG) AND submittedDate:[202609140000 TO 202609242359]",
+          "total": 6,
+          "returned": 6,
+          "status": "ok"
+        },
+        {
+          "id": "X09a_structured_decisions",
+          "query": "abs:\"structured decisions\" AND submittedDate:[202606010000 TO 202609242359]",
+          "total": 43,
+          "returned": 43,
+          "status": "ok"
+        },
+        {
+          "id": "X09b_smart_if",
+          "query": "abs:\"smart if-statements\" OR abs:\"smart if statements\"",
+          "total": 0,
+          "returned": 0,
+          "status": "ok"
+        },
+        {
+          "id": "X09c_semantic_if",
+          "query": "abs:\"semantic if\" OR abs:\"semantic ifs\"",
+          "total": 78411,
+          "returned": 0,
+          "status": "rejected"
+        }
+      ],
+      "new_candidates": 7,
+      "decisions": {
+        "include_core": 4,
+        "outside_core_scope": 3
+      },
+      "id_refresh": {
+        "ids": 67,
+        "metadata_changes": 3
+      },
+      "note": "First run after the 2026-09-24 arXiv announcement: four new core studies. Two included papers gained a v2 (evidence was read on v1)."
     }
   ]
 }

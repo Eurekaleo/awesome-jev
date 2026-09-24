@@ -3,13 +3,13 @@
 
 # Data
 
-Canonical records for the Jev survey (cutoff 2026-09-23). Edit these files, then run `python3 scripts/build.py`.
+Canonical records for the Jev survey (cutoff 2026-09-24). Edit these files, then run `python3 scripts/build.py`.
 
 | File | Contents | Edited by hand? |
 | --- | --- | --- |
-| `papers.json` | 67 records (13 core, 1 peripheral, 53 background) with verified arXiv metadata, editorial fields, openness and locators | yes |
-| `claims.json` | 62 evidence records (paper, vendor and community claims) | yes |
-| `repositories.json` | 31 implementation, evaluation and related repositories, each audited at a linked commit | yes |
+| `papers.json` | 71 records (17 core, 1 peripheral, 53 background) with verified arXiv metadata, editorial fields, openness and locators | yes |
+| `claims.json` | 75 evidence records (paper, vendor and community claims) | yes |
+| `repositories.json` | 34 implementation, evaluation and related repositories, each audited at a linked commit | yes |
 | `taxonomy.json` | vocabularies: stages, method families, topics, applications, relationships, test levels, scopes, evidence types, openness statuses, findings, failure modes, application cards | yes |
 | `review-relations.json` | study families, lineage, name collisions and the related survey | yes |
 | `sources.json` | official vendor pages used as sources | yes |

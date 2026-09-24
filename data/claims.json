@@ -2747,6 +2747,543 @@
       "limitations": [],
       "note": null,
       "headline": "Architecture follows third-party speculation, not a disclosure"
+    },
+    {
+      "id": "c-27678-cost",
+      "subject": "arxiv:2609.27678",
+      "claim_text": "On the 123-contract baseline Jev had the lowest cost and median response time of the ten configurations: $0.000228 per contract and 1.24 s (P95 1.59 s), against $0.001353 and 1.60 s for Gemini 3.5 Flash-Lite and $0.000931 and 1.74 s for GPT-5.6 Luna.",
+      "source_url": "https://arxiv.org/abs/2609.27678v1",
+      "locator": "§4.1; Table 1; Appendix M",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "cost per contract",
+      "value": 0.000228,
+      "unit": "USD",
+      "baseline": "Gemini 3.5 Flash-Lite; GPT-5.6 Luna",
+      "task": null,
+      "sample_size": {
+        "n": 123,
+        "unit": "contracts"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Costs are token usage times public prices; latency includes network and provider infrastructure.",
+        "One client; providers and collection times differ."
+      ],
+      "note": null,
+      "headline": "$0.000228 and 1.24 s per contract — lowest of ten models"
+    },
+    {
+      "id": "c-27678-accuracy",
+      "subject": "arxiv:2609.27678",
+      "claim_text": "Baseline accuracy was 77.38% [75.99, 78.81] for Jev against 78.96–83.21% for the seven hosted language models; Gemini 3.5 Flash-Lite gained 5.16 points (paired 95% interval 3.49–6.98) at about six times the cost, while the gain for GPT-5.6 Luna was not established.",
+      "source_url": "https://arxiv.org/abs/2609.27678v1",
+      "locator": "§4.1; Table 1; Appendix A",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "accuracy",
+      "value": 0.7738,
+      "unit": "fraction",
+      "baseline": "Seven hosted language models",
+      "task": "ContractNLI classification",
+      "sample_size": {
+        "n": 2091,
+        "unit": "judgments"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Invalid responses count as incorrect for every model.",
+        "The held-out split does not establish absence from training data."
+      ],
+      "note": null,
+      "headline": "Accuracy 77.38% vs 78.96–83.21% for hosted LLMs"
+    },
+    {
+      "id": "c-27678-persistent",
+      "subject": "arxiv:2609.27678",
+      "claim_text": "On 30 fixed anchors answered twelve times each, Jev kept 23 correct in every response (Claude Sonnet 5: 24; Claude Haiku 4.5: 19). Five of Jev’s anchors received the same wrong label every time, so agreement across repeats overstated correctness.",
+      "source_url": "https://arxiv.org/abs/2609.27678v1",
+      "locator": "§4.2; Table 2",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "anchors correct in all twelve responses",
+      "value": 23,
+      "unit": "of 30 anchors",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 30,
+        "unit": "anchors (360 requests)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F1",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "The Sonnet–Jev difference is one target, with an interval spanning zero.",
+        "Jev’s output-order condition changes question-key order only."
+      ],
+      "note": null,
+      "headline": "23/30 anchors correct in all 12 responses; 5 consistently wrong"
+    },
+    {
+      "id": "c-27607-agreement",
+      "subject": "arxiv:2609.27607",
+      "claim_text": "A one-question Jev configuration reached Kendall τ 0.573 on RadEvalX and 0.398 on RadEvalExpert with expert total-error counts, exceeding an open NLI judge with the same statements and aggregation; RadMatch on a local 27B model was stronger on clinically significant errors (0.491 vs 0.346 on RadEvalX).",
+      "source_url": "https://arxiv.org/abs/2609.27607v1",
+      "locator": "Abstract; §5.1; Table 1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "Kendall τ (total errors)",
+      "value": 0.573,
+      "unit": "correlation",
+      "baseline": "Open NLI judge; RadMatch",
+      "task": "Radiology report factuality",
+      "sample_size": {
+        "n": 100,
+        "unit": "report pairs (RadEvalX)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Agreement with reference text, not with the image.",
+        "Local baselines use a substituted 27B backend."
+      ],
+      "note": null,
+      "headline": "Kendall τ 0.573 / 0.398 with expert error counts; beats open NLI"
+    },
+    {
+      "id": "c-27607-cost",
+      "subject": "arxiv:2609.27607",
+      "claim_text": "One support question per statement kept expert agreement close to the seven-question design with 43–45% fewer input tokens; the judgment calls cost about $0.000226–0.000258 per report pair, under three cents per hundred pairs, excluding local statement extraction.",
+      "source_url": "https://arxiv.org/abs/2609.27607v1",
+      "locator": "Abstract; §5.3; Appendix E",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "judgment API cost per report pair",
+      "value": 0.000226,
+      "unit": "USD",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 100,
+        "unit": "report pairs (RadEvalX)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "author_estimate",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Priced from token counts at the list price; local decomposition cost excluded."
+      ],
+      "note": null,
+      "headline": "Under $0.03 per 100 report pairs (judgment calls only)"
+    },
+    {
+      "id": "c-27607-calibration",
+      "subject": "arxiv:2609.27607",
+      "claim_text": "Raw sentence-level probabilities had ECE 0.1192 on the ReXErr test set (open NLI: 0.1045); isotonic calibration fitted on half of the studies lowered Jev’s ECE on the other half from 0.1235 to 0.0077.",
+      "source_url": "https://arxiv.org/abs/2609.27607v1",
+      "locator": "§5.6; Appendix G",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "expected calibration error",
+      "value": 0.1192,
+      "unit": "ECE",
+      "baseline": null,
+      "task": "Injected-error detection",
+      "sample_size": {
+        "n": 19513,
+        "unit": "sentences"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "model_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Calibration fitted and tested on halves of the same benchmark.",
+        "Measured on the multi-question configuration’s support outputs."
+      ],
+      "note": null,
+      "headline": "Raw ECE 0.12; isotonic recalibration → 0.008 on holdout"
+    },
+    {
+      "id": "c-27535-anchors",
+      "subject": "arxiv:2609.27535",
+      "claim_text": "Flagship anchors covering 1.7% of Epstein states lowered effect MAE from 0.0305 to 0.0180 (paired improvement 0.0125, 95% interval 0.0064–0.0167); on 37 held-out SocSci210 experiments, 0.5–1.5% anchor coverage raised captured decision gain from 0.268 to 0.386.",
+      "source_url": "https://arxiv.org/abs/2609.27535v1",
+      "locator": "Abstract; §7; Table 2",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "effect MAE",
+      "value": 0.018,
+      "unit": "MAE",
+      "baseline": "Jev kernel alone",
+      "task": null,
+      "sample_size": {
+        "n": 9070,
+        "unit": "participants (Epstein)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        },
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Preregistered policy-value and heterogeneity primaries were not shown.",
+        "Corrections can import the flagship’s errors."
+      ],
+      "note": null,
+      "headline": "1.7% flagship anchors cut effect error 41%; decision gain 0.27 → 0.39"
+    },
+    {
+      "id": "c-27535-gates",
+      "subject": "arxiv:2609.27535",
+      "claim_text": "The Jev kernel passed the content-fidelity gates in all 15 new countries of a 16-country study but failed both intervention-sensitivity gates, which GPT-6 Astra passed.",
+      "source_url": "https://arxiv.org/abs/2609.27535v1",
+      "locator": "§6; Table 1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "countries passing content gates",
+      "value": 15,
+      "unit": "of 15 new countries",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 16,
+        "unit": "countries"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Models read English in all countries; this does not test multilingual inference."
+      ],
+      "note": null,
+      "headline": "Passes content gates in 15/15 new countries; fails intervention gates"
+    },
+    {
+      "id": "c-27535-cost",
+      "subject": "arxiv:2609.27535",
+      "claim_text": "Fresh Jev predictions cost $0.0227 per thousand with median latency 213 ms (p95 304 ms); GPT-6 Astra cost about 312–455 times as much per prediction, and a million agents executed 20 tabulated steps in 0.90 s on a laptop.",
+      "source_url": "https://arxiv.org/abs/2609.27535v1",
+      "locator": "§9; Table 3",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "cost per thousand predictions",
+      "value": 0.0227,
+      "unit": "USD",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 20000,
+        "unit": "states (scale run)"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Flagship costs are subscription-billed usage converted at list prices.",
+        "Tabulated execution time excludes fresh inference."
+      ],
+      "note": null,
+      "headline": "$0.0227 per 1,000 predictions; median 213 ms"
+    },
+    {
+      "id": "c-27535-discrepancy",
+      "subject": "arxiv:2609.27535",
+      "claim_text": "Propagating a fitted human–model discrepancy gave retrospective coverage of 0.93 and 0.96 at nominal 0.80 and 0.90 on 37 unseen studies, against 0.29 and 0.36 from human sampling uncertainty alone.",
+      "source_url": "https://arxiv.org/abs/2609.27535v1",
+      "locator": "§8; Figure 3",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "interval coverage at nominal 0.90",
+      "value": 0.96,
+      "unit": "coverage",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 37,
+        "unit": "held-out studies"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "jev-1.13.0"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F2",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Retrospective; fitted on studies selected for reliable contrasts."
+      ],
+      "note": null,
+      "headline": "Shared discrepancy: 93% / 96% coverage vs 29% / 36% sampling-only"
+    },
+    {
+      "id": "c-27331-games",
+      "subject": "arxiv:2609.27331",
+      "claim_text": "With GPT-6 plans, the controller won all four completed non-cheating full games, including two against Lv7; the earlier Jev-only controller reached its 20-minute limit against Lv2 without ever expanding.",
+      "source_url": "https://arxiv.org/abs/2609.27331v1",
+      "locator": "Abstract; §4.2; Table 1",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "full-game wins",
+      "value": 4,
+      "unit": "of 4 games",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 5,
+        "unit": "full games"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "Jev 1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "The two controllers also differ in candidate descriptions and execution handling.",
+        "Opponents are not matched between controllers."
+      ],
+      "note": null,
+      "headline": "4/4 full-game wins incl. two vs Lv7 with GPT-6 plans; Jev-only never expanded"
+    },
+    {
+      "id": "c-27331-micro",
+      "subject": "arxiv:2609.27331",
+      "claim_text": "Across 35 SMAC-Hard maps with three episodes each, the combined system raised mean enemy elimination from 16.50% to 37.69% and wins from 3 to 7 out of 105.",
+      "source_url": "https://arxiv.org/abs/2609.27331v1",
+      "locator": "§4.4; Table 3",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "mean enemy elimination",
+      "value": 0.3769,
+      "unit": "fraction",
+      "baseline": "Jev-only controller",
+      "task": null,
+      "sample_size": {
+        "n": 105,
+        "unit": "episodes per controller"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "Jev 1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "not_applicable",
+      "findings": [
+        {
+          "id": "F6",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "One shared plan per map; the three episodes are not independent planner samples."
+      ],
+      "note": null,
+      "headline": "Enemy elimination 16.5% → 37.7%; wins 3 → 7 of 105"
+    },
+    {
+      "id": "c-27331-cost",
+      "subject": "arxiv:2609.27331",
+      "claim_text": "Median Jev response time was 0.422 s (P95 0.531 s) in full games against 27.60 s for GPT-6 planning calls; of USD 3.71 estimated model cost per game, Jev accounted for USD 0.15 and planning for 96%.",
+      "source_url": "https://arxiv.org/abs/2609.27331v1",
+      "locator": "§4.6; Tables 5–6",
+      "evidence_type": "author_reported_experiment",
+      "reported_by": "authors",
+      "independently_reproduced": false,
+      "metric": "model cost per game",
+      "value": 3.71,
+      "unit": "USD",
+      "baseline": null,
+      "task": null,
+      "sample_size": {
+        "n": 4,
+        "unit": "full games"
+      },
+      "model": "Jev",
+      "model_version": {
+        "value": "Jev 1.13"
+      },
+      "hardware": {
+        "value": null,
+        "reason": "not_applicable_hosted"
+      },
+      "test_level": "system_test",
+      "measurement_scope": "end_to_end",
+      "findings": [
+        {
+          "id": "F4",
+          "relation": "supports"
+        },
+        {
+          "id": "F3",
+          "relation": "supports"
+        }
+      ],
+      "limitations": [
+        "Costs are standard-API-equivalent estimates from recorded usage.",
+        "Real-time games overlap inference with play."
+      ],
+      "note": null,
+      "headline": "Jev 0.422 s median; $0.15 of $3.71 per game"
     }
   ]
 }

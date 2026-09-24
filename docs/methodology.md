@@ -3,7 +3,7 @@
 
 # Methodology
 
-Data cutoff: **23 Sep 2026** (Asia/Singapore). This document is generated from `data/search-runs.json`, `data/papers.json` and `data/claims.json`.
+Data cutoff: **24 Sep 2026** (Asia/Singapore). This document is generated from `data/search-runs.json`, `data/papers.json` and `data/claims.json`.
 
 ## 1. Questions
 
@@ -64,6 +64,8 @@ Of 128 new records, 9 were added as background references and 119 were excluded 
 **GitHub.** Five repository searches produced 1,082 unique discovery results at the snapshot; 81 catalogues/guides were audited (79 READMEs at pinned commits) and 30 priority implementation and evaluation resources were read (2 overlap). README outgoing links (4,666) are unverified candidates and are never counted as projects.
 The increment re-ran the searches: 1,108 results, 28 new unverified candidates (none added). Watched repositories: `youzizzz1028/Awesome-Jev` head `f3703012b0`; `hellogumbo/awesome-jev` head `e2014cdb35`; `typesafe-ai/typesafe-sdk-python` head `0ffd094c72`; `typesafe-ai/typesafe-sdk-js` head `66880ccded`; `typesafe-ai/system-one-adapter-python` head `e1d4cc9382`.
 
+**Increment 2026-09-24T0502Z.** 17 accepted and 17 expansion queries; 7 records not screened before: 4 added as core studies, 0 as background, 3 excluded with a recorded reason. First run after the 2026-09-24 arXiv announcement: four new core studies. Two included papers gained a v2 (evidence was read on v1).
+
 ## 3. Eligibility
 
 - **Core:** evaluates TypeSafe Jev, a clearly identified Jev-like typed-decision implementation, or a system whose contribution materially depends on such decisions.
@@ -73,14 +75,14 @@ The increment re-ran the searches: 1,108 results, 28 new unverified candidates (
 
 ## 4. Screening and reading depth
 
-- 13 core and 1 peripheral studies: full text, key tables and limitation sections; every extracted number carries a locator.
+- 17 core and 1 peripheral studies: full text, key tables and limitation sections; every extracted number carries a locator.
 - 53 background references: arXiv metadata and abstract (one reranker paper spot-checked in full text).
 - Repositories: README at a pinned commit; 12 source files read in 10 repositories; nothing executed.
 - One AI-assisted reviewer. This is not a registered protocol or a PRISMA-compliant systematic review; a second independent screener is the first open task (docs/limitations.md).
 
 ## 5. Extraction
 
-Each checkable statement is an evidence record in `data/claims.json` (62 records: 44 author reported experiment, 3 code inspection, 6 community report, 8 vendor documentation, 1 vendor reported result). Fields: subject, claim text, headline, source URL and locator, evidence type, metric/value/unit, baseline, task, sample size (or a reason), model and version (or a reason), hardware, test level, measurement scope, limitations and links to findings F1–F7.
+Each checkable statement is an evidence record in `data/claims.json` (75 records: 57 author reported experiment, 3 code inspection, 6 community report, 8 vendor documentation, 1 vendor reported result). Fields: subject, claim text, headline, source URL and locator, evidence type, metric/value/unit, baseline, task, sample size (or a reason), model and version (or a reason), hardware, test level, measurement scope, limitations and links to findings F1–F7.
 
 Measurement scopes are never pooled: single request, amortized per question, batch, end to end, simulation, author estimate, vendor claim. Test levels: model test, system test, hybrid, simulation.
 

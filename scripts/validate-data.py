@@ -209,8 +209,6 @@ def main():
         if r['decision'] == 'excluded' and r['arxiv_id'] in seen:
             err(f'arxiv:{r["arxiv_id"]} is in data/papers.json but marked excluded in research/screening.json')
     stats = jevlib.compute_stats(d)
-    if stats['core'] != 13 or stats['peripheral'] != 1:
-        warn(f'core/peripheral counts changed: {stats["core"]}/{stats["peripheral"]} (update docs and CHANGELOG)')
     if any(r['type'] == 'unverified' for r in repos):
         err('unverified outgoing candidates must not enter repositories.json')
 

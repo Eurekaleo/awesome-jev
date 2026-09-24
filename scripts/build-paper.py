@@ -142,17 +142,17 @@ def figures(d):
     lab = {'commercial_jev': 'Evaluates hosted Jev', 'independent_jev_like': 'Independent Jev-like model', 'downstream_system': 'Uses Jev inside a system'}
 
     # Figure 1: timeline as a dot plot, one row per study (no label collisions)
-    fig, ax = plt.subplots(figsize=(7.2, 4.2))
-    days = list(range(15, 24))
+    cut = int(d['papers']['meta']['cutoff'][8:10])  # data cutoff (September)
+    fig, ax = plt.subplots(figsize=(7.2, 1.4 + 0.155 * len(prim)))
+    days = list(range(15, cut + 1))
     for i, p in enumerate(prim):
         rel = p['model_relationship'][0]
         dday = int(p['published_at'][8:10]) + int(p['published_at'][11:13]) / 24
         ax.plot([15, dday], [i, i], color='#eef3f3', linewidth=1, zorder=1)
         ax.scatter([dday], [i], s=48, color='white' if p['tier'] == 'peripheral' else col[rel], edgecolors=col[rel], linewidths=1.6, zorder=3)
-    for dday, text in ((15, 'Jev launch'), (17, 'Vendor limits page\nlast reviewed'), (21, 'Prior survey\ndraft dated'), (23, 'Cutoff')):
+    for dday, text in ((15, 'Jev launch'), (17, 'Vendor limits page\nlast reviewed'), (21, 'Prior survey\ndraft dated'), (cut, 'Cutoff')):
         ax.axvline(dday, color='#8b979e', linewidth=0.9, zorder=2)
         ax.text(dday, -1.1, text, ha='center', va='bottom', fontsize=6.4, color='#55636c')
-    ax.set_xlim(14.7, 23.6)
     ax.set_ylim(len(prim) - 0.4, -2.4)
     ax.set_xticks(days)
     ax.set_xticklabels([f'{x} Sep' for x in days])
@@ -164,7 +164,7 @@ def figures(d):
     ax.set_axisbelow(True)
     handles = [Line2D([0], [0], marker='o', color='none', markerfacecolor=col[k], markeredgecolor=col[k], markersize=6, label=lab[k]) for k in col]
     handles.append(Line2D([0], [0], marker='o', color='none', markerfacecolor='white', markeredgecolor='#55636c', markersize=6, label='Peripheral (open marker)'))
-    ax.set_xlim(14.4, 23.6)
+    ax.set_xlim(14.4, cut + 0.6)
     ax.legend(handles=handles, loc='upper center', bbox_to_anchor=(0.4, 1.17), frameon=False, fontsize=7, ncol=2, handletextpad=0.3, columnspacing=1.4)
     fig.tight_layout()
     for ext in ('pdf', 'png'):

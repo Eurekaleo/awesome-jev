@@ -36,12 +36,16 @@
 
 **F6 · System-level gains need module-level attribution and the right reference.** Memory systems, orchestration pipelines and scientific workflows improve for many reasons at once. Attribution requires ablations, matched baselines and references that measure what the workflow reuses (derived quantities, narrative-grounded labels) rather than only final labels.
 
-**F7 · The evidence base is young, clustered and unreplicated.** Thirteen core preprints appeared within four days, each as a single version; two share a study family; many community results are self-reported; several comparisons rest on a handful of items or on test-set-informed choices. None of the core results has been independently reproduced.
+**F7 · The evidence base is young, clustered and unreplicated.** The core preprints appeared within five days of one another, most as a single version; two share a study family; many community results are self-reported; several comparisons rest on a handful of items or on test-set-informed choices. None of the core results has been independently reproduced.
 
 ## Core studies
 
 | Date (v1) | Study | Relationship to Jev | Test level | Headline (author-reported) | Code |
 | --- | --- | --- | --- | --- | --- |
+| 2026-09-23 | [Same Scores, Different Decisions: Evaluating JEV and Language Models for Legal Document Understanding](https://arxiv.org/abs/2609.27678v1) | Evaluates hosted jev-1.13.0 against nine language models on legal contract inference. | Model test | $0.000228 and 1.24 s per contract — lowest of ten models | [●](https://github.com/ZF-Utokyo/Jev-Benchmark) |
+| 2026-09-23 | [Can Jev Judge Radiology Reports? Evaluating a System One Model for Clinical Factuality](https://arxiv.org/abs/2609.27607v1) | Uses hosted jev-1.13.0 as a statement-level support judge for generated radiology reports. | Model test | Kendall τ 0.573 / 0.398 with expert error counts; beats open NLI | ○ |
+| 2026-09-23 | [KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration](https://arxiv.org/abs/2609.27535v1) | Uses hosted jev-1.13.0 as a typed behavioural kernel for population experiments, corrected with sparse GPT-6 Astra anchors. | System test | 1.7% flagship anchors cut effect error 41%; decision gain 0.27 → 0.39 | [●](https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator) |
+| 2026-09-23 | [JEV-Star: Fast, Low-Cost StarCraft II Control with Language-Model Planning](https://arxiv.org/abs/2609.27331v1) | Uses hosted Jev 1.13 for frequent action selection in a StarCraft II controller, with GPT-6 Astra writing persistent plans. | System test | 4/4 full-game wins incl. two vs Lv7 with GPT-6 plans; Jev-only never expanded | [●](https://github.com/sc2musa/Jev_Star) |
 | 2026-09-22 | [Type-Safe Is Not Error-Free: A Constrained Decision Head Follows the Option Name, Not the Rubric Bound to It](https://arxiv.org/abs/2609.26758v1) | Black-box evaluation of hosted Jev alongside two open-weight Jev-like encoder decision heads. | Model test | Hosted Jev AUROC .8146 → .5806 after name–rubric swap; 0% type errors | ○ claimed |
 | 2026-09-22 | [JEV-as-a-Judge: Accept When Confident, Escalate When Unsure](https://arxiv.org/abs/2609.26550v1) | Evaluates hosted jev-1.13.0 as a model judge against sixteen generative and reward-model judges. | Model test | RewardBench 92.2% vs 93.5%; HaluEval 87.5% vs 86.7% (GPT-6) | ○ claimed |
 | 2026-09-22 | [REFLEX with Jev for Efficient Selective Control in LLM Agents](https://arxiv.org/abs/2609.26532v1) | Uses hosted jev-1.13.0 as a typed decision layer inside an LLM agent, calling a strong LLM when confidence is low or generation is required. | System test | 95% success with 1.12 strong calls/task vs 88% and 4.10 (−72.7%) | ○ |
@@ -84,6 +88,7 @@
 | [jujumilk3/jev-calibration-audit](https://github.com/jujumilk3/jev-calibration-audit/blob/daab9e2c2d5d5683bf07f3482deb653c26856219/README.md) | Evaluation | — | ● | – | ○ | ● | ● |
 | [marcosmartinez/jev-acento](https://github.com/marcosmartinez/jev-acento/blob/7e007b4c2bd552471b56eff035f9a3df7593f9fe/README.md) | Evaluation | — | ● | – | ○ | ● | ● |
 | [scienthoon/jev-ood-calibration](https://github.com/scienthoon/jev-ood-calibration/blob/914d87ab16517f14e833cff63d73b51235b14bd6/README.md) | Evaluation | — | ● | – | ○ | ● | ● |
+| [ZF-Utokyo/Jev-Benchmark](https://github.com/ZF-Utokyo/Jev-Benchmark/blob/57b42a356de9369fa07f9a67bb224228e9c4047b/README.md) | Evaluation | Hosted System One service | ● | – | – | ● | ● |
 | [LouisUltra/jev-deep-dive](https://github.com/LouisUltra/jev-deep-dive/blob/1aea95911563175f5553379aa1d34926f5bde93e/README.md) | Research guide | — | ● | – | ○ | ○ | ○ |
 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble/blob/38edc3b576f13179df785d412621d5cb1128d02d/README.md) | Model | Fine-tuned decoder decision models | ● | ● | ● | ○ | ○ |
 | [FLock-io/this-that-model](https://github.com/FLock-io/this-that-model/blob/542d445efa5f68b14bfbd1f8ed25aacd8379d839/README.md) | Model | Fine-tuned decoder decision models | ● | ● | ○ | ● | ○ |
@@ -96,8 +101,10 @@
 | [typesafe-ai/typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js/blob/66880ccded6cb642dc1809620c2b108c33730214/README.md) | SDK | Hosted System One service | ● | – | ○ | ○ | ○ |
 | [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python/blob/0ffd094c72ed9445223060b24ffd7a56aa781fb4/README.md) | SDK | Hosted System One service | ● | – | ○ | ○ | ○ |
 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast/blob/1231850a0bf1a0c0341fe408ef1668dbbfdfac46/README.md) | System | Hosted System One service | ● | – | ○ | ○ | ○ |
+| [HengyuLi-Ozaki-lab/kite_population_simulator](https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator/blob/69057c07a23f6575e6565fd7af08b4b3bbda43db/README.md) | System | Hosted System One service | ● | – | – | ● | ○ |
 | [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem/blob/81574eb23f3fd8d1a6c4d54a1e7d6f2dd539e9bb/README.md) | System | Hosted System One service | ● | – | ○ | ○ | ○ |
 | [pozapas/jev-calibrated-narrative-coding](https://github.com/pozapas/jev-calibrated-narrative-coding/blob/850fe4f0db35f165b56247a53d786cd1dfc12302/README.md) | System | Hosted System One service | ● | – | ○ | ● | ◐ |
+| [sc2musa/Jev_Star](https://github.com/sc2musa/Jev_Star/blob/23930349ee8206f58572aff24daea4ddc0eb82ff/README.md) | System | Hosted System One service | ● | – | – | ◐ | ◐ |
 
 ## Background references
 
@@ -203,7 +210,7 @@ Citation metadata is in [CITATION.cff](CITATION.cff) (GitHub shows it under “C
   title        = {Jev and Typed Decision Models: An Empirical Survey of Calibration, Selective Control, and Open Implementations},
   year         = {2026},
   howpublished = {\url{https://github.com/Eurekaleo/awesome-jev-survey}},
-  note         = {Version 0.1.0, data cutoff 23 Sep 2026. Working draft, not peer-reviewed}
+  note         = {Version 0.2.0, data cutoff 24 Sep 2026. Working draft, not peer-reviewed}
 }
 ```
 
