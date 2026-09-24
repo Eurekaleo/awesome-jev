@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Incremental GitHub discovery for the Jev survey.
 
-Re-runs the five repository searches used in the 2026-09-23 snapshot, removes
-repositories already in the snapshot discovery set (or in earlier increments),
-and writes the remainder as *unverified discovery candidates*. Nothing is added
-to data/ automatically: a candidate becomes a repository record only after a
-person reads it and fills the fields required by docs/data-contract.md.
+Re-runs the five repository searches used on 2026-09-23, removes repositories
+already listed in research/github-seen.json (or in local runs), and writes the
+remainder as *unverified discovery candidates*. Nothing is added to data/
+automatically: a candidate becomes a repository record only after a person
+reads it and fills the fields described in data/README.md.
 
 It also records the head commit of watched repositories (prior surveys,
 official SDKs) so that changes to competing work are noticed.
@@ -57,8 +57,7 @@ def main():
     run_id = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H%MZ')
     out_dir = ROOT / 'research' / 'increments' / run_id / 'github'
     out_dir.mkdir(parents=True, exist_ok=True)
-    snap = sorted((ROOT / 'research').glob('snapshot-*'))[-1]
-    known = {r['full_name'].lower() for r in json.loads((snap / 'github_discovery_compact.json').read_text())}
+    known = {n.lower() for n in json.loads((ROOT / 'research' / 'github-seen.json').read_text())['repositories']}
     for prev in (ROOT / 'research' / 'increments').glob('*/github/discovery.json'):
         if prev.parent != out_dir:
             known |= {r['full_name'].lower() for r in json.loads(prev.read_text())}

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Render the data-bearing documentation from data/*.json (called by scripts/build.py).
 
-Generates docs/methodology.md, docs/related-surveys.md, docs/evidence-audit.md and data/README.md.
-Hand-written docs (limitations, deployment) are not touched.
+Generates docs/methodology.md, docs/evidence-audit.md and data/README.md.
+The hand-written docs/limitations.md is not touched.
 """
 import pathlib
 import sys
@@ -32,7 +32,7 @@ def methodology(d, s):
          '`all:` searches arXiv metadata fields, not PDF full text, so a broader recent “decision model” query was added and found a core paper that brand-name queries missed.', '',
          '| ID | Query | Hits |', '| --- | --- | ---: |']
     L += [f'| `{q["id"]}` | `{md(q["query"])}` | {q["total"] if q["total"] is not None else "—"} |' for q in snap['queries']]
-    L += ['', f'Background references: 6 of the {s["background_snapshot"]} snapshot background records came from these queries; 38 were retrieved by explicit arXiv ID as a purposive seed set (not a discovery count).', '',
+    L += ['', 'Background references came partly from these queries and partly from a purposive seed set retrieved by explicit arXiv ID (not a discovery count).', '',
           f'**Same-day increment ({inc["id"].split("-", 2)[-1]}).** All {inc["accepted_rerun"]["queries"]} accepted queries were re-run; totals were '
           f'{"identical" if inc["accepted_rerun"]["reproduced_snapshot_totals"] else "different"} ({inc["accepted_rerun"]["hits_before_dedup"]} hits). '
           f'{len(inc["expansion"])} expansion queries widened the vocabulary beyond the brand name; queries returning more than 2,000 results were rejected by rule (the arXiv API treats hyphenated and multi-word phrases loosely). '
@@ -42,7 +42,7 @@ def methodology(d, s):
     dec = inc['decisions']
     L += ['', f'Of {inc["new_candidates"]} new records, {dec.get("include_background", 0)} were added as background references and '
           f'{dec.get("outside_core_scope", 0) + dec.get("outside_core_scope_linked_dataset", 0)} were excluded with a recorded reason '
-          '(`research/increments/2026-09-23T0818Z/screening.json`). No new core study appeared: arXiv announces new submissions around 00:00 UTC, so a same-day rerun mainly verifies the snapshot.', '',
+          '(`research/screening.json`).', '',
           f'**GitHub.** Five repository searches produced {gh["unique_results"]:,} unique discovery results at the snapshot; {gh["catalogues_audited"]} catalogues/guides were audited ({gh["readmes_fetched"]} READMEs at pinned commits) and {gh["priority_resources"]} priority implementation and evaluation resources were read (2 overlap). '
           f'README outgoing links ({gh["outgoing_candidates_all"]:,}) are unverified candidates and are never counted as projects.']
     if ghi:
@@ -63,37 +63,13 @@ def methodology(d, s):
           ', '.join(f'{v} {k.replace("_", " ")}' for k, v in sorted(s['claims_by_type'].items())) + '). '
           'Fields: subject, claim text, headline, source URL and locator, evidence type, metric/value/unit, baseline, task, sample size (or a reason), model and version (or a reason), hardware, test level, measurement scope, limitations and links to findings F1–F7.', '',
           'Measurement scopes are never pooled: single request, amortized per question, batch, end to end, simulation, author estimate, vendor claim. Test levels: model test, system test, hybrid, simulation.', '',
-          'Openness is recorded as six independent fields per paper — code, weights, data, raw predictions, recomputable, independently reproduced — and seven per repository. “Not located” means not found in this review.', '',
+          'Openness is recorded as six independent fields per paper — code, weights, data, raw predictions, recomputable, independently reproduced — and seven per repository. “Not located” means not found, not that it does not exist.', '',
           '## 6. Synthesis', '',
           'Findings are stated at the strength their records allow, with supporting and qualifying records listed together (site §04, `paper/survey.md` §7). Study families are synthesised once. No meta-analytic pooling is attempted: tasks, metrics and scopes are heterogeneous.', '',
           '## 7. Updating', '',
-          '1. `python3 scripts/update-metadata.py` and `python3 scripts/update-github.py` write a new dated folder under `research/increments/`.',
-          '2. Screen `new_candidates.json` with reasons (`screening.json`), then add accepted records to `data/`.',
+          '1. `python3 scripts/update-metadata.py` and `python3 scripts/update-github.py` write a dated working folder under `research/increments/` (not committed) listing records not yet screened.',
+          '2. Screen the new candidates, add each decision and reason to `research/screening.json` (and seen repositories to `research/github-seen.json`), add included records to `data/`, and log the run in `data/search-runs.json`.',
           '3. `python3 scripts/validate-data.py && python3 scripts/build.py`, update `CHANGELOG.md`, and re-run `python3 scripts/check-links.py`.', '']
-    return '\n'.join(L)
-
-
-def related(d):
-    rel = d['review-relations']
-    rs = rel['related_surveys'][0]
-    L = [GEN, '# Related surveys and how this one differs', '',
-         f'**Prior work.** [*{rs["title"]}*]({rs["url"]}) — {rs["authors"]}; {rs["dated"]}. Status: {rs["status"]}. Checked: {rs["checked"]}',
-         f'Manuscript commit: `{rs["manuscript_commit"]}`. A Git timestamp shows when a commit was made, not when the work became public; neither this survey nor the prior draft is claimed as first.', '',
-         'What we credit to the prior draft: the umbrella framing of machine-native decision models, the separation of structural validity, semantic correctness, probabilistic reliability and decision utility, and a fair replication protocol with interface-level baselines. This survey adopts that separation.', '',
-         'What this survey adds, and what still needs verification, is in the matrix. The empirical claims about the prior draft refer to its pinned commit and may change in later versions.', '',
-         '| Dimension | Prior draft (Decisions, Not Tokens) | This survey | Basis |', '| --- | --- | --- | --- |']
-    L += [f'| {md(m["dimension"])} | {md(m["prior"])} | {md(m["this_survey"])} | {md(m["evidence"])} |' for m in rel['survey_matrix']]
-    L += ['', '## Adjacent surveys cited as background', '']
-    names = {'2503.15850': 'uncertainty quantification and calibration in LLMs', '2502.17419': 'System 1 to System 2 reasoning LLMs',
-             '2503.24377': 'efficient reasoning / reasoning economy', '2307.13565': 'decision-focused learning'}
-    P = J.by_id(d['papers']['papers'], 'arxiv_id')
-    for aid, topic in names.items():
-        p = P[aid]
-        L.append(f'- [{md(p["title"])}]({p["url"]}) — {topic}. {md(p["role"])}')
-    L += ['', '## Remaining checks before claiming novelty in a submission', '',
-          '1. Re-run the survey/review queries (`Q07`, `Q08`, `Q14`) and a Google Scholar / Semantic Scholar title search on the submission date.',
-          '2. Re-read the prior draft at its latest commit and update the matrix.',
-          '3. Phrase contributions as specific artefacts (evidence records, openness audit, protocol) rather than as priority.', '']
     return '\n'.join(L)
 
 
@@ -136,20 +112,20 @@ def data_readme(d, s):
     return '\n'.join([GEN, '# Data', '',
         f'Canonical records for the Jev survey (cutoff {s["cutoff"]}). Edit these files, then run `python3 scripts/build.py`.', '',
         '| File | Contents | Edited by hand? |', '| --- | --- | --- |',
-        f'| `papers.json` | {s["papers"]} records ({s["core"]} core, {s["peripheral"]} peripheral, {s["background"]} background) with verified arXiv metadata, editorial fields, openness, locators and the original snapshot fields under `source_record` | yes |',
+        f'| `papers.json` | {s["papers"]} records ({s["core"]} core, {s["peripheral"]} peripheral, {s["background"]} background) with verified arXiv metadata, editorial fields, openness and locators | yes |',
         f'| `claims.json` | {s["claims"]} evidence records (paper, vendor and community claims) | yes |',
-        f'| `repositories.json` | {s["repos_unique"]} repositories: {s["priority_repos"]} priority resources and {s["catalogues"]} catalogues/guides ({s["repo_overlap"]} in both) | yes |',
+        f'| `repositories.json` | {s["repos_unique"]} implementation, evaluation and related repositories, each audited at a linked commit | yes |',
         '| `taxonomy.json` | vocabularies: stages, method families, topics, applications, relationships, test levels, scopes, evidence types, openness statuses, findings, failure modes, application cards | yes |',
-        '| `review-relations.json` | study families, lineage, name collisions, prior survey and comparison matrix | yes |',
+        '| `review-relations.json` | study families, lineage, name collisions and the related survey | yes |',
         '| `sources.json` | official vendor pages used as sources | yes |',
         '| `search-runs.json` | arXiv and GitHub search runs (snapshot and increments) | appended per increment |',
-        '| `stats.json`, `references.bib`, `exports/*.csv` | generated | no |', '',
+        '| `references.bib`, `exports/*.csv` | generated | no |', '',
+        'Screening decisions for every arXiv record considered, and the GitHub repositories already seen, are in `../research/`.', '',
         '## Key rules', '',
         '- IDs: `arxiv:<id>` for papers, `gh:<owner/name>` (lower case) for repositories, `c-…`, `v-…`, `r-…` for claims from papers, vendor pages and repositories.',
         '- Unknown values are `null` with a `reason`; `null` is never zero.',
-        '- Multi-label fields (`topics`, `stages`, `method_families`, `model_relationship`) may overlap; counts in the site explain this.',
+        '- Multi-label fields (`topics`, `stages`, `method_families`, `model_relationship`) may overlap.',
         '- Venues are recorded only as stated in arXiv metadata (`venue_source`); `venue_verified_at` stays null until checked against proceedings.',
-        '- The 4,666 README outgoing links are unverified candidates and live only in `research/snapshot-2026-09-23/repository_candidates.csv`.',
         '- CSV exports prefix cells that start with `= + - @`, tab or CR with an apostrophe (formula-injection guard).', ''])
 
 
@@ -159,7 +135,6 @@ def main():
     docs = J.ROOT / 'docs'
     docs.mkdir(exist_ok=True)
     (docs / 'methodology.md').write_text(methodology(d, s), encoding='utf-8')
-    (docs / 'related-surveys.md').write_text(related(d), encoding='utf-8')
     (docs / 'evidence-audit.md').write_text(audit(d, s), encoding='utf-8')
     (J.ROOT / 'data' / 'README.md').write_text(data_readme(d, s), encoding='utf-8')
 

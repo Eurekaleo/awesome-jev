@@ -76,7 +76,6 @@ def compute_stats(d):
     tiers = Counter(p['tier'] for p in papers)
     primary = [p for p in papers if p['tier'] in ('core', 'peripheral')]
     core = [p for p in papers if p['tier'] == 'core']
-    snap_bg = sum(1 for p in papers if p['tier'] == 'background' and 'increment' not in (p.get('source_record') or {}))
     stage_counts = {s['id']: sum(1 for p in primary if s['id'] in p['stages']) for s in tax['stages']}
     family_counts = {f['id']: sum(1 for p in primary if f['id'] in p['method_families']) for f in tax['method_families']}
     rel_counts = {r['id']: sum(1 for p in papers if r['id'] in p['model_relationship']) for r in tax['model_relationships']}
@@ -89,18 +88,16 @@ def compute_stats(d):
     gh = runs['snapshot-github-2026-09-23']
     return dict(
         papers=len(papers), core=tiers['core'], peripheral=tiers['peripheral'], background=tiers['background'],
-        background_snapshot=snap_bg, background_increment=tiers['background'] - snap_bg, core_plus=len(primary),
+        core_plus=len(primary),
         claims=len(claims), claims_by_type=dict(Counter(c['evidence_type'] for c in claims)),
         claims_papers=sum(1 for c in claims if c['subject'].startswith('arxiv:')),
         findings=len(tax['findings']), stages=stage_counts, families=family_counts, relationships=rel_counts,
         openness={k: dict(v) for k, v in open_counts.items()}, finding_counts={k: dict(v) for k, v in finding_counts.items()},
-        repos_unique=len(repos), priority_repos=sets['priority'], catalogues=sets['catalogue'],
-        repo_overlap=sum(1 for r in repos if len(r['sets']) == 2),
-        readmes=sum(1 for r in repos if 'catalogue' in r['sets'] and r.get('catalogue_audit', {}).get('status') == 'ok'),
+        repos_unique=len(repos), priority_repos=sets['priority'],
+        catalogues=gh['catalogues_audited'], readmes=gh['readmes_fetched'],
         source_files_read=sum(len(r['selected_source_read']) for r in repos),
         source_repos_read=sum(1 for r in repos if r['selected_source_read']),
-        outgoing_candidates=d['repositories']['meta']['unverified_outgoing_candidates'],
-        seed_candidates=d['repositories']['meta']['seed_outgoing_candidates'],
+        outgoing_candidates=gh['outgoing_candidates_all'],
         github_discovery=gh['unique_results'],
         arxiv_queries=snap_run['accepted_queries'], arxiv_hits=snap_run['hits_before_dedup'], arxiv_screened=snap_run['unique_screened'],
         increment_queries=len(inc.get('expansion', [])), increment_new=inc.get('new_candidates', 0),
@@ -135,7 +132,7 @@ def bibtex_for_paper(p):
 def bibtex_for_source(s):
     fields = [('title', '{' + bib_text(s['title']) + '}'), ('author', '{' + (s.get('author') or s['publisher']) + '}'),
               ('howpublished', bib_text(s['publisher'])), ('year', (s.get('date') or s['accessed'])[:4]), ('url', s['url']),
-              ('note', bib_text(f"Accessed {s['accessed']}; snapshot {s['snapshot']}"))]
+              ('note', bib_text(f"Accessed {s['accessed']}"))]
     body = ',\n'.join(f'  {k} = {{{v}}}' for k, v in fields if v)
     return f'@misc{{{s["bibtex_key"]},\n{body}\n}}\n'
 

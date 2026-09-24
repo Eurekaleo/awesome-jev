@@ -7,20 +7,21 @@ Canonical records for the Jev survey (cutoff 2026-09-23). Edit these files, then
 
 | File | Contents | Edited by hand? |
 | --- | --- | --- |
-| `papers.json` | 67 records (13 core, 1 peripheral, 53 background) with verified arXiv metadata, editorial fields, openness, locators and the original snapshot fields under `source_record` | yes |
+| `papers.json` | 67 records (13 core, 1 peripheral, 53 background) with verified arXiv metadata, editorial fields, openness and locators | yes |
 | `claims.json` | 62 evidence records (paper, vendor and community claims) | yes |
-| `repositories.json` | 109 repositories: 30 priority resources and 81 catalogues/guides (2 in both) | yes |
+| `repositories.json` | 31 implementation, evaluation and related repositories, each audited at a linked commit | yes |
 | `taxonomy.json` | vocabularies: stages, method families, topics, applications, relationships, test levels, scopes, evidence types, openness statuses, findings, failure modes, application cards | yes |
-| `review-relations.json` | study families, lineage, name collisions, prior survey and comparison matrix | yes |
+| `review-relations.json` | study families, lineage, name collisions and the related survey | yes |
 | `sources.json` | official vendor pages used as sources | yes |
 | `search-runs.json` | arXiv and GitHub search runs (snapshot and increments) | appended per increment |
-| `stats.json`, `references.bib`, `exports/*.csv` | generated | no |
+| `references.bib`, `exports/*.csv` | generated | no |
+
+Screening decisions for every arXiv record considered, and the GitHub repositories already seen, are in `../research/`.
 
 ## Key rules
 
 - IDs: `arxiv:<id>` for papers, `gh:<owner/name>` (lower case) for repositories, `c-…`, `v-…`, `r-…` for claims from papers, vendor pages and repositories.
 - Unknown values are `null` with a `reason`; `null` is never zero.
-- Multi-label fields (`topics`, `stages`, `method_families`, `model_relationship`) may overlap; counts in the site explain this.
+- Multi-label fields (`topics`, `stages`, `method_families`, `model_relationship`) may overlap.
 - Venues are recorded only as stated in arXiv metadata (`venue_source`); `venue_verified_at` stays null until checked against proceedings.
-- The 4,666 README outgoing links are unverified candidates and live only in `research/snapshot-2026-09-23/repository_candidates.csv`.
 - CSV exports prefix cells that start with `= + - @`, tab or CR with an apostrophe (formula-injection guard).

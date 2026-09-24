@@ -26,13 +26,10 @@ class DataRules(unittest.TestCase):
         s = self.stats
         self.assertEqual(s['core'] + s['peripheral'] + s['background'], s['papers'])
         self.assertEqual((s['core'], s['peripheral']), (13, 1))
-        self.assertEqual(s['background_snapshot'], 44)
 
     def test_unverified_candidates_never_become_records(self):
-        self.assertEqual(self.d['repositories']['meta']['unverified_outgoing_candidates'], 4666)
+        self.assertFalse(any(r['type'] == 'unverified' for r in self.d['repositories']['repositories']))
         self.assertLess(self.stats['repos_unique'], 200)
-        html = (ROOT / 'index.html').read_text(encoding='utf-8')
-        self.assertNotIn('repository_candidates.csv"', html.replace('<code>research/snapshot-2026-09-23/repository_candidates.csv</code>', ''))
 
     def test_no_claim_is_marked_reproduced(self):
         for c in self.d['claims']['claims']:

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Incremental arXiv search and metadata refresh for the Jev survey.
 
-Writes a new, dated run directory under research/increments/ and never
-modifies research/snapshot-*/ or data/. Screening decisions for new
+Writes a dated working directory under research/increments/ (not committed)
+and never modifies data/. Records already in data/papers.json or
+research/screening.json are skipped; screening decisions for the new
 candidates are made by a person afterwards (see docs/methodology.md).
 
 Usage:
@@ -34,7 +35,7 @@ UA = {'User-Agent': 'JevSurveyLiteratureUpdate/1.0 (academic review; sequential 
       'Accept': 'application/atom+xml, application/xml;q=0.9, */*;q=0.8'}
 MAX_PLAUSIBLE = 2000  # a narrow review query returning more than this is rejected, not screened
 
-# The 17 queries accepted in the 2026-09-23 snapshot (research/snapshot-2026-09-23/SEARCH_PROTOCOL.md).
+# The 17 queries accepted in the 2026-09-23 search (listed in docs/methodology.md).
 # Strings are reproduced exactly; only the run date differs.
 ACCEPTED = [
     ('Q01_jev', 'all:jev'),
@@ -202,15 +203,10 @@ def main():
     raw_dir = run_dir / 'api'
     raw_dir.mkdir(parents=True, exist_ok=True)
 
-    snap = sorted((ROOT / 'research').glob('snapshot-*'))[-1]
-    canonical = ROOT / 'data' / 'papers.json'
-    papers = (json.loads(canonical.read_text())['papers'] if canonical.exists()
-              else json.loads((snap / 'papers.json').read_text()))
+    papers = json.loads((ROOT / 'data' / 'papers.json').read_text())['papers']
     known_bib = {p['arxiv_id'] for p in papers if p.get('arxiv_id')}
-    import csv
-    with open(snap / 'screening_log.csv', encoding='utf-8-sig') as f:
-        screened = {r['arxiv_id'] for r in csv.DictReader(f)}
-    # previously screened increments also count as known
+    screened = {r['arxiv_id'] for r in json.loads((ROOT / 'research' / 'screening.json').read_text())['records']}
+    # decisions from local runs that have not been merged into research/screening.json yet
     for prev in sorted((ROOT / 'research' / 'increments').glob('*/screening.json')):
         screened |= {r['arxiv_id'] for r in json.loads(prev.read_text())}
 

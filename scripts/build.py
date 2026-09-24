@@ -7,7 +7,6 @@
 Outputs
   index.html                      static, pre-rendered site (GitHub Pages serves the repo root)
   site/data/drawer.json           per-record evidence for the drawer and client exports (lazy-loaded)
-  data/stats.json                 every count shown anywhere
   data/references.bib             bibliography of all records
   data/exports/*.csv              papers, claims, repositories (formula-injection safe)
   paper/references.bib            manuscript bibliography (records + official sources + repositories)
@@ -651,13 +650,12 @@ def main():
     if v.returncode:
         sys.exit('validation failed; nothing built')
     x = Ctx(J.load_all())
-    targets = ['index.html', 'site/data/drawer.json', 'data/stats.json', 'data/references.bib', 'paper/references.bib', 'README.md',
+    targets = ['index.html', 'site/data/drawer.json', 'data/references.bib', 'paper/references.bib', 'README.md',
                'data/exports/papers.csv', 'data/exports/claims.csv', 'data/exports/repositories.csv', 'data/README.md',
-               'docs/methodology.md', 'docs/related-surveys.md', 'docs/evidence-audit.md', 'paper/survey.md', 'paper/main.tex']
+               'docs/methodology.md', 'docs/evidence-audit.md', 'paper/survey.md', 'paper/main.tex']
     before = {t: (ROOT / t).read_bytes() if (ROOT / t).exists() else None for t in targets}
     (ROOT / 'site' / 'data').mkdir(parents=True, exist_ok=True)
     (ROOT / 'site' / 'data' / 'drawer.json').write_text(json.dumps(drawer_data(x), ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
-    (ROOT / 'data' / 'stats.json').write_text(json.dumps(x.stats, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     export_bibtex(x)
     export_csvs(x)
     html = render_page(x)

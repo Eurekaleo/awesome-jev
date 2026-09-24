@@ -38,7 +38,7 @@ def main():
     if site:
         a(f'**Website:** <{site}>')
     else:
-        a('**Website:** open `index.html` in a browser, or serve the folder (see [docs/deployment.md](docs/deployment.md)). No public URL has been assigned yet.')
+        a('**Website:** open `index.html` in a browser, or serve the folder with `python3 -m http.server`.')
     a('')
     authors = [x for x in cfg.get('authors') or [] if x.get('name')]
     if authors:

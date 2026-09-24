@@ -9,7 +9,6 @@
       "author": "Diogo Almeida",
       "date": "2026-09-15",
       "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-      "snapshot": "sources/official/launch.txt",
       "accessed": "2026-09-23",
       "kind": "vendor_blog",
       "bibtex_key": "typesafe2026launch"
@@ -19,7 +18,6 @@
       "title": "Models (Jev 1.13)",
       "publisher": "TypeSafe AI",
       "url": "https://docs.typesafe.ai/models",
-      "snapshot": "sources/official/models.md",
       "accessed": "2026-09-23",
       "kind": "vendor_docs",
       "bibtex_key": "typesafe2026models"
@@ -29,7 +27,6 @@
       "title": "Confidence",
       "publisher": "TypeSafe AI",
       "url": "https://docs.typesafe.ai/confidence",
-      "snapshot": "sources/official/confidence.md",
       "accessed": "2026-09-23",
       "kind": "vendor_docs",
       "bibtex_key": "typesafe2026confidence"
@@ -39,7 +36,6 @@
       "title": "System One",
       "publisher": "TypeSafe AI",
       "url": "https://docs.typesafe.ai/concepts/system-one",
-      "snapshot": "sources/official/concepts__system-one.md",
       "accessed": "2026-09-23",
       "kind": "vendor_docs",
       "bibtex_key": "typesafe2026systemone"
@@ -49,7 +45,6 @@
       "title": "State",
       "publisher": "TypeSafe AI",
       "url": "https://docs.typesafe.ai/concepts/state",
-      "snapshot": "sources/official/concepts__state.md",
       "accessed": "2026-09-23",
       "kind": "vendor_docs",
       "bibtex_key": "typesafe2026state"
@@ -59,7 +54,6 @@
       "title": "Primitives: Choice, Score and Noul",
       "publisher": "TypeSafe AI",
       "url": "https://docs.typesafe.ai/primitives",
-      "snapshot": "sources/official/primitives.md",
       "accessed": "2026-09-23",
       "kind": "vendor_docs",
       "bibtex_key": "typesafe2026primitives"
@@ -69,7 +63,6 @@
       "title": "Jev 1.13 jaggedness",
       "publisher": "TypeSafe AI",
       "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
-      "snapshot": "sources/official/model-jaggedness__jev-1.13.md",
       "accessed": "2026-09-23",
       "kind": "vendor_docs",
       "bibtex_key": "typesafe2026jaggedness"
@@ -79,7 +72,6 @@
       "title": "Confidence-gated routing",
       "publisher": "TypeSafe AI",
       "url": "https://docs.typesafe.ai/patterns/confidence-routing",
-      "snapshot": "sources/official/patterns__confidence-routing.md",
       "accessed": "2026-09-23",
       "kind": "vendor_docs",
       "bibtex_key": "typesafe2026routing"

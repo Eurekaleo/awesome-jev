@@ -33,7 +33,7 @@ RQ1 definition and lineage · RQ2 probability quality · RQ3 efficiency attribut
 | `Q13_rlcd_expanded` | `all:"Reinforcement Learning for Calibrated Decisions"` | 0 |
 | `Q14_typed_surveys` | `(ti:survey OR ti:review OR ti:overview) AND (all:"typed decision" OR all:"decision-only" OR all:"non-generative") AND submittedDate:[202001010000 TO 202609232359]` | 4 |
 
-Background references: 6 of the 44 snapshot background records came from these queries; 38 were retrieved by explicit arXiv ID as a purposive seed set (not a discovery count).
+Background references came partly from these queries and partly from a purposive seed set retrieved by explicit arXiv ID (not a discovery count).
 
 **Same-day increment (2026-09-23T0818Z).** All 17 accepted queries were re-run; totals were identical (225 hits). 19 expansion queries widened the vocabulary beyond the brand name; queries returning more than 2,000 results were rejected by rule (the arXiv API treats hyphenated and multi-word phrases loosely). All 58 bibliography IDs were refreshed: no new versions, titles or journal references.
 
@@ -59,7 +59,7 @@ Background references: 6 of the 44 snapshot background records came from these q
 | `X09b_smart_if` | `abs:"smart if-statements" OR abs:"smart if statements"` | 0 | ok |
 | `X09c_semantic_if` | `abs:"semantic if" OR abs:"semantic ifs"` | 78323 | rejected_implausibly_broad |
 
-Of 128 new records, 9 were added as background references and 119 were excluded with a recorded reason (`research/increments/2026-09-23T0818Z/screening.json`). No new core study appeared: arXiv announces new submissions around 00:00 UTC, so a same-day rerun mainly verifies the snapshot.
+Of 128 new records, 9 were added as background references and 119 were excluded with a recorded reason (`research/screening.json`).
 
 **GitHub.** Five repository searches produced 1,082 unique discovery results at the snapshot; 81 catalogues/guides were audited (79 READMEs at pinned commits) and 30 priority implementation and evaluation resources were read (2 overlap). README outgoing links (4,666) are unverified candidates and are never counted as projects.
 The increment re-ran the searches: 1,108 results, 28 new unverified candidates (none added). Watched repositories: `youzizzz1028/Awesome-Jev` head `f3703012b0`; `hellogumbo/awesome-jev` head `e2014cdb35`; `typesafe-ai/typesafe-sdk-python` head `0ffd094c72`; `typesafe-ai/typesafe-sdk-js` head `66880ccded`; `typesafe-ai/system-one-adapter-python` head `e1d4cc9382`.
@@ -84,7 +84,7 @@ Each checkable statement is an evidence record in `data/claims.json` (62 records
 
 Measurement scopes are never pooled: single request, amortized per question, batch, end to end, simulation, author estimate, vendor claim. Test levels: model test, system test, hybrid, simulation.
 
-Openness is recorded as six independent fields per paper — code, weights, data, raw predictions, recomputable, independently reproduced — and seven per repository. “Not located” means not found in this review.
+Openness is recorded as six independent fields per paper — code, weights, data, raw predictions, recomputable, independently reproduced — and seven per repository. “Not located” means not found, not that it does not exist.
 
 ## 6. Synthesis
 
@@ -92,6 +92,6 @@ Findings are stated at the strength their records allow, with supporting and qua
 
 ## 7. Updating
 
-1. `python3 scripts/update-metadata.py` and `python3 scripts/update-github.py` write a new dated folder under `research/increments/`.
-2. Screen `new_candidates.json` with reasons (`screening.json`), then add accepted records to `data/`.
+1. `python3 scripts/update-metadata.py` and `python3 scripts/update-github.py` write a dated working folder under `research/increments/` (not committed) listing records not yet screened.
+2. Screen the new candidates, add each decision and reason to `research/screening.json` (and seen repositories to `research/github-seen.json`), add included records to `data/`, and log the run in `data/search-runs.json`.
 3. `python3 scripts/validate-data.py && python3 scripts/build.py`, update `CHANGELOG.md`, and re-run `python3 scripts/check-links.py`.

@@ -7,8 +7,8 @@
 Checks: unique IDs and BibTeX keys; controlled vocabularies; references between
 papers, claims, repositories, relations and synthesis entries; missing values
 carry a reason; openness rules (a URL for located code, no self-declared
-reproduction without a run log); URL schemes; and that every record of the
-immutable snapshot survives with its verified metadata.
+reproduction without a run log); URL schemes; and that no screened-out record
+sits in data/papers.json.
 """
 import argparse
 import datetime as dt
@@ -204,31 +204,19 @@ def main():
     for s in sources:
         check_url(s['url'], s['id'], required=True)
 
-    # --- snapshot coverage ----------------------------------------------
-    snap = json.loads((jevlib.ROOT / 'research' / 'snapshot-2026-09-23' / 'papers.json').read_text())
-    for m in snap:
-        p = seen.get(m['arxiv_id'])
-        if not p:
-            err(f'snapshot record lost: {m["arxiv_id"]}')
-            continue
-        for f_snap, f_new in (('versioned_id', 'versioned_id'), ('title', 'title'), ('authors', 'authors'),
-                              ('published', 'published_at'), ('tier', 'tier')):
-            if m[f_snap] != p[f_new]:
-                err(f'{p["id"]}: {f_new} differs from the verified snapshot ({m[f_snap]!r} vs {p[f_new]!r}); record an update instead')
-        if p['source_record'].get('category') != m['category']:
-            err(f'{p["id"]}: source_record not preserved')
+    screening = json.loads((jevlib.ROOT / 'research' / 'screening.json').read_text())['records']
+    for r in screening:
+        if r['decision'] == 'excluded' and r['arxiv_id'] in seen:
+            err(f'arxiv:{r["arxiv_id"]} is in data/papers.json but marked excluded in research/screening.json')
     stats = jevlib.compute_stats(d)
     if stats['core'] != 13 or stats['peripheral'] != 1:
         warn(f'core/peripheral counts changed: {stats["core"]}/{stats["peripheral"]} (update docs and CHANGELOG)')
-    repo_meta = d['repositories']['meta']
-    if stats['priority_repos'] != 30 or stats['catalogues'] != 81 or stats['repo_overlap'] != 2:
-        warn('repository set sizes differ from the 2026-09-23 audit (30 / 81 / 2 overlap)')
-    if any(r['type'] == 'unverified' for r in repos) or repo_meta['unverified_outgoing_candidates'] != 4666:
+    if any(r['type'] == 'unverified' for r in repos):
         err('unverified outgoing candidates must not enter repositories.json')
 
     if not args.quiet or errors or warnings:
         print(f'papers {stats["papers"]} (core {stats["core"]}, peripheral {stats["peripheral"]}, background {stats["background"]}); '
-              f'claims {stats["claims"]}; repositories {stats["repos_unique"]} ({stats["priority_repos"]} priority, {stats["catalogues"]} catalogues, {stats["repo_overlap"]} overlap)')
+              f'claims {stats["claims"]}; repositories {stats["repos_unique"]}')
     for w in warnings:
         print('WARN ', w)
     for e in errors:

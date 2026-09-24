@@ -1,0 +1,2280 @@
+{
+ "note": "Every arXiv record screened for this survey, so later searches only surface new work. Included records live in data/papers.json.",
+ "records": [
+  {
+   "arxiv_id": "0810.0780",
+   "title": "A search for disk-galaxy lenses in the Sloan Digital Sky Survey",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "0908.3948",
+   "title": "Will the Large Synoptic Survey Telescope detect extra-solar planetesimals entering the solar system?",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1004.3738",
+   "title": "VLT multi-epoch radial velocity survey toward NGC 6253. Analysis of three transiting planetary candidates",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1108.0363",
+   "title": "Typesafe Modeling in Text Mining",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1207.1534",
+   "title": "Generalized Hybrid Grey Relation Method for Multiple Attribute Mixed Type Decision Making",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1401.6672",
+   "title": "First results from the CALYPSO IRAM-PdBI survey - III. Monopolar jets driven by a proto-binary system in NGC1333-IRAS2A",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1509.00475",
+   "title": "The Grism Lens-Amplified Survey from Space (GLASS). I. Survey overview and first data release",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1607.07476",
+   "title": "First lensed quasar systems from the VST-ATLAS survey: one quad, two doubles and two pairs of lensless twins",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1609.05510",
+   "title": "Attojoule Optoelectronics for Low-Energy Information Processing and Communications: a Tutorial Review",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1710.06892",
+   "title": "Typesafe Abstractions for Tensor Operations",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1801.06880",
+   "title": "A multiwavelength survey of HI-excess galaxies with surprisingly inefficient star formation",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1809.06434",
+   "title": "The VLA/ALMA Nascent Disk and Multiplicity (VANDAM) Survey of Perseus Protostars. VI. Characterizing the Formation Mechanism for Close Multiple Systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1809.08034",
+   "title": "Answering the \"why\" in Answer Set Programming - A Survey of Explanation Approaches",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1901.11411",
+   "title": "Eliom: A Language for Modular Tierless Web Programming",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1903.11643",
+   "title": "High-speed photometry of faint cataclysmic variables - IX. Targets from multiple transient surveys",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "1905.09369",
+   "title": "Sparse Equisigned PCA: Algorithms and Performance Bounds in the Noisy Rank-1 Setting",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2002.06185",
+   "title": "Robust Contract Evolution in a TypeSafe MicroServices Architecture",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2006.13955",
+   "title": "The XMM Cluster Survey: new evidence for the 3.5 keV feature in clusters is inconsistent with a dark matter origin",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2009.10363",
+   "title": "How many suns are in the sky? A SPHERE multiplicity survey of exoplanet host stars I -- Four new close stellar companions including a white dwarf",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2101.09336",
+   "title": "A Comprehensive Survey on Hardware-Aware Neural Architecture Search",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2103.14244",
+   "title": "A Survey of Microarchitectural Side-channel Vulnerabilities, Attacks and Defenses in Cryptography",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2108.09412",
+   "title": "SemiFed: Semi-supervised Federated Learning with Consistency and Pseudo-Labeling",
+   "decision": "excluded",
+   "reason": "Stemming false match on “semif”; unrelated semi-supervised federated learning.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2110.14747",
+   "title": "Dynamic Review-based Recommenders",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2111.04115",
+   "title": "A survey of two analytical wake models for crosswind kite power systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2203.13001",
+   "title": "The application of techniques derived from artificial intelligence to the prediction of the solvency of bank customers: case of the application of the cart type decision tree (dt)",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2207.00300",
+   "title": "Robust Bayesian Learning for Reliable Wireless AI: Framework and Applications",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2209.06603",
+   "title": "Typesafe Coordinate Systems in High-Throughput Sequencing Applications",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2210.04621",
+   "title": "Calibrating AI Models for Few-Shot Demodulation via Conformal Prediction",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2212.06436",
+   "title": "Survey on social reputation mechanisms: Someone told me I can trust you",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2304.04354",
+   "title": "ViT-Calibrator: Decision Stream Calibration for Vision Transformer",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2305.07993",
+   "title": "The Nonstationary Newsvendor with (and without) Predictions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2307.12950",
+   "title": "RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment",
+   "decision": "excluded",
+   "reason": "Acronym collision (RLCD); unrelated to calibrated decisions.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2308.04636",
+   "title": "A Review on Transportation Network based on Complex Network Approach",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2310.05921",
+   "title": "Conformal Decision Theory: Safe Autonomous Decisions from Imperfect Predictions",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2312.11001",
+   "title": "A Versatile Causal Discovery Framework to Allow Causally-Related Hidden Variables",
+   "decision": "excluded",
+   "reason": "Acronym collision (RLCD); unrelated to calibrated decisions.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2402.02047",
+   "title": "Calibration and Correctness of Language Models for Code",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2404.13503",
+   "title": "Calibration Error for Decision Making",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2404.17637",
+   "title": "The NuSTAR Serendipitous Survey: the 80-month catalog and source properties of the high-energy emitting AGN and quasar population",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2405.09592",
+   "title": "A Survey of Generative Techniques for Spatial-Temporal Data Mining",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2409.18443",
+   "title": "Investigating the Impact of Sovereign Credit Rating Downgrade on the US Equity Market",
+   "decision": "excluded",
+   "reason": "Matched on an author name; not about typed decision models.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2410.02005",
+   "title": "FairlyUncertain: A Comprehensive Benchmark of Uncertainty in Algorithmic Fairness",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2410.13053",
+   "title": "Verification of Linear Dynamical Systems via O-Minimality of the Real Numbers",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2411.02444",
+   "title": "MADOD: Generalizing OOD Detection to Unseen Domains via G-Invariance Meta-Learning",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2501.14971",
+   "title": "Automatic Link Selection in Multi-Channel Multiple Access with Link Failures",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2502.12058",
+   "title": "A survey about perceptions of mobility to inform an agent-based simulator of subjective modal choice",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2503.03113",
+   "title": "Predicting Space Tourism Demand Using Explainable AI",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2503.22458",
+   "title": "Evaluating LLM-based Agents for Multi-Turn Conversations: A Survey",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2503.23090",
+   "title": "USE-LFA: A Data-Driven Framework for UAM Site Evaluation using Latent Factor Analysis",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2504.00856",
+   "title": "Group Sequential Design with Posterior and Posterior Predictive Probabilities",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2504.15582",
+   "title": "Smooth Calibration and Decision Making",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2504.17448",
+   "title": "CHASe: Client Heterogeneity-Aware Data Selection for Effective Federated Active Learning",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2504.21569",
+   "title": "A Systematic Literature Review of Parameter-Efficient Fine-Tuning for Large Code Models",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2507.12094",
+   "title": "Is This Predictor More Informative than Another? A Decision-Theoretical Comparison",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2507.13716",
+   "title": "Benchmarking of EEG Analysis Techniques for Parkinson's Disease Diagnosis: A Comparison between Traditional ML Methods and Foundation DL Methods",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2509.02923",
+   "title": "A Narrative Review of Clinical Decision Support Systems in Offloading Footwear for Diabetes-Related Foot Ulcers",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2510.07750",
+   "title": "Calibrating Decision Robustness via Inverse Conformal Risk Control",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2511.13699",
+   "title": "Efficient Calibration for Decision Making",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2511.22679",
+   "title": "Foundations of Quantum Granular Computing with Effect-Based Granules, Algebraic Properties and Reference Architectures",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.01449",
+   "title": "Segmentation and Processing of German Court Decisions from Open Legal Data",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.05666",
+   "title": "Advancing credit mobility through stakeholder-informed AI design and adoption",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.09871",
+   "title": "Epistemology gives a Future to Complementarity in Human-AI Interactions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.13743",
+   "title": "Counterexample Classification for Signal Temporal Logic Specifications",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.15105",
+   "title": "Brjuno-Like Functions for nonlinear expanding maps: Fractional Derivatives and Regularity Dichotomies",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.17034",
+   "title": "An infinite set of one-range addition theorems without an infinite second series, for Slater orbitals and it derivatives, applicable more than one coordinate system",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.19189",
+   "title": "Foresight Learning for SEC Risk Prediction",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.21506",
+   "title": "IROS: A Dual-Process Architecture for Real-Time VLM-Based Indoor Navigation",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2601.22653",
+   "title": "Human-Centered Explainability in AI-Enhanced UI Security Interfaces: Designing Trustworthy Copilots for Cybersecurity Analysts",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.00244",
+   "title": "A Bayesian Approach to Feedback Control for Hyperbolic Balance Laws",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.02920",
+   "title": "A Reproducible Framework for Bias-Resistant Machine Learning on Small-Sample Neuroimaging Data",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.13698",
+   "title": "Localized-basis formulation of interacting Hamiltonians in flat topological bands: coherent states and coherent-like states for fractional physics",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.13713",
+   "title": "On Theoretically-Driven LLM Agents for Multi-Dimensional Discourse Analysis",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.14146",
+   "title": "Early-stage memory effect on the dephasing charger-mediated quantum battery",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.16847",
+   "title": "Electron viscosity and device-dependent variability in four-probe electrical transport in ultra-clean graphene field-effect transistors",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.17065",
+   "title": "Quantum-Channel Matrix Optimization for Holevo Bound Enhancement",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.17589",
+   "title": "States that grow linearly in time, exceptional points, and zero norm states in the simple harmonic oscillator",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2602.21268",
+   "title": "A Dynamic Survey of Soft Set Theory and Its Extensions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.00816",
+   "title": "Adjoint Reidemeister torsion of 3-manifolds with torus boundary for semisimple algebraic groups",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.01948",
+   "title": "PreSight: Preoperative Outcome Prediction for Parkinson's Disease via Region-Prior Morphometry and Patient-Specific Weighting",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.02198",
+   "title": "Predicting Gaia astrometry's ability to constrain the populations of circumbinary planets",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.05477",
+   "title": "A FAST Survey of H I Absorption in Low-power Radio Sources",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.07074",
+   "title": "Physics-Guided VLM Priors for All-Cloud Removal",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.07567",
+   "title": "Revisiting the LiRA Membership Inference Attack Under Realistic Assumptions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.08459",
+   "title": "Data-Driven Priors for Uncertainty-Aware Deterioration Risk Prediction with Multimodal Data",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.08900",
+   "title": "A New Modeling to Feature Selection Based on the Fuzzy Rough Set Theory in Normal and Optimistic States on Hybrid Information Systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.11002",
+   "title": "Global dynamics and bifurcation analysis of a chemostat model with obligate mutualism and mortality",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.14479",
+   "title": "Risk-Calibrated Process Capability Approval with Finite Samples",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.15709",
+   "title": "Survey of Various Fuzzy and Uncertain Decision-Making Methods",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.16847",
+   "title": "Solving gravitational field equations by Wiener-Hopf matrix factorisation, and beyond",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.17328",
+   "title": "A Progressive Visual-Logic-Aligned Framework for Ride-Hailing Adjudication",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.20488",
+   "title": "Spatio-Temporal Grid Intelligence: A Hybrid Graph Neural Network and LSTM Framework for Robust Electricity Theft Detection",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2603.26065",
+   "title": "Eliciting Von Neumann-Morgenstern utility from discrete choices with response error",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.00425",
+   "title": "Effective attractive and repulsive interactions behind lift synchronization",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.02361",
+   "title": "TRACE: Traceroute-based Internet Route change Analysis with Ensemble Learning",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.04080",
+   "title": "Intelligent Traffic Monitoring with YOLOv11: A Case Study in Real-Time Vehicle Detection",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.06388",
+   "title": "Determining the Host Stars of Planets in Binary Star Systems with Asterodensity Profiling: Investigating the Canonical Radius Gap",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.07629",
+   "title": "Behavior Latticing: Inferring User Motivations from Unstructured Interactions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.10073",
+   "title": "Graph-RHO: Critical-path-aware Heterogeneous Graph Network for Long-Horizon Flexible Job-Shop Scheduling",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.13352",
+   "title": "A Hybrid Statistical Learning Framework for Capability-Based Decision Support in Manufacturing",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.14523",
+   "title": "Quantifying and Improving the Accuracy of Electromagnetic Transient-Transient Stability Hybrid Simulation",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.15957",
+   "title": "Small Yet Configurable: Unveiling Null Variability in Software",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.20022",
+   "title": "MoBayes: A Modular Bayesian Framework for Separating Reasoning from Language in Conversational Clinical Decision Support",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.24668",
+   "title": "The Price of Agreement: Measuring LLM Sycophancy in Agentic Financial Applications",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.24730",
+   "title": "Analysis of the Gaia DR3 planetary nebula candidates and the possible symbiotic stars among them",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.24886",
+   "title": "Getting large-scale quantum neural networks ready for quantum hardware",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.25162",
+   "title": "Experimental Workflows for Combinatorial Optimization: Towards Quantum Advantage",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2604.25683",
+   "title": "K-CARE: Knowledge-driven Symmetrical Contextual Anchoring and Analogical Prototype Reasoning for E-commerce Relevance",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.01127",
+   "title": "Impact-Driven Quantum Decomposition for Traffic Zone Partitioning: A Hybrid Gate-Model Framework",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.02376",
+   "title": "Graph-Augmented Topological Internalization with Dual-Stream Classifiers for Medical Report Generation",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.04096",
+   "title": "Quantum Dynamics: A Dilation-Based Approach",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.06933",
+   "title": "MAGIQ: A Post-Quantum Multi-Agentic AI Governance System with Provable Security",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.07595",
+   "title": "A Syndrome--Space Approach to Proximity Gaps and Correlated Agreement for Random Linear Codes and Random Reed--Solomon Codes",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.09317",
+   "title": "Mem-W: Latent Memory-Native GUI Agents",
+   "decision": "excluded",
+   "reason": "“Machine-native” used in an unrelated sense (symbol vocabularies or memory-native agents).",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.13642",
+   "title": "Conformal Anomaly Detection in Python: Moving Beyond Heuristic Thresholds with nonconform",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.14202",
+   "title": "LLM-Based Robustness Testing of Microservice Applications: An Empirical Study",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.15478",
+   "title": "Comments on higher-derivative corrections in the AdS/CFT duality",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.16726",
+   "title": "A Global-Local Graph Attention Network for Traffic Forecasting",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.17657",
+   "title": "General Science Ranking (GSR): An Open-Source, Citation-Normalized Journal and Conference Classification System for Computer Science and Medicine",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.17749",
+   "title": "Testable and Actionable Calibration for Full Swap Regret",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.20080",
+   "title": "TIC 295741342: A Triply-Eclipsing Triple Star System with a Giant Tertiary",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.22547",
+   "title": "MKG-CARE: Case-Aware Reasoning with Multimodal Knowledge Graphs for Explainable Medical Image Diagnosis",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.23644",
+   "title": "Balanced intersection size distributions in finite geometries and vector spaces",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.25486",
+   "title": "RAG-Match: Retrieval-Augmented Knowledge Injection and Hierarchical Reasoning for Calibrated Semantic Relevance",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.27700",
+   "title": "CiteCheck: Retrieval-Grounded Detection of LLM Citation Hallucinations in Scientific Text",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2605.29399",
+   "title": "Expecting Empathy: How Interaction Context Shapes Norms for Empathic Response in Digital Communication",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.02106",
+   "title": "When Tabular Foundation Models Transfer Across Modalities: A Systematic Evaluation Across 95 Datasets, 7 Modalities, and Two Regimes",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.02488",
+   "title": "RASER: Recoverability-Aware Selective Escalation Router for Multi-Hop Question Answering",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.02871",
+   "title": "Adaptive Latent Agentic Reasoning",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.03488",
+   "title": "Piston control in a two-ion quantum device",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.05179",
+   "title": "Efficient Punctuation Restoration via Weighted Lookahead Scoring Method for Streaming ASR Systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.05577",
+   "title": "Multi-parameter persistence in dynamical systems for maximizing effects of control inputs",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.05784",
+   "title": "TAPO: Tool-Aware Policy Optimization via Credit Transfer for Multimodal Search Agents",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.06660",
+   "title": "AEGIS: A Backup Reflex for Physical AI",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.06835",
+   "title": "Translate-R1: Cost-Aware Translation Tool Use via Reinforcement Learning",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.06847",
+   "title": "Physics-Driven Semantic Scattering Structure Understanding of Aircraft Target in SAR Images",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.08426",
+   "title": "CritLens: Visual Analytics for Criteria Discovery in Review-Based Decision Making",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.09937",
+   "title": "RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.11266",
+   "title": "Seeing Before Colliding: Anticipatory Safe RL with Frozen Vision-Language Models",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.11949",
+   "title": "Online Shift Detection and Conformal Adaptation for Deployed Safety Classifiers",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.12154",
+   "title": "The Brain That Goes Quiet: Serving a Large Model's Knowledge at 131 Tokens per Second on an 8 GB Laptop by Removing the Large Model from the Runtime Path",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.12293",
+   "title": "LLM-Based Digital Twin Intelligence for Application-Aware Network Selection in 6G Heterogeneous Wireless Networks",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.12395",
+   "title": "MARCIM-WG: A cyber wargame proposal based on math modeling applied in a naval scenario",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.13837",
+   "title": "Hybrid Neural Retrieval with Generative Query Refinement for Quranic Passage Retrieval",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.15916",
+   "title": "A generalized Stieltjes system with polynomial source",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.16047",
+   "title": "From Argument Components to Graphs: A Multi-Agent Debate with Confidence Gating for Argument Relations",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.19501",
+   "title": "DeXposure-Claw: An Agentic System for DeFi Risk Supervision",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.19685",
+   "title": "Following up the Kepler field with PLATO: Transit Timing Performance",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.20122",
+   "title": "ScaffoldAgent: Utility-Guided Dynamic Outline Optimization for Open-Ended Deep Research",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.20713",
+   "title": "FairTutor: Equity-Aware Pedagogical LLM Routing for Budget-Constrained AI Tutoring",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.21996",
+   "title": "Cultural Targets, Structural Frames, Binding Morals: A Cross-Lingual Audit of Online Hate in Multicultural Singapore",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.22597",
+   "title": "MapReason-OSM: Can Vision-Language Models Make Graph-Verifiable Mobility Decisions from Street Maps ?",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.22807",
+   "title": "KaLM-Reranker-V1: Fast but Not Late Interaction for Compressed Document Reranking",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.23283",
+   "title": "Towards Root Memories: Benchmarking and Enhancing Implicit Logical Memory Retrieval for Personalized LLMs",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.23785",
+   "title": "Controlled Chaos in 4D SCFTs",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.24003",
+   "title": "DissProve: Automated Verification of Asynchronous Distributed Protocols with Affine Communication",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.24447",
+   "title": "P-MTP: Efficient Document Parsing via Multi-Token Prediction with Progressive Depth Scaling",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.24472",
+   "title": "G$^3$VLA: Geometric inductive bias for Vision-Language-Action Models",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.25783",
+   "title": "Non-uniqueness of weak solutions to cross-diffusion systems with advection",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.26007",
+   "title": "From Sparse and Imperfect 2D Anchors to Consistent 3D Gaussian Street Scenes: Support-Aware Appearance",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.28933",
+   "title": "FinInvest-GTCN: Explainable Graph-Temporal-Causal Modeling for Risk-Aware Investment Decision Optimization",
+   "decision": "excluded",
+   "reason": "“Decision head” refers to an RL, ethics or optimisation module, not option readout.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.29565",
+   "title": "Speculative Pre-Positioning: Decoding Stateful Sessions to the Next Decision Point Off the Critical Path",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.29816",
+   "title": "Rethinking Build vs. Buy Decisions in Enterprise Software: Navigating Trade-offs through a Structured Decision-Support Approach",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.29863",
+   "title": "KbSD: Knowledge Boundary aware Self-Distillation for Behavioral Calibration in Agentic Search",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.30531",
+   "title": "Entity Binding Failures in Tool-Augmented Agents",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.31315",
+   "title": "BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.31331",
+   "title": "Expected Gain-based Escalation in Vertical Federated Learning",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.31470",
+   "title": "CLOUDADV: Decision-Aligned Instance Sizing with Zero-Shot Foundation Models under Drift",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2606.31921",
+   "title": "Interface-Aware Neural Newton Preconditioning for Robust Cohesive Zone Model Simulations",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.00570",
+   "title": "Dual-Confidence Contrastive Decoding for Retrieval-Augmented Generation",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.01234",
+   "title": "Modeling the Performance of the Burevestnik Nuclear-Powered Cruise Missile",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.03333",
+   "title": "SPORK: Self-Speculative Forking to Accelerate Agentic LLM Inference",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.03651",
+   "title": "LLM-Guided Transportation Hub Capacity Planning with Textual Business Inputs",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.05007",
+   "title": "Quantum-Inspired Harmonic Decision Models: A Computational Framework for Music Generation",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.05438",
+   "title": "Modality Relevance is not Modality Utility: Post-hoc Selective Modality Escalation for Cost-Aware Multimodal RAG",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.05632",
+   "title": "Bridging Stakeholder and Product Requirements: An Empirical Study of Requirement Engineering in the Automotive Industry",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.05805",
+   "title": "Onnes: A Physics-Grounded Multi-Agent LLM Simulator for Cryogenic Fault Diagnosis in Quantum Computing Infrastructure",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.05814",
+   "title": "Latency-Constrained Hardware-Aware Quantum Error Correction Co-Design with Adaptive Confidence-Gated Neural Decoding for the Rotated Surface Code",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.05999",
+   "title": "AgoraSim: A Hybrid Agent-Based Modeling Framework",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.06631",
+   "title": "Dynamic-in-Few-Step: Unifying Dynamic Computation and Few-Step Distillation for Efficient Video Generation",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.08395",
+   "title": "Token-Flow Firewall: Semantic Runtime Auditing for Persistent AI Agents",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.09090",
+   "title": "EXHOLD: Experience-Aware Real-Time Hold Control for Large-Scale Ride-Hailing Matching at DiDi",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.10140",
+   "title": "FlowPainter: Inpainting Optical Flow via Confidence-Guided Completion",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.10707",
+   "title": "MDQEC-QAS: Meta-Decoding for Quantum Error Correction with Hardware-Aware VQC Search and Confidence-Gated Recovery",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.11216",
+   "title": "Distributed Semantics for Distributed Quantum Computing",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.11906",
+   "title": "In-Context Reinforcement Learning under Non-Stationarity: A Survey",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.14390",
+   "title": "Why Git Is the Memory Solution for the Agentic Development Lifecycle",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.16085",
+   "title": "Controlling Implicit Shortcut Reliance in L2 Spoken English Auto-markers",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.17167",
+   "title": "Normal form method of center-focus problem in piecewise-smooth systems and algorithm design",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.17765",
+   "title": "FIFA World Cup 2026 as a Contamination-Free Benchmark for LLM Forecasting Agents: Four Models, a Bookmaker, and 104 Matches",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.17774",
+   "title": "Persona-as-Configuration: Generative Stakeholder Reporting for Agricultural Floods",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.18701",
+   "title": "Subsonic time-periodic solutions to radially symmetric spiral flows in an annulus",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.18713",
+   "title": "Confidence-Gated Vision-Only Heading Alignment for UAV-UGV Cooperative Systems",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.18770",
+   "title": "GLID: Gated Local Intrinsic Dimension Repairs the Blind Spots of Face-Forgery Detectors",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.18865",
+   "title": "Enhanced Neural Quantum State via Annealed Gradient Descent",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.20449",
+   "title": "The Storyteller in the Model: Narrative Pattern Inheritance, Escalation Dynamics, and Alignment Governance in LLMs",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.22995",
+   "title": "Theory of approximate quantum error correction and the error-set model",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.24605",
+   "title": "Map Multi-Tool: A Map-Based Approach to Modeling Beam Systematics for Cosmic Microwave Background Experiments",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.24924",
+   "title": "Efficient computation of real-time correlators using Pauli Propagation",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.26024",
+   "title": "LLM4OSC: Profile-Bound Natural Language Control with Deterministic Validation for Open Sound Control",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.27578",
+   "title": "What makes prompts a graph: necessary and sufficient conditions for prompt graph engineering",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.27700",
+   "title": "Calibrate Before Reason: Robust Visual Token Reduction against Semantic Drift in VLMs",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.28418",
+   "title": "WIDE: Boosting Adaptive LLM Inference via Token-level Dynamic Width Pruning",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.28529",
+   "title": "CoGate: Confidence-Gated Co-Decoding for Secure Code Generation",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2607.28677",
+   "title": "Reasoning in Real World Clinical Care: Why Large Language Models Are Not Yet Safe for Autonomous Clinical Decision Support",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.00401",
+   "title": "Embodied Passive Aeroacoustic Perception Enables Relative Sensing and Pursuit Between Aerial Robots",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.00573",
+   "title": "TrimMoE A communication aware and adaptive depth framework for distributed edge inference",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.01033",
+   "title": "CallScreenBench: Benchmarking Small Language Models as Phone Secretaries",
+   "decision": "excluded",
+   "reason": "Benchmark underlying core paper 2609.23959; linked from that record as a dataset rather than added to the bibliography.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.01303",
+   "title": "AlphaG-OPD: Reliability-Gated Sibling Counterfactuals for On-Policy Distillation in Symbolic Alpha Factor Discovery",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.02624",
+   "title": "Neural network realization of binary refinement iterates via a two-chart atlas selector",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.03514",
+   "title": "Beyond Peak TOPS/W: A System-Level Perspective on Hybrid Digital, Analogue and Neuromorphic Computing",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.03868",
+   "title": "GENESIS: Towards Explainable Causal Discovery",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.04355",
+   "title": "The Calibration Floor: Format Repair Can Masquerade as Self-Correction at Small-to-Mid Scale",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.05324",
+   "title": "Interacting Galilean and Finite-Energy Carroll Fermions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.05519",
+   "title": "EcoAgent-Bench: Evaluating Economic Decision-Making in Budget-Constrained LLM Agents",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.05572",
+   "title": "Viveka: Context-Aware Sensing for Energy Efficiency in Smart Wearables",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.06235",
+   "title": "Global vs. Product Observables in Bipartite Quantum Systems: The Sharp Bound",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.06571",
+   "title": "Model Confidence Under Answer-Preserving Attacks: An Informativeness-Manipulability Frontier",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.06861",
+   "title": "Gated-BEPO: Confidence-Gated Bellman Credit Assignment for Large Language Model Agents",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.06914",
+   "title": "RibAssist 3D: Biplanar Rib-Fracture Detection, Addressing, and Selective 3D Localization from CT-Derived Projections",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.08822",
+   "title": "Automated Generation of Complexity-Validated Decision Scenarios Using Large Language Models",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.09248",
+   "title": "Emotion2Skill: Model-Internal Emotion Signals for Adaptive Skill Selection and Evolution",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.10154",
+   "title": "Multimodal Item Parameter Estimation using Simulated Response Probabilitie",
+   "decision": "excluded",
+   "reason": "Uses option/typed probabilities in an unrelated task; not needed as background for the survey questions.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.10698",
+   "title": "EVIL-Detect for NLPCC 2026 Shared Task 6: LLM-Generated Text Detection",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.10731",
+   "title": "When Is a General Factor Distinguishable? Non-Proportionality, Stable Structure, and the Bifactor Decision",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.11241",
+   "title": "RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.11403",
+   "title": "When Self-Consistency Backfires: Majority Vote Hurts the Majority of Hard Science Problems for Small LLMs",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.11631",
+   "title": "CLAIM: Leading Open-domain Active Clarification of Large Language Models with Uncertainty Measurement",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.11817",
+   "title": "Quantum Inequalities from the Second Law",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.12841",
+   "title": "AQuA: Recursively Self-Improving Quantitative Trading Research Agents",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.13046",
+   "title": "BoardroomAI: Dependency-Aware Human-Steerable Multi-Agent Deliberation through Evolving Decision Graphs",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.14400",
+   "title": "Ten simple rules for non-visual, reproducible and accessible bioinformatics",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.14927",
+   "title": "LLMs Can Predict Failure Risk, But Struggle to Predict Which Collaboration Protocol Pays Off: Cost-Aware Protocol Routing Across Reasoning Tasks",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.14995",
+   "title": "PAS-QFL: Personalized Ansatz Selection for Quantum Federated Learning under Client Data Heterogeneity",
+   "decision": "excluded",
+   "reason": "“Decision head” refers to an RL, ethics or optimisation module, not option readout.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.15484",
+   "title": "Poisson structures for a similarity reduction of the Drinfeld-Sokolov hierarchy of type $A$",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.16055",
+   "title": "Governance at the Boundary: How Agent Decomposition Degrades Policy Compliance",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.16710",
+   "title": "The Ethical Decision Head: Operationalizing Normative Ethics in Autonomous Vehicles via Reinforcement Learning from Human Feedback",
+   "decision": "excluded",
+   "reason": "“Decision head” refers to an RL, ethics or optimisation module, not option readout.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.16919",
+   "title": "CARA: Cognitive Adaptive Recommendation Agent",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.16930",
+   "title": "EMAN: Optimization-Driven Capacity Growth through Path Emergence in Multi-Task Learning",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.17291",
+   "title": "B-Spline Embedded Structure Learning for 3D Tooth Segmentation",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.18174",
+   "title": "Seasonal false alarms in customer churn and decline early-warning systems: adjacent-window labels confound seasonality with decline, and a year-over-year correction",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.19004",
+   "title": "Autonomous Agricultural Tractor: Integrated Weed Detection and LiDAR Navigation for Precision Paddy Farming",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.19029",
+   "title": "Adaptive Memory and Reflection Multi-Agent System for Medical Question Answering",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.19135",
+   "title": "Autonomous Cyber Defense in Connected Vehicles: A Multi-Agent Approach to V2X Security",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.19529",
+   "title": "When Machines Speak: A Unified Generative Framework for Integrating Machine-Native Symbols into Pretrained Large Language Models",
+   "decision": "excluded",
+   "reason": "“Machine-native” used in an unrelated sense (symbol vocabularies or memory-native agents).",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.19558",
+   "title": "Reliable Financial Named Entity Recognition Under Domain Shift: Confidence Estimation and Selective Prediction",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.19922",
+   "title": "Auditing Recorded Predictive Lead Service-Line Classifications Against Physical Verification: A Statewide Study of New York",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.20152",
+   "title": "The Generalized Random Access Problem for Linear Codes",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.20630",
+   "title": "SAGE: A Unified Algebra and Self-Adaptive Execution for AI Functions in SQL",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.21434",
+   "title": "Maximal-Rank Squeezing from Rank-One Quenches: An Exact Spectral-Reachability Theorem for Gaussian Bosonic Systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.21537",
+   "title": "Counterfactual, Per-Decision Bias Auditing for Automated Hiring: Localizing and Explaining Disparate Impact in Applicant Tracking Systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.21572",
+   "title": "Betting for Sim-to-Real Performance Certificates",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.21734",
+   "title": "LMP-GNN: Probabilistic Reconstruction of Missing Lane Counts for Signed Max-Pressure Traffic Signal Control",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.22772",
+   "title": "SPOC-SQL: Stage-wise Preference Optimization for Controllable Text-to-SQL",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.22967",
+   "title": "Closed-Loop Bayesian Molecular Inverse Design with Semantic LLM Surrogates",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.24786",
+   "title": "Harvesting the Volatility Risk Premium: A Learning-to-Rank Approach",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.25565",
+   "title": "Maru: Information Architecture as a Shared Language for Generating Aligned and Persistent User Interfaces",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.26180",
+   "title": "PACEShop: Evaluating Personalized, Actionable, Compositional, and Evidence-grounded Shopping Assistants",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.27932",
+   "title": "Graphionale: How Graph Visualizations of LLM Rationales Affect Human Decision Making",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.28728",
+   "title": "PermitGPT: A Unified Generative-AI Pipeline for Construction Hazard Forecasting, Permit Prediction, and Community Impact",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.28846",
+   "title": "A rigor-matched audit of periodic-step layer skipping for efficient llm inference: conflayers versus swift, with a supplemental analysis of trained routing alternatives",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.29397",
+   "title": "AlgoWorlds: Benchmarking Tool Use for Global Optimization in Algorithmic Worlds",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.29398",
+   "title": "Review-Period Sensitivity in Multiclass Queue Scheduling",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2608.30860",
+   "title": "Well-conditioned iterative methods for large open quantum systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.00615",
+   "title": "BeamRMX: Radiation-Pattern-Driven Learning for Generalizable Beam Radio Map Prediction and Beam Management",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.00943",
+   "title": "Illiquidity at Risk",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.02092",
+   "title": "Beyond Outcome Gaps: Process-Aware Fairness Diagnosis for LLM-based Multi-Agent Decision Systems",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.02211",
+   "title": "The relationship between solar and stellar tachoclines, dynamos, and spin-down",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.02614",
+   "title": "Ruelle--Pollicott Theory for Metastable Systems: A Unified Framework for Tipping Transitions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.02750",
+   "title": "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.04048",
+   "title": "Translation as a Decision Space: A Multi-Agent Perspective on Low-Resource Dialect Generation",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.04445",
+   "title": "Conformity Breaks Conformal Prediction",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.05322",
+   "title": "Restricting the effects hides a nonphysical symmetry from every causal structure",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.05637",
+   "title": "Better Together: Complementary Query Rewriting Under a Strong RAG Baseline",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.05758",
+   "title": "From Monolithic Blending to Agentic Orchestration: Dynamic Response for Conversational Assistants at Scale",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.07305",
+   "title": "Marginal Fidelity Does Not Establish User Simulation in Demographic Synthetic Survey Panels: Response Contracts, Support Collapse and Conditioning Failure",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.08161",
+   "title": "Snugi-AI-v2 @ eRisk 2026 Task 2: Early Depression Detection via a Learned Stopping Policy with Sustained Confidence Gate",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.08481",
+   "title": "An Evidence Model for Agentic Processes: Evidence Claims, Trust Assumptions, and Policy Assessment",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.08678",
+   "title": "HiBRIDGE: A Hierarchical Bayesian Neural Network Framework for Interpretable Dialogue Management in Group-Robot Interaction",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.09776",
+   "title": "Proof-Carrying Cognition: Closing the Verification Gap with Reality-Settled Reward",
+   "decision": "excluded",
+   "reason": "Uses option/typed probabilities in an unrelated task; not needed as background for the survey questions.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.09948",
+   "title": "Robust Rank Aggregation for Multimodal Speech-Based Alzheimer's Disease Detection",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.10873",
+   "title": "When Validation Stops Learning: Auditing Update Admission for Continual Embodied Agents",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.11023",
+   "title": "RCL: A Retrieval-Confidence Layer for Detecting Insufficient Context in Enterprise Retrieval-Augmented Code Generation",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.11264",
+   "title": "Can AI Remediate Backend Failures Safely? GuardedAct with Blast-Radius-Aware Sandboxing",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.11775",
+   "title": "Rapid Learning of Dexterous In-Hand Pen Writing through Real-Time Jacobian Estimation",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.12489",
+   "title": "Confidence-Gated Transductive Test Generation for Code Reranking",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.13288",
+   "title": "Target-Checked Reliability Score Refinement for Video Question Answering",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.13357",
+   "title": "Can Autonomous LLM Agents Execute Multireference Quantum Chemistry Calculations?",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.13774",
+   "title": "From Benchmark to Deployment: Shift-Robust Fabric Recognition for Industrial Textile Onboarding",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.14451",
+   "title": "Follow the Geometry, Not the Model: Cold Start Semi-Supervised Learning",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.15217",
+   "title": "Accelerating the Solving of Many Tiny General Linear Systems on GPUs: Application to Constitutive Laws",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.15530",
+   "title": "Option-Aware Retrieval and Task-Specific VLM Adaptation for Medical VQA",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.15919",
+   "title": "Pilot Early, Commit Late: A Real-Options Model of Enterprise AI Adoption under Rapid Technological Progress",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.16163",
+   "title": "GPEvac: GNN-Based PPO for Adaptive Evacuation Routing During Shooting Events",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.16858",
+   "title": "TecoPrompt: Temporal-Conservative Prompt Learning for Vision-Language Models",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.17247",
+   "title": "DriveMCP: An Agentic AI framework for Advanced Driver Assistance System",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.17977",
+   "title": "When to Call an LLM: A Confidence-Gated Hybrid for Cost-Effective Emotion Recognition in Conversational AI",
+   "decision": "included_background",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.18610",
+   "title": "A Geometric Theory of Decision Boundaries in Structured Markov Decision Processes",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.18766",
+   "title": "FRAUDSkill: Structured Frozen-Weight Skill Optimization for Audio Anti-Fraud Detection",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.20463",
+   "title": "Beyond the Stability--Plasticity Frontier in Streaming Target Speaker Extraction",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.22753",
+   "title": "Replacing Large Language Models with Jev Decision Models for Low-Latency Edge Service Orchestration",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.23136",
+   "title": "Fast Intent-Driven Service Orchestration with Jev for 6G Edge Networks",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.23513",
+   "title": "Critical Touching of Temporal Entanglement Transitions",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.23703",
+   "title": "Financial Language Models as Applied Artificial Intelligence Systems for News-Based Trading under Market Frictions",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.23886",
+   "title": "this-that-model-1.0: A typed decision model that decides in 30 ms, for a millionth of a cent",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.23959",
+   "title": "Open-Jev Judgments on CallScreenBench: Calibrated One-Pass Scam Screening with a Small Language Model",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.23986",
+   "title": "Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24052",
+   "title": "Calibrated Decisions at Scale: Converting Police Crash Narratives into Probabilistic Crash Variables with a System One Model (Jev)",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24181",
+   "title": "Firm Valuation When AI Shapes the Business Model: A Milestone-Based Real-Options Framework for the AI Valuation Uncertainty Problem",
+   "decision": "excluded",
+   "reason": "Uses option/typed probabilities in an unrelated task; not needed as background for the survey questions.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24395",
+   "title": "JEVQA - Video Quality from Metadata, Bitstream, and Pixel Features with a General-Purpose Decision Model",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24496",
+   "title": "Conformalized Safe Feasible Sets in Uncertain Decision Systems",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24574",
+   "title": "Evaluating Decision Models for Text Annotation in Computational Social Science",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24631",
+   "title": "From Semantic Decisions to Feasible Trajectories: Self-Evolving LLM-Guided Optimal Control for Narrow-Space Parking",
+   "decision": "excluded",
+   "reason": "“Structured decisions” used in an unrelated sense (control, planning, finance, requirements); no typed finite-option decision interface or relation to Jev.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24868",
+   "title": "DualWAM: Dual-System World Action Models for Asynchronous Global Planning and Local Refinement",
+   "decision": "excluded",
+   "reason": "Name match only (dual-system robotics); no typed decision interface.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.24965",
+   "title": "Jev for Scientific Decisions: Evaluating Semantic Choices and Their Consequences",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.25498",
+   "title": "Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains",
+   "decision": "included_peripheral",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.25773",
+   "title": "Video-HopChain: Multi-Hop Questions and Confidence-Gated Exploration for Video Reasoning Models",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.25845",
+   "title": "Visual Jev: Accurate and Efficient Decisions from Shared Visual Context",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.26069",
+   "title": "RankCert: When Can Simulated Learners Safely Select an AI Tutor? Robust Decision Certification Under Structural Uncertainty",
+   "decision": "excluded",
+   "reason": "Confidence gating or escalation in an unrelated application domain; adjacent background is already covered by selected references.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.26293",
+   "title": "Dual-Frontier: When Can an Agent Trust Its World Model?",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.26532",
+   "title": "REFLEX with Jev for Efficient Selective Control in LLM Agents",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.26550",
+   "title": "JEV-as-a-Judge: Accept When Confident, Escalate When Unsure",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "2609.26758",
+   "title": "Type-Safe Is Not Error-Free: A Constrained Decision Head Follows the Option Name, Not the Rubric Bound to It",
+   "decision": "included_core",
+   "reason": "Included; see data/papers.json.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "astro-ph/0302582",
+   "title": "The VLT-UVES survey for molecular hydrogen in high-redshift damped Lyman-alpha systems",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "astro-ph/0312269",
+   "title": "The Canada-UK Deep Submillimetre Survey VIII: Source Identifications in the 3-hour field",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "cond-mat/0210037",
+   "title": "Magnetosuperconductivity in ruthenocuprates RuSr2GdCu2O8(Ru 1212) and RuSr2(Gd0.75Ce0.25)2Cu2O10 (Ru 1222) a critical review",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  },
+  {
+   "arxiv_id": "cs/0607143",
+   "title": "Target Type Tracking with PCR5 and Dempster's rules: A Comparative Analysis",
+   "decision": "excluded",
+   "reason": "No direct link to Jev or a Jev-like typed decision interface at title/abstract level.",
+   "screened": "2026-09-23"
+  }
+ ]
+}
