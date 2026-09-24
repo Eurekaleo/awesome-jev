@@ -1,12 +1,12 @@
 # Running, building and publishing
 
-The repository is <https://github.com/Eurekaleo/awesome-jev>. GitHub Pages serves the site from `main` (repository root) at <https://eurekaleo.github.io/awesome-jev/>. No DOI or archival copy exists yet.
+The repository is <https://github.com/Eurekaleo/awesome-jev-survey>. GitHub Pages serves the site from `main` (repository root) at <https://eurekaleo.github.io/awesome-jev-survey/>. No DOI or archival copy exists yet.
 
 ## Run locally
 
 ```sh
-git clone https://github.com/Eurekaleo/awesome-jev.git
-cd awesome-jev
+git clone https://github.com/Eurekaleo/awesome-jev-survey.git
+cd awesome-jev-survey
 python3 -m http.server 8000      # then open http://localhost:8000
 ```
 

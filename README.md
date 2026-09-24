@@ -4,7 +4,7 @@
 
 **An evidence survey of TypeSafe’s Jev and Jev-like typed decision models — calibration, selective control and open implementations.**
 
-**Website:** <https://eurekaleo.github.io/awesome-jev/>
+**Website:** <https://eurekaleo.github.io/awesome-jev-survey/>
 
 **Author:** [Meng Luo](https://eurekaleo.github.io/)
 
@@ -191,7 +191,7 @@
 
 ## Contributing
 
-New studies, corrections, code or weights updates and reproduction reports are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) or [open an issue](https://github.com/Eurekaleo/awesome-jev/issues/new/choose).
+New studies, corrections, code or weights updates and reproduction reports are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) or [open an issue](https://github.com/Eurekaleo/awesome-jev-survey/issues/new/choose).
 
 ## Citation and licence
 
@@ -202,7 +202,7 @@ Citation metadata is in [CITATION.cff](CITATION.cff) (GitHub shows it under “C
   author       = {Luo, Meng},
   title        = {Jev and Typed Decision Models: An Empirical Survey of Calibration, Selective Control, and Open Implementations},
   year         = {2026},
-  howpublished = {\url{https://github.com/Eurekaleo/awesome-jev}},
+  howpublished = {\url{https://github.com/Eurekaleo/awesome-jev-survey}},
   note         = {Version 0.1.0, data cutoff 23 Sep 2026. Working draft, not peer-reviewed}
 }
 ```
